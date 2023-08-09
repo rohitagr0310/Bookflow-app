@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run your pre-commit tasks here
+# For example, running linting and tests
+
+yarn lint
+yarn test
