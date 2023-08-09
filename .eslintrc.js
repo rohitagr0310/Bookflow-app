@@ -35,6 +35,7 @@ module.exports = {
     quotes: ['error', 'single'],
 
     // Require semicolons at the end of statements
+    
     semi: ['error', 'always'],
 
     // Enforce consistent spacing inside curly braces
