@@ -63,4 +63,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or inquiries, please contact [Rohit Agarwal](mailto:Rohitagr2610@gmail.com) or [Qaidjohar Jukker](mailto:qaidjoharytqt@gmail.com).
+For questions or inquiries, please contact [Rohit Agarwal](mailto:Rohitagr2610@gmail.com).
