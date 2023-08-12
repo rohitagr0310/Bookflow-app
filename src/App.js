@@ -4,6 +4,8 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header.js";
 import LoginPage from "./components/login_page/LoginPage.js";
+import AdminPanel from "./components/admin_panel/AdminPanel.js";
+import StudentPanel from "./components/student_panel/StudentPanel.js";
 
 const theme = createTheme();
 
@@ -19,6 +21,8 @@ function App () {
           <Header />
           <Routes>
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/admin" element={<AdminPanel />} /> {/* Route to AdminPanel */}
+            <Route path="/student" element={<StudentPanel />} /> {/* Route to StudentPanel */}
             {/* Other routes */}
           </Routes>
         </div>

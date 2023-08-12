@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 import useStyles from "./LoginPageStyles";
 
 const LoginPage = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
@@ -18,15 +21,30 @@ const LoginPage = () => {
   };
 
   const handleSignIn = () => {
-    // Perform sign-in logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    // Simulated authentication logic for demonstration
+    const adminEmail = "admin@bookflow.com"; // admin email
+    const adminPassword = "admin123"; // admin password
+
+    const studentEmail = "student@bookflow.com"; // student email
+    const studentPassword = "student123"; // student password
+
+    if (email === adminEmail && password === adminPassword) {
+      // If user is authenticated as admin, navigate to admin panel
+      navigate("/admin");
+    } else if (email === studentEmail && password === studentPassword) {
+      // If user is not admin, navigate to student panel
+      navigate("/student");
+    }
   };
 
   const handleSignUp = () => {
-    // Perform sign-up logic here
+    // Simulated sign-up logic for demonstration
+    console.log("Sign up logic");
     console.log("Email:", email);
     console.log("Password:", password);
+
+    // After successful sign-up, navigate to the appropriate panel
+    navigate("/student");
   };
 
   return (
@@ -50,7 +68,8 @@ const LoginPage = () => {
         <Button
           variant="contained"
           color="primary"
-          onClick={isSignUp ? handleSignUp : handleSignIn}>
+          onClick={isSignUp ? handleSignUp : handleSignIn}
+        >
           {isSignUp ? "Sign Up" : "Sign In"}
         </Button>
         <p className={classes.p} onClick={() => setIsSignUp(!isSignUp)}>
