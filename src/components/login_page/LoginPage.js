@@ -68,8 +68,7 @@ const LoginPage = () => {
         <Button
           variant="contained"
           color="primary"
-          onClick={isSignUp ? handleSignUp : handleSignIn}
-        >
+          onClick={isSignUp ? handleSignUp : handleSignIn}>
           {isSignUp ? "Sign Up" : "Sign In"}
         </Button>
         <p className={classes.p} onClick={() => setIsSignUp(!isSignUp)}>
