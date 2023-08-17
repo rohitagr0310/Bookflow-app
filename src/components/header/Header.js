@@ -5,6 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import Menu from "@mui/material/Menu";
@@ -17,7 +18,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -28,7 +29,7 @@ const Header = () => {
   };
 
   // let isLoggedIn = true; // Simulated login status
-  const userRole = "admin"; // Simulated user role
+  const userRole = "student"; // Simulated user role
 
   const handleLogout = () => {
     // Perform logout actions if needed
@@ -44,20 +45,25 @@ const Header = () => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" style={{ flexGrow: 1 }}>
+          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           BookFlow
+          </Link>
         </Typography>
         <div className={classes.search}>
           <div className={classes.searchIcon}>
             <SearchIcon />
           </div>
           <InputBase
-            placeholder="Search…"
+            placeholder="  Search…"
             classes={{
               root: classes.inputRoot,
               input: classes.inputInput
             }}
             inputProps={{ "aria-label": "search" }}
           />
+          <IconButton color="inherit" className={classes.qrCodeIcon}>
+            <QrCodeScannerIcon />
+          </IconButton>
         </div>
         {isLoggedIn ? (
           <>
@@ -109,16 +115,6 @@ const Header = () => {
               style={{ textDecoration: "none", color: "inherit" }}
             >
               Login
-            </Link>
-            <Link
-              to="/signup" // Add a route for the sign-up page
-              style={{
-                marginLeft: "16px", // Add some spacing between Login and Sign Up links
-                textDecoration: "none",
-                color: "inherit"
-              }}
-            >
-              Sign Up
             </Link>
           </>
         )}

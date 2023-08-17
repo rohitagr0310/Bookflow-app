@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import LoginIcon from "@mui/icons-material/Login";
 import { useNavigate } from "react-router-dom";
 import useStyles from "./LoginPageStyles";
 
@@ -10,7 +11,6 @@ const LoginPage = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isSignUp, setIsSignUp] = useState(false);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -37,16 +37,6 @@ const LoginPage = () => {
     }
   };
 
-  const handleSignUp = () => {
-    // Simulated sign-up logic for demonstration
-    console.log("Sign up logic");
-    console.log("Email:", email);
-    console.log("Password:", password);
-
-    // After successful sign-up, navigate to the appropriate panel
-    navigate("/student");
-  };
-
   return (
     <div className={classes.root}>
       <form className={classes.form}>
@@ -66,16 +56,14 @@ const LoginPage = () => {
           onChange={handlePasswordChange}
         />
         <Button
+          endIcon={<LoginIcon/>}
+          type="submit"
+          sx={{ marginTop: 3, borderRadius: 3 }}
           variant="contained"
           color="primary"
-          onClick={isSignUp ? handleSignUp : handleSignIn}>
-          {isSignUp ? "Sign Up" : "Sign In"}
+          onClick={handleSignIn}>
+            Sign In
         </Button>
-        <p className={classes.p} onClick={() => setIsSignUp(!isSignUp)}>
-          {isSignUp
-            ? "Already have an account? Sign In"
-            : "Don't have an account? Sign Up"}
-        </p>
       </form>
     </div>
   );
