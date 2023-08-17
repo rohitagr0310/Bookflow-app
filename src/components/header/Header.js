@@ -5,6 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import Menu from "@mui/material/Menu";
@@ -53,13 +54,16 @@ const Header = () => {
             <SearchIcon />
           </div>
           <InputBase
-            placeholder="Search…"
+            placeholder="  Search…"
             classes={{
               root: classes.inputRoot,
               input: classes.inputInput
             }}
             inputProps={{ "aria-label": "search" }}
           />
+          <IconButton color="inherit" className={classes.qrCodeIcon}>
+            <QrCodeScannerIcon />
+          </IconButton>
         </div>
         {isLoggedIn ? (
           <>
