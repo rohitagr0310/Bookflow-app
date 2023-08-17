@@ -1,7 +1,5 @@
 import { makeStyles } from "@mui/styles";
 
-const drawerWidth = 240;
-
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: theme.palette.primary.main
@@ -42,12 +40,9 @@ const useStyles = makeStyles((theme) => ({
       }
     }
   },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0
-  },
-  drawerPaper: {
-    width: drawerWidth
+  qrCodeIcon: {
+    marginLeft: theme.spacing(2),
+    color: theme.palette.primary.contrastText
   }
 }));
 
