@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   qrCodeIcon: {
+    marginLeft: theme.spacing(2),
     color: theme.palette.primary.contrastText
   }
 }));
