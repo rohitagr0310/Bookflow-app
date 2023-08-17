@@ -19,8 +19,46 @@
           "type": "directory",
           "children": [
             {
+              "name": "AdminHeader.js",
+              "type": "file"
+            },
+            {
+              "name": "AdminNav.js",
+              "type": "file"
+            },
+            {
+              "name": "AdminNavStyle.css",
+              "type": "file"
+            },
+            {
               "name": "AdminPanel.js",
               "type": "file"
+            },
+            {
+              "name": "pages",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "Account.js",
+                  "type": "file"
+                },
+                {
+                  "name": "AddBook.js",
+                  "type": "file"
+                },
+                {
+                  "name": "AllBooks.js",
+                  "type": "file"
+                },
+                {
+                  "name": "IssuedBooks.js",
+                  "type": "file"
+                },
+                {
+                  "name": "ManageStudents.js",
+                  "type": "file"
+                }
+              ]
             }
           ]
         },
@@ -103,10 +141,6 @@
       ]
     },
     {
-      "name": "generateSitemap.js",
-      "type": "file"
-    },
-    {
       "name": "index.css",
       "type": "file"
     },
@@ -116,10 +150,6 @@
     },
     {
       "name": "reportWebVitals.js",
-      "type": "file"
-    },
-    {
-      "name": "sitemap.xml",
       "type": "file"
     }
   ]
