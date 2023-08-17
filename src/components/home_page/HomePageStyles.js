@@ -19,12 +19,11 @@ const useStyles = makeStyles((theme) => ({
       marginRight: theme.spacing(2)
     }
   },
-  bookCard: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: theme.spacing(2),
-    backgroundColor: "#ffffff",
+  carouselContainer: {
+    marginBottom: theme.spacing(3)
+  },
+  carousel: {
+    maxWidth: "100%",
     borderRadius: "8px",
     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
     transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
