@@ -5,8 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
+import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Link, useNavigate } from "react-router-dom";
@@ -48,19 +47,9 @@ const Header = () => {
           BookFlow
           </Link>
         </Typography>
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
-          </div>
-          <InputBase
-            placeholder="Search…"
-            classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput
-            }}
-            inputProps={{ "aria-label": "search" }}
-          />
-        </div>
+        <IconButton color="inherit" className={classes.qrCodeIcon}>
+          <QrCodeScannerIcon />
+        </IconButton>
         {isLoggedIn ? (
           <>
             {userRole === "admin" ? (
