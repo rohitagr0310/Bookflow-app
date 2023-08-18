@@ -1,3 +1,5 @@
+/* AdminNavStyle.css */
+/* General styling for header and dropdown */
 .header {
   display: flex;
   justify-content: space-between;
@@ -21,10 +23,9 @@
   color: lightblue;
 }
 
-/* Style for the dropdown navigation */
 .header-dropdown {
-  position:static;
-  top: 60px; /* Adjust this value as needed */
+  position: absolute;
+  top: 100px;
   right: 20px;
   background-color: #333;
   color: white;
@@ -32,6 +33,7 @@
   padding: 20px;
   display: none;
   z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header:hover .header-dropdown {
@@ -42,7 +44,7 @@
   display: block;
   color: white;
   text-decoration: none;
-  padding: 5px 0;
+  padding: 8px 0;
   transition: color 0.3s ease;
 }
 
@@ -50,31 +52,34 @@
   color: lightblue;
 }
 
-/* AdminNavStyle.css */
+/* Styling for sidebar */
 .sidebar {
   position: fixed;
-  top: 100px; /* Adjust the top value to shift the sidebar downward */
+  top: 100px;
   left: 0;
-  width: 200px;
+  width: 220px;
   height: 100%;
   background-color: #333;
   color: white;
   padding: 20px;
   transition: transform 0.3s ease;
   transform: translateX(-100%);
+  overflow-y: auto;
+  z-index: 100;
 }
 
 .sidebar.active {
   transform: translateX(0);
 }
 
+/* Styling for page links */
 .page-links {
   margin-bottom: 40px;
 }
 
 .page-links h3 {
-  margin-bottom: 10px;
-  font-size: 30px;
+  margin-bottom: 16px;
+  font-size: 24px;
   color: #fff;
 }
 
@@ -84,7 +89,7 @@
 }
 
 .page-links li {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .page-links a {
