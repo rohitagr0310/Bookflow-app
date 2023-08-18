@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Navigation from "./AdminNav";
 
-const Header = () => {
+const AdminHeader = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
@@ -33,4 +33,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AdminHeader;

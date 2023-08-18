@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./AdminNavStyle.css";
 
-const Navigation = () => {
+const AdminNav = () => {
   const navigationStyle = {
     backgroundColor: "blue",
     padding: "20px"
@@ -34,4 +34,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default AdminNav;
