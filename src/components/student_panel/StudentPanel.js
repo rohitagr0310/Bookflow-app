@@ -1,6 +1,7 @@
 import React from "react";
 import BookCard from "../card/Bookcard"; // Import the BookCard component
 import { Grid } from "@mui/material"; // Import Grid component for layout
+import Navigation from "./StudentNav";
 
 export const fakeBooks = [
   {
@@ -100,6 +101,7 @@ export const fakeBooks = [
 const StudentPanel = () => {
   return (
     <div>
+      <Navigation/>
       <h1>Student Panel</h1>
       <Grid container spacing={2}>
         {fakeBooks.map((book, index) => (
