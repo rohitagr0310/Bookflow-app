@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import ClearAllSharpIcon from "@mui/icons-material/ClearAllSharp";
 import Navigation from "./AdminNav";
 
 const AdminHeader = () => {
@@ -13,14 +12,14 @@ const AdminHeader = () => {
   const logout = () => {
     // Add your logout logic here
     // Navigate to the login page after logout
-    history.push("./component/login_page/LoginPage.js");
+    // history.push("./component/login_page/LoginPage.js");
   };
 
   return (
     <div className="header">
       {/* Hamburger icon for the menu */}
       <button className={`menu-button ${dropdownVisible ? "active" : ""}`} onClick={toggleDropdown}>
-        <FontAwesomeIcon icon={faBars} />
+        <ClearAllSharpIcon />
       </button>
       <button onClick={logout}>Logout</button>
       <div className={`sidebar ${dropdownVisible ? "active" : ""}`}>
