@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./AdminNavStyle.css";
-import "./pages/Dashboard";
 
 const Navigation = () => {
   const navigationStyle = {
