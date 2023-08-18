@@ -7,6 +7,7 @@ import LoginPage from "./components/login_page/LoginPage.js";
 import AdminPanel from "./components/admin_panel/AdminPanel.js";
 import StudentPanel from "./components/student_panel/StudentPanel.js";
 import Footer from "./components/footer/Footer.js";
+import QRCodeScanner from "./components/QRCodeScanner";
 
 const theme = createTheme();
 
@@ -36,6 +37,7 @@ function App () {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/qr" element={<QRCodeScanner />} /> {/* New Route */}
             <Route path="/student" element={<StudentPanel />} />
           </Routes>
           <Footer />
