@@ -4,8 +4,7 @@ import "./AdminNavStyle.css";
 
 const AdminNav = () => {
   const navigationStyle = {
-    backgroundColor: "blue",
-    padding: "20px"
+    padding: "180px 50px"
   };
 
   const linkStyle = {
