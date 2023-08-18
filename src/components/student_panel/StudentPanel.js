@@ -1,6 +1,7 @@
-import React from "react";
 import BookCard from "../card/Bookcard"; // Import the BookCard component
-import { Grid } from "@mui/material"; // Import Grid component for layout
+import React, { useState } from "react";
+import { Grid, Button, Modal } from "@mui/material"; // Import the required components
+import QRCodeScanner from "../QRCodeScanner"; // Import the QRCodeScanner component
 
 export const fakeBooks = [
   {
@@ -98,13 +99,30 @@ export const fakeBooks = [
 ];
 
 const StudentPanel = () => {
+  const [showScanner, setShowScanner] = useState(false);
+
+  const handleQRCodeButtonClick = () => {
+    setShowScanner(true);
+  };
+
+  const handleScannerClose = () => {
+    setShowScanner(false);
+  };
+
   return (
     <div>
-      <h1>Student Panel</h1>
+      <h1>Student</h1>
       <Grid container spacing={2}>
         {fakeBooks.map((book, index) => (
           <Grid item key={index}>
-            <BookCard book={book} />
+            <BookCard book={book}>
+              <Button variant="contained" onClick={handleQRCodeButtonClick}>
+                Scan QR Code
+              </Button>
+              <Modal open={showScanner} onClose={handleScannerClose}>
+                {showScanner && <QRCodeScanner />}
+              </Modal>
+            </BookCard>
           </Grid>
         ))}
       </Grid>
