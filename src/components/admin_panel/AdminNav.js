@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./AdminNavStyle.css";
 
-const Navigation = () => {
+const AdminNav = () => {
   const navigationStyle = {
-    backgroundColor: "blue",
-    padding: "20px"
+    padding: "180px 50px"
   };
 
   const linkStyle = {
@@ -21,16 +20,17 @@ const Navigation = () => {
     <div style={navigationStyle} className="navigation-panel">
       <nav>
         <ul>
-          <li><Link to="/add-book" style={linkStyle} activeStyle={linkHoverStyle}>Add Book</Link></li>
-          <li><Link to="/manage-students" style={linkStyle} activeStyle={linkHoverStyle}>Manage Students</Link></li>
-          <li><Link to="/issued-books" style={linkStyle} activeStyle={linkHoverStyle}>Issued Books</Link></li>
-          <li><Link to="/all-books" style={linkStyle} activeStyle={linkHoverStyle}>All Books</Link></li>
-          <li><Link to="/account" style={linkStyle} activeStyle={linkHoverStyle}>Account</Link></li>
-          <li><Link to="/logout" style={linkStyle} activeStyle={linkHoverStyle}>Logout</Link></li>
+          <li><Link to="/pages/Dashboard" style={linkStyle} activeStyle={linkHoverStyle}>Dashboard</Link></li>
+          <li><Link to="/pages/AddBook" style={linkStyle} activeStyle={linkHoverStyle}>Add Book</Link></li>
+          <li><Link to="/ManageStudents" style={linkStyle} activeStyle={linkHoverStyle}>Manage Students</Link></li>
+          <li><Link to="/pages/IssuedBooks" style={linkStyle} activeStyle={linkHoverStyle}>Issued Books</Link></li>
+          <li><Link to="/pages/AllBooks" style={linkStyle} activeStyle={linkHoverStyle}>All Books</Link></li>
+          <li><Link to="/pages/Account" style={linkStyle} activeStyle={linkHoverStyle}>Account</Link></li>
+          <li><Link to="./login_page/LoginPage" style={linkStyle} activeStyle={linkHoverStyle}>Logout</Link></li>
         </ul>
       </nav>
     </div>
   );
 };
 
-export default Navigation;
+export default AdminNav;
