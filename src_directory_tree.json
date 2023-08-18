@@ -1,0 +1,156 @@
+{
+  "name": "src",
+  "type": "directory",
+  "children": [
+    {
+      "name": "App.css",
+      "type": "file"
+    },
+    {
+      "name": "App.js",
+      "type": "file"
+    },
+    {
+      "name": "components",
+      "type": "directory",
+      "children": [
+        {
+          "name": "admin_panel",
+          "type": "directory",
+          "children": [
+            {
+              "name": "AdminHeader.js",
+              "type": "file"
+            },
+            {
+              "name": "AdminNav.js",
+              "type": "file"
+            },
+            {
+              "name": "AdminNavStyle.css",
+              "type": "file"
+            },
+            {
+              "name": "AdminPanel.js",
+              "type": "file"
+            },
+            {
+              "name": "pages",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "Account.js",
+                  "type": "file"
+                },
+                {
+                  "name": "AddBook.js",
+                  "type": "file"
+                },
+                {
+                  "name": "AllBooks.js",
+                  "type": "file"
+                },
+                {
+                  "name": "IssuedBooks.js",
+                  "type": "file"
+                },
+                {
+                  "name": "ManageStudents.js",
+                  "type": "file"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "card",
+          "type": "directory",
+          "children": [
+            {
+              "name": "BookCardStyles.js",
+              "type": "file"
+            },
+            {
+              "name": "Bookcard.js",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "footer",
+          "type": "directory",
+          "children": [
+            {
+              "name": "Footer.js",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "header",
+          "type": "directory",
+          "children": [
+            {
+              "name": "Header.js",
+              "type": "file"
+            },
+            {
+              "name": "HeaderStyles.js",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "home_page",
+          "type": "directory",
+          "children": [
+            {
+              "name": "HomePage.js",
+              "type": "file"
+            },
+            {
+              "name": "HomePageStyles.js",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "login_page",
+          "type": "directory",
+          "children": [
+            {
+              "name": "LoginPage.js",
+              "type": "file"
+            },
+            {
+              "name": "LoginPageStyles.js",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "student_panel",
+          "type": "directory",
+          "children": [
+            {
+              "name": "StudentPanel.js",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "index.css",
+      "type": "file"
+    },
+    {
+      "name": "index.js",
+      "type": "file"
+    },
+    {
+      "name": "reportWebVitals.js",
+      "type": "file"
+    }
+  ]
+}
