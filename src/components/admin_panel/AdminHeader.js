@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Navigation from "./AdminNav";
 
-const Header = () => {
+const AdminHeader = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
@@ -11,18 +13,24 @@ const Header = () => {
   const logout = () => {
     // Add your logout logic here
     // Navigate to the login page after logout
-    // Phistory.push("./component/login_page/LoginPage");
+    history.push("./component/login_page/LoginPage.js");
   };
 
   return (
     <div className="header">
-      <button name="start" onClick={toggleDropdown}>Menu</button>
+      {/* Hamburger icon for the menu */}
+      <button className={`menu-button ${dropdownVisible ? "active" : ""}`} onClick={toggleDropdown}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
       <button onClick={logout}>Logout</button>
       <div className={`sidebar ${dropdownVisible ? "active" : ""}`}>
         <Navigation />
       </div>
+      {dropdownVisible && (
+        <div className="overlay" onClick={toggleDropdown} />
+      )}
     </div>
   );
 };
 
-export default Header;
+export default AdminHeader;
