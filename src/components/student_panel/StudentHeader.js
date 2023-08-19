@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ClearAllSharpIcon from "@mui/icons-material/ClearAllSharp";
-import AdminNav from "./AdminNav";
+import StudentNav from "./StudentNav.js";
 
-const AdminHeader = () => {
+const StudentHeader = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
@@ -16,7 +16,7 @@ const AdminHeader = () => {
         <ClearAllSharpIcon />
       </button>
       <div className={`sidebar ${dropdownVisible ? "active" : ""}`}>
-        <AdminNav />
+        <StudentNav />
       </div>
       {dropdownVisible && (
         <div className="overlay" onClick={toggleDropdown} />
@@ -25,4 +25,4 @@ const AdminHeader = () => {
   );
 };
 
-export default AdminHeader;
+export default StudentHeader;
