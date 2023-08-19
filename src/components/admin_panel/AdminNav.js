@@ -22,7 +22,7 @@ const AdminNav = () => {
     <div style={navigationStyle} className="navigation-panel">
       <nav>
         <ul className="link-list">
-          <li><Link to="/pages/add-book" style={linkStyle} activeStyle={linkHoverStyle}>Add Book</Link></li>
+          <li><Link to="/admin/add-book" style={linkStyle} activeStyle={linkHoverStyle}>Add Book</Link></li>
           <li><Link to="/ManageStudents" style={linkStyle} activeStyle={linkHoverStyle}>Manage Students</Link></li>
           <li><Link to="/pages/IssuedBooks" style={linkStyle} activeStyle={linkHoverStyle}>Issued Books</Link></li>
           <li><Link to="/pages/AllBooks" style={linkStyle} activeStyle={linkHoverStyle}>All Books</Link></li>

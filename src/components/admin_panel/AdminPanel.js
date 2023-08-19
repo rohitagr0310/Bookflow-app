@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import Header from "./AdminHeader";
 import QRCodeScanner from "../qrcodescanner/QRCodeScanner";
-import "./AdminPanelStyles.css"; // Import the CSS file
-// import Account from "./admin_pages/Account";
-// import { Route, Routes } from "react-router-dom";
+import "./AdminPanelStyles.css";
 import { Outlet } from "react-router-dom";
 
 const AdminPanel = () => {
