@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Header from "./AdminHeader";
 import QRCodeScanner from "../qrcodescanner/QRCodeScanner";
 import "./AdminPanelStyles.css"; // Import the CSS file
+// import Account from "./admin_pages/Account";
+// import { Route, Routes } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const AdminPanel = () => {
   const [qrScannerOpen, setQrScannerOpen] = useState(false);
@@ -34,7 +37,8 @@ const AdminPanel = () => {
       )}
 
       <div className="admin-content">
-        Admin Panel Content Here
+        Admin Panel Content Here panel
+        <Outlet />
       </div>
     </div>
   );
