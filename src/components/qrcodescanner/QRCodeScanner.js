@@ -1,30 +1,36 @@
 import React, { useState, useRef } from "react";
 import { QrReader } from "react-qr-reader";
 import PropTypes from "prop-types";
+import "./QRCodeScannerStyles.css";
 
 const QRCodeScanner = ({ onScan }) => {
+  const qrReaderRef = useRef(null);
   const [qrScannerOpen, setQrScannerOpen] = useState(false);
-  const qrReaderRef = useRef(null); // Create a ref for the QR reader component
 
-  const handleScan = (data) => {
-    if (data) {
-      console.log("Scanned QR code data:", data);
-      onScan(data);
+  const handleResult = async (result, error) => {
+    if (result) {
+      console.log(result?.text);
+      onScan(result.text);
+      closeScanner();
     }
-  };
 
-  const handleError = (error) => {
-    console.error(error);
+    if (error) {
+      console.info(error);
+    }
   };
 
   const toggleScanner = () => {
-    if (qrScannerOpen) {
-      // Stop the scanner and close it
-      if (qrReaderRef.current) {
-        qrReaderRef.current.stop();
-      }
+    if (qrReaderRef.current) {
+      qrReaderRef.current.clear();
     }
     setQrScannerOpen(!qrScannerOpen);
+  };
+
+  const closeScanner = () => {
+    if (qrReaderRef.current) {
+      qrReaderRef.current.stop();
+    }
+    setQrScannerOpen(false);
   };
 
   return (
@@ -33,13 +39,14 @@ const QRCodeScanner = ({ onScan }) => {
         {qrScannerOpen ? "Close Scanner" : "Open Scanner"}
       </button>
       {qrScannerOpen && (
-        <QrReader
-          ref={qrReaderRef} // Assign the ref to the QR reader component
-          delay={1000}
-          onError={handleError}
-          onScan={handleScan}
-          style={{ width: "100%" }}
-        />
+        <div className="qr-reader-container">
+          <QrReader
+            ref={qrReaderRef}
+            delay={1000}
+            onResult={handleResult}
+            className="qr-reader"
+          />
+        </div>
       )}
     </div>
   );

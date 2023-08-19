@@ -32,7 +32,7 @@ const AdminNav = () => {
           <li><Link to="/pages/IssuedBooks" style={linkStyle} activeStyle={linkHoverStyle}>Issued Books</Link></li>
           <li><Link to="/pages/AllBooks" style={linkStyle} activeStyle={linkHoverStyle}>All Books</Link></li>
           <li><Link to="/pages/Account" style={linkStyle} activeStyle={linkHoverStyle}>Account</Link></li>
-          <li><Link to="./login_page/LoginPage" style={linkStyle} activeStyle={linkHoverStyle}>Logout</Link></li>
+          <li><Link to="../login" style={linkStyle} activeStyle={linkHoverStyle}>Logout</Link></li>
         </ul>
       </nav>
     </div>
