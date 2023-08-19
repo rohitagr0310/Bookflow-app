@@ -10,7 +10,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    position: "relative"
+    position: "relative",
+    [theme.breakpoints.down("sm")]: {
+      backgroundAttachment: "fixed"
+    }
   },
   container: {
     paddingTop: theme.spacing(4),
