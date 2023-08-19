@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { ThemeProvider, createTheme } from "@mui/material/styles"; // Import ThemeProvider and createTheme
 import useStyles from "./HomePageStyles";
-import Header from "../header/Header";
+import Header from "./header/Header";
 const theme = createTheme();
 
 const HomePage = () => {
