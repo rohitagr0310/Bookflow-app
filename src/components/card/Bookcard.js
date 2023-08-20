@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import useStyles from "./BookCardStyles"; // Import the styles from your file
+import useStyles from "./_BookCard.sass";
 
 const BookCard = ({ book }) => {
-  const classes = useStyles(); // Apply the styles using makeStyles
+  const classes = useStyles();
 
   return (
     <Card className={classes.card}>

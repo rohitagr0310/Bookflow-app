@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import useStyles from "./HeaderStyles";
+import useStyles from "./_Header.sass";
 
 const theme = createTheme();
 
@@ -18,15 +18,15 @@ const Header = () => {
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
           </IconButton>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
-            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Typography variant="h6" className={classes.headerText}>
+            <Link to="/" className={classes.headerLink}>
               BookFlow
             </Link>
           </Typography>
 
           <Link
             to="/login"
-            style={{ textDecoration: "none", color: "inherit" }}
+            className={`${classes.headerLink} ${classes.loginLink}`}
           >
             Login
           </Link>
