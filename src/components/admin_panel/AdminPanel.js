@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./AdminHeader";
 import QRCodeScanner from "../qrcodescanner/QRCodeScanner";
-import "./AdminPanelStyles.css";
+import "./_admin-panel-styles.css";
 import { Outlet } from "react-router-dom";
 
 const AdminPanel = () => {
@@ -35,7 +35,7 @@ const AdminPanel = () => {
       )}
 
       <div className="admin-content">
-        Admin Panel Content Here panel
+        Admin Panel
         <Outlet />
       </div>
     </div>
