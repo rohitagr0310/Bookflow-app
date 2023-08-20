@@ -8,6 +8,8 @@ import AuthPage from "./components/login_page/AuthPage.js";
 import AdminPanel from "./components/admin_panel/AdminPanel.js";
 import StudentPanel from "./components/student_panel/StudentPanel.js";
 import Footer from "./components/footer/Footer.js";
+import Account from "./components/admin_panel/admin_pages/Account.js";
+import AddBook from "./components/admin_panel/admin_pages/AddBook.js";
 
 const theme = createTheme();
 
@@ -35,9 +37,13 @@ function App () {
           <CssBaseline />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<AuthPage />} />
-            <Route path="/admin" element={<AdminPanel />} />
-            <Route path="/student" element={<StudentPanel />} />
+            <Route path="login" element={<AuthPage />} />
+            <Route path="admin" element={<AdminPanel />} >
+              <Route path="account" element={<Account />} />
+              <Route path="add-book" element={<AddBook />} />
+            </Route>
+            <Route path="student" element={<StudentPanel />} >
+            </Route>
           </Routes>
           <Footer />
         </div>
