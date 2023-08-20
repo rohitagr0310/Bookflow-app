@@ -1,71 +1,9 @@
 import React, { useState } from "react";
-import { makeStyles } from "@mui/styles";
 import { Container, Typography, IconButton } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-const useStyles = makeStyles((theme) => ({
-  smallText: {
-    fontSize: "0.8rem" // Adjust the font size as needed
-  },
-  contactButton: {
-    fontSize: "0.8rem"
-  },
-  aboutUsButton: {
-    cursor: "pointer",
-    textDecoration: "underline",
-    color: "white"
-  },
-  footer: {
-    backgroundColor: "#00031A",
-    color: "white",
-    padding: theme.spacing(4, 0),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  },
-  socialIconsContainer: {
-    marginTop: theme.spacing(2),
-    borderTop: "1px solid white", // Add a white line above the socialIconsContainer
-    paddingTop: theme.spacing(2), // Add some top padding to separate it from the line
-    display: "flex", // Remove flexDirection: "column" to keep icons on the same line
-    alignItems: "center"
-  },
-  socialIcons: {
-    fontSize: "2rem",
-    margin: theme.spacing(0, 1),
-    color: "white"
-  },
-  columnsContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginTop: theme.spacing(2),
-    width: "100%",
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
-      alignItems: "center"
-    }
-  },
-  column: {
-    flex: 1,
-    marginRight: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-    textAlign: "center"
-  },
-  columnTitle: {
-    fontWeight: "bold",
-    marginBottom: theme.spacing(1),
-    textDecoration: "underline"
-  },
-  columnLink: {
-    display: "block",
-    color: "white",
-    textDecoration: "none",
-    marginBottom: theme.spacing(0.5),
-    fontSize: "0.8rem"
-  }
-}));
+import useStyles from "./_Footer.sass";
 
 /**
  * Footer component.
