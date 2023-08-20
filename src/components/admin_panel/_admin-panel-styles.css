@@ -1,5 +1,3 @@
-/* AdminPanelStyles.css */
-
 /* Style for the button */
 .qr-button {
   background-color: #3498db;
@@ -55,4 +53,7 @@
 .qr-code-data {
   margin-top: 20px;
   font-size: 18px;
+}
+.admin-content{
+  text-align: center;
 }

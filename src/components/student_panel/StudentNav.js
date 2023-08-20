@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./StudentNavStyle.css";
-import "./student_pages/Account.js";
+import "./student_pages/StudentAccount.js";
 import "./student_pages/History.js";
-import "./student_pages/IssuedBooks.js";
-import "./student_pages/Logout.js";
+import "./student_pages/BookIssued.js";
 import "./student_pages/Search.js";
 
 const StudentNav = () => {
@@ -27,11 +26,11 @@ const StudentNav = () => {
     <div style={navigationStyle} className="navigation-panel">
       <nav>
         <ul className="link-list"> {/* Add a class to the ul */}
-          <li><Link to="/Account" style={linkStyle} activeStyle={linkHoverStyle}>Account</Link></li>
-          <li><Link to="/AddBook" style={linkStyle} activeStyle={linkHoverStyle}>Search</Link></li>
-          <li><Link to="/ManageStudents" style={linkStyle} activeStyle={linkHoverStyle}>History</Link></li>
-          <li><Link to="/IssuedBooks" style={linkStyle} activeStyle={linkHoverStyle}>Issued Books</Link></li>
-          <li><Link to="/Logout" style={linkStyle} activeStyle={linkHoverStyle}>Logout</Link></li>
+          <li><Link to="/student/std-account" style={linkStyle} activeStyle={linkHoverStyle}>Account</Link></li>
+          <li><Link to="/student/search" style={linkStyle} activeStyle={linkHoverStyle}>Search</Link></li>
+          <li><Link to="/student/history" style={linkStyle} activeStyle={linkHoverStyle}>History</Link></li>
+          <li><Link to="/student/book-issued" style={linkStyle} activeStyle={linkHoverStyle}>Issued Books</Link></li>
+          <li><Link to="../login" style={linkStyle} activeStyle={linkHoverStyle}>Logout</Link></li>
         </ul>
       </nav>
     </div>
