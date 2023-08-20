@@ -13,6 +13,10 @@ import AddBook from "./components/admin_panel/admin_pages/AddBook.js";
 import ManageStudents from "./components/admin_panel/admin_pages/ManageStudents.js";
 import IssuedBooks from "./components/admin_panel/admin_pages/IssuedBooks.js";
 import AllBooks from "./components/admin_panel/admin_pages/AllBooks.js";
+import BookIssued from "./components/student_panel/student_pages/BookIssued.js";
+import StudentAccount from "./components/student_panel/student_pages/StudentAccount.js";
+import History from "./components/student_panel/student_pages/History.js";
+import Search from "./components/student_panel/student_pages/Search.js";
 
 const theme = createTheme();
 
@@ -49,6 +53,10 @@ function App () {
               <Route path="issued-book" element={<IssuedBooks />} />
             </Route>
             <Route path="student" element={<StudentPanel />} >
+              <Route path="std-account" element={<StudentAccount />} />
+              <Route path="history" element={<History />} />
+              <Route path="book-issued" element={<BookIssued />} />
+              <Route path="search" element={<Search />} />
             </Route>
           </Routes>
           <Footer />
