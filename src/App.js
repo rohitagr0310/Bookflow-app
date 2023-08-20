@@ -1,7 +1,8 @@
 /* eslint-disable require-jsdoc */
 import React, { useState, useEffect } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./theme.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./components/home_page/HomePage.js";
 import AuthPage from "./components/login_page/AuthPage.js";
@@ -17,8 +18,6 @@ import BookIssued from "./components/student_panel/student_pages/BookIssued.js";
 import StudentAccount from "./components/student_panel/student_pages/StudentAccount.js";
 import History from "./components/student_panel/student_pages/History.js";
 import Search from "./components/student_panel/student_pages/Search.js";
-
-const theme = createTheme();
 
 /*
  * Main component for the application.
