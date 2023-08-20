@@ -1,0 +1,29 @@
+.authPageContainer
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  background: linear-gradient(to right, #64b5f6, #1976d2)
+
+.formContainer
+  background-color: $background-paper
+  box-shadow: $shadows[5]
+  border-radius: 10px
+  padding: $spacing[3]
+  margin: $spacing[2]
+  width: 400px
+  @media (max-width: $theme.breakpoints.values.sm)
+    width: 100%
+
+.formHeader
+  margin-bottom: $spacing[2]
+  text-align: center
+
+.submitButton
+  margin-top: $spacing[3]
+  border-radius: 8px
+  width: 100%
+
+.bodyNoMarginPadding
+  margin: 0
+  padding: 0
