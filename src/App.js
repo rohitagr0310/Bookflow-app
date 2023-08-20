@@ -8,8 +8,15 @@ import AuthPage from "./components/login_page/AuthPage.js";
 import AdminPanel from "./components/admin_panel/AdminPanel.js";
 import StudentPanel from "./components/student_panel/StudentPanel.js";
 import Footer from "./components/footer/Footer.js";
-import Account from "./components/admin_panel/admin_pages/Account.js";
+import AdminAccount from "./components/admin_panel/admin_pages/AdminAccount.js";
 import AddBook from "./components/admin_panel/admin_pages/AddBook.js";
+import ManageStudents from "./components/admin_panel/admin_pages/ManageStudents.js";
+import IssuedBooks from "./components/admin_panel/admin_pages/IssuedBooks.js";
+import AllBooks from "./components/admin_panel/admin_pages/AllBooks.js";
+import BookIssued from "./components/student_panel/student_pages/BookIssued.js";
+import StudentAccount from "./components/student_panel/student_pages/StudentAccount.js";
+import History from "./components/student_panel/student_pages/History.js";
+import Search from "./components/student_panel/student_pages/Search.js";
 
 const theme = createTheme();
 
@@ -39,10 +46,17 @@ function App () {
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<AuthPage />} />
             <Route path="admin" element={<AdminPanel />} >
-              <Route path="account" element={<Account />} />
+              <Route path="account" element={<AdminAccount />} />
               <Route path="add-book" element={<AddBook />} />
+              <Route path="all-book" element={<AllBooks />} />
+              <Route path="manage-std" element={<ManageStudents />} />
+              <Route path="issued-book" element={<IssuedBooks />} />
             </Route>
             <Route path="student" element={<StudentPanel />} >
+              <Route path="std-account" element={<StudentAccount />} />
+              <Route path="history" element={<History />} />
+              <Route path="book-issued" element={<BookIssued />} />
+              <Route path="search" element={<Search />} />
             </Route>
           </Routes>
           <Footer />
