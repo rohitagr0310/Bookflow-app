@@ -11,7 +11,6 @@ const AdminHeader = () => {
 
   return (
     <div className="header">
-      {/* Hamburger icon for the menu */}
       <button className={`menu-button ${dropdownVisible ? "active" : ""}`} onClick={toggleDropdown}>
         <ClearAllSharpIcon />
       </button>

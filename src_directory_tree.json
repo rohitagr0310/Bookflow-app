@@ -27,15 +27,19 @@
               "type": "file"
             },
             {
-              "name": "AdminNavStyle.css",
-              "type": "file"
-            },
-            {
               "name": "AdminPanel.js",
               "type": "file"
             },
             {
-              "name": "pages",
+              "name": "AdminPanelStyles.css",
+              "type": "file"
+            },
+            {
+              "name": "_admin-nav.css",
+              "type": "file"
+            },
+            {
+              "name": "admin_pages",
               "type": "directory",
               "children": [
                 {
@@ -87,20 +91,6 @@
           ]
         },
         {
-          "name": "header",
-          "type": "directory",
-          "children": [
-            {
-              "name": "Header.js",
-              "type": "file"
-            },
-            {
-              "name": "HeaderStyles.js",
-              "type": "file"
-            }
-          ]
-        },
-        {
           "name": "home_page",
           "type": "directory",
           "children": [
@@ -111,6 +101,34 @@
             {
               "name": "HomePageStyles.js",
               "type": "file"
+            },
+            {
+              "name": "Images",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "background.jpg",
+                  "type": "file"
+                },
+                {
+                  "name": "library.jpg",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "header",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "Header.js",
+                  "type": "file"
+                },
+                {
+                  "name": "HeaderStyles.js",
+                  "type": "file"
+                }
+              ]
             }
           ]
         },
@@ -119,11 +137,25 @@
           "type": "directory",
           "children": [
             {
-              "name": "LoginPage.js",
+              "name": "AuthPage.js",
               "type": "file"
             },
             {
-              "name": "LoginPageStyles.js",
+              "name": "AuthPageStyles.js",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "qrcodescanner",
+          "type": "directory",
+          "children": [
+            {
+              "name": "QRCodeScanner.js",
+              "type": "file"
+            },
+            {
+              "name": "QRCodeScannerStyles.css",
               "type": "file"
             }
           ]
@@ -133,8 +165,46 @@
           "type": "directory",
           "children": [
             {
+              "name": "StudentHeader.js",
+              "type": "file"
+            },
+            {
+              "name": "StudentNav.js",
+              "type": "file"
+            },
+            {
+              "name": "StudentNavStyle.css",
+              "type": "file"
+            },
+            {
               "name": "StudentPanel.js",
               "type": "file"
+            },
+            {
+              "name": "student_pages",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "Account.js",
+                  "type": "file"
+                },
+                {
+                  "name": "History.js",
+                  "type": "file"
+                },
+                {
+                  "name": "IssuedBooks.js",
+                  "type": "file"
+                },
+                {
+                  "name": "Logout.js",
+                  "type": "file"
+                },
+                {
+                  "name": "Search.js",
+                  "type": "file"
+                }
+              ]
             }
           ]
         }
@@ -147,6 +217,11 @@
     {
       "name": "index.js",
       "type": "file"
+    },
+    {
+      "name": "pages",
+      "type": "directory",
+      "children": []
     },
     {
       "name": "reportWebVitals.js",
