@@ -1,30 +1,28 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import useStyles from "./BookCardStyles"; // Import the styles from your file
+import "./_BookCard.sass";
 
 const BookCard = ({ book }) => {
-  const classes = useStyles(); // Apply the styles using makeStyles
-
   return (
-    <Card className={classes.card}>
+    <Card className="card">
       <CardMedia
-        className={classes.media}
+        className="media"
         component="img"
         image={book.coverImage}
         alt={book.title}
       />
-      <CardContent className={classes.content}>
-        <Typography className={classes.title} variant="h6" gutterBottom>
+      <CardContent className="content">
+        <Typography className="title" variant="h6" gutterBottom>
           {book.title}
         </Typography>
-        <Typography className={classes.author} variant="body2">
+        <Typography className="author" variant="body2">
           {book.author}
         </Typography>
-        <Typography className={classes.description} variant="body2">
+        <Typography className="description" variant="body2">
           {book.description}
         </Typography>
-        <Typography className={classes.availability} variant="body2">
+        <Typography className="availability" variant="body2">
           Available: {book.available ? "Yes" : "No"}
         </Typography>
       </CardContent>
