@@ -1,0 +1,37 @@
+.appBar {
+	background-color: #1976d2;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.headerText {
+	flex-grow: 1;
+	font-family: "Arial", sans-serif;
+	font-size: 1.5rem;
+	padding-left: 16px;
+}
+
+.headerLink {
+	text-decoration: none;
+	color: inherit;
+	transition: color 0.3s ease-in-out;
+}
+
+.headerLink:hover {
+	color: #64b5f6;
+}
+
+.loginLink {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1rem;
+	margin-left: 16px;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.loginLink:hover {
+	background-color: white;
+	color: #1976d2;
+}
