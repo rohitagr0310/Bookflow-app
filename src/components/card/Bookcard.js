@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import "./_BookCard.sass";
+import "./_BookCard.css";
 
 const BookCard = ({ book }) => {
   return (

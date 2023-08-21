@@ -1,0 +1,78 @@
+.bodyNoMarginPadding {
+	margin: 0;
+	padding: 0;
+}
+
+.appBar {
+	background-color: #1976d2;
+}
+
+.authPageContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: linear-gradient(to right, #81e1f4, #277cd1);
+}
+
+.formContainer {
+	background-color: white;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px;
+	width: 400px;
+}
+
+.formHeader {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.formHeader h6 {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.formHeader p {
+	font-size: 1rem;
+}
+
+.formContainer form {
+	display: flex;
+	flex-direction: column;
+}
+
+.formContainer form .submitButton {
+	margin-top: 20px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	background-color: #1976d2;
+	color: white;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.formContainer form .submitButton:hover {
+	background-color: #1565c0;
+}
+
+.toggleButtonContainer {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.toggleButtonContainer button {
+	padding: 5px 10px;
+	border: none;
+	background-color: transparent;
+	color: #1976d2;
+	cursor: pointer;
+	transition: color 0.3s ease-in-out;
+}
+
+.toggleButtonContainer button:hover {
+	color: #1565c0;
+}
