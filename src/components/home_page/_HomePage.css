@@ -1,0 +1,116 @@
+/* Styling for the root container */
+.root {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+		url("./Images/background.jpg");
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+/* Styling for the main heading */
+.mainHeading {
+	color: transparent;
+	text-align: center;
+	padding-top: 16px; /* You can adjust this value */
+	padding-bottom: 24px; /* You can adjust this value */
+	-webkit-text-stroke: 1px #eeeded;
+	text-shadow: -3px 5px 3px rgba(0, 0, 0, 1);
+	font-size: 2.5rem; /* You can adjust this value */
+	font-weight: bold;
+}
+
+/* Styling for the content text */
+.contentText {
+	color: #eee9da;
+	margin-bottom: 16px; /* You can adjust this value */
+	text-align: center;
+	font-size: 1rem; /* You can adjust this value */
+}
+
+/* Styling for sections */
+.section {
+	margin: 64px 0; /* You can adjust this value */
+	text-align: center;
+}
+
+/* Styling for section headings */
+.sectionHeading {
+	color: #e9ffc2;
+	margin-bottom: 32px; /* You can adjust this value */
+	font-size: 2.5rem; /* You can adjust this value */
+	font-weight: bold;
+	text-shadow: 0 1px 7px rgba(0, 0, 0, 1);
+}
+
+/* Styling for section content */
+.sectionContent {
+	color: #eee9da;
+	margin-bottom: 8px; /* You can adjust this value */
+	padding-top: 16px; /* You can adjust this value */
+	font-size: 1.1rem; /* You can adjust this value */
+}
+
+/* Styling for the library image */
+.libraryImage {
+	width: 80%;
+	margin: 50px auto;
+	display: block;
+	border-radius: 16px; /* You can adjust this value */
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* You can adjust this value */
+	transition: transform 0.3s ease-in-out; /* Add a smooth transform transition */
+}
+
+/* Hover effect for the library image */
+.libraryImage:hover {
+	transform: scale(1.05); /* Scale up on hover */
+}
+
+/* Styling for the testimonial cards */
+.testimonialCards {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 32px; /* You can adjust this value */
+	margin-top: 32px; /* You can adjust this value */
+}
+
+/* Styling for individual testimonial card */
+.testimonialCard {
+	width: 100%;
+	max-width: 400px;
+	padding: 24px; /* You can adjust this value */
+	border-radius: 16px; /* You can adjust this value */
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* You can adjust this value */
+	text-align: center;
+	transition: transform 0.3s ease-in-out; /* Add a smooth transform transition */
+}
+
+/* Hover effect for testimonial card */
+.testimonialCard:hover {
+	transform: translateY(-5px);
+	background-color: azure; /* Shift up on hover */
+}
+
+/* Styling for testimonial content */
+.testimonialContent {
+	color: #000;
+	font-style: italic;
+	font-size: 0.9rem;
+	text-align: center;
+	margin-top: 16px; /* You can adjust this value */
+}
+
+/* Transition for testimonial content */
+.testimonialContent {
+	transition: color 0.3s ease-in-out; /* Add a smooth color transition */
+}
+
+/* Hover effect for testimonial content */
+.testimonialCard:hover .testimonialContent {
+	color: #1976d2; /* Change color on hover */
+}

@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import "./_Header.sass";
+import "./_Header.css";
 
 const theme = createTheme();
 
@@ -24,7 +24,7 @@ const Header = () => {
 
           <Link
             to="/login"
-            className={"$\"headerLink} $\"loginLink}"}
+            className="loginLink"
           >
             Login
           </Link>

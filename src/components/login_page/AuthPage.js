@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 import LoginIcon from "@mui/icons-material/Login";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz"; // New icon
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import "./_AuthPage.sass";
+import "./_AuthPage.css";
 
 const theme = createTheme();
 

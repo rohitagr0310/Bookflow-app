@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { QrReader } from "react-qr-reader";
 import PropTypes from "prop-types";
-import "./_QRCodeScanner.sass";
+import "./_QRCodeScanner.css";
 
 const QRCodeScanner = ({ onScan }) => {
   const qrReaderRef = useRef(null);
