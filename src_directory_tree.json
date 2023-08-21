@@ -15,67 +15,15 @@
       "type": "directory",
       "children": [
         {
-          "name": "admin_panel",
-          "type": "directory",
-          "children": [
-            {
-              "name": "AdminHeader.js",
-              "type": "file"
-            },
-            {
-              "name": "AdminNav.js",
-              "type": "file"
-            },
-            {
-              "name": "AdminPanel.js",
-              "type": "file"
-            },
-            {
-              "name": "AdminPanelStyles.css",
-              "type": "file"
-            },
-            {
-              "name": "_admin-nav.css",
-              "type": "file"
-            },
-            {
-              "name": "admin_pages",
-              "type": "directory",
-              "children": [
-                {
-                  "name": "Account.js",
-                  "type": "file"
-                },
-                {
-                  "name": "AddBook.js",
-                  "type": "file"
-                },
-                {
-                  "name": "AllBooks.js",
-                  "type": "file"
-                },
-                {
-                  "name": "IssuedBooks.js",
-                  "type": "file"
-                },
-                {
-                  "name": "ManageStudents.js",
-                  "type": "file"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "card",
           "type": "directory",
           "children": [
             {
-              "name": "BookCardStyles.js",
+              "name": "Bookcard.jsx",
               "type": "file"
             },
             {
-              "name": "Bookcard.js",
+              "name": "_BookCard.css",
               "type": "file"
             }
           ]
@@ -85,8 +33,108 @@
           "type": "directory",
           "children": [
             {
-              "name": "Footer.js",
+              "name": "Footer.jsx",
               "type": "file"
+            },
+            {
+              "name": "_Footer.css",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "qrcodescanner",
+          "type": "directory",
+          "children": [
+            {
+              "name": "QRCodeScanner.jsx",
+              "type": "file"
+            },
+            {
+              "name": "_QRCodeScanner.css",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "index.css",
+      "type": "file"
+    },
+    {
+      "name": "index.js",
+      "type": "file"
+    },
+    {
+      "name": "pages",
+      "type": "directory",
+      "children": [
+        {
+          "name": "admin_panel",
+          "type": "directory",
+          "children": [
+            {
+              "name": "AdminHeader.jsx",
+              "type": "file"
+            },
+            {
+              "name": "AdminNav.jsx",
+              "type": "file"
+            },
+            {
+              "name": "AdminPanel.jsx",
+              "type": "file"
+            },
+            {
+              "name": "_admin-nav.css",
+              "type": "file"
+            },
+            {
+              "name": "_admin-panel-styles.css",
+              "type": "file"
+            },
+            {
+              "name": "admin_pages",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "AddBook.jsx",
+                  "type": "file"
+                },
+                {
+                  "name": "AdminAccount.jsx",
+                  "type": "file"
+                },
+                {
+                  "name": "AllBooks.jsx",
+                  "type": "file"
+                },
+                {
+                  "name": "IssuedBooks.jsx",
+                  "type": "file"
+                },
+                {
+                  "name": "ManageStudents.jsx",
+                  "type": "file"
+                },
+                {
+                  "name": "Profile_pic.jpg",
+                  "type": "file"
+                },
+                {
+                  "name": "_add-book.css",
+                  "type": "file"
+                },
+                {
+                  "name": "_admin-account.css",
+                  "type": "file"
+                },
+                {
+                  "name": "_issued-book.css",
+                  "type": "file"
+                }
+              ]
             }
           ]
         },
@@ -95,11 +143,7 @@
           "type": "directory",
           "children": [
             {
-              "name": "HomePage.js",
-              "type": "file"
-            },
-            {
-              "name": "HomePageStyles.js",
+              "name": "HomePage.jsx",
               "type": "file"
             },
             {
@@ -117,15 +161,19 @@
               ]
             },
             {
+              "name": "_HomePage.css",
+              "type": "file"
+            },
+            {
               "name": "header",
               "type": "directory",
               "children": [
                 {
-                  "name": "Header.js",
+                  "name": "Header.jsx",
                   "type": "file"
                 },
                 {
-                  "name": "HeaderStyles.js",
+                  "name": "_Header.css",
                   "type": "file"
                 }
               ]
@@ -137,25 +185,11 @@
           "type": "directory",
           "children": [
             {
-              "name": "AuthPage.js",
+              "name": "AuthPage.jsx",
               "type": "file"
             },
             {
-              "name": "AuthPageStyles.js",
-              "type": "file"
-            }
-          ]
-        },
-        {
-          "name": "qrcodescanner",
-          "type": "directory",
-          "children": [
-            {
-              "name": "QRCodeScanner.js",
-              "type": "file"
-            },
-            {
-              "name": "QRCodeScannerStyles.css",
+              "name": "_AuthPage.css",
               "type": "file"
             }
           ]
@@ -165,11 +199,11 @@
           "type": "directory",
           "children": [
             {
-              "name": "StudentHeader.js",
+              "name": "StudentHeader.jsx",
               "type": "file"
             },
             {
-              "name": "StudentNav.js",
+              "name": "StudentNav.jsx",
               "type": "file"
             },
             {
@@ -177,7 +211,7 @@
               "type": "file"
             },
             {
-              "name": "StudentPanel.js",
+              "name": "StudentPanel.jsx",
               "type": "file"
             },
             {
@@ -185,23 +219,31 @@
               "type": "directory",
               "children": [
                 {
-                  "name": "Account.js",
+                  "name": "BookIssued.jsx",
                   "type": "file"
                 },
                 {
-                  "name": "History.js",
+                  "name": "History.jsx",
                   "type": "file"
                 },
                 {
-                  "name": "IssuedBooks.js",
+                  "name": "Search.jsx",
                   "type": "file"
                 },
                 {
-                  "name": "Logout.js",
+                  "name": "StudentAccount.jsx",
                   "type": "file"
                 },
                 {
-                  "name": "Search.js",
+                  "name": "_history.css",
+                  "type": "file"
+                },
+                {
+                  "name": "_issuedbook.css",
+                  "type": "file"
+                },
+                {
+                  "name": "_studentAccount.css",
                   "type": "file"
                 }
               ]
@@ -209,19 +251,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "index.css",
-      "type": "file"
-    },
-    {
-      "name": "index.js",
-      "type": "file"
-    },
-    {
-      "name": "pages",
-      "type": "directory",
-      "children": []
     },
     {
       "name": "reportWebVitals.js",

@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./StudentNavStyle.css";
-import "./student_pages/StudentAccount.js";
-import "./student_pages/History.js";
-import "./student_pages/BookIssued.js";
-import "./student_pages/Search.js";
+import "./student_pages/StudentAccount.jsx";
+import "./student_pages/History.jsx";
+import "./student_pages/BookIssued.jsx";
+import "./student_pages/Search.jsx";
 
 const StudentNav = () => {
   const navigationStyle = {

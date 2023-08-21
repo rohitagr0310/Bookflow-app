@@ -1,7 +1,7 @@
 import React from "react";
-import BookCard from "../card/Bookcard"; // Import the BookCard component
+import BookCard from "../../components/card/Bookcard.jsx";
 import { Grid } from "@mui/material"; // Import Grid component for layout
-import Header from "./StudentHeader.js";
+import Header from "./StudentHeader.jsx";
 import { Outlet } from "react-router-dom";
 
 export const fakeBooks = [

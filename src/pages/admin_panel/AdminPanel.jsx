@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "./AdminHeader";
-import QRCodeScanner from "../qrcodescanner/QRCodeScanner";
+import QRCodeScanner from "../../components/qrcodescanner/QRCodeScanner";
 import "./_admin-panel-styles.css";
 import { Outlet } from "react-router-dom";
 

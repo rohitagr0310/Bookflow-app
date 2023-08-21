@@ -1,23 +1,22 @@
 /* eslint-disable require-jsdoc */
 import React, { useState, useEffect } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider } from "@mui/material/styles";
-import theme from "./theme.js";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./components/home_page/HomePage.js";
-import AuthPage from "./components/login_page/AuthPage.js";
-import AdminPanel from "./components/admin_panel/AdminPanel.js";
-import StudentPanel from "./components/student_panel/StudentPanel.js";
-import Footer from "./components/footer/Footer.js";
-import AdminAccount from "./components/admin_panel/admin_pages/AdminAccount.js";
-import AddBook from "./components/admin_panel/admin_pages/AddBook.js";
-import ManageStudents from "./components/admin_panel/admin_pages/ManageStudents.js";
-import IssuedBooks from "./components/admin_panel/admin_pages/IssuedBooks.js";
-import AllBooks from "./components/admin_panel/admin_pages/AllBooks.js";
-import BookIssued from "./components/student_panel/student_pages/BookIssued.js";
-import StudentAccount from "./components/student_panel/student_pages/StudentAccount.js";
-import History from "./components/student_panel/student_pages/History.js";
-import Search from "./components/student_panel/student_pages/Search.js";
+import HomePage from "./pages/home_page/HomePage.jsx";
+import AuthPage from "./pages/login_page/AuthPage.jsx";
+import AdminPanel from "./pages/admin_panel/AdminPanel.jsx";
+import StudentPanel from "./pages/student_panel/StudentPanel.jsx";
+import Footer from "./components/footer/Footer.jsx";
+import AdminAccount from "./pages/admin_panel/admin_pages/AdminAccount.jsx";
+import AddBook from "./pages/admin_panel/admin_pages/AddBook.jsx";
+import ManageStudents from "./pages/admin_panel/admin_pages/ManageStudents.jsx";
+import IssuedBooks from "./pages/admin_panel/admin_pages/IssuedBooks.jsx";
+import AllBooks from "./pages/admin_panel/admin_pages/AllBooks.jsx";
+import BookIssued from "./pages/student_panel/student_pages/BookIssued.jsx";
+import StudentAccount from "./pages/student_panel/student_pages/StudentAccount.jsx";
+import History from "./pages/student_panel/student_pages/History.jsx";
+import Search from "./pages/student_panel/student_pages/Search.jsx";
 
 /*
  * Main component for the application.
@@ -26,6 +25,7 @@ import Search from "./components/student_panel/student_pages/Search.js";
 function App () {
   const [backendStatus, setBackendStatus] = useState("");
 
+  const theme = createTheme();
   useEffect(() => {
     fetch("http://localhost:5000/api/status")
       .then(response => response.json())
