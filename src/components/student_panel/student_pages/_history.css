@@ -1,0 +1,30 @@
+/*// _history.css*/
+
+/* _history.css */
+.container {
+  max-width: 100%;
+  margin: 400px;
+  padding: 200px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.history-table {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.history-table th,
+.history-table td {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+.history-table th {
+  background-color: #82d910;
+}

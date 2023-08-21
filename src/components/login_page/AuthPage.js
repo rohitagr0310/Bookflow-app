@@ -10,12 +10,11 @@ import Button from "@mui/material/Button";
 import LoginIcon from "@mui/icons-material/Login";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz"; // New icon
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import useStyles from "./AuthPageStyles.js";
+import "./_AuthPage.sass";
 
 const theme = createTheme();
 
 const AuthPage = () => {
-  const classes = useStyles();
   const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({
@@ -87,8 +86,8 @@ const AuthPage = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.bodyNoMarginPadding}>
-        <AppBar className={classes.appBar} position="static">
+      <div className="bodyNoMarginPadding">
+        <AppBar className="appBar" position="static">
           <Toolbar>
             <IconButton
               edge="start"
@@ -104,9 +103,9 @@ const AuthPage = () => {
             </Typography>
           </Toolbar>
         </AppBar>
-        <div className={classes.authPageContainer}>
-          <div className={classes.formContainer}>
-            <div className={classes.formHeader}>
+        <div className="authPageContainer">
+          <div className="formContainer">
+            <div className="formHeader">
               <Typography variant="h6">
                 {showLogin ? "Login" : "Sign Up"}
               </Typography>
@@ -138,7 +137,7 @@ const AuthPage = () => {
                   <Button
                     endIcon={<LoginIcon />}
                     type="submit"
-                    className={classes.submitButton}
+                    className="submitButton"
                     variant="contained"
                     color="primary"
                     onClick={handleSignIn}
@@ -194,7 +193,7 @@ const AuthPage = () => {
                   />
                   <Button
                     type="submit"
-                    className={classes.submitButton}
+                    className="submitButton"
                     variant="contained"
                     color="primary"
                   >
@@ -202,7 +201,7 @@ const AuthPage = () => {
                   </Button>
                 </form>
               )}
-            <div className={classes.toggleButtonContainer}>
+            <div className="toggleButtonContainer">
               <Button
                 variant="text"
                 color="primary"

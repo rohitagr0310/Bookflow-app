@@ -1,78 +1,15 @@
 import React, { useState } from "react";
-import { makeStyles } from "@mui/styles";
 import { Container, Typography, IconButton } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-const useStyles = makeStyles((theme) => ({
-  smallText: {
-    fontSize: "0.8rem" // Adjust the font size as needed
-  },
-  contactButton: {
-    fontSize: "0.8rem"
-  },
-  aboutUsButton: {
-    cursor: "pointer",
-    textDecoration: "underline",
-    color: "white"
-  },
-  footer: {
-    backgroundColor: "#00031A",
-    color: "white",
-    padding: theme.spacing(4, 0),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  },
-  socialIconsContainer: {
-    marginTop: theme.spacing(2),
-    borderTop: "1px solid white", // Add a white line above the socialIconsContainer
-    paddingTop: theme.spacing(2), // Add some top padding to separate it from the line
-    display: "flex", // Remove flexDirection: "column" to keep icons on the same line
-    alignItems: "center"
-  },
-  socialIcons: {
-    fontSize: "2rem",
-    margin: theme.spacing(0, 1),
-    color: "white"
-  },
-  columnsContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginTop: theme.spacing(2),
-    width: "100%",
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
-      alignItems: "center"
-    }
-  },
-  column: {
-    flex: 1,
-    marginRight: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-    textAlign: "center"
-  },
-  columnTitle: {
-    fontWeight: "bold",
-    marginBottom: theme.spacing(1),
-    textDecoration: "underline"
-  },
-  columnLink: {
-    display: "block",
-    color: "white",
-    textDecoration: "none",
-    marginBottom: theme.spacing(0.5),
-    fontSize: "0.8rem"
-  }
-}));
+import "./_Footer.sass";
 
 /**
  * Footer component.
  * @returns {JSX.Element} Footer
  */
 function Footer () {
-  const classes = useStyles();
   const [showAboutUsText, setShowAboutUsText] = useState(false);
   const [showContactInfo, setShowContactInfo] = useState(false);
 
@@ -83,98 +20,98 @@ function Footer () {
     setShowContactInfo(!showContactInfo);
   };
   return (
-    <footer className={classes.footer}>
+    <footer className="footer">
       <Container maxWidth="lg">
-        <div className={classes.columnsContainer}>
-          <div className={classes.column}>
-            <Typography variant="h6" className={classes.columnTitle}>
+        <div className="columnsContainer">
+          <div className="column">
+            <Typography variant="h6" className="columnTitle">
               {/* Render "About Us" as a clickable element */}
-              <span onClick={toggleAboutUsText} className={classes.aboutUsButton}>
+              <span onClick={toggleAboutUsText} className="aboutUsButton">
                 About Us
               </span>
             </Typography>
             {/* Render additional text conditionally */}
             {showAboutUsText && (
-              <p className={classes.smallText}>
+              <p className="smallText">
                 Our Library Management WebApp simplifies the process of borrowing and returning
                 books, making the library experience seamless and efficient.
               </p>
             )}
-            <a onClick={toggleContactInfo} className={classes.contactButton}>
+            <a onClick={toggleContactInfo} className="contactButton">
               Contact
             </a>
             {showContactInfo && (
               <div>
-                <p className={classes.smallText} >Contact Information:</p>
-                <p className={classes.smallText}>Email: contact@example.com</p>
-                <p className={classes.smallText}>Phone: +1 (123) 456-7890</p>
+                <p className="smallText" >Contact Information:</p>
+                <p className="smallText">Email: contact@example.com</p>
+                <p className="smallText">Phone: +1 (123) 456-7890</p>
               </div>
             )}
-            <a href="http://localhost:3002/#" className={classes.columnLink}>
+            <a href="http://localhost:3002/#" className="columnLink">
               Home
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Services
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Blog
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               FAQ
             </a>
           </div>
-          <div className={classes.column}>
-            <Typography variant="h6" className={classes.columnTitle}>
+          <div className="column">
+            <Typography variant="h6" className="columnTitle">
               Support
             </Typography>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Help Centre
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Terms
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Privacy
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Security
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Sitemap
             </a>
           </div>
-          <div className={classes.column}>
-            <Typography variant="h6" className={classes.columnTitle}>
+          <div className="column">
+            <Typography variant="h6" className="columnTitle">
               Career
             </Typography>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Press
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Partner
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Investors
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Advertise
             </a>
-            <a href="#" className={classes.columnLink}>
+            <a href="#" className="columnLink">
               Affiliate
             </a>
           </div>
         </div>
-        <div className={classes.socialIconsContainer}>
+        <div className="socialIconsContainer">
           <IconButton href="https://www.facebook.com/technonjr"
-            target="_blank"color="inherit" className={classes.socialIcons}>
+            target="_blank"color="inherit" className="socialIcons">
             <FacebookIcon />
           </IconButton>
           <IconButton href="https://twitter.com/TechnoIndiaNJR"
-            target="_blank"color="inherit" className={classes.socialIcons}>
+            target="_blank"color="inherit" className="socialIcons">
             <TwitterIcon />
           </IconButton>
           <IconButton href="https://www.linkedin.com/school/technonjr/"
-            target="_blank" color="inherit" className={classes.socialIcons}>
+            target="_blank" color="inherit" className="socialIcons">
             <LinkedInIcon />
           </IconButton>
         </div>
