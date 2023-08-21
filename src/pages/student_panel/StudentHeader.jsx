@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ClearAllSharpIcon from "@mui/icons-material/ClearAllSharp";
-import StudentNav from "./StudentNav.js";
+import StudentNav from "./StudentNav.jsx";
 
 const StudentHeader = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
