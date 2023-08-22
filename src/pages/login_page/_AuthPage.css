@@ -12,7 +12,9 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background: linear-gradient(to right, #81e1f4, #277cd1);
+	background-image: url(../../images/loginPage-bg.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .formContainer {
