@@ -8,6 +8,7 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
+    "axion": "^0.1.0",
     "chai": "^4.3.7",
     "chai-http": "^4.4.0",
     "cors": "^2.8.5",
