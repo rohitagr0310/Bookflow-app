@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Header from "./header/Header";
-import libraryImage from "../../Images/library.jpg";
+import libraryImage from "../../images/library.jpg";
 import "./_HomePage.css";
 
 const theme = createTheme();
