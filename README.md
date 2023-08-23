@@ -24,26 +24,49 @@ BookFlow is a library management app that allows users to seamlessly manage book
 ## Getting Started
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/your-username/bookflow-app.git
-   ```
+`
+git clone https://github.com/your-username/bookflow-app.git
+`
 
-2. Navigate to the project directory:
-   ```
-   cd bookflow-app
-   ```
+3. Navigate to the project directory:
+`
+cd bookflow-app
+`
 
 3. Install dependencies:
-   ```
-   npm install
-   ```
+`
+npm install
+`
 
 4. Start the development server:
-   ```
-   npm start
-   ```
+`
+npm start
+`
 
 5. Open your browser and navigate to http://localhost:3000 to see the app in action.
+
+## Weekly Progress
+
+### Week 1
+
+- Added authentication feature
+- Implemented user registration and login
+- Designed initial UI components for authentication
+- Set up basic routing using React Router
+
+### Week 2
+
+- Integrated QR code scanning functionality
+- Developed book issuance and return process
+- Implemented real-time availability status using Axios
+- Enhanced search and filter functionality for books
+
+### Week 3
+
+- Collaborated with UI/UX team for responsive design improvements
+- Optimized performance through code refactoring
+- Addressed user feedback from initial testing
+- Prepared the app for beta testing phase
 
 ## Contributing
 
