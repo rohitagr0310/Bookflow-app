@@ -73,7 +73,7 @@ npm start
 Special thanks to the following contributors who have helped in shaping the BookFlow App:
 
 - [Rohit Agarwal](https://github.com/rohitagar2610)
-- [Anshika Jain]([https://github.com/jain-anshika)
+- [Anshika Jain](https://github.com/jain-anshika)
 - [Ankit Dhanawat](https://github.com/jainankit0811)
 - [Qaidjohar Jukker](https://github.com/qaidjoharj53)
 - [Jayesh Joshi](https://github.com/jayesh2474)
