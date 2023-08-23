@@ -1,62 +1,59 @@
-/* _studentAccount.css */
+/* AddBook.css */
+body {
+  background: linear-gradient(135deg, #5f6bc0, #7d97c9);
+  background-size: 400% 400%; /* Adjust gradient size as needed */
+  animation: gradientAnimation 3s infinite alternate; /* Add animation for a dynamic effect */
+}
 
-/* Overall container */
-.body {
-  background-color: #0f57f3d7;
-  padding: 100px;
-  max-width: 10000px;
-  .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #98a8a9;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(78, 178, 222, 0.1);
-    background-color: #0ff3ef;
+@keyframes gradientAnimation {
+  0% {
+    background-position: 5% 5%;
   }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.account-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(197, 223, 248);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  /* Headline */
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
+.input-group {
+  margin-bottom: 20px;
+}
 
-  /* Form styling */
-  form {
-    display: flex;
-    flex-direction: column;
-    column-gap: normal;
-  }
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
-  /* Input fields */
-  input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 14px;
-  }
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-  /* Submit button */
-  button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
+.center-button {
+  text-align: center;
+  margin-top: 20px;
+}
 
-  button:hover {
-    background-color: #0056b3;
-  }
+.center-button button {
+  padding: 10px 20px;
+  background-color: #4a55a2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  /* Responsive adjustments */
-  @media (max-width: 480px) {
-    .container {
-      max-width: 100%;
-    }
-  }
+.center-button button:hover {
+  background-color: #7895cb;
 }

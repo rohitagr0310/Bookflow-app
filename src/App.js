@@ -17,7 +17,7 @@ import BookIssued from "./pages/student_panel/student_pages/BookIssued.jsx";
 import StudentAccount from "./pages/student_panel/student_pages/StudentAccount.jsx";
 import History from "./pages/student_panel/student_pages/History.jsx";
 import Search from "./pages/student_panel/student_pages/Search.jsx";
-import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
+import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
 
 /*
  * Main component for the application.
@@ -55,9 +55,9 @@ function App () {
             <Route path="student" element={<StudentPanel />} >
               <Route path="std-account" element={<StudentAccount />} />
               <Route path="history" element={<History />} />
+              <Route path="home" element={<StudentHomepage />} />
               <Route path="book-issued" element={<BookIssued />} />
               <Route path="search" element={<Search />} />
-              <Route path="feed-back" element={<Feedback/>}/>
             </Route>
           </Routes>
           <Footer />
