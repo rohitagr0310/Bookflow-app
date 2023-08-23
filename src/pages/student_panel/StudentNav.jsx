@@ -31,6 +31,7 @@ const StudentNav = () => {
           <li><Link to="/student/history" style={linkStyle} activeStyle={linkHoverStyle}>History</Link></li>
           <li><Link to="/student/book-issued" style={linkStyle} activeStyle={linkHoverStyle}>Issued Books</Link></li>
           <li><Link to="/student/std-account" style={linkStyle} activeStyle={linkHoverStyle}>Account</Link></li>
+          <li><Link to="/student/feed-back" style={linkStyle} activeStyle={linkHoverStyle}>Feedback</Link></li>
           <li><Link to="../login" style={linkStyle} activeStyle={linkHoverStyle}>Logout</Link></li>
         </ul>
       </nav>

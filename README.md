@@ -24,30 +24,60 @@ BookFlow is a library management app that allows users to seamlessly manage book
 ## Getting Started
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/your-username/bookflow-app.git
-   ```
+`
+git clone https://github.com/your-username/bookflow-app.git
+`
 
-2. Navigate to the project directory:
-   ```
-   cd bookflow-app
-   ```
+3. Navigate to the project directory:
+`
+cd bookflow-app
+`
 
 3. Install dependencies:
-   ```
-   npm install
-   ```
+`
+npm install
+`
 
 4. Start the development server:
-   ```
-   npm start
-   ```
+`
+npm start
+`
 
 5. Open your browser and navigate to http://localhost:3000 to see the app in action.
 
-## Contributing
+## Weekly Progress
 
-We welcome contributions to enhance BookFlow! To contribute, please follow these steps:
+### Week 1
+
+- Added authentication feature
+- Implemented user registration and login
+- Designed initial UI components for authentication
+- Set up basic routing using React Router
+
+### Week 2
+
+- Integrated QR code scanning functionality
+- Developed book issuance and return process
+- Implemented real-time availability status using Axios
+- Enhanced search and filter functionality for books
+
+### Week 3
+
+- Collaborated with UI/UX team for responsive design improvements
+- Optimized performance through code refactoring
+- Addressed user feedback from initial testing
+- Prepared the app for beta testing phase
+
+## Contributors
+
+Special thanks to the following contributors who have helped in shaping the BookFlow App:
+
+- [Rohit Agarwal](https://github.com/rohitagar2610)
+- [Anshika Jain](https://github.com/jain-anshika)
+- [Ankit Dhanawat](https://github.com/jainankit0811)
+- [Qaidjohar Jukker](https://github.com/qaidjoharj53)
+- [Jayesh Joshi](https://github.com/jayesh2474)
+
 
 1. Fork the repository.
 2. Create a new branch: `git checkout -b feature/your-feature-name`
