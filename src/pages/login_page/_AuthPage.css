@@ -12,37 +12,42 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-image: url(../../images/loginPage-bg.jpeg);
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		url(../../images/loginPage-bg1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center bottom;
 }
 
 .formContainer {
-	background-color: white;
+	background-color: transparent;
+	backdrop-filter: blur(7px);
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	padding: 20px;
-	margin: 10px;
+	margin: auto;
+	color: white;
 	width: 400px;
 }
 
-.formHeader {
+.formHeader h6 {
 	margin-bottom: 20px;
 	text-align: center;
-}
-
-.formHeader h6 {
 	font-size: 1.5rem;
 	font-weight: bold;
-}
-
-.formHeader p {
-	font-size: 1rem;
 }
 
 .formContainer form {
 	display: flex;
 	flex-direction: column;
+}
+
+.formContainer form input {
+	color: white;
+}
+
+.formContainer form label {
+	color: white;
 }
 
 .formContainer form .submitButton {
@@ -69,12 +74,13 @@
 .toggleButtonContainer button {
 	padding: 5px 10px;
 	border: none;
-	background-color: transparent;
-	color: #1976d2;
+	background-color: rgba(77, 77, 77, 0.2);
+	border-radius: 12px;
+	color: #52abff;
 	cursor: pointer;
 	transition: color 0.3s ease-in-out;
 }
 
 .toggleButtonContainer button:hover {
-	color: #1565c0;
+	color: #ffffff;
 }
