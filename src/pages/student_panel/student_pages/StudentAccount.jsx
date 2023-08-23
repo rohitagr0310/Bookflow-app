@@ -1,113 +1,87 @@
 import React, { useState } from "react";
-import "./_studentAccount.css";
+import "./_studentAccount.css"; // Import the CSS file for styling
 
-const AccountCreation = () => {
+const StudentAccount = () => {
+  const [isEditing, setIsEditing] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [rollNumber, setRollNumber] = useState("");
-  const [studentId, setStudentId] = useState("");
-  const [collegeId, setCollegeId] = useState("");
-  const [semaster, setSemaster] = useState("");
+  const [rollno, setRollNo] = useState("");
+  const [emailid, setEmailID] = useState("");
+  const [semester, setSemester] = useState("");
   const [year, setYear] = useState("");
+  const [phoneno, setPhoneNo] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, e.g., send data to backend
-    // You can use a fetch request or an API library here
-    // Make sure to handle errors and success messages accordingly
+  const handleEditClick = () => {
+    setIsEditing(true);
+    console.log("Book added:", {
+      username,
+      password,
+      rollno,
+      emailid,
+      semester,
+      year,
+      phoneno
+    });
+
+    // Clear input fields
+    setUsername("");
+    setPassword("");
+    setRollNo("");
+    setEmailID("");
+    setSemester("");
+    setYear("");
+    setPhoneNo("");
+  };
+
+  const handleConfirmClick = () => {
+    // Logic to handle confirming the edited details
+    // Update the database or perform necessary actions
+    setIsEditing(false);
   };
 
   return (
-    <body className="body">
-      <div className="container">
-        <h1>Edit an Account</h1>
-        <form onSubmit={handleSubmit}>
-          <table>
-            <tbody>
-              <tr>
-                <td>Username:</td>
-                <td>
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Password:</td>
-                <td>
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Roll Number:</td>
-                <td>
-                  <input
-                    type="text"
-                    value={rollNumber}
-                    onChange={(e) => setRollNumber(e.target.value)}
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Student ID:</td>
-                <td>
-                  <input
-                    type="text"
-                    value={studentId}
-                    onChange={(e) => setStudentId(e.target.value)}
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>College ID:</td>
-                <td>
-                  <input
-                    type="text"
-                    value={collegeId}
-                    onChange={(e) => setCollegeId(e.target.value)}
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Semaster:</td>
-                <td>
-                  <input
-                    type="text"
-                    value={semaster}
-                    onChange={(e) => setSemaster(e.target.value)}
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Year:</td>
-                <td>
-                  <input
-                    type="text"
-                    value={year}
-                    onChange={(e) => setYear(e.target.value)}
-                    required
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <button type="submit">Edit Account</button>
-        </form>
+    <div className="account-container">
+      <h1>Account</h1>
+      <div className="input-group">
+        <label>Username:</label>
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
       </div>
-    </body>
+      <div className="input-group">
+        <label>Password:</label>
+        <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </div>
+      <div className="input-group">
+        <label>Roll No.:</label>
+        <input type="text" value={rollno} onChange={(e) => setRollNo(e.target.value)} />
+      </div>
+      <div className="input-group">
+        <label>Email ID:</label>
+        <input type="text" value={emailid} onChange={(e) => setEmailID(e.target.value)} />
+      </div>
+      <div className="input-group">
+        <label>Semester:</label>
+        <input type="text" value={semester} onChange={(e) => setSemester(e.target.value)} />
+      </div>
+      <div className="input-group">
+        <label>Year:</label>
+        <input type="text" value={year} onChange={(e) => setYear(e.target.value)} />
+      </div>
+      <div className="input-group">
+        <label>Phone No.</label>
+        <input type="text" value={phoneno} onChange={(e) => setPhoneNo(e.target.value)} />
+      </div>
+
+      <div className="center-button">
+        {isEditing
+          ? (
+            <button onClick={handleConfirmClick}>Confirm</button>
+          )
+          : (
+            <button onClick={handleEditClick}>Edit</button>
+          )}
+      </div>
+    </div>
   );
 };
 
-export default AccountCreation;
+export default StudentAccount;

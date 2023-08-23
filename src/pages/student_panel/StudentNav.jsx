@@ -26,10 +26,11 @@ const StudentNav = () => {
     <div style={navigationStyle} className="navigation-panel">
       <nav>
         <ul className="link-list"> {/* Add a class to the ul */}
-          <li><Link to="/student/std-account" style={linkStyle} activeStyle={linkHoverStyle}>Account</Link></li>
+          <li><Link to="/student/home" style={linkStyle} activeStyle={linkHoverStyle}>Home</Link></li>
           <li><Link to="/student/search" style={linkStyle} activeStyle={linkHoverStyle}>Search</Link></li>
           <li><Link to="/student/history" style={linkStyle} activeStyle={linkHoverStyle}>History</Link></li>
           <li><Link to="/student/book-issued" style={linkStyle} activeStyle={linkHoverStyle}>Issued Books</Link></li>
+          <li><Link to="/student/std-account" style={linkStyle} activeStyle={linkHoverStyle}>Account</Link></li>
           <li><Link to="../login" style={linkStyle} activeStyle={linkHoverStyle}>Logout</Link></li>
         </ul>
       </nav>
