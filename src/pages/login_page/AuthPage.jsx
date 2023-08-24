@@ -61,15 +61,9 @@ const AuthPage = () => {
     const studentEmail = "student@bookflow.com";
     const studentPassword = "student123";
 
-    if (
-      loginData.loginEmail === adminEmail &&
-      loginData.loginPassword === adminPassword
-    ) {
+    if (loginData.loginEmail === adminEmail && loginData.loginPassword === adminPassword) {
       navigate("/admin");
-    } else if (
-      loginData.loginEmail === studentEmail &&
-      loginData.loginPassword === studentPassword
-    ) {
+    } else if (loginData.loginEmail === studentEmail && loginData.loginPassword === studentPassword) {
       navigate("/student");
     }
   };
@@ -89,26 +83,18 @@ const AuthPage = () => {
       <div className="bodyNoMarginPadding">
         <AppBar className="appBar" position="static">
           <Toolbar>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="back"
-              component={Link}
-              to="/"
-            >
+            <IconButton edge="start" color="inherit" aria-label="back" component={Link} to="/">
               <ArrowBackIcon />
             </IconButton>
             <Typography variant="h6" style={{ flexGrow: 1 }}>
-            Authentication
+              Authentication
             </Typography>
           </Toolbar>
         </AppBar>
         <div className="authPageContainer">
           <div className="formContainer">
             <div className="formHeader">
-              <Typography variant="h6">
-                {showLogin ? "Login" : "Sign Up"}
-              </Typography>
+              <Typography variant="h6">{showLogin ? "Login" : "Sign Up"}</Typography>
             </div>
             {showLogin
               ? (
@@ -142,7 +128,7 @@ const AuthPage = () => {
                     color="primary"
                     onClick={handleSignIn}
                   >
-                Sign In
+                  Sign In
                   </Button>
                 </form>
               )
@@ -191,23 +177,13 @@ const AuthPage = () => {
                     required
                     type="password"
                   />
-                  <Button
-                    type="submit"
-                    className="submitButton"
-                    variant="contained"
-                    color="primary"
-                  >
-                Sign Up
+                  <Button type="submit" className="submitButton" variant="contained" color="primary">
+                  Sign Up
                   </Button>
                 </form>
               )}
             <div className="toggleButtonContainer">
-              <Button
-                variant="text"
-                color="primary"
-                onClick={handleToggleForm}
-                startIcon={<SwapHorizIcon />}
-              >
+              <Button variant="text" color="primary" onClick={handleToggleForm} startIcon={<SwapHorizIcon />}>
                 {showLogin ? "Switch to Sign Up" : "Switch to Login"}
               </Button>
             </div>
