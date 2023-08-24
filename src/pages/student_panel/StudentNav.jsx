@@ -4,7 +4,7 @@ import "./_StudentNavStyle.css";
 import "./student_pages/StudentAccount.jsx";
 import "./student_pages/History.jsx";
 import "./student_pages/BookIssued.jsx";
-import "./student_pages/Search.jsx";
+import "./student_search/Search.jsx";
 
 const StudentNav = () => {
   const navigationStyle = {

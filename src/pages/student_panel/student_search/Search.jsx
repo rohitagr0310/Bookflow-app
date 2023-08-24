@@ -1,8 +1,8 @@
 /* eslint-disable require-jsdoc */
 import React, { useState } from "react";
 import "./_search.css";
-import SearchForm from "../../../components/StudentSeaech/SearchForm.jsx";
-import SearchResults from "../../../components/StudentSeaech/SearchResults.jsx";
+import SearchForm from "./SearchForm.jsx";
+import SearchResults from "./SearchResults.jsx";
 
 function Search () {
   const [searchResults, setSearchResults] = useState([]);
