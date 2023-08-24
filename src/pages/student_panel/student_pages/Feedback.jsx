@@ -19,7 +19,6 @@ const Feedback = () => {
     <div className="feedback-container">
       <h1 className="form-title">[Library Name] Feedback Form</h1>
       <form className="feedback-form" onSubmit={handleSubmit}>
-        {/* ... Form input fields ... */}
         <button type="submit" className="submit-button">
           Submit
         </button>

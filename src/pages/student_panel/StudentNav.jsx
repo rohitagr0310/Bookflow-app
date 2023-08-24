@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./StudentNavStyle.css";
+import "./_StudentNavStyle.css";
 import "./student_pages/StudentAccount.jsx";
 import "./student_pages/History.jsx";
 import "./student_pages/BookIssued.jsx";
@@ -25,7 +25,7 @@ const StudentNav = () => {
   return (
     <div style={navigationStyle} className="navigation-panel">
       <nav>
-        <ul className="link-list"> {/* Add a class to the ul */}
+        <ul className="link-list">
           <li><Link to="/student/home" style={linkStyle} activeStyle={linkHoverStyle}>Home</Link></li>
           <li><Link to="/student/search" style={linkStyle} activeStyle={linkHoverStyle}>Search</Link></li>
           <li><Link to="/student/history" style={linkStyle} activeStyle={linkHoverStyle}>History</Link></li>

@@ -1,0 +1,14 @@
+/* Styles for the Search component */
+.Search {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.Search-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+/* Additional styles for the components */
