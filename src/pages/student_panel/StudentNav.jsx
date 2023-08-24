@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./_StudentNavStyle.css";
+import "./_StudentNav.css";
 import "./student_pages/StudentAccount.jsx";
 import "./student_pages/History.jsx";
 import "./student_pages/BookIssued.jsx";
