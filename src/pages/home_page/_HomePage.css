@@ -1,15 +1,15 @@
 /* Styling for the root container */
+/* Styling for the background container */
 .root {
-	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-		url("../../images/background.jpg");
-	background-size: cover;
-	background-position: center;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+  background-color: rgb(39, 39, 40); /* Add this line to set the background color to white */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 /* Styling for the main heading */
@@ -54,6 +54,14 @@
 	padding-top: 16px; /* You can adjust this value */
 	font-size: 1.1rem; /* You can adjust this value */
 }
+/* Styling for the slide images */
+.slide-image {
+  	width: 100%;
+  	height: auto;
+  	max-height: 100%;
+  	object-fit: cover;
+}
+
 
 /* Styling for the library image */
 .libraryImage {

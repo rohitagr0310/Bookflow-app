@@ -1,12 +1,14 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Container from "@mui/material/Container";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Header from "./header/Header";
-import libraryImage from "../../images/library.jpg";
 import "./_HomePage.css";
+import background1 from "../../images/background1.jpg"; // Import your images
+import background2 from "../../images/background2.jpg"; // Import your images
+import background3 from "../../images/background3.jpg"; // Import your images
+import background4 from "../../images/background4.jpg"; // Import your images
 
 const theme = createTheme();
 
@@ -16,64 +18,55 @@ const HomePage = () => {
       <div className="root">
         <Header />
         <Container maxWidth="lg">
-          <Typography variant="h3" className="mainHeading" gutterBottom>
-            WebApp to BookFlow Library
-          </Typography>
-          <Typography variant="body1" className="contentText" paragraph>
-            This is a Library Management WebApp designed to serve the needs of our college{"'"}s library. The app offers
-            an intuitive platform for both students and administrators to interact with the library{"'"}s resources.
-          </Typography>
-          <section className="section">
-            <Typography variant="h4" className="sectionHeading">
-              About Us
-            </Typography>
-            <Typography variant="body1" className="sectionContent" paragraph>
-              Our Library Management WebApp simplifies the process of borrowing and returning books, making the library
-              experience seamless and efficient.
-            </Typography>
+          {/* Section 1 with Slider */}
+          <section
+            className="section"
+            style={{
+              backgroundImage: `url(${background1})`,
+              backgroundSize: "cover", // Set the background size
+              backgroundPosition: "center",
+              height: "70vh"
+            }}
+          >
+            {/* Add content for Section 1 here */}
           </section>
-          <section className="section">
-            <Typography variant="h4" className="sectionHeading">
-              Features
-            </Typography>
-            <Typography className="sectionContent">• Easy browsing and searching of available books •</Typography>
-            <Typography className="sectionContent">
-              • Access to personalized student and administrator panels •
-            </Typography>
-            <Typography className="sectionContent">
-              • Quick and convenient book borrowing and return process •
-            </Typography>
+          <section
+            className="section"
+            style={{
+              backgroundImage: `url(${background2})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              height: "100vh"
+            }}
+          >
+            {/* Add content for Section 2 here */}
           </section>
-          <img src={libraryImage} alt="Library" className="libraryImage" />
-          <section className="section">
-            <Typography variant="h4" className="sectionHeading">
-              Testimonials
-            </Typography>
-            <div className="testimonialCards">
-              <Card className="testimonialCard">
-                <CardContent>
-                  <Typography variant="body1" className="testimonialContent">
-                    &#34;BookFlow has made managing library resources a breeze. It{"'"}s user-friendly and has
-                    transformed our library experience.&#34;
-                    <br />
-                    <br />~ Qaidjohar Jukker, Student
-                  </Typography>
-                </CardContent>
-              </Card>
-              <Card className="testimonialCard">
-                <CardContent>
-                  <Typography variant="body1" className="testimonialContent">
-                    &#34;As an administrator, BookFlow has improved our library operations tremendously. It{"'"}s a
-                    must-have tool.&#34; <br />
-                    <br />~ Adarsh Regar, Administrator
-                  </Typography>
-                </CardContent>
-              </Card>
-            </div>
+
+          {/* Section 3 */}
+          <section
+            className="section"
+            style={{
+              backgroundImage: `url(${background3})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              height: "100vh"
+            }}
+          >
+            {/* Add content for Section 3 here */}
           </section>
-          <Typography variant="body1" className="contentText" paragraph>
-            Join us and explore a world of knowledge and imagination with BookFlow Library.
-          </Typography>
+
+          {/* Section 4 */}
+          <section
+            className="section"
+            style={{
+              backgroundImage: `url(${background4})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              height: "100vh"
+            }}
+          >
+            {/* Add content for Section 4 here */}
+          </section>
         </Container>
       </div>
     </ThemeProvider>
