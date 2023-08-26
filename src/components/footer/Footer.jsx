@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Container, Typography, IconButton } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -10,12 +11,8 @@ import "./_Footer.css";
  * @returns {JSX.Element} Footer
  */
 function Footer () {
-  const [showAboutUsText, setShowAboutUsText] = useState(false);
   const [showContactInfo, setShowContactInfo] = useState(false);
 
-  const toggleAboutUsText = () => {
-    setShowAboutUsText(!showAboutUsText);
-  };
   const toggleContactInfo = () => {
     setShowContactInfo(!showContactInfo);
   };
@@ -26,17 +23,11 @@ function Footer () {
           <div className="column">
             <Typography variant="h6" className="columnTitle">
               {/* Render "About Us" as a clickable element */}
-              <span onClick={toggleAboutUsText} className="aboutUsButton">
+              <Link to="/about-us" className="aboutUsButton">
                 About Us
-              </span>
+              </Link>
             </Typography>
             {/* Render additional text conditionally */}
-            {showAboutUsText && (
-              <p className="smallText">
-                Our Library Management WebApp simplifies the process of borrowing and returning
-                books, making the library experience seamless and efficient.
-              </p>
-            )}
             <a onClick={toggleContactInfo} className="contactButton">
               Contact
             </a>
@@ -47,7 +38,7 @@ function Footer () {
                 <p className="smallText">Phone: +1 (123) 456-7890</p>
               </div>
             )}
-            <a href="http://localhost:3002/#" className="columnLink">
+            <a href="http://localhost:3000" className="columnLink">
               Home
             </a>
             <a href="#" className="columnLink">
