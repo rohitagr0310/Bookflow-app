@@ -16,7 +16,7 @@ import AllBooks from "./pages/admin_panel/admin_pages/AllBooks.jsx";
 import BookIssued from "./pages/student_panel/student_pages/BookIssued.jsx";
 import StudentAccount from "./pages/student_panel/student_pages/StudentAccount.jsx";
 import History from "./pages/student_panel/student_pages/History.jsx";
-import Search from "./pages/student_panel/student_pages/Search.jsx";
+import Search from "./pages/student_panel/student_search/Search.jsx";
 import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
 
