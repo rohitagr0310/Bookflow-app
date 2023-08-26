@@ -1,5 +1,8 @@
 import { createPool } from "mysql2";
 
+import { configDotenv } from "dotenv";
+configDotenv({ path: "./.env" });
+
 const pool = createPool({
   host: process.env.REACT_APP_DB_HOST,
   user: process.env.REACT_APP_DB_USER,
