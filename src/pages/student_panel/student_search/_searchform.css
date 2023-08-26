@@ -1,0 +1,36 @@
+/* Styles for the Toggle Filters button */
+.filter-toggle {
+  margin-bottom: 10px;
+}
+
+/* Styles for the filter form */
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+}
+
+.filter-form label {
+  margin-bottom: 5px;
+}
+
+.filter-form input {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.filter-form button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-form button:hover {
+  background-color: #0056b3;
+}
