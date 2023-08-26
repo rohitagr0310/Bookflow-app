@@ -1,9 +1,9 @@
-import { createPool } from "mysql";
+import { createPool } from "mysql2";
 
 const pool = createPool({
   host: "localhost",
-  user: "Rohit2610",
-  password: "Rohit@2610",
+  user: "root",
+  password: "dhanawat@0811",
   database: "bookflow"
 });
 
