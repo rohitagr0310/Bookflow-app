@@ -23,7 +23,7 @@ function Footer () {
           <div className="column">
             <Typography variant="h6" className="columnTitle">
               {/* Render "About Us" as a clickable element */}
-              <Link to="/footer/aboutus" className="aboutUsButton">
+              <Link to="/about-us" className="aboutUsButton">
                 About Us
               </Link>
             </Typography>
@@ -38,7 +38,7 @@ function Footer () {
                 <p className="smallText">Phone: +1 (123) 456-7890</p>
               </div>
             )}
-            <a href="http://localhost:3002/#" className="columnLink">
+            <a href="http://localhost:3000" className="columnLink">
               Home
             </a>
             <a href="#" className="columnLink">

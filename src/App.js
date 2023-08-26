@@ -19,7 +19,7 @@ import History from "./pages/student_panel/student_pages/History.jsx";
 import Search from "./pages/student_panel/student_search/Search.jsx";
 import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
-import AboutUs from "./components/footer/extra_pages/AboutUs.jsx";
+import AboutUs from "./components/footer/extra_pages/About.jsx";
 
 /*
  * Main component for the application.
@@ -47,6 +47,7 @@ function App () {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<AuthPage />} />
+            <Route path="about-us" component={<AboutUs />} />
             <Route path="admin" element={<AdminPanel />}>
               <Route path="account" element={<AdminAccount />} />
               <Route path="add-book" element={<AddBook />} />
@@ -63,10 +64,8 @@ function App () {
               <Route path="feed-back" element={<Feedback />} />
             </Route>
           </Routes>
-<Footer />
+          <Footer />
         </div>
-        <Route path="/footer/aboutus" component={AboutUs} />
-        <Footer />
       </Router>
     </ThemeProvider>
   );
