@@ -1,7 +1,7 @@
 /* Styling for the root container */
 /* Styling for the background container */
 .root {
-  background-color: rgb(39, 39, 40); /* Add this line to set the background color to white */
+  background-color: rgb(242, 246, 248); /* Add this line to set the background color to white */
   background-size: cover;
   background-position: center;
   min-height: 100vh;

@@ -3,7 +3,7 @@ import { createPool } from "mysql2";
 const pool = createPool({
   host: "localhost",
   user: "root",
-  password: "dhanawat@0811",
+  password: "64666466j",
   database: "bookflow"
 });
 
