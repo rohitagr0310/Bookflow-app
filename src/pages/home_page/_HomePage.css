@@ -1,15 +1,19 @@
 /* Styling for the root container */
 /* Styling for the background container */
 .root {
-  background-color: rgb(242, 246, 248); /* Add this line to set the background color to white */
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+	background-color: rgb(
+		242,
+		246,
+		248
+	); /* Add this line to set the background color to white */
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
 /* Styling for the main heading */
@@ -56,12 +60,11 @@
 }
 /* Styling for the slide images */
 .slide-image {
-  	width: 100%;
-  	height: auto;
-  	max-height: 100%;
-  	object-fit: cover;
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	object-fit: cover;
 }
-
 
 /* Styling for the library image */
 .libraryImage {
@@ -121,4 +124,45 @@
 /* Hover effect for testimonial content */
 .testimonialCard:hover .testimonialContent {
 	color: #1976d2; /* Change color on hover */
+}
+
+/* Add this media query at the end of your CSS file to adjust styles for mobile screens */
+@media (max-width: 768px) {
+	.section {
+		margin: 32px 0;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: auto;
+	}
+
+	.libraryImage {
+		width: 100%;
+		max-width: 300px;
+		margin: 32px auto;
+	}
+
+	.mainHeading {
+		font-size: 2rem;
+		padding-top: 8px;
+		padding-bottom: 16px;
+	}
+
+	.sectionHeading {
+		font-size: 1.5rem;
+		margin-bottom: 24px;
+	}
+
+	.sectionContent {
+		font-size: 1rem;
+	}
+
+	.testimonialCard {
+		max-width: 300px;
+		padding: 16px;
+	}
+
+	.testimonialContent {
+		font-size: 0.8rem;
+	}
 }
