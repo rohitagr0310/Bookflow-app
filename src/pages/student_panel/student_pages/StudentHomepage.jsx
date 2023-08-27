@@ -2,6 +2,7 @@ import React from "react";
 import BookCard from "../../../components/card/Bookcard";
 import { Grid } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import "./_studenthomepage.css";
 
 export const fakeBooks = [
   {
@@ -100,13 +101,13 @@ export const fakeBooks = [
 
 const StudentHomepage = () => {
   return (
-    <div>
+    <div className="container">
       <Outlet />
-      <h1>Welcome to Student HomePage</h1>
+      <h1 className="heading">Welcome to Student HomePage</h1>
       <Grid container spacing={2}>
         {fakeBooks.map((book, index) => (
-          <Grid item key={index}>
-            <BookCard book={book} />
+          <Grid item key={index} className="book-grid">
+            <BookCard book={book} className="book-card" />
           </Grid>
         ))}
       </Grid>

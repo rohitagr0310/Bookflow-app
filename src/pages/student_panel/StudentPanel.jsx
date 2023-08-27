@@ -4,11 +4,16 @@ import { Outlet } from "react-router-dom";
 
 const StudentPanel = () => {
   return (
-    <div>
-      <Header />
-      <h1>Student Panel</h1>
-      <Outlet/>
-    </div>
+    <body >
+      <div className="student-panel-container">
+        <Header />
+        <h1>Student Panel</h1>
+        <div className="student-panel-content">
+          <Outlet className="student-panel-outlet" />
+        </div>
+      </div>
+    </body>
+
   );
 };
 

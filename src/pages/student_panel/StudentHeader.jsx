@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ClearAllSharpIcon from "@mui/icons-material/ClearAllSharp";
 import StudentNav from "./StudentNav.jsx";
+// import "./_StudentHeader.css"; // Correctly reference the CSS file
 
 const StudentHeader = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -10,7 +11,7 @@ const StudentHeader = () => {
   };
 
   return (
-    <div className="header">
+    <div className="header"> {/* Use the correct CSS class */}
       {/* Hamburger icon for the menu */}
       <button className={`menu-button ${dropdownVisible ? "active" : ""}`} onClick={toggleDropdown}>
         <ClearAllSharpIcon />

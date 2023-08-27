@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable require-jsdoc */
 import React, { useState, useEffect } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,7 +14,7 @@ import AddBook from "./pages/admin_panel/admin_pages/AddBook.jsx";
 import ManageStudents from "./pages/admin_panel/admin_pages/ManageStudents.jsx";
 import IssuedBooks from "./pages/admin_panel/admin_pages/IssuedBooks.jsx";
 import AllBooks from "./pages/admin_panel/admin_pages/AllBooks.jsx";
-import BookIssued from "./pages/student_panel/student_pages/BookIssued.jsx";
+import BookIssued from "./pages/student_panel/student_pages/BooksIssued.jsx";
 import StudentAccount from "./pages/student_panel/student_pages/StudentAccount.jsx";
 import History from "./pages/student_panel/student_pages/History.jsx";
 import Search from "./pages/student_panel/student_search/Search.jsx";
