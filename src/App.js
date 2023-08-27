@@ -19,7 +19,6 @@ import History from "./pages/student_panel/student_pages/History.jsx";
 import Search from "./pages/student_panel/student_search/Search.jsx";
 import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
-import AboutUs from "./components/footer/extra_pages/About.jsx";
 
 /*
  * Main component for the application.
@@ -31,9 +30,9 @@ function App () {
   const theme = createTheme();
   useEffect(() => {
     fetch("http://localhost:5000/api/status")
-      .then((response) => response.json())
-      .then((data) => setBackendStatus(data))
-      .catch((error) => console.error("Error connecting to backend:", error));
+      .then(response => response.json())
+      .then(data => setBackendStatus(data))
+      .catch(error => console.error("Error connecting to backend:", error));
   }, []);
 
   return (
@@ -47,15 +46,14 @@ function App () {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<AuthPage />} />
-            <Route path="about-us" component={<AboutUs />} />
-            <Route path="admin" element={<AdminPanel />}>
+            <Route path="admin" element={<AdminPanel />} >
               <Route path="account" element={<AdminAccount />} />
               <Route path="add-book" element={<AddBook />} />
               <Route path="all-book" element={<AllBooks />} />
               <Route path="manage-std" element={<ManageStudents />} />
               <Route path="issued-book" element={<IssuedBooks />} />
             </Route>
-            <Route path="student" element={<StudentPanel />}>
+            <Route path="student" element={<StudentPanel />} >
               <Route path="std-account" element={<StudentAccount />} />
               <Route path="history" element={<History />} />
               <Route path="home" element={<StudentHomepage />} />
