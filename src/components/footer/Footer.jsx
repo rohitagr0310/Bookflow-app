@@ -33,8 +33,9 @@ function Footer () {
             {/* Render additional text conditionally */}
             {showAboutUsText && (
               <p className="smallText">
-                Our Library Management WebApp simplifies the process of borrowing and returning
-                books, making the library experience seamless and efficient.
+                Our Library Management WebApp simplifies the process of
+                borrowing and returning books, making the library experience
+                seamless and efficient.
               </p>
             )}
             <a onClick={toggleContactInfo} className="contactButton">
@@ -42,7 +43,7 @@ function Footer () {
             </a>
             {showContactInfo && (
               <div>
-                <p className="smallText" >Contact Information:</p>
+                <p className="smallText">Contact Information:</p>
                 <p className="smallText">Email: contact@example.com</p>
                 <p className="smallText">Phone: +1 (123) 456-7890</p>
               </div>
@@ -81,42 +82,51 @@ function Footer () {
             </a>
           </div>
           <div className="column">
+            {/* Subscribe column */}
             <Typography variant="h6" className="columnTitle">
-              Career
+              Subscribe
             </Typography>
-            <a href="#" className="columnLink">
-              Press
-            </a>
-            <a href="#" className="columnLink">
-              Partner
-            </a>
-            <a href="#" className="columnLink">
-              Investors
-            </a>
-            <a href="#" className="columnLink">
-              Advertise
-            </a>
-            <a href="#" className="columnLink">
-              Affiliate
-            </a>
+            {/* Add your subscribe input and button here */}
+            <div className="subscribeForm">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="subscribeInput"
+              />
+              <button className="subscribeButton">Subscribe</button>
+            </div>
           </div>
+          <div className="column"></div>
         </div>
         <div className="socialIconsContainer">
-          <IconButton href="https://www.facebook.com/technonjr"
-            target="_blank"color="inherit" className="socialIcons">
+          <IconButton
+            href="https://www.facebook.com/technonjr"
+            target="_blank"
+            color="inherit"
+            className="socialIcons"
+          >
             <FacebookIcon />
           </IconButton>
-          <IconButton href="https://twitter.com/TechnoIndiaNJR"
-            target="_blank"color="inherit" className="socialIcons">
+          <IconButton
+            href="https://twitter.com/TechnoIndiaNJR"
+            target="_blank"
+            color="inherit"
+            className="socialIcons"
+          >
             <TwitterIcon />
           </IconButton>
-          <IconButton href="https://www.linkedin.com/school/technonjr/"
-            target="_blank" color="inherit" className="socialIcons">
+          <IconButton
+            href="https://www.linkedin.com/school/technonjr/"
+            target="_blank"
+            color="inherit"
+            className="socialIcons"
+          >
             <LinkedInIcon />
           </IconButton>
         </div>
         <Typography variant="body2" align="center">
-          &copy; {new Date().getFullYear()} BookFlow Library Management. All rights reserved.
+          &copy; {new Date().getFullYear()} BookFlow Library Management. All
+          rights reserved.
         </Typography>
       </Container>
     </footer>
