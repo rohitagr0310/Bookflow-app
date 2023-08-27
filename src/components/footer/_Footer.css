@@ -72,3 +72,35 @@
 .logo {
 	padding: 50px 0;
 }
+
+/* Add this media query at the end of your CSS file to adjust styles for mobile screens */
+@media (max-width: 768px) {
+	.columnsContainer {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.column {
+		flex: none;
+		margin: 8px 0;
+	}
+
+	.columnTitle {
+		font-size: 1rem;
+	}
+
+	.columnLink {
+		margin-top: 8px;
+		font-size: 0.8rem;
+	}
+
+	.socialIconsContainer {
+		margin-top: 16px;
+	}
+
+	.logo {
+		padding: 16px 0;
+		font-size: 1.5rem;
+	}
+}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./_StudentNav.css";
 import "./student_pages/StudentAccount.jsx";
 import "./student_pages/History.jsx";
-import "./student_pages/BookIssued.jsx";
+import "./student_pages/BooksIssued.jsx";
 import "./student_search/Search.jsx";
 
 const StudentNav = () => {
@@ -23,7 +23,7 @@ const StudentNav = () => {
   };
 
   return (
-    <div style={navigationStyle} className="navigation-panel">
+    <div style={navigationStyle} className="navigation-panel"> {/* Use the correct CSS class */}
       <nav>
         <ul className="link-list">
           <li><Link to="/student/home" style={linkStyle} activeStyle={linkHoverStyle}>Home</Link></li>

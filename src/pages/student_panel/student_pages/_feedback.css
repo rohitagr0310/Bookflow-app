@@ -1,48 +1,39 @@
-/* FeedbackForm.css */
-
+/* src/FeedbackForm.css */
 .feedback-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
-}
-
-.form-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .feedback-form {
-  width: 400px;
+  width: 80%;
+  max-width: 400px;
+  background-color: #f4f4f4;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.feedback-form label {
+label {
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
-.feedback-form input,
-.feedback-form textarea {
+textarea {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  resize: vertical;
 }
 
-.submit-button {
+button {
   background-color: #007bff;
   color: #fff;
-  padding: 10px 20px;
   border: none;
+  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
 }
