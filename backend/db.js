@@ -1,4 +1,4 @@
-import { createPool } from "mysql2";
+import { createPool } from "mysql";
 
 import { configDotenv } from "dotenv";
 configDotenv({ path: "./.env" });

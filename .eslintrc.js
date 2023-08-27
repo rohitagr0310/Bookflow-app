@@ -43,7 +43,7 @@ module.exports = {
     eqeqeq: "error",
 
     // Enforce a maximum line length to improve readability
-    "max-len": ["error", { code: 120 }],
+    "max-len": ["error", { code: 180 }],
 
     // Require consistent return values in array methods like map and forEach
     "array-callback-return": "error",
