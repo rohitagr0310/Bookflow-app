@@ -1,11 +1,9 @@
-// server/index.js
-
 import statusRoute from "./routes/statusRoute.js";
 import express, { json } from "express";
 import { contentSecurityPolicy } from "helmet";
 import cors from "cors";
 import adminrouter from "./routes/adminRoutes.js";
-// ... (other imports)
+import AuthRouter from "./routes/authRoutes.js";
 
 const app = express();
 
@@ -16,9 +14,11 @@ app.use(json());
 app.get("/", (req, res) => {
   res.send("Welcome to the backend server!");
 });
+
 // API routes
 app.use("/api/status", statusRoute);
 app.use("/api/admin", adminrouter);
+app.use("/auth", AuthRouter);
 
 // Use helmet middleware with CSP settings
 app.use(
