@@ -1,10 +1,13 @@
-import { createPool } from "mysql";
+import { createPool } from "mysql2";
+
+import { configDotenv } from "dotenv";
+configDotenv({ path: "./.env" });
 
 const pool = createPool({
-  host: "localhost",
-  user: "Rohit2610",
-  password: "Rohit@2610",
-  database: "bookflow"
+  host: process.env.REACT_APP_DB_HOST,
+  user: process.env.REACT_APP_DB_USER,
+  password: process.env.REACT_APP_DB_PASSWORD,
+  database: process.env.REACT_APP_DB_DATABASE
 });
 
 export default pool;
