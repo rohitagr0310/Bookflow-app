@@ -43,7 +43,6 @@
 
 .columnTitle {
 	font-weight: bold;
-	margin-bottom: 0.5rem;
 	text-decoration: underline;
 	font-size: 1.2rem;
 }
@@ -52,7 +51,7 @@
 	display: block;
 	color: white;
 	text-decoration: none;
-	margin-bottom: 0.25rem;
+	margin-top: 1rem;
 	font-size: 0.8rem;
 	transition: color 0.3s ease-in-out;
 }
@@ -65,40 +64,11 @@
 	font-size: 0.8rem;
 }
 
-.contactButton {
-	font-size: 0.8rem;
-	cursor: pointer;
-	transition: color 0.3s ease-in-out;
-}
-
-.contactButton:hover {
-	color: #3498db;
-}
-
-.aboutUsButton {
-	cursor: pointer;
-	text-decoration: underline;
-	color: white;
-	transition: color 0.3s ease-in-out;
-}
-
-.aboutUsButton:hover {
-	color: #3498db;
-}
-
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
-.footerText {
-	text-align: center;
-	margin-top: 1rem;
-	font-size: 0.9rem;
-	line-height: 1.5;
-}
-
-.footerLogo {
-	width: 100px;
-	height: auto;
+.logo {
+	padding: 50px 0;
 }
