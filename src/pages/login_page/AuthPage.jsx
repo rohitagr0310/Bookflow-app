@@ -90,8 +90,6 @@ const AuthPage = () => {
   };
 
   const handleSignUp = async (event) => {
-    event.preventDefault(); // Prevent page reload
-
     try {
       const apiUrlSignup = "http://localhost:5000/auth/signup";
 
@@ -106,7 +104,8 @@ const AuthPage = () => {
       if (response.status === 201) {
       // Signup successful code
         console.log("Signup successful:", response.data.message);
-      // You can also navigate the user to the appropriate page here
+        console.log("Navigating to /login");
+        window.location.reload();
       } else {
       // Signup failed, show an error message
         console.error("Signup failed:", response.data.message);
