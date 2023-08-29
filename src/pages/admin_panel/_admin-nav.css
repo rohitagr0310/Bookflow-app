@@ -20,7 +20,7 @@
 }
 
 .header button:hover {
-  color: lightblue;
+  color: rgb(245, 245, 245);
 }
 
 .header-dropdown {
@@ -49,7 +49,7 @@
 }
 
 .header-dropdown a:hover {
-  color: lightblue;
+  color: rgb(243, 243, 243);
 }
 
 /* Styling for sidebar */
@@ -74,7 +74,7 @@
 
 /* Styling for page links */
 .page-links {
-  margin-bottom:auto;
+  margin-bottom: auto;
   margin-top: auto;
 }
 
@@ -125,7 +125,7 @@
   color: lightblue;
 }
 
-.navigation-panel{
+.navigation-panel {
   padding: 0;
 }
 .link-list {

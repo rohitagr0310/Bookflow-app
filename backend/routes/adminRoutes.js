@@ -5,6 +5,10 @@ const adminrouter = Router();
 
 adminrouter.post("/addBook", adminController.addBook);
 
-adminrouter.get("/all-books", adminController.getAllBooks);
+adminrouter.get("/all-books/library", adminController.getAllBookslibrary);
+
+adminrouter.get("/all-books/test", adminController.getAllBookstest);
+
+// adminrouter.get("/all-books/bookbank", adminController.getAllBookslibrary);
 
 export default adminrouter;

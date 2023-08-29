@@ -16,7 +16,7 @@ const adminController = {
     });
   },
 
-  getAllBooks: (req, res) => {
+  getAllBookslibrary: (req, res) => {
     pool.query("SELECT * FROM library limit 50", (error, results) => {
       if (error) {
         console.error("Error fetching books:", error);
@@ -25,8 +25,29 @@ const adminController = {
         res.status(200).json(results);
       }
     });
-  }
+  },
 
+  getAllBookstest: (req, res) => {
+    pool.query("SELECT * FROM test limit 50", (error, results) => {
+      if (error) {
+        console.error("Error fetching books:", error);
+        res.status(500).json({ error: "An error occurred" });
+      } else {
+        res.status(200).json(results);
+      }
+    });
+  },
+
+  getAllBooksbank: (req, res) => {
+    pool.query("SELECT * FROM bookbank limit 50", (error, results) => {
+      if (error) {
+        console.error("Error fetching books:", error);
+        res.status(500).json({ error: "An error occurred" });
+      } else {
+        res.status(200).json(results);
+      }
+    });
+  }
 };
 
 export default adminController;

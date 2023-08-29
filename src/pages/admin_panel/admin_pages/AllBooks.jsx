@@ -3,9 +3,14 @@ import axios from "axios";
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
+  const [selectedTable, setSelectedTable] = useState("library");
 
   useEffect(() => {
-    const apiUrl = "http://localhost:5000/api/admin/all-books";
+    fetchBooks(selectedTable);
+  }, [selectedTable]);
+
+  const fetchBooks = (table) => {
+    const apiUrl = `http://localhost:5000/api/admin/all-books/${table}`;
 
     axios.get(apiUrl)
       .then(response => {
@@ -13,13 +18,22 @@ const AllBooks = () => {
         setBooks(response.data);
       })
       .catch(error => {
-        console.error("Error fetching books:", error);
+        console.error(`Error fetching books from ${table}:`, error);
       });
-  }, []);
+  };
 
   return (
     <div>
       <h2>All Books</h2>
+      <label htmlFor="tableSelect">Select Table: </label>
+      <select
+        id="tableSelect"
+        value={selectedTable}
+        onChange={(e) => setSelectedTable(e.target.value)}
+      >
+        <option value="library">Library</option>
+        <option value="test">test</option>
+      </select>
       <table>
         <thead>
           <tr>
