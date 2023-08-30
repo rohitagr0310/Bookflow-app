@@ -54,7 +54,7 @@
 /* Styling for sidebar */
 .sidebar {
   position: fixed;
-  top: 100px;
+  top: 40px;
   left: 0;
   width: 200px;
   height: 100%;
@@ -73,7 +73,7 @@
 
 /* Styling for page links */
 .page-links {
-  margin-bottom:auto;
+  margin-bottom: auto;
   margin-top: auto;
 }
 
@@ -124,7 +124,7 @@
   color: lightblue;
 }
 
-.navigation-panel{
+.navigation-panel {
   padding: 0;
 }
 .link-list {
