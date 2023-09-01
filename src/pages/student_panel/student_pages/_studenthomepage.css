@@ -1,0 +1,61 @@
+/* Assuming you have a CSS file named 'StudentHomepage.css' */
+
+/* Style for the entire page */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style for the welcome heading */
+.heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style for the book grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Style for individual book cards */
+.book-card {
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  background-color: #fff;
+}
+
+.book-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.book-title {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.book-author {
+  font-size: 14px;
+  color: #888;
+}
+
+.book-description {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.book-availability {
+  font-size: 14px;
+  margin-top: 10px;
+  color: green;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}

@@ -11,11 +11,17 @@ import LoginIcon from "@mui/icons-material/Login";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz"; // New icon
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./_AuthPage.css";
+import axios from "axios";
+import TimedPopup from "../../components/timedpopup/TimedPopup";
 
 const theme = createTheme();
 
 const AuthPage = () => {
   const navigate = useNavigate();
+  const [successPopupOpen, setSuccessPopupOpen] = useState(false);
+  const [errorPopupOpen, setErrorPopupOpen] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [popupSeverity, setPopupSeverity] = useState("success");
 
   const [loginData, setLoginData] = useState({
     loginEmail: "",
@@ -24,6 +30,7 @@ const AuthPage = () => {
 
   const [signupData, setSignupData] = useState({
     name: "",
+    rollnumber: "",
     signupEmail: "",
     signupPassword: "",
     confirmPassword: ""
@@ -53,25 +60,68 @@ const AuthPage = () => {
     }));
   };
 
-  const handleSignIn = () => {
-    // Simulated authentication logic for demonstration
-    const adminEmail = "admin@bookflow.com";
-    const adminPassword = "admin123";
+  const handleSignIn = async () => {
+    event.preventDefault();
+    try {
+      const apiUrlLogin = "http://localhost:5000/auth/login";
 
-    const studentEmail = "student@bookflow.com";
-    const studentPassword = "student123";
+      const response = await axios.post(apiUrlLogin, {
+        email: loginData.loginEmail,
+        password: loginData.loginPassword
+      });
 
-    if (loginData.loginEmail === adminEmail && loginData.loginPassword === adminPassword) {
-      navigate("/admin");
-    } else if (loginData.loginEmail === studentEmail && loginData.loginPassword === studentPassword) {
-      navigate("/student");
+      if (response.status === 200) {
+        const userType = response.data.userType;
+        const token = response.data.token;
+
+        // Store the token in local storage or state
+        localStorage.setItem("token", token);
+
+        // Navigate based on the userType
+        if (userType === "A") {
+          navigate("/admin");
+        } else if (userType === "U") {
+          navigate("/student");
+        } else {
+          console.error("Unknown user type:", userType);
+        }
+      } else {
+      // Login failed, show an error message
+        console.error(response.data.message);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
     }
   };
 
-  const handleSignUp = (event) => {
-    event.preventDefault();
-    // Perform signup logic here using the signupData
-    console.log("Sign Up form data submitted:", signupData);
+  const handleSignUp = async (event) => {
+    try {
+      const apiUrlSignup = "http://localhost:5000/auth/signup";
+
+      const response = await axios.post(apiUrlSignup, {
+        name: signupData.name,
+        rollnumber: signupData.rollnumber,
+        email: signupData.signupEmail,
+        password: signupData.signupPassword,
+        confirmPassword: signupData.confirmPassword
+      });
+
+      if (response.status === 201) {
+      // Signup successful code
+        console.log("Signup successful:", response.data.message);
+        setPopupMessage("User registered successfully!");
+        setPopupSeverity("success");
+        setSuccessPopupOpen(true);
+      } else {
+      // Signup failed, show an error message
+        console.error("Signup failed:", response.data.message);
+        setPopupMessage("Registration failed. Please try again.");
+        setPopupSeverity("error");
+        setErrorPopupOpen(true);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   const handleToggleForm = () => {
@@ -145,6 +195,16 @@ const AuthPage = () => {
                     required
                   />
                   <TextField
+                    label="Roll Number"
+                    name="rollnumber"
+                    value={signupData.rollnumber}
+                    onChange={handleSignupChange}
+                    fullWidth
+                    margin="normal"
+                    variant="outlined"
+                    required
+                  />
+                  <TextField
                     label="Email"
                     name="signupEmail"
                     value={signupData.signupEmail}
@@ -177,7 +237,7 @@ const AuthPage = () => {
                     required
                     type="password"
                   />
-                  <Button type="submit" className="submitButton" variant="contained" color="primary">
+                  <Button type="submit" className="submitButton" variant="contained" color="primary" onClick={handleSignUp}>
                   Sign Up
                   </Button>
                 </form>
@@ -190,6 +250,18 @@ const AuthPage = () => {
           </div>
         </div>
       </div>
+      <TimedPopup
+        open={successPopupOpen}
+        onClose={() => setSuccessPopupOpen(false)}
+        message={popupMessage}
+        severity={popupSeverity}
+      />
+      <TimedPopup
+        open={errorPopupOpen}
+        onClose={() => setErrorPopupOpen(false)}
+        message={popupMessage}
+        severity={popupSeverity}
+      />
     </ThemeProvider>
   );
 };

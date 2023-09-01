@@ -54,6 +54,10 @@
   margin-top: 20px;
   font-size: 18px;
 }
-.admin-content{
+.admin-content {
   text-align: center;
+}
+
+.admin-panel {
+  background-color: white;
 }

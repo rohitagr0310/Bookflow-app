@@ -1,20 +1,5 @@
-/* AddBook.css */
-body {
-  background: linear-gradient(135deg, #5f6bc0, #7d97c9);
-  background-size: 400% 400%; /* Adjust gradient size as needed */
-  animation: gradientAnimation 3s infinite alternate; /* Add animation for a dynamic effect */
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 5% 5%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 .account-container {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   background-color: rgb(197, 223, 248);
