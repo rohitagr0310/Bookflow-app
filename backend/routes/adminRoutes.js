@@ -3,7 +3,9 @@ import adminController from "../controllers/adminController.js";
 
 const adminrouter = Router();
 
-adminrouter.post("/addBook", adminController.addBook);
+adminrouter.post("/add-Book/test", adminController.addBookTest);
+
+adminrouter.post("/add-Book/library", adminController.addBookLibrary);
 
 adminrouter.get("/all-books/library", adminController.getAllBookslibrary);
 

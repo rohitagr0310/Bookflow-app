@@ -29,7 +29,6 @@ const AdminNav = () => {
           <li><Link to="/admin/manage-std" style={linkStyle} activeStyle={linkHoverStyle}>Manage Students</Link></li>
           <li><Link to="/admin/issued-book" style={linkStyle} activeStyle={linkHoverStyle}>Issued Books</Link></li>
           <li><Link to="/admin/all-book" style={linkStyle} activeStyle={linkHoverStyle}>All Books</Link></li>
-          <li><Link to="/admin/account" style={linkStyle} activeStyle={linkHoverStyle}>Account</Link></li>
           <li><Link to="../login" style={linkStyle} activeStyle={linkHoverStyle}>Logout</Link></li>
         </ul>
       </nav>
