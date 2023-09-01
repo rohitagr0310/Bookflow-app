@@ -9,7 +9,6 @@ import AuthPage from "./pages/login_page/AuthPage.jsx";
 import AdminPanel from "./pages/admin_panel/AdminPanel.jsx";
 import StudentPanel from "./pages/student_panel/StudentPanel.jsx";
 import Footer from "./components/footer/Footer.jsx";
-import AdminAccount from "./pages/admin_panel/admin_pages/AdminAccount.jsx";
 import AddBook from "./pages/admin_panel/admin_pages/AddBook.jsx";
 import ManageStudents from "./pages/admin_panel/admin_pages/ManageStudents.jsx";
 import IssuedBooks from "./pages/admin_panel/admin_pages/IssuedBooks.jsx";
@@ -48,7 +47,6 @@ function App () {
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<AuthPage />} />
             <Route path="admin" element={<AdminPanel />} >
-              <Route path="account" element={<AdminAccount />} />
               <Route path="add-book" element={<AddBook />} />
               <Route path="all-book" element={<AllBooks />} />
               <Route path="manage-std" element={<ManageStudents />} />
