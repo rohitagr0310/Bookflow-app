@@ -159,8 +159,19 @@
 		font-size: 0.8rem;
 	}
 }
-
 .page {
 	padding-left: 0px;
 	padding-right: 0px;
+}
+/* New section class without padding and margin */
+.section-no-padding-margin {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
