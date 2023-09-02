@@ -31,7 +31,7 @@ const HomePage = () => {
     <ThemeProvider theme={theme}>
       <div className="root">
         <Header />
-        <Container>
+        <Container className="page">
           <section
             className="section"
             style={{

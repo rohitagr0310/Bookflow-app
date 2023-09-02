@@ -1,7 +1,7 @@
 /* Styling for the root container */
 /* Styling for the background container */
 .root {
-	background-color: rgb(242,246,248);
+	background-color: rgb(242, 246, 248);
 	background-size: cover;
 	background-position: center;
 	min-height: 100vh;
@@ -34,7 +34,6 @@
 
 /* Styling for sections */
 .section {
-	margin: 64px 0; /* You can adjust this value */
 	text-align: center;
 }
 
@@ -47,7 +46,7 @@
 	text-shadow: 0 1px 7px rgba(0, 0, 0, 1);
 	background-color: #000000;
 	border-radius: 10px; /* Add rounded corners to the section */
-  	padding: 1px; /* Add padding to the section */
+	padding: 1px; /* Add padding to the section */
 	box-shadow: none;
 }
 /* Styling for section content */
@@ -81,50 +80,49 @@
 }
 /* Styling for the testimonial cards container */
 .testimonialCardContainer {
-  display: flex;
-  justify-content: center; /* Center the testimonials horizontally */
-  overflow-x: auto; /* Add horizontal scroll if needed */
-  gap: 32px;
-  margin-top: 32px;
-  padding-bottom: 16px; /* Add some space at the bottom to prevent horizontal scroll */
+	display: flex;
+	justify-content: center; /* Center the testimonials horizontally */
+	overflow-x: auto; /* Add horizontal scroll if needed */
+	gap: 32px;
+	margin-top: 32px;
+	padding-bottom: 16px; /* Add some space at the bottom to prevent horizontal scroll */
 }
 
 /* Styling for individual testimonial card */
 .testimonialCard {
-  width: 300px; /* Adjust the width as needed */
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-  background-color: #f0f0f0; /* Background color for the card */
+	width: 300px; /* Adjust the width as needed */
+	padding: 24px;
+	border-radius: 16px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	transition: transform 0.3s ease-in-out;
+	background-color: #f0f0f0; /* Background color for the card */
 }
 
 /* Hover effect for testimonial card */
 .testimonialCard:hover {
-  transform: translateY(-5px);
-  background-color: #ffffff; /* Change background color on hover */
+	transform: translateY(-5px);
+	background-color: #ffffff; /* Change background color on hover */
 }
 
 /* Styling for testimonial content */
 .testimonialContent {
-  color: #000;
-  font-style: italic;
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 16px;
+	color: #000;
+	font-style: italic;
+	font-size: 1rem;
+	text-align: center;
+	margin-top: 16px;
 }
 
 /* Styling for testimonial names */
 .testimonialName {
-  font-weight: bold;
-  margin-top: 16px;
+	font-weight: bold;
+	margin-top: 16px;
 }
 
 /* Add this media query at the end of your CSS file to adjust styles for mobile screens */
 @media (max-width: 768px) {
 	.section {
-		margin: 32px 0;
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -160,4 +158,9 @@
 	.testimonialContent {
 		font-size: 0.8rem;
 	}
+}
+
+.page {
+	padding-left: 0px;
+	padding-right: 0px;
 }
