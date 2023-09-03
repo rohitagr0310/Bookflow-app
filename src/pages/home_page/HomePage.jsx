@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "@mui/material/Container";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material/styles";
 import Header from "./header/Header";
 import "./_HomePage.css";
 import background1 from "../../images/background1.jpg";
@@ -8,21 +8,36 @@ import background2 from "../../images/background2.jpg";
 import background3 from "../../images/background3.jpg";
 import background4 from "../../images/background4.jpg";
 
-const theme = createTheme();
+let theme = createTheme();
+
+theme = responsiveFontSizes(theme); // Optionally, enable responsive font sizes
+
+theme = createTheme({
+  ...theme,
+  overrides: {
+    MuiContainer: {
+      root: {
+        [theme.breakpoints.up("sm")]: {
+          padding: 0 // Set padding to zero for screens wider than 600px
+        }
+      }
+    }
+  }
+});
 
 const HomePage = () => {
   const testimonials = [
     {
-      name: "Qaidjohar Jukker",
+      name: "Qaidjohar Jukker(jordy)",
       quote: "This website changed my life. I can't believe how amazing it is!"
     },
     {
-      name: "Ankit Haga",
+      name: "Ankit Kangaale",
       quote:
         "I've been using this website for years, and it never disappoints."
     },
     {
-      name: "Haga Jayesh",
+      name: "Jayesh",
       quote:
         "The content on this website is top-notch. I recommend it to everyone."
     }
@@ -31,9 +46,9 @@ const HomePage = () => {
     <ThemeProvider theme={theme}>
       <div className="root">
         <Header />
-        <Container>
+        <Container className="page">
           <section
-            className="section"
+            className="section-no-padding-margin"
             style={{
               backgroundImage: `url(${background1})`,
               backgroundSize: "cover",
@@ -41,6 +56,7 @@ const HomePage = () => {
               height: "70vh"
             }}
           >
+            {/* Section content */}
           </section>
           <section
             className="section"
