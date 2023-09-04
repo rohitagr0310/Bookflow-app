@@ -73,7 +73,6 @@ const AuthPage = () => {
       if (response.status === 200) {
         const userType = response.data.userType;
         const token = response.data.token;
-
         // Store the token in local storage or state
         localStorage.setItem("token", token);
 
@@ -90,6 +89,9 @@ const AuthPage = () => {
         console.error(response.data.message);
       }
     } catch (error) {
+      setPopupMessage(error.message);
+      setPopupSeverity("success");
+      setSuccessPopupOpen(true);
       console.error("An error occurred:", error);
     }
   };
