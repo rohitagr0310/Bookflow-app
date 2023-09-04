@@ -17,7 +17,7 @@ const HomePage = () => {
       quote: "I've been using this website for years, and it never disappoints."
     },
     {
-      name: "Jayesh Jadhav",
+      name: "Anishka Jain",
       quote: "The content on this website is top-notch. I recommend it to everyone."
     }
   ];
