@@ -1,10 +1,4 @@
 /* AddBook.css */
-body {
-  background: linear-gradient(135deg, #5f6bc0, #7d97c9);
-  background-size: 400% 400%; /* Adjust gradient size as needed */
-  animation: gradientAnimation 3s infinite alternate; /* Add animation for a dynamic effect */
-}
-
 @keyframes gradientAnimation {
   0% {
     background-position: 5% 5%;

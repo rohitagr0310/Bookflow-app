@@ -13,9 +13,11 @@
   border: none;
   color: white;
   cursor: pointer;
-  margin-right: 10px;
   font-size: 16px;
   transition: color 0.3s ease;
+  margin-left: 20px;
+  padding: 10px;
+  width: auto;
 }
 
 .header button:hover {
@@ -29,7 +31,6 @@
   background-color: #333;
   color: white;
   border-radius: 5px;
-  padding: px;
   display: none;
   z-index: 1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -54,7 +55,7 @@
 /* Styling for sidebar */
 .sidebar {
   position: fixed;
-  top: 100px;
+  top: 118px;
   left: 0;
   width: 200px;
   height: 100%;
@@ -133,7 +134,7 @@
 }
 
 .link-list li {
-  margin-bottom: 10px; /* Remove the previous spacing */
+  margin-bottom: 50px; /* Remove the previous spacing */
 }
 
 .link {

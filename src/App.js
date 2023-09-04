@@ -20,6 +20,7 @@ import History from "./pages/student_panel/student_pages/History.jsx";
 import Search from "./pages/student_panel/student_search/Search.jsx";
 import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
+import ContactUs from "./pages/home_page/ContactUs.jsx";
 
 /*
  * Main component for the application.
@@ -46,6 +47,7 @@ function App () {
           <CssBaseline />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="contact-us" element={<ContactUs />} />
             <Route path="login" element={<AuthPage />} />
             <Route path="admin" element={<AdminPanel />} >
               <Route path="account" element={<AdminAccount />} />
