@@ -9,8 +9,11 @@
 .sectionContent {
 	text-align: center;
 	padding: 50px 80px;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	min-height: 100%;
 }
 
 /* Styling for section headings */
@@ -19,7 +22,7 @@
 	font-size: 2.5rem;
 	font-weight: bold;
 	text-shadow: 0 1px 7px rgba(0, 0, 0, 1);
-	border-radius: 10px; /* Add rounded corners to the section */
+	border-radius: 10px;
 	box-shadow: none;
 	padding-bottom: 50px;
 }

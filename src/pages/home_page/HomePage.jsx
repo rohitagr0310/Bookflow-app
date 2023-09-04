@@ -32,7 +32,6 @@ const HomePage = () => {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            width: "100vw",
             height: "100vh"
           }}
         >
@@ -55,7 +54,6 @@ const HomePage = () => {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            width: "100vw",
             height: "100vh"
           }}
         ></section>
@@ -67,7 +65,6 @@ const HomePage = () => {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            width: "100vw",
             height: "100vh"
           }}
         ></section>
@@ -79,7 +76,6 @@ const HomePage = () => {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            width: "100vw",
             height: "100vh"
           }}
         ></section>

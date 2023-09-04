@@ -1,17 +1,18 @@
 .appBar {
 	background: rgba(52, 0, 52, 0.9) !important;
+	padding: 7px 0px;
 }
 
 .headerText {
 	flex-grow: 1;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 1.5rem;
-	padding-left: 16px;
+	padding-left: 50px;
 }
 
 .headerLink {
 	text-decoration: none;
 	color: inherit;
+	font-size: 1.6rem;
 	transition: color 0.3s ease-in-out;
 }
 
@@ -22,11 +23,11 @@
 .loginLink {
 	text-decoration: none;
 	color: inherit;
-	font-size: 1rem;
-	margin-left: 16px;
+	font-size: 1.2rem;
 	border: none;
-	padding: 8px 16px;
-	border-radius: 4px;
+	padding: 7px 21px;
+	margin-right: 29px;
+	border-radius: 5px;
 	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
