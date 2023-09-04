@@ -28,14 +28,26 @@ const HomePage = () => {
         <section
           className="section"
           style={{
-            backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 1)), url(${background1})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${background1})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             width: "100vw",
             height: "100vh"
           }}
-        ></section>
+        >
+          <div className="sectionContent">
+            <h1 className="sectionHeading">Welcome to BookFlow: Your Literary Oasis!</h1>
+            <p className="sectionText">
+              Step into a world where pages breathe life into imagination and stories dance with every click. BookFlow invites you to embark on a literary journey like no other. Whether you&apos;re a passionate reader or a diligent administrator, our
+              webapp is your gateway to boundless realms of knowledge and creativity. Dive into a sea of meticulously cataloged books, a treasure trove that spans genres, continents, and centuries. Admins, take the helm and navigate with ease,
+              managing your library&apos;s every facet. Readers, discover new horizons, connect with fellow bibliophiles, and embark on literary adventures together. With BookFlow, literature comes to life, and your journey begins here. Welcome home.
+            </p>
+            <p className="sectionText">We are a one-stop destination for all your book needs.</p>
+            <p className="sectionText">We have a wide range of books for you to choose from.</p>
+            <p className="sectionText">Your search for the best books ends here...</p>
+          </div>
+        </section>
         <section
           className="section"
           style={{

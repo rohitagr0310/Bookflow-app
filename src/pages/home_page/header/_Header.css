@@ -1,11 +1,10 @@
 .appBar {
-	background-color: #1976d2;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	background: rgba(52, 0, 52, 0.9) !important;
 }
 
 .headerText {
 	flex-grow: 1;
-	font-family: "Arial", sans-serif;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.5rem;
 	padding-left: 16px;
 }
@@ -17,7 +16,7 @@
 }
 
 .headerLink:hover {
-	color: #64b5f6;
+	color: rgb(85, 241, 255);
 }
 
 .loginLink {
@@ -32,6 +31,5 @@
 }
 
 .loginLink:hover {
-	background-color: white;
-	color: #1976d2;
+	background-color: rgba(255, 255, 255, 0.12);
 }

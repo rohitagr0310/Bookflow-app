@@ -1,7 +1,4 @@
 .root {
-	background-color: rgb(242, 246, 248);
-	background-size: cover;
-	background-position: center;
 	min-height: 100vh;
 	flex-direction: column;
 	justify-content: center;
@@ -9,64 +6,30 @@
 	position: relative;
 }
 
-/* Styling for the main heading */
-.mainHeading {
-	color: transparent;
+.sectionContent {
 	text-align: center;
-	padding-top: 16px; /* You can adjust this value */
-	padding-bottom: 24px; /* You can adjust this value */
-	-webkit-text-stroke: 1px #eeeded;
-	text-shadow: -3px 5px 3px rgba(0, 0, 0, 1);
-	font-size: 2.5rem; /* You can adjust this value */
-	font-weight: bold;
-}
-
-/* Styling for the content text */
-.contentText {
-	color: #eee9da;
-	margin-bottom: 16px; /* You can adjust this value */
-	text-align: center;
-	font-size: 1rem; /* You can adjust this value */
-}
-
-/* Styling for sections */
-.section {
-	text-align: center;
+	padding: 50px 80px;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Styling for section headings */
 .sectionHeading {
-	color: #fdfdfd;
-	font-size: 2.5rem; /* You can adjust this value */
+	color: #ffffff;
+	font-size: 2.5rem;
 	font-weight: bold;
 	text-shadow: 0 1px 7px rgba(0, 0, 0, 1);
-	background-color: #000000;
 	border-radius: 10px; /* Add rounded corners to the section */
-	padding: 1px; /* Add padding to the section */
 	box-shadow: none;
+	padding-bottom: 50px;
 }
+
 /* Styling for section content */
-.sectionContent {
-	color: #eee9da;
-	margin-bottom: 8px; /* You can adjust this value */
-	padding-top: 16px; /* You can adjust this value */
-	font-size: 1.1rem; /* You can adjust this value */
+.sectionText {
+	color: #e0e0e0;
+	font-size: 1.3rem;
 }
 
-/* Styling for the library image */
-.libraryImage {
-	width: 80%;
-	margin: 50px auto;
-	display: block;
-	border-radius: 16px; /* You can adjust this value */
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* You can adjust this value */
-	transition: transform 0.3s ease-in-out; /* Add a smooth transform transition */
-}
-
-/* Hover effect for the library image */
-.libraryImage:hover {
-	transform: scale(1.05); /* Scale up on hover */
-}
 /* Styling for the testimonial cards container */
 .testimonialCardContainer {
 	display: flex;
