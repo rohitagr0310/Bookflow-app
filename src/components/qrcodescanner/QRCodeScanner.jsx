@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { QrReader } from "react-qr-reader";
 import PropTypes from "prop-types";
 import "./_QRCodeScanner.css";
 
 const QRCodeScanner = ({ onScan }) => {
   const qrReaderRef = useRef(null);
-  const [qrScannerOpen, setQrScannerOpen] = useState(true);
+  const [qrScannerOpen, setQrScannerOpen] = useState(false);
 
   const handleResult = async (result, error) => {
     if (result) {
@@ -19,9 +19,12 @@ const QRCodeScanner = ({ onScan }) => {
     }
   };
 
-  useEffect(() => {
-    qrReaderRef.current?.openImageDialog(); // Open the scanner immediately
-  }, []); // Run this effect only once on initial render
+  const toggleScanner = () => {
+    if (qrReaderRef.current) {
+      qrReaderRef.current.clear();
+    }
+    setQrScannerOpen(!qrScannerOpen);
+  };
 
   const closeScanner = () => {
     if (qrReaderRef.current) {
@@ -32,6 +35,9 @@ const QRCodeScanner = ({ onScan }) => {
 
   return (
     <div className="qr-scanner">
+      <button onClick={toggleScanner}>
+        {qrScannerOpen ? "Close Scanner" : "Open Scanner"}
+      </button>
       {qrScannerOpen && (
         <div className="qr-reader-container">
           <QrReader
@@ -42,7 +48,6 @@ const QRCodeScanner = ({ onScan }) => {
           />
         </div>
       )}
-      {!qrScannerOpen && <div>Scanner closed. Component will unmount.</div>}
     </div>
   );
 };
