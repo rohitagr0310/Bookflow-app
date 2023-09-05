@@ -47,11 +47,11 @@ function ContactUs () {
     5: "Excellent+"
   };
   /**
- * Get the label text for a given rating value.
- *
- * @param {number} value - The rating value.
- * @returns {string} The label text.
- */
+   * Get the label text for a given rating value.
+   *
+   * @param {number} value - The rating value.
+   * @returns {string} The label text.
+   */
   function getLabelText (value) {
     return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
   }
@@ -78,69 +78,42 @@ function ContactUs () {
       </div>
 
       <div className="white"></div>
+
       <h2 className="feedback">Feedback Form</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
         </div>
         <div>
           <label htmlFor="email">Email: </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
         </div>
+
+        <Box className="rating">
+          <Rating
+            name="size-large"
+            size="large"
+            value={value}
+            precision={0.5}
+            getLabelText={getLabelText}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+            onChangeActive={(event, newHover) => {
+              setHover(newHover);
+            }}
+            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+          />
+          {value !== null && <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>}
+        </Box>
+
         <div>
           <label htmlFor="message">Feedback: </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
+          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required></textarea>
         </div>
         <button type="submit">Submit</button>
       </form>
-
-      <Box className="rating"
-        sx={{
-          width: 200,
-          display: "flex",
-          alignItems: "center"
-        }}
-      >
-        <Rating
-
-          name="size-large"
-          size="large"
-          value={value}
-          precision={0.5}
-          getLabelText={getLabelText}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-          onChangeActive={(event, newHover) => {
-            setHover(newHover);
-          }}
-          emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
-        />
-        {value !== null && (
-          <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-        )}
-      </Box>
     </div>
   );
 }
