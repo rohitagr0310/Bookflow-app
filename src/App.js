@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable require-jsdoc */
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -27,22 +27,11 @@ import ContactUs from "./pages/home_page/ContactUs.jsx";
  * @returns {JSX.Element} The rendered component.
  */
 function App () {
-  const [backendStatus, setBackendStatus] = useState("");
-
   const theme = createTheme();
-  useEffect(() => {
-    fetch("http://localhost:5000/api/status")
-      .then(response => response.json())
-      .then(data => setBackendStatus(data))
-      .catch(error => console.error("Error connecting to backend:", error));
-  }, []);
 
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <div>
-          <p>Backend Status: {backendStatus.message}</p>
-        </div>
         <div className="App">
           <CssBaseline />
           <Routes>
