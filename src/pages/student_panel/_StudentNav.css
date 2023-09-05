@@ -15,9 +15,6 @@
   cursor: pointer;
   font-size: 16px;
   transition: color 0.3s ease;
-  margin-left: 20px;
-  padding: 10px;
-  width: auto;
 }
 
 .header button:hover {
@@ -55,7 +52,7 @@
 /* Styling for sidebar */
 .sidebar {
   position: fixed;
-  top: 118px;
+  top: 40px;
   left: 0;
   width: 200px;
   height: 100%;

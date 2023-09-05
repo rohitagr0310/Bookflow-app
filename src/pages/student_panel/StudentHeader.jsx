@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import ClearAllSharpIcon from "@mui/icons-material/ClearAllSharp";
 import StudentNav from "./StudentNav.jsx";
-// import "./_StudentHeader.css"; // Correctly reference the CSS file
+import QrCodeScannerRoundedIcon from "@mui/icons-material/QrCodeScannerRounded";
+import QRCodeScanner from "../../components/qrcodescanner/QRCodeScanner";
+import PropTypes from "prop-types";
+import "./_StudentHeader.css";
 
 const StudentHeader = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
