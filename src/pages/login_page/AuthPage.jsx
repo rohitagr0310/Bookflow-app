@@ -12,16 +12,11 @@ import SwapHorizIcon from "@mui/icons-material/SwapHoriz"; // New icon
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./_AuthPage.css";
 import axios from "axios";
-import TimedPopup from "../../components/timedpopup/TimedPopup";
 
 const theme = createTheme();
 
 const AuthPage = () => {
   const navigate = useNavigate();
-  const [successPopupOpen, setSuccessPopupOpen] = useState(false);
-  const [errorPopupOpen, setErrorPopupOpen] = useState(false);
-  const [popupMessage, setPopupMessage] = useState("");
-  const [popupSeverity, setPopupSeverity] = useState("success");
 
   const [loginData, setLoginData] = useState({
     loginEmail: "",
@@ -95,6 +90,8 @@ const AuthPage = () => {
   };
 
   const handleSignUp = async (event) => {
+    event.preventDefault(); // Prevent page reload
+
     try {
       const apiUrlSignup = "http://localhost:5000/auth/signup";
 
@@ -109,15 +106,10 @@ const AuthPage = () => {
       if (response.status === 201) {
       // Signup successful code
         console.log("Signup successful:", response.data.message);
-        setPopupMessage("User registered successfully!");
-        setPopupSeverity("success");
-        setSuccessPopupOpen(true);
+      // You can also navigate the user to the appropriate page here
       } else {
       // Signup failed, show an error message
         console.error("Signup failed:", response.data.message);
-        setPopupMessage("Registration failed. Please try again.");
-        setPopupSeverity("error");
-        setErrorPopupOpen(true);
       }
     } catch (error) {
       console.error("An error occurred:", error);
@@ -250,18 +242,6 @@ const AuthPage = () => {
           </div>
         </div>
       </div>
-      <TimedPopup
-        open={successPopupOpen}
-        onClose={() => setSuccessPopupOpen(false)}
-        message={popupMessage}
-        severity={popupSeverity}
-      />
-      <TimedPopup
-        open={errorPopupOpen}
-        onClose={() => setErrorPopupOpen(false)}
-        message={popupMessage}
-        severity={popupSeverity}
-      />
     </ThemeProvider>
   );
 };

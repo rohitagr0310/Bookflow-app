@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./_add-book.css";
 import axios from "axios";
 
@@ -22,11 +22,6 @@ const AddBook = () => {
   const [purchaseCost, setPurchaseCost] = useState("");
   const [keyword, setKeyword] = useState("");
   const [qrCode, setQRCode] = useState("");
-  const [selectedTable, setSelectedTable] = useState("test");
-
-  useEffect(() => {
-    handleAddBook(selectedTable);
-  }, [selectedTable]);
 
   const handleAddBook = () => {
     const bookData = {
@@ -50,10 +45,28 @@ const AddBook = () => {
       keyword,
       qrCode
     };
+    console.log("Book added:", {
+      accessionType,
+      accessionNumber,
+      accessionPrefix,
+      accessionDate,
+      bookTitle,
+      authorFirst,
+      authorSecond,
+      publisher,
+      year,
+      pages,
+      subject,
+      language,
+      edition,
+      vendor,
+      billNo,
+      purchaseDate,
+      purchaseCost,
+      keyword
+    });
 
-    const apiUrl = `http://localhost:5000/api/admin/add-book/${selectedTable}`;
-
-    axios.post(apiUrl, bookData) // Send data to the server
+    axios.post("/add-book", bookData) // Send data to the server
       .then(response => {
         console.log("Book added successfully:", response.data);
         // Clear input fields
@@ -85,13 +98,6 @@ const AddBook = () => {
   return (
     <div className="add-book-container">
       <h1>Add Book Page</h1>
-      <div className="input-group">
-        <label>Select Table:</label>
-        <select value={selectedTable} onChange={(e) => setSelectedTable(e.target.value)}>
-          <option value="test">test</option>
-          <option value="library">Library</option>
-        </select>
-      </div>
       <div className="input-group">
         <label>Accession Type:</label>
         <input type="text" value={accessionType} onChange={(e) => setAccessionType(e.target.value)} />
