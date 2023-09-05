@@ -7,7 +7,7 @@ import "./_Header.css";
 
 const Header = () => {
   return (
-    <AppBar className="appBar" position="static">
+    <AppBar className="appBar">
       <Toolbar>
         <Typography variant="h6" className="headerText">
           <Link to="/" className="headerLink">
