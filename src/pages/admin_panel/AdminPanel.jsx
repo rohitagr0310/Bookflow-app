@@ -17,10 +17,10 @@ import Paper from "@mui/material/Paper";
 import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import LogoutIcon from "@mui/icons-material/Logout";
 import { mainListItems } from "./listItems";
 import Deposits from "./Deposits";
-import Orders from "./Orders";
+import Orders from "./pending";
 
 function Copyright (props) {
   return (
@@ -114,8 +114,8 @@ export default function Dashboard () {
               Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
+              <Badge badgeContent={0} color="secondary">
+                <LogoutIcon fontSize="large" />
               </Badge>
             </IconButton>
           </Toolbar>

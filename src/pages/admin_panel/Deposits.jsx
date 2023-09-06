@@ -11,19 +11,50 @@ export default function Deposits () {
   return (
     <React.Fragment>
       <Typography component="h2" variant="h6" color="primary" gutterBottom>
-      Recent Deposit
+      Total books in LIB
       </Typography>
       <Typography component="p" variant="h4">
-        $3,024.00
+        12,000
       </Typography>
       <Typography color="text.secondary" sx={{ flex: 1 }}>
         on 15 March, 2019
       </Typography>
       <div>
         <Link color="primary" href="#" onClick={preventDefault}>
-          View balance
+          View all books
         </Link>
       </div>
+
+      <Typography component="h2" variant="h6" color="primary" gutterBottom>
+      Total books in BB
+      </Typography>
+      <Typography component="p" variant="h4">
+        50,000
+      </Typography>
+      <Typography color="text.secondary" sx={{ flex: 1 }}>
+        on 15 March, 2019
+      </Typography>
+      <div>
+        <Link color="primary" href="#" onClick={preventDefault}>
+          View BB books
+        </Link>
+      </div>
+
+      <Typography component="h2" variant="h6" color="primary" gutterBottom>
+      Currently Issued books
+      </Typography>
+      <Typography component="p" variant="h4">
+        40
+      </Typography>
+      <Typography color="text.secondary" sx={{ flex: 1 }}>
+        on 15 March, 2019
+      </Typography>
+      <div>
+        <Link color="primary" href="#" onClick={preventDefault}>
+          View Issued Books
+        </Link>
+      </div>
+
     </React.Fragment>
   );
 }
