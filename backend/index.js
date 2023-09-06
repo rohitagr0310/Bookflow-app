@@ -1,4 +1,3 @@
-import statusRoute from "./routes/statusRoute.js";
 import express, { json } from "express";
 import { contentSecurityPolicy } from "helmet";
 import cors from "cors";
