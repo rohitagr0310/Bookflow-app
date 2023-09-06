@@ -15,7 +15,6 @@ app.get("/", (req, res) => {
 });
 
 // API routes
-app.use("/api/status", statusRoute);
 app.use("/api/admin", adminrouter);
 app.use("/auth", AuthRouter);
 
