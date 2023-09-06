@@ -1,5 +1,11 @@
+/* Styling for the root container */
+/* Styling for the background container */
 .root {
+	background-color: rgb(242,246,248);
+	background-size: cover;
+	background-position: center;
 	min-height: 100vh;
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -8,82 +14,146 @@
 
 .sectionContent {
 	text-align: center;
-	padding: 50px 80px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	min-height: 100%;
+	padding-top: 16px; /* You can adjust this value */
+	padding-bottom: 24px; /* You can adjust this value */
+	-webkit-text-stroke: 1px #eeeded;
+	text-shadow: -3px 5px 3px rgba(0, 0, 0, 1);
+	font-size: 2.5rem; /* You can adjust this value */
+	font-weight: bold;
+}
+
+/* Styling for the content text */
+.contentText {
+	color: #eee9da;
+	margin-bottom: 16px; /* You can adjust this value */
+	text-align: center;
+	font-size: 1rem; /* You can adjust this value */
+}
+
+/* Styling for sections */
+.section {
+	margin: 64px 0; /* You can adjust this value */
+	text-align: center;
 }
 
 /* Styling for section headings */
 .sectionHeading {
-	color: #ffffff;
-	font-size: 2.5rem;
+	color: #fdfdfd;
+	margin-bottom: 32px; /* You can adjust this value */
+	font-size: 2.5rem; /* You can adjust this value */
 	font-weight: bold;
 	text-shadow: 0 1px 7px rgba(0, 0, 0, 1);
-	border-radius: 10px;
+	background-color: #000000;
+	border-radius: 10px; /* Add rounded corners to the section */
+  	padding: 1px; /* Add padding to the section */
 	box-shadow: none;
 	padding-bottom: 50px;
 }
 
 /* Styling for section content */
-.sectionText {
-	color: #e0e0e0;
-	font-size: 1.3rem;
+.sectionContent {
+	color: #eee9da;
+	margin-bottom: 8px; /* You can adjust this value */
+	padding-top: 16px; /* You can adjust this value */
+	font-size: 1.1rem; /* You can adjust this value */
+}
+/* Styling for the slide images */
+.slide-image {
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+/* Styling for the library image */
+.libraryImage {
+	width: 80%;
+	margin: 50px auto;
+	display: block;
+	border-radius: 16px; /* You can adjust this value */
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* You can adjust this value */
+	transition: transform 0.3s ease-in-out; /* Add a smooth transform transition */
 }
 
 /* Styling for the testimonial cards container */
 .testimonialCardContainer {
-	display: flex;
-	justify-content: center; /* Center the testimonials horizontally */
-	overflow-x: auto; /* Add horizontal scroll if needed */
-	gap: 50px;
-	padding: 100px 0px; /* Add some space at the bottom to prevent horizontal scroll */
+  display: flex;
+  justify-content: center; /* Center the testimonials horizontally */
+  overflow-x: auto; /* Add horizontal scroll if needed */
+  gap: 32px;
+  margin-top: 32px;
+  padding-bottom: 16px; /* Add some space at the bottom to prevent horizontal scroll */
 }
 
+/* Styling for individual testimonial card */
 .testimonialCard {
-	width: 300px;
-	padding: 24px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 16px;
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-	text-align: center;
-	transition: transform 0.3s ease-in-out;
-	background-color: #f0f0f0; /* Background color for the card */
-
-	/* Horizontal alignment for screens wider than 600px */
-}
-
-/* Media query for screens smaller than 600px (vertical alignment) */
-@media (max-width: 600px) {
-	.testimonialCard {
-		width: 250px;
-		flex-direction: column; /* Stack cards vertically on mobile */
-		align-items: center; /* Center content horizontally on mobile */
-		text-align: center; /* Center text content */
-	}
+  width: 300px; /* Adjust the width as needed */
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  background-color: #f0f0f0; /* Background color for the card */
 }
 
 /* Hover effect for testimonial card */
 .testimonialCard:hover {
-	transform: translateY(-5px);
-	background-color: #ffffff; /* Change background color on hover */
+  transform: translateY(-5px);
+  background-color: #ffffff; /* Change background color on hover */
 }
 
 /* Styling for testimonial content */
 .testimonialContent {
-	color: #000;
-	font-style: italic;
-	font-size: 1rem;
-	text-align: center;
-	margin-top: 16px;
+  color: #000;
+  font-style: italic;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 16px;
 }
 
 /* Styling for testimonial names */
 .testimonialName {
-	font-weight: bold;
-	margin-top: 26px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+/* Add this media query at the end of your CSS file to adjust styles for mobile screens */
+@media (max-width: 768px) {
+	.section {
+		margin: 32px 0;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: auto;
+	}
+
+	.libraryImage {
+		width: 100%;
+		max-width: 300px;
+		margin: 32px auto;
+	}
+
+	.mainHeading {
+		font-size: 2rem;
+		padding-top: 8px;
+		padding-bottom: 16px;
+	}
+
+	.sectionHeading {
+		font-size: 1.5rem;
+		margin-bottom: 24px;
+	}
+
+	.sectionContent {
+		font-size: 1rem;
+	}
+
+	.testimonialCard {
+		max-width: 300px;
+		padding: 16px;
+	}
+
+	.testimonialContent {
+		font-size: 0.8rem;
+	}
 }
