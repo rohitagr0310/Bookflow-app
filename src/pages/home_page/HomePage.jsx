@@ -13,11 +13,11 @@ const HomePage = () => {
       quote: "This website changed my life. I can't believe how amazing it is!"
     },
     {
-      name: "Ankit Kangaale",
+      name: "Anshika Jain",
       quote: "I've been using this website for years, and it never disappoints."
     },
     {
-      name: "Jayesh Jadhav",
+      name: "Rohit Agrawal",
       quote: "The content on this website is top-notch. I recommend it to everyone."
     }
   ];
@@ -31,8 +31,7 @@ const HomePage = () => {
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${background1})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            height: "100vh"
+            backgroundPosition: "center"
           }}
         >
           <div className="sectionContent">
@@ -47,14 +46,14 @@ const HomePage = () => {
             <p className="sectionText">Your search for the best books ends here...</p>
           </div>
         </section>
+
         <section
           className="section"
           style={{
             backgroundImage: `linear-gradient(to left, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.8)), url(${background2})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            height: "100vh"
+            backgroundPosition: "center"
           }}
         ></section>
 
@@ -64,8 +63,7 @@ const HomePage = () => {
             backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.8)), url(${background3})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            height: "100vh"
+            backgroundPosition: "center"
           }}
         ></section>
 
@@ -75,27 +73,30 @@ const HomePage = () => {
             backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 1)), url(${background4})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            height: "100vh"
+            backgroundPosition: "center"
           }}
         ></section>
         <section
           className="section testimonialCards"
           style={{
-            backgroundImage: "linear-gradient(to right, #000000, #2e2e2e, #585858, #878787, #b9b9b9, #b9b9b9, #b9b9b9, #b9b9b9, #878787, #585858, #2e2e2e, #000000)",
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 1)), url(${background3})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center"
           }}
         >
-          <h2 className="sectionHeading">What Our Users Say</h2>
-          <div className="testimonialCardContainer">
-            {testimonials.map((testimonial, index) => (
-              <div className="testimonialCard" key={index}>
-                <p className="testimonialContent">{testimonial.quote}</p>
-                <p className="testimonialName">{testimonial.name}</p>
-              </div>
-            ))}
+          <div className="sectionContent">
+            <h2 className="sectionHeading" style={{ letterSpacing: 5 }}>
+              TESTIMONIALS
+            </h2>
+            <div className="testimonialCardContainer">
+              {testimonials.map((testimonial, index) => (
+                <div className="testimonialCard" key={index}>
+                  <p className="testimonialContent">{testimonial.quote}</p>
+                  <p className="testimonialName">{testimonial.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>

@@ -6,6 +6,11 @@
 	position: relative;
 }
 
+section {
+	height: auto;
+	min-height: 90vh;
+}
+
 .sectionContent {
 	text-align: center;
 	padding: 50px 80px;
@@ -14,6 +19,7 @@
 	justify-content: center;
 	align-items: center;
 	min-height: 100%;
+	overflow: auto;
 }
 
 /* Styling for section headings */
@@ -25,6 +31,7 @@
 	border-radius: 10px;
 	box-shadow: none;
 	padding-bottom: 50px;
+	letter-spacing: 1px;
 }
 
 /* Styling for section content */
@@ -36,15 +43,15 @@
 /* Styling for the testimonial cards container */
 .testimonialCardContainer {
 	display: flex;
-	justify-content: center; /* Center the testimonials horizontally */
-	overflow-x: auto; /* Add horizontal scroll if needed */
+	justify-content: center;
+	overflow-x: auto;
 	gap: 50px;
-	padding: 100px 0px; /* Add some space at the bottom to prevent horizontal scroll */
+	padding: 100px 0px;
 }
 
 .testimonialCard {
 	width: 300px;
-	padding: 24px;
+	padding: 25px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -52,18 +59,13 @@
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 	text-align: center;
 	transition: transform 0.3s ease-in-out;
-	background-color: #f0f0f0; /* Background color for the card */
-
-	/* Horizontal alignment for screens wider than 600px */
+	background-color: #f0f0f0;
 }
 
-/* Media query for screens smaller than 600px (vertical alignment) */
 @media (max-width: 600px) {
-	.testimonialCard {
-		width: 250px;
-		flex-direction: column; /* Stack cards vertically on mobile */
-		align-items: center; /* Center content horizontally on mobile */
-		text-align: center; /* Center text content */
+	.testimonialCardContainer {
+		flex-direction: column;
+		align-items: center;
 	}
 }
 
