@@ -1,10 +1,14 @@
 import React from "react";
+import Container from "@mui/material/Container";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Header from "./header/Header";
 import "./_HomePage.css";
-import background1 from "../../images/background.jpg";
+import background1 from "../../images/background1.jpg";
 import background2 from "../../images/background2.jpg";
 import background3 from "../../images/background3.jpg";
 import background4 from "../../images/background4.jpg";
+
+const theme = createTheme();
 
 const HomePage = () => {
   const testimonials = [
