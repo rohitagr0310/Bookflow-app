@@ -13,8 +13,13 @@
 }
 
 section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	height: auto;
-	min-height: 90vh;
+	min-height: 100vh;
+	position: relative;
 }
 
 .sectionContent {
@@ -30,65 +35,58 @@ section {
 
 /* Styling for section headings */
 .sectionHeading {
-	color: #fdfdfd;
+	color: #000000;
 	margin-bottom: 32px; /* You can adjust this value */
 	font-size: 2.5rem; /* You can adjust this value */
 	font-weight: bold;
-	text-shadow: 0 1px 7px rgba(0, 0, 0, 1);
-	background-color: #000000;
-	border-radius: 10px; /* Add rounded corners to the section */
-	padding: 1px; /* Add padding to the section */
+	text-shadow: 0 3px 7px rgba(255, 255, 255, 0.7);
 	box-shadow: none;
 	padding-bottom: 50px;
 	letter-spacing: 1px;
 }
 
-/* Styling for section content */
-.sectionContent {
-	color: #eee9da;
-	margin-bottom: 8px; /* You can adjust this value */
-	padding-top: 16px; /* You can adjust this value */
-	font-size: 1.1rem; /* You can adjust this value */
-}
-/* Styling for the slide images */
-.slide-image {
-	width: 100%;
-	height: auto;
-	max-height: 100%;
-	object-fit: cover;
+.sectionText {
+	color: #495464;
+	font-size: 1.3rem;
+	letter-spacing: 0.5;
+	text-align: left;
 }
 
-/* Styling for the library image */
-.libraryImage {
-	width: 80%;
-	margin: 50px auto;
-	display: block;
-	border-radius: 16px; /* You can adjust this value */
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* You can adjust this value */
-	transition: transform 0.3s ease-in-out; /* Add a smooth transform transition */
+.sectionDivider {
+	width: 50%;
+	height: 3px;
+	margin: auto;
+	background-color: #000;
 }
 
-/* Styling for the testimonial cards container */
 .testimonialCardContainer {
 	display: flex;
 	justify-content: center;
 	overflow-x: auto;
-	gap: 50px;
-	padding: 100px 0px;
+	gap: 180px;
 }
 
-/* Styling for individual testimonial card */
+.quoteImage {
+	width: 50px;
+	height: 50px;
+	margin-left: 16px;
+	color: #dddddd;
+}
+
 .testimonialCard {
 	width: 300px;
 	padding: 25px;
+	margin-top: 10px;
 	display: flex;
+	font-size: 2rem;
 	flex-direction: column;
 	align-items: center;
-	border-radius: 16px;
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-	text-align: center;
+	color: #000;
+	border: #dddddd 5px solid;
+	border-radius: 20px;
 	transition: transform 0.3s ease-in-out;
-	background-color: #f0f0f0;
+	background-color: transparent;
+	border-top-color: transparent;
 }
 
 @media (max-width: 600px) {
@@ -98,17 +96,14 @@ section {
 	}
 }
 
-/* Hover effect for testimonial card */
 .testimonialCard:hover {
 	transform: translateY(-5px);
-	background-color: #ffffff; /* Change background color on hover */
+	background-color: #dddddd;
 }
 
 /* Styling for testimonial content */
 .testimonialContent {
-	color: #000;
 	font-style: italic;
-	font-size: 1rem;
 	text-align: center;
 	margin-top: 16px;
 }
@@ -122,7 +117,6 @@ section {
 /* Add this media query at the end of your CSS file to adjust styles for mobile screens */
 @media (max-width: 768px) {
 	.section {
-		margin: 32px 0;
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
