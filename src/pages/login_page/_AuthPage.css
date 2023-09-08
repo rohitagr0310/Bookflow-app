@@ -84,3 +84,7 @@
 .toggleButtonContainer button:hover {
   color: #ffffff;
 }
+
+.forget{
+  margin: auto;
+}

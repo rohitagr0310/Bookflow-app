@@ -12,11 +12,16 @@ import SwapHorizIcon from "@mui/icons-material/SwapHoriz"; // New icon
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./_AuthPage.css";
 import axios from "axios";
+import "./ForgetPassword";
 
 const theme = createTheme();
 
 const AuthPage = () => {
   const navigate = useNavigate();
+
+  const handleForgotPassword = () => {
+    navigate("/password-reset");
+  };
 
   const [loginData, setLoginData] = useState({
     loginEmail: "",
@@ -171,6 +176,9 @@ const AuthPage = () => {
                     onClick={handleSignIn}
                   >
                   Sign In
+                  </Button>
+                  <Button variant="text" color="primary" className="forget" onClick={handleForgotPassword}>
+                    <Link to="/password-reset">Forgot Password?</Link>
                   </Button>
                 </form>
               )

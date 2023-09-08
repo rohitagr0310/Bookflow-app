@@ -21,6 +21,7 @@ import Search from "./pages/student_panel/student_search/Search.jsx";
 import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
 import ContactUs from "./pages/home_page/ContactUs.jsx";
+import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
 
 /*
  * Main component for the application.
@@ -38,6 +39,7 @@ function App () {
             <Route path="/" element={<HomePage />} />
             <Route path="contact-us" element={<ContactUs />} />
             <Route path="login" element={<AuthPage />} />
+            <Route path="/password-reset" element={<ForgetPassword />} />
             <Route path="admin" element={<AdminPanel />} >
               <Route path="account" element={<AdminAccount />} />
               <Route path="add-book" element={<AddBook />} />
