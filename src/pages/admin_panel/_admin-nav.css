@@ -1,12 +1,18 @@
 /* AdminNavStyle.css */
+
 /* General styling for header and dropdown */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
   color: white;
   padding: 7px 20px;
+  z-index: 100; /* Ensure header stays above content */
 }
 
 .header button {
@@ -20,7 +26,7 @@
 }
 
 .header button:hover {
-  color: lightblue;
+  color: #f5f5f5;
 }
 
 .header-dropdown {
@@ -30,7 +36,7 @@
   background-color: #333;
   color: white;
   border-radius: 5px;
-  padding: px;
+  padding: 8px;
   display: none;
   z-index: 1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -49,13 +55,13 @@
 }
 
 .header-dropdown a:hover {
-  color: lightblue;
+  color: #f3f3f3;
 }
 
 /* Styling for sidebar */
 .sidebar {
   position: fixed;
-  top: 100px;
+  top: 40px;
   left: 0;
   width: 200px;
   height: 100%;
@@ -74,8 +80,7 @@
 
 /* Styling for page links */
 .page-links {
-  margin-bottom:auto;
-  margin-top: auto;
+  margin: auto;
 }
 
 .page-links h3 {
@@ -102,39 +107,15 @@
 .page-links a:hover {
   color: lightblue;
 }
-/* AdminNavStyle.css */
 
+/* Shared styles for link lists */
 .link-list {
   list-style: none;
   padding: 0;
 }
 
 .link-list li {
-  margin-bottom: 10px; /* Adjust spacing between list items */
-}
-
-.link {
-  display: block;
-  padding: 8px 0;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.link:hover {
-  color: lightblue;
-}
-
-.navigation-panel{
-  padding: 0;
-}
-.link-list {
-  list-style: none;
-  padding: 0;
-}
-
-.link-list li {
-  margin-bottom: 10px; /* Remove the previous spacing */
+  margin-bottom: 10px;
 }
 
 .link {

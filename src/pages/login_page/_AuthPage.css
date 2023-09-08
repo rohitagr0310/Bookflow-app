@@ -1,86 +1,86 @@
 .bodyNoMarginPadding {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .appBar {
-  background-color: #1976d2;
+	background-color: rgba(35, 154, 160, 0.7);
 }
 
 .authPageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../../images/loginPage-bg1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 130vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		url(../../images/loginPage-bg1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
 }
 
 .formContainer {
-  background-color: transparent;
-  backdrop-filter: blur(7px);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  margin: auto;
-  color: white;
-  width: 400px;
+	background-color: transparent;
+	backdrop-filter: blur(10px);
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	padding: 20px;
+	margin: auto;
+	color: white;
+	width: 400px;
 }
 
 .formHeader h6 {
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 .formContainer form {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .formContainer form input {
-  color: white;
+	color: white;
 }
 
 .formContainer form label {
-  color: white;
+	color: white;
 }
 
 .formContainer form .submitButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #1976d2;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+	margin-top: 20px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	background-color: #1976d2;
+	color: white;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
 }
 
 .formContainer form .submitButton:hover {
-  background-color: #1565c0;
+	background-color: #1565c0;
 }
 
 .toggleButtonContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
 }
 
 .toggleButtonContainer button {
-  padding: 5px 10px;
-  border: none;
-  background-color: rgba(77, 77, 77, 0.2);
-  border-radius: 12px;
-  color: #52abff;
-  cursor: pointer;
-  transition: color 0.3s ease-in-out;
+	padding: 5px 10px;
+	border: none;
+	background-color: rgba(77, 77, 77, 0.2);
+	border-radius: 12px;
+	color: #52abff;
+	cursor: pointer;
+	transition: color 0.3s ease-in-out;
 }
 
 .toggleButtonContainer button:hover {
-  color: #ffffff;
+	color: #ffffff;
 }
