@@ -11,14 +11,16 @@ import LoginIcon from "@mui/icons-material/Login";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz"; // New icon
 import "./_AuthPage.css";
 import axios from "axios";
-import TimedPopup from "../../components/timedpopup/TimedPopup";
+import "./ForgetPassword";
+
+const theme = createTheme();
 
 const AuthPage = () => {
   const navigate = useNavigate();
-  const [successPopupOpen, setSuccessPopupOpen] = useState(false);
-  const [errorPopupOpen, setErrorPopupOpen] = useState(false);
-  const [popupMessage, setPopupMessage] = useState("");
-  const [popupSeverity, setPopupSeverity] = useState("success");
+
+  const handleForgotPassword = () => {
+    navigate("/password-reset");
+  };
 
   const [loginData, setLoginData] = useState({
     loginEmail: "",
@@ -150,6 +152,9 @@ const AuthPage = () => {
                   <TextField label="Password" type="password" placeholder="Password" variant="outlined" value={loginData.loginPassword} onChange={handleLoginPasswordChange} fullWidth margin="normal" required />
                   <Button endIcon={<LoginIcon />} type="submit" className="submitButton" variant="contained" color="primary" onClick={handleSignIn}>
                   Sign In
+                  </Button>
+                  <Button variant="text" color="primary" className="forget" onClick={handleForgotPassword}>
+                    <Link to="/password-reset">Forgot Password?</Link>
                   </Button>
                 </form>
               )
