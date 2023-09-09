@@ -1,4 +1,3 @@
-import statusRoute from "./routes/statusRoute.js";
 import express, { json } from "express";
 import { contentSecurityPolicy } from "helmet";
 import cors from "cors";
@@ -16,7 +15,6 @@ app.get("/", (req, res) => {
 });
 
 // API routes
-app.use("/api/status", statusRoute);
 app.use("/api/admin", adminrouter);
 app.use("/auth", AuthRouter);
 
