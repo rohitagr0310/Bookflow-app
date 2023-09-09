@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 import "./_studentAccount.css"; // Import the CSS file for styling
+import {
+// Avatar,
+// Box,
+// Button,
+// Card,
+// CardActions,
+// CardContent
+// Divider,
+// Typography
+} from "@mui/material";
 
 const StudentAccount = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -43,15 +53,16 @@ const StudentAccount = () => {
     <div className="account-container">
       <h1>Account</h1>
       <div className="input-group">
-        <label>Username:</label>
+        <label className="label">Username:</label>
         <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
       </div>
       <div className="input-group">
-        <label>Password:</label>
+        <label className="label">Password:</label>
         <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
       <div className="input-group">
-        <label>Roll No.:</label>
+        <label className="label"
+        >Roll No.:</label>
         <input type="text" value={rollno} onChange={(e) => setRollNo(e.target.value)} />
       </div>
       <div className="input-group">

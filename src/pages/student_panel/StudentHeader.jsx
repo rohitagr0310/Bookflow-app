@@ -5,7 +5,6 @@ import QrCodeScannerRoundedIcon from "@mui/icons-material/QrCodeScannerRounded";
 import QRCodeScanner from "../../components/qrcodescanner/QRCodeScanner";
 import PropTypes from "prop-types";
 import "./_StudentHeader.css";
-// import "./_StudentHeader.css"; // Correctly reference the CSS file
 
 const StudentHeader = ({ onScanQRCode }) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
