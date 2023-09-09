@@ -52,6 +52,7 @@
 
 .formContainer form .submitButton {
   margin-top: 20px;
+  margin: auto;
   padding: 10px 20px;
   border-radius: 5px;
   background-color: #1976d2;
