@@ -9,19 +9,16 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import LoginIcon from "@mui/icons-material/Login";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz"; // New icon
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./_AuthPage.css";
 import axios from "axios";
-import TimedPopup from "../../components/timedpopup/TimedPopup";
-
-const theme = createTheme();
+import "./ForgetPassword";
 
 const AuthPage = () => {
   const navigate = useNavigate();
-  const [successPopupOpen, setSuccessPopupOpen] = useState(false);
-  const [errorPopupOpen, setErrorPopupOpen] = useState(false);
-  const [popupMessage, setPopupMessage] = useState("");
-  const [popupSeverity, setPopupSeverity] = useState("success");
+
+  const handleForgotPassword = () => {
+    navigate("/password-reset");
+  };
 
   const [loginData, setLoginData] = useState({
     loginEmail: "",
@@ -85,7 +82,7 @@ const AuthPage = () => {
           console.error("Unknown user type:", userType);
         }
       } else {
-      // Login failed, show an error message
+        // Login failed, show an error message
         console.error(response.data.message);
       }
     } catch (error) {
@@ -109,17 +106,11 @@ const AuthPage = () => {
       });
 
       if (response.status === 201) {
-      // Signup successful code
+        // Signup successful code
         console.log("Signup successful:", response.data.message);
-        setPopupMessage("User registered successfully!");
-        setPopupSeverity("success");
-        setSuccessPopupOpen(true);
       } else {
-      // Signup failed, show an error message
+        // Signup failed, show an error message
         console.error("Signup failed:", response.data.message);
-        setPopupMessage("Registration failed. Please try again.");
-        setPopupSeverity("error");
-        setErrorPopupOpen(true);
       }
     } catch (error) {
       console.error("An error occurred:", error);
@@ -131,14 +122,14 @@ const AuthPage = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <div className="bodyNoMarginPadding">
-        <AppBar className="appBar" position="static">
+        <AppBar className="appBar">
           <Toolbar>
             <IconButton edge="start" color="inherit" aria-label="back" component={Link} to="/">
               <ArrowBackIcon />
             </IconButton>
-            <Typography variant="h6" style={{ flexGrow: 1 }}>
+            <Typography variant="h6" style={{ flexGrow: 1, marginLeft: 10 }}>
               Authentication
             </Typography>
           </Toolbar>
@@ -151,94 +142,23 @@ const AuthPage = () => {
             {showLogin
               ? (
                 <form>
-                  <TextField
-                    label="Email"
-                    placeholder="Email"
-                    variant="outlined"
-                    value={loginData.loginEmail}
-                    onChange={handleLoginEmailChange}
-                    fullWidth
-                    margin="normal"
-                    required
-                  />
-                  <TextField
-                    label="Password"
-                    type="password"
-                    placeholder="Password"
-                    variant="outlined"
-                    value={loginData.loginPassword}
-                    onChange={handleLoginPasswordChange}
-                    fullWidth
-                    margin="normal"
-                    required
-                  />
-                  <Button
-                    endIcon={<LoginIcon />}
-                    type="submit"
-                    className="submitButton"
-                    variant="contained"
-                    color="primary"
-                    onClick={handleSignIn}
-                  >
+                  <TextField label="Email" placeholder="Email" variant="outlined" value={loginData.loginEmail} onChange={handleLoginEmailChange} fullWidth margin="normal" required />
+                  <TextField label="Password" type="password" placeholder="Password" variant="outlined" value={loginData.loginPassword} onChange={handleLoginPasswordChange} fullWidth margin="normal" required />
+                  <Button endIcon={<LoginIcon />} type="submit" className="submitButton" variant="contained" color="primary" onClick={handleSignIn}>
                   Sign In
+                  </Button>
+                  <Button variant="text" color="primary" className="forget" onClick={handleForgotPassword}>
+                    <Link to="/password-reset">Forgot Password?</Link>
                   </Button>
                 </form>
               )
               : (
                 <form onSubmit={handleSignUp}>
-                  <TextField
-                    label="Name"
-                    name="name"
-                    value={signupData.name}
-                    onChange={handleSignupChange}
-                    fullWidth
-                    margin="normal"
-                    variant="outlined"
-                    required
-                  />
-                  <TextField
-                    label="Roll Number"
-                    name="rollnumber"
-                    value={signupData.rollnumber}
-                    onChange={handleSignupChange}
-                    fullWidth
-                    margin="normal"
-                    variant="outlined"
-                    required
-                  />
-                  <TextField
-                    label="Email"
-                    name="signupEmail"
-                    value={signupData.signupEmail}
-                    onChange={handleSignupChange}
-                    fullWidth
-                    margin="normal"
-                    variant="outlined"
-                    required
-                    type="email"
-                  />
-                  <TextField
-                    label="Password"
-                    name="signupPassword"
-                    value={signupData.signupPassword}
-                    onChange={handleSignupChange}
-                    fullWidth
-                    margin="normal"
-                    variant="outlined"
-                    required
-                    type="password"
-                  />
-                  <TextField
-                    label="Confirm Password"
-                    name="confirmPassword"
-                    value={signupData.confirmPassword}
-                    onChange={handleSignupChange}
-                    fullWidth
-                    margin="normal"
-                    variant="outlined"
-                    required
-                    type="password"
-                  />
+                  <TextField label="Name" name="name" value={signupData.name} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required />
+                  <TextField label="Roll Number" name="rollnumber" value={signupData.rollnumber} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required />
+                  <TextField label="Email" name="signupEmail" value={signupData.signupEmail} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required type="email" />
+                  <TextField label="Password" name="signupPassword" value={signupData.signupPassword} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required type="password" />
+                  <TextField label="Confirm Password" name="confirmPassword" value={signupData.confirmPassword} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required type="password" />
                   <Button type="submit" className="submitButton" variant="contained" color="primary" onClick={handleSignUp}>
                   Sign Up
                   </Button>
@@ -252,19 +172,7 @@ const AuthPage = () => {
           </div>
         </div>
       </div>
-      <TimedPopup
-        open={successPopupOpen}
-        onClose={() => setSuccessPopupOpen(false)}
-        message={popupMessage}
-        severity={popupSeverity}
-      />
-      <TimedPopup
-        open={errorPopupOpen}
-        onClose={() => setErrorPopupOpen(false)}
-        message={popupMessage}
-        severity={popupSeverity}
-      />
-    </ThemeProvider>
+    </>
   );
 };
 

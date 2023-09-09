@@ -4,14 +4,14 @@
 }
 
 .appBar {
-  background-color: #1976d2;
+  background-color: rgba(35, 154, 160, 0.7);
 }
 
 .authPageContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 130vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(../../images/loginPage-bg1.jpg);
   background-repeat: no-repeat;
@@ -52,6 +52,7 @@
 
 .formContainer form .submitButton {
   margin-top: 20px;
+  margin: auto;
   padding: 10px 20px;
   border-radius: 5px;
   background-color: #1976d2;
@@ -83,4 +84,8 @@
 
 .toggleButtonContainer button:hover {
   color: #ffffff;
+}
+
+.forget {
+  margin: auto;
 }
