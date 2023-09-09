@@ -9,6 +9,7 @@ import "./student_search/Search.jsx";
 const StudentNav = () => {
   const navigationStyle = {
     padding: "70px 50px"
+
   };
 
   const linkStyle = {

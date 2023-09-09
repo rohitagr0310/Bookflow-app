@@ -4,6 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./_Footer.css";
+
 /**
  * Footer component.
  * @returns {JSX.Element} Footer
@@ -17,7 +18,7 @@ function Footer () {
             <Typography variant="h6" className="columnTitle">
               About Us
             </Typography>
-            <a href="/contact-us" className="columnLink">
+            <a className="columnLink">
               Contact
             </a>
             <a href="/" className="columnLink">

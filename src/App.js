@@ -9,7 +9,6 @@ import AuthPage from "./pages/login_page/AuthPage.jsx";
 import AdminPanel from "./pages/admin_panel/AdminPanel.jsx";
 import StudentPanel from "./pages/student_panel/StudentPanel.jsx";
 import Footer from "./components/footer/Footer.jsx";
-import AdminAccount from "./pages/admin_panel/admin_pages/AdminAccount.jsx";
 import AddBook from "./pages/admin_panel/admin_pages/AddBook.jsx";
 import ManageStudents from "./pages/admin_panel/admin_pages/ManageStudents.jsx";
 import IssuedBooks from "./pages/admin_panel/admin_pages/IssuedBooks.jsx";
@@ -20,7 +19,7 @@ import History from "./pages/student_panel/student_pages/History.jsx";
 import Search from "./pages/student_panel/student_search/Search.jsx";
 import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
-import ContactUs from "./pages/home_page/ContactUs.jsx";
+import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
 
 /*
  * Main component for the application.
@@ -36,10 +35,9 @@ function App () {
           <CssBaseline />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="contact-us" element={<ContactUs />} />
             <Route path="login" element={<AuthPage />} />
+            <Route path="/password-reset" element={<ForgetPassword />} />
             <Route path="admin" element={<AdminPanel />} >
-              <Route path="account" element={<AdminAccount />} />
               <Route path="add-book" element={<AddBook />} />
               <Route path="all-book" element={<AllBooks />} />
               <Route path="manage-std" element={<ManageStudents />} />
