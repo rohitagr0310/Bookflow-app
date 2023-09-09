@@ -13,8 +13,6 @@ import "./_AuthPage.css";
 import axios from "axios";
 import "./ForgetPassword";
 
-const theme = createTheme();
-
 const AuthPage = () => {
   const navigate = useNavigate();
 
@@ -108,15 +106,9 @@ const AuthPage = () => {
       if (response.status === 201) {
         // Signup successful code
         console.log("Signup successful:", response.data.message);
-        setPopupMessage("User registered successfully!");
-        setPopupSeverity("success");
-        setSuccessPopupOpen(true);
       } else {
         // Signup failed, show an error message
         console.error("Signup failed:", response.data.message);
-        setPopupMessage("Registration failed. Please try again.");
-        setPopupSeverity("error");
-        setErrorPopupOpen(true);
       }
     } catch (error) {
       console.error("An error occurred:", error);
@@ -178,8 +170,6 @@ const AuthPage = () => {
           </div>
         </div>
       </div>
-      <TimedPopup open={successPopupOpen} onClose={() => setSuccessPopupOpen(false)} message={popupMessage} severity={popupSeverity} />
-      <TimedPopup open={errorPopupOpen} onClose={() => setErrorPopupOpen(false)} message={popupMessage} severity={popupSeverity} />
     </>
   );
 };
