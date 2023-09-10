@@ -76,7 +76,7 @@ const HomePage = () => {
                 <p className="sectionText">Say goodbye to long queues and paperwork. Whether you&apos;re in the library or browsing our vast online catalog, QR code scanning makes borrowing books a breeze.</p>
               </div>
               <div style={{ flex: "1", textAlign: "right" }}>
-                <img src={img1} alt="Image Description" />
+                <img src={img1} alt="Image Description" width={"80%"}/>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ const HomePage = () => {
           <div className="sectionContent">
             <div style={{ display: "flex", alignItems: "center" }}>
               <div style={{ flex: "1", textAlign: "left" }}>
-                <img src={img2} alt="Image Description" />
+                <img src={img2} alt="Image Description" width={"80%"}/>
               </div>
               <div style={{ flex: "1" }}>
                 <h2 className="sectionHeading">All-in-One Book Management</h2>
@@ -131,7 +131,7 @@ const HomePage = () => {
                 <p className="sectionText">It&apos;s your literary journey, beautifully organized in one place. BookFlow ensures that every chapter of your reading history is easily accessible and memorable.</p>
               </div>
               <div style={{ flex: "1", textAlign: "right" }}>
-                <img src={img3} alt="Image Description" width={"800"} />
+                <img src={img3} alt="Image Description" width={"80%"} />
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import LoginIcon from "@mui/icons-material/Login";
-import SwapHorizIcon from "@mui/icons-material/SwapHoriz"; // New icon
+import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import "./_AuthPage.css";
 import axios from "axios";
 import "./ForgetPassword";
@@ -86,9 +86,6 @@ const AuthPage = () => {
         console.error(response.data.message);
       }
     } catch (error) {
-      setPopupMessage(error.message);
-      setPopupSeverity("success");
-      setSuccessPopupOpen(true);
       console.error("An error occurred:", error);
     }
   };
