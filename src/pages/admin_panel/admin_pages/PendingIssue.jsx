@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./_admin-history.css"; // Import the CSS file for styling
+import "./_pending-issue.css"; // Import the CSS file for styling
 
-const AdminHistory = () => {
-  const [AdminHistory] = useState([
+const PendingIssue = () => {
+  const [pendingIssue] = useState([
     {
       bookName: "Book One",
       issueDate: "2023-08-20",
@@ -17,16 +17,15 @@ const AdminHistory = () => {
       issuedBy: "Jane Smith",
       rollNumber: "54321"
     }
-    // Add more issued book objects here
   ]);
 
-  const totalIssuedBooks = AdminHistory.length;
+  const totalPendingIssue = pendingIssue.length;
 
   return (
-    <div className="admin-history-container">
-      <h1>History</h1>
+    <div className="pending-issue-container">
+      <h1>PendingIssue</h1>
       <div className="total-issued-books">
-        <p>Total Issued Books: {totalIssuedBooks}</p>
+        <p>Total Pending Issues: {totalPendingIssue}</p>
       </div>
       <table className="issued-books-list">
         <thead>
@@ -39,7 +38,7 @@ const AdminHistory = () => {
           </tr>
         </thead>
         <tbody>
-          {AdminHistory.map((book, index) => (
+          {pendingIssue.map((book, index) => (
             <tr key={index}>
               <td>{book.bookName}</td>
               <td>{book.issueDate}</td>
@@ -54,4 +53,4 @@ const AdminHistory = () => {
   );
 };
 
-export default AdminHistory;
+export default PendingIssue;

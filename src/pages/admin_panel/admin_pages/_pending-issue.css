@@ -1,0 +1,37 @@
+/* IssuedBooks.css */
+
+.pending-issuecontainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(197, 223, 248);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.total-issued-books {
+  margin-bottom: 20px;
+}
+
+.issued-books-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.issued-books-list th,
+.issued-books-list td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.issued-books-list th {
+  background-color: #4a55a2;
+  color: white;
+}
+
+.issued-books-list td {
+  background-color: #f2ead3;
+}
+
+/* Add more styling as needed */
