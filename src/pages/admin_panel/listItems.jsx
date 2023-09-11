@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -10,31 +11,31 @@ import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/admin">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/admin/add-book">
       <ListItemIcon>
         <LibraryAddIcon />
       </ListItemIcon>
       <ListItemText primary="Add Book" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/admin/all-book">
       <ListItemIcon>
         <LibraryBooksIcon />
       </ListItemIcon>
       <ListItemText primary="All Books" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/admin/issued-book">
       <ListItemIcon>
         <MenuBookIcon />
       </ListItemIcon>
       <ListItemText primary="Issued Books" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/admin/manage-std">
       <ListItemIcon>
         <LocalLibraryIcon />
       </ListItemIcon>

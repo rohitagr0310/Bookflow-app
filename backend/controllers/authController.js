@@ -82,7 +82,7 @@ const authController = {
         const userType = user.user_type;
 
         const token = sign({ userId: user.id }, "your_secret_key");
-        return res.status(200).json({ message: "Login successful", token, userType });
+        return res.status(200).json({ message: "Login successful", email, token, userType });
       });
     } catch (error) {
       console.error(error);

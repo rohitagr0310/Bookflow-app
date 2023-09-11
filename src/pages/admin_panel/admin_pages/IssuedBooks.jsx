@@ -17,7 +17,6 @@ const IssuedBooks = () => {
       issuedBy: "Jane Smith",
       rollNumber: "54321"
     }
-    // Add more issued book objects here
   ]);
 
   const totalIssuedBooks = issuedBooks.length;

@@ -1,49 +1,46 @@
 /* AdminHeader.css */
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1976D2;
-  color: #fff;
-  padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #2a2a2a;
+	color: white;
+	padding: 10px 20px;
 }
 
 .menu-button {
-  background: none;
+  background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 24px;
-  color: #fff;
+  font-size: 20px;
+  color: white;
 }
 
 .menu-button.active {
-  color: #ff5722; /* Change color when active */
+  color: #f39c12;
 }
 
 .sidebar {
-  background-color: #1976D2;
-  color: #fff;
-  width: 0;
-  height: 100%;
-  overflow-x: hidden;
   position: fixed;
-  top: 0;
-  left: 0;
-  transition: 0.3s;
-  z-index: 1;
+  top: 48px;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #2a2a2a;
+  transition: left 0.3s ease-in-out;
 }
 
 .sidebar.active {
-  width: 250px; /* Show sidebar when active */
+  left: 0;
 }
 
 .overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 999;
 }
