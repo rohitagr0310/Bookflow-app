@@ -26,7 +26,7 @@ function generateData () {
 const tableData = generateData();
 
 // eslint-disable-next-line require-jsdoc
-export default function BigTable () {
+export default function StudentHistory () {
   return (
     <React.Fragment>
       <Typography component="h2" variant="h6" color="primary" gutterBottom>

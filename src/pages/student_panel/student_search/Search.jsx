@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import "./_search.css";
 import SearchForm from "./SearchForm.jsx";
-import SearchResults from "./SearchResults.jsx";
 
 function Search () {
   const [searchResults, setSearchResults] = useState([]);
@@ -22,7 +21,7 @@ function Search () {
     <div className="Search">
       <header className="Search-header">
         <SearchForm onSearch={handleSearch} />
-        <SearchResults results={searchResults} />
+        <searchResults results={searchResults} />
       </header>
     </div>
   );

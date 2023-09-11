@@ -20,6 +20,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { mainListItems } from "./StudentlistItems";
 import Orders from "./StudentOrders";
+import { Outlet } from "react-router-dom";
 
 function Copyright (props) {
   return (
@@ -149,6 +150,11 @@ export default function Dashboard () {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             {/* Recent Orders */}
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Outlet/>
+              </Grid>
+            </Grid>
             <Grid item xs={12}>
               <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
                 <Orders />
