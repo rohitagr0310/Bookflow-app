@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "react";
+import { Link } from "react-router-dom";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -9,6 +9,8 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import HistoryIcon from "@mui/icons-material/History";
+import PendingActionsIcon from "@mui/icons-material/PendingActions";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export const mainListItems = (
   <React.Fragment>
@@ -30,6 +32,12 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="All Books" />
     </ListItemButton>
+    <ListItemButton component={Link} to="/admin/pending-issue">
+      <ListItemIcon>
+        <PendingActionsIcon />
+      </ListItemIcon>
+      <ListItemText primary="Pending Issue" />
+    </ListItemButton>
     <ListItemButton component={Link} to="/admin/issued-book">
       <ListItemIcon>
         <MenuBookIcon />
@@ -47,6 +55,12 @@ export const mainListItems = (
         <HistoryIcon />
       </ListItemIcon>
       <ListItemText primary="History" />
+    </ListItemButton>
+    <ListItemButton component={Link} to="/login">
+      <ListItemIcon>
+        <LogoutIcon />
+      </ListItemIcon>
+      <ListItemText primary="Logout" />
     </ListItemButton>
   </React.Fragment>
 );
