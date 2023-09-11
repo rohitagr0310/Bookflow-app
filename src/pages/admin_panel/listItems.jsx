@@ -8,6 +8,7 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import HistoryIcon from "@mui/icons-material/History";
 
 export const mainListItems = (
   <React.Fragment>
@@ -40,6 +41,12 @@ export const mainListItems = (
         <LocalLibraryIcon />
       </ListItemIcon>
       <ListItemText primary="Manage students" />
+    </ListItemButton>
+    <ListItemButton component={Link} to="/admin/admin-history">
+      <ListItemIcon>
+        <HistoryIcon />
+      </ListItemIcon>
+      <ListItemText primary="History" />
     </ListItemButton>
   </React.Fragment>
 );

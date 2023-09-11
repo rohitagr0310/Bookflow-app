@@ -20,6 +20,7 @@ import Search from "./pages/student_panel/student_search/Search.jsx";
 import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
 import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
+import AdminHistory from "./pages/admin_panel/admin_pages/AdminHistory.jsx";
 
 /*
  * Main component for the application.
@@ -42,6 +43,7 @@ function App () {
               <Route path="all-book" element={<AllBooks />} />
               <Route path="manage-std" element={<ManageStudents />} />
               <Route path="issued-book" element={<IssuedBooks />} />
+              <Route path="admin-history" element={<AdminHistory />} />
             </Route>
             <Route path="student" element={<StudentPanel />} >
               <Route path="std-account" element={<StudentAccount />} />
