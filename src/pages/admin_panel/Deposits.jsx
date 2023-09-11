@@ -1,60 +1,51 @@
 /* eslint-disable require-jsdoc */
 import * as React from "react";
 import Link from "@mui/material/Link";
-import Typography from "@mui/material/Typography";
+import { Typography, Paper, Grid } from "@mui/material";
+import { PropTypes } from "prop-types";
 
 function preventDefault (event) {
   event.preventDefault();
 }
 
-export default function Deposits () {
+const Deposits = (props) => {
+  const { title, count, asOnDate, ctaLabel } = props;
+
   return (
     <React.Fragment>
-      <Typography component="h2" variant="h6" color="primary" gutterBottom>
-      Total books in LIB
-      </Typography>
-      <Typography component="p" variant="h4">
-        12,000
-      </Typography>
-      <Typography color="text.secondary" sx={{ flex: 1 }}>
-        on 15 March, 2019
-      </Typography>
-      <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          View all books
-        </Link>
-      </div>
+      <Grid item xs={6} md={4} lg={3}>
+        <Paper
+          sx={{
+            p: 2,
+            display: "flex",
+            flexDirection: "column",
+            height: 240
+          }}
+        >
+          <Typography component="h2" variant="h6" color="primary" gutterBottom>
+            {title}
+          </Typography>
+          <Typography component="p" variant="h4">
+            {count}
+          </Typography>
+          <Typography color="text.secondary" sx={{ flex: 1 }}>
+            {asOnDate}
+          </Typography>
+          <Link color="primary" href="#" onClick={preventDefault}>
+            {ctaLabel}
+          </Link>
 
-      <Typography component="h2" variant="h6" color="primary" gutterBottom>
-      Total books in BB
-      </Typography>
-      <Typography component="p" variant="h4">
-        50,000
-      </Typography>
-      <Typography color="text.secondary" sx={{ flex: 1 }}>
-        on 15 March, 2019
-      </Typography>
-      <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          View BB books
-        </Link>
-      </div>
-
-      <Typography component="h2" variant="h6" color="primary" gutterBottom>
-      Currently Issued books
-      </Typography>
-      <Typography component="p" variant="h4">
-        40
-      </Typography>
-      <Typography color="text.secondary" sx={{ flex: 1 }}>
-        on 15 March, 2019
-      </Typography>
-      <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          View Issued Books
-        </Link>
-      </div>
-
+        </Paper>
+      </Grid>
     </React.Fragment>
   );
-}
+};
+
+Deposits.propTypes = {
+  title: PropTypes.string.isRequired,
+  count: PropTypes.string.isRequired,
+  asOnDate: PropTypes.string.isRequired,
+  ctaLabel: PropTypes.string.isRequired
+};
+
+export default Deposits;
