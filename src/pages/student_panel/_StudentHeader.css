@@ -1,36 +1,49 @@
-/* StudentHeader.css */
+/* AdminHeader.css */
 
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #2a2a2a;
-  color: white;
+  align-items: center;
+  background-color: #1976D2;
+  color: #fff;
   padding: 10px 20px;
 }
 
 .menu-button {
-  background-color: transparent;
+  background: none;
   border: none;
   cursor: pointer;
-  font-size: 20px;
-  color: white;
+  font-size: 24px;
+  color: #fff;
 }
 
 .menu-button.active {
-  color: #f39c12;
+  color: #ff5722; /* Change color when active */
 }
 
 .sidebar {
-  position: fixed;
-  top: 48px;
-  left: -250px;
-  width: 250px;
+  background-color: #1976D2;
+  color: #fff;
+  width: 0;
   height: 100%;
-  background-color: #2a2a2a;
-  transition: left 0.3s ease-in-out;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  z-index: 1;
 }
 
 .sidebar.active {
+  width: 250px; /* Show sidebar when active */
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
   left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
 }

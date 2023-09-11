@@ -133,7 +133,7 @@ const AddBook = () => {
       <div className="input-group">
         <label>Year:</label>
         <input type="text" value={year} onChange={(e) => setYear(e.target.value)} />
-      </div>
+      </div>w
       <div className="input-group">
         <label>Pages:</label>
         <input type="text" value={pages} onChange={(e) => setPages(e.target.value)} />
