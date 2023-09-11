@@ -1,21 +1,20 @@
 import React, { useState } from "react";
-import "./_feedback.css";
-import {
-// Avatar,
-// Box,
-// Button,
-// Card
-// CardActions,
-// CardContent
-// Divider,
-// Typography
-} from "@mui/material";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
-const FeedbackForm = () => {
+const feedback = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [feedback, setFeedback] = useState("");
-  const [rating, setRating] = useState(0); // Initialize the rating state with 0
+  const [rating, setRating] = useState(0);
 
   const handleFeedbackChange = (event) => {
     setFeedback(event.target.value);
@@ -30,7 +29,7 @@ const FeedbackForm = () => {
   };
 
   const handleRatingChange = (event) => {
-    setRating(parseInt(event.target.value)); // Convert the value to an integer
+    setRating(parseInt(event.target.value));
   };
 
   const handleSubmit = (event) => {
@@ -40,64 +39,73 @@ const FeedbackForm = () => {
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Rating:", rating);
-    // You can perform further actions like sending the feedback to a server here
   };
 
   return (
-    <div className="feedback-container">
-      <h1>Feedback Form</h1>
-      <h3>What brings you to our website, and how is your experience been so far? <br></br> Share your thoughts and feedback with us! </h3>
-      <form className="feedback-form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={handleNameChange}
-          placeholder="Enter your name..."
-        />
+    <Card>
+      <CardContent>
+        <Container maxWidth="sm">
+          <Typography variant="h4">Feedback Form</Typography>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              label="Name"
+              variant="outlined"
+              fullWidth
+              value={name}
+              onChange={handleNameChange}
+              placeholder="Enter your name..."
+              margin="normal"
+            />
 
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={handleEmailChange}
-          placeholder="Enter your email..."
-        />
+            <TextField
+              label="Email"
+              variant="outlined"
+              fullWidth
+              type="email"
+              value={email}
+              onChange={handleEmailChange}
+              placeholder="Enter your email..."
+              margin="normal"
+            />
 
-        <label htmlFor="rating">Rating:</label>
-        <select
-          id="rating"
-          name="rating"
-          value={rating}
-          onChange={handleRatingChange}
-        >
-          <option value={0}>Select a rating</option>
-          <option value={1}>1 - Poor</option>
-          <option value={2}>2 - Fair</option>
-          <option value={3}>3 - Good</option>
-          <option value={4}>4 - Very Good</option>
-          <option value={5}>5 - Excellent</option>
-        </select>
+            <FormControl variant="outlined" fullWidth margin="normal">
+              <InputLabel htmlFor="rating">Rating</InputLabel>
+              <Select
+                label="Rating"
+                id="rating"
+                name="rating"
+                value={rating}
+                onChange={handleRatingChange}
+              >
+                <MenuItem value={0}>Select a rating</MenuItem>
+                <MenuItem value={1}>1 - Poor</MenuItem>
+                <MenuItem value={2}>2 - Fair</MenuItem>
+                <MenuItem value={3}>3 - Good</MenuItem>
+                <MenuItem value={4}>4 - Very Good</MenuItem>
+                <MenuItem value={5}>5 - Excellent</MenuItem>
+              </Select>
+            </FormControl>
 
-        <label htmlFor="feedback">Your Feedback:</label>
-        <textarea
-          id="feedback"
-          name="feedback"
-          value={feedback}
-          onChange={handleFeedbackChange}
-          rows="4"
-          placeholder="Enter your feedback here..."
-        />
+            <TextField
+              label="Your Feedback"
+              variant="outlined"
+              multiline
+              rows={4}
+              fullWidth
+              value={feedback}
+              onChange={handleFeedbackChange}
+              placeholder="Enter your feedback here..."
+              margin="normal"
+            />
 
-        <button type="submit" onClick="document.getElementById('feedback').value = ''">Submit Feedback</button>
-      </form>
-    </div>
-
+            <Button type="submit" variant="contained" color="primary">
+          Submit Feedback
+            </Button>
+          </form>
+        </Container>
+      </CardContent>
+    </Card>
   );
 };
 
-export default FeedbackForm;
+export default feedback;

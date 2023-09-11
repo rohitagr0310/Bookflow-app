@@ -15,7 +15,7 @@ import IssuedBooks from "./pages/admin_panel/admin_pages/IssuedBooks.jsx";
 import AllBooks from "./pages/admin_panel/admin_pages/AllBooks.jsx";
 import StudentAccount from "./pages/student_panel/student_pages/StudentAccount.jsx";
 import StudentHistory from "./pages/student_panel/student_pages/StudentHistory.jsx";
-import Search from "./pages/student_panel/student_search/Search.jsx";
+import Search from "./pages/student_panel/student_pages/StudentSearch.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
 import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
 import AdminHistory from "./pages/admin_panel/admin_pages/AdminHistory.jsx";

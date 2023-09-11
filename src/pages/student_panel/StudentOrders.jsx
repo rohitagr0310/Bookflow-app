@@ -1,88 +1,78 @@
-/* eslint-disable require-jsdoc */
-import * as React from "react";
-import Link from "@mui/material/Link";
+import React, { useState, useEffect } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+function BookTable () {
+  const [books, setBooks] = useState([
+    {
+      id: 1,
+      name: "Book 1",
+      scheme: "Scheme A",
+      submissionDate: "2023-09-10",
+      pendingDays: 2
+    },
+    {
+      id: 2,
+      name: "Book 2",
+      scheme: "Scheme B",
+      submissionDate: "2023-09-08",
+      pendingDays: 4
+    }
+    // Add more initial book data as needed
+  ]);
 
-// Generate Order Data
-function createData (id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
-}
+  // Simulate receiving new book data
+  useEffect(() => {
+    // This is just a sample. You can replace this with real data fetching logic.
+    const newBookData = {
+      id: books.length + 1,
+      name: "New Book",
+      scheme: "Scheme C",
+      submissionDate: "2023-09-12",
+      pendingDays: 1
+    };
 
-const rows = [
-  createData(
-    0,
-    "16 Mar, 2019",
-    "Elvis Presley",
-    "Tupelo, MS",
-    "VISA ⠀•••• 3719",
-    312.44
-  ),
-  createData(
-    1,
-    "16 Mar, 2019",
-    "Paul McCartney",
-    "London, UK",
-    "VISA ⠀•••• 2574",
-    866.99
-  ),
-  createData(2, "16 Mar, 2019", "Tom Scholz", "Boston, MA", "MC ⠀•••• 1253", 100.81),
-  createData(
-    3,
-    "16 Mar, 2019",
-    "Michael Jackson",
-    "Gary, IN",
-    "AMEX ⠀•••• 2000",
-    654.39
-  ),
-  createData(
-    4,
-    "15 Mar, 2019",
-    "Bruce Springsteen",
-    "Long Branch, NJ",
-    "VISA ⠀•••• 5919",
-    212.79
-  )
-];
+    // Add the new book data to the state
+    setBooks([...books, newBookData]);
+  }, [books]);
 
-function preventDefault (event) {
-  event.preventDefault();
-}
-
-export default function Orders () {
   return (
-    <React.Fragment><Typography component="h2" variant="h6" color="primary" gutterBottom>
-      Recent Orders
-    </Typography>
-    <Table size="small">
-      <TableHead>
-        <TableRow>
-          <TableCell>Date</TableCell>
-          <TableCell>Name</TableCell>
-          <TableCell>Ship To</TableCell>
-          <TableCell>Payment Method</TableCell>
-          <TableCell align="right">Sale Amount</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {rows.map((row) => (
-          <TableRow key={row.id}>
-            <TableCell>{row.date}</TableCell>
-            <TableCell>{row.name}</TableCell>
-            <TableCell>{row.shipTo}</TableCell>
-            <TableCell>{row.paymentMethod}</TableCell>
-            <TableCell align="right">{`$${row.amount}`}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-    <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
-    </Link>
-    </React.Fragment>
+    <Container maxWidth="lg">
+      <Typography variant="h4" component="h1" gutterBottom>
+        Student Book Information
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>ID</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>Scheme</TableCell>
+              <TableCell>Date of Submission</TableCell>
+              <TableCell>Date Pending Time</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {books.map((book) => (
+              <TableRow key={book.id}>
+                <TableCell>{book.id}</TableCell>
+                <TableCell>{book.name}</TableCell>
+                <TableCell>{book.scheme}</TableCell>
+                <TableCell>{book.submissionDate}</TableCell>
+                <TableCell>{book.pendingDays} days</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Container>
   );
 }
+
+export default BookTable;
