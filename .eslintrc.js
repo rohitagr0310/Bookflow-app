@@ -46,18 +46,6 @@ module.exports = {
     "max-len": ["error", { code: 250 }],
 
     // Require consistent return values in array methods like map and forEach
-    "array-callback-return": "error",
-
-    // Require JSDoc comments for functions and classes
-    "require-jsdoc": [
-      "error",
-      {
-        require: {
-          FunctionDeclaration: true,
-          MethodDefinition: true,
-          ClassDeclaration: true
-        }
-      }
-    ]
+    "array-callback-return": "error"
   }
 };

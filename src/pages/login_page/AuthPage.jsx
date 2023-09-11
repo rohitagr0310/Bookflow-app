@@ -8,7 +8,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import LoginIcon from "@mui/icons-material/Login";
-import SwapHorizIcon from "@mui/icons-material/SwapHoriz"; // New icon
+import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import "./_AuthPage.css";
 import axios from "axios";
 import "./ForgetPassword";
@@ -70,7 +70,6 @@ const AuthPage = () => {
       if (response.status === 200) {
         const userType = response.data.userType;
         const token = response.data.token;
-
         // Store the token in local storage or state
         localStorage.setItem("token", token);
 
