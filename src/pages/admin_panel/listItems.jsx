@@ -9,6 +9,7 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import HistoryIcon from "@mui/icons-material/History";
+import PendingActionsIcon from "@mui/icons-material/PendingActions";
 
 export const mainListItems = (
   <React.Fragment>
@@ -29,6 +30,12 @@ export const mainListItems = (
         <LibraryBooksIcon />
       </ListItemIcon>
       <ListItemText primary="All Books" />
+    </ListItemButton>
+    <ListItemButton component={Link} to="/admin/pending-issue">
+      <ListItemIcon>
+        <PendingActionsIcon />
+      </ListItemIcon>
+      <ListItemText primary="Pending Issue" />
     </ListItemButton>
     <ListItemButton component={Link} to="/admin/issued-book">
       <ListItemIcon>
