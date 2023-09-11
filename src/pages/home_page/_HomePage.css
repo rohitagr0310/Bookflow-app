@@ -1,116 +1,109 @@
 /* Styling for the root container */
 /* Styling for the background container */
 .root {
-	background-color: rgb(242,246,248);
-	background-size: cover;
-	background-position: center;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+  background-color: rgb(242, 246, 248);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-/* Styling for the main heading */
-.mainHeading {
-	color: transparent;
-	text-align: center;
-	padding-top: 16px; /* You can adjust this value */
-	padding-bottom: 24px; /* You can adjust this value */
-	-webkit-text-stroke: 1px #eeeded;
-	text-shadow: -3px 5px 3px rgba(0, 0, 0, 1);
-	font-size: 2.5rem; /* You can adjust this value */
-	font-weight: bold;
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
 }
 
-/* Styling for the content text */
-.contentText {
-	color: #eee9da;
-	margin-bottom: 16px; /* You can adjust this value */
-	text-align: center;
-	font-size: 1rem; /* You can adjust this value */
-}
-
-/* Styling for sections */
-.section {
-	margin: 64px 0; /* You can adjust this value */
-	text-align: center;
+.sectionContent {
+  text-align: center;
+  padding: 50px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  overflow: auto;
 }
 
 /* Styling for section headings */
 .sectionHeading {
-	color: #fdfdfd;
-	margin-bottom: 32px; /* You can adjust this value */
-	font-size: 2.5rem; /* You can adjust this value */
-	font-weight: bold;
-	text-shadow: 0 1px 7px rgba(0, 0, 0, 1);
-	background-color: #000000;
-	border-radius: 10px; /* Add rounded corners to the section */
-  	padding: 1px; /* Add padding to the section */
-	box-shadow: none;
-}
-/* Styling for section content */
-.sectionContent {
-	color: #eee9da;
-	margin-bottom: 8px; /* You can adjust this value */
-	padding-top: 16px; /* You can adjust this value */
-	font-size: 1.1rem; /* You can adjust this value */
-}
-/* Styling for the slide images */
-.slide-image {
-	width: 100%;
-	height: auto;
-	max-height: 100%;
-	object-fit: cover;
+  color: #000000;
+  margin-bottom: 32px; /* You can adjust this value */
+  font-size: 2.5rem; /* You can adjust this value */
+  font-weight: bold;
+  text-shadow: 0 3px 7px rgba(255, 255, 255, 0.7);
+  box-shadow: none;
+  padding-bottom: 50px;
+  letter-spacing: 1px;
 }
 
-/* Styling for the library image */
-.libraryImage {
-	width: 80%;
-	margin: 50px auto;
-	display: block;
-	border-radius: 16px; /* You can adjust this value */
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* You can adjust this value */
-	transition: transform 0.3s ease-in-out; /* Add a smooth transform transition */
+.sectionText {
+  color: #495464;
+  font-size: 100%;
+  letter-spacing: 0.5;
+  text-align: left;
 }
 
-/* Hover effect for the library image */
-.libraryImage:hover {
-	transform: scale(1.05); /* Scale up on hover */
+.sectionDivider {
+  width: 50%;
+  height: 3px;
+  margin: auto;
+  background-color: #000;
 }
-/* Styling for the testimonial cards container */
+
 .testimonialCardContainer {
   display: flex;
-  justify-content: center; /* Center the testimonials horizontally */
-  overflow-x: auto; /* Add horizontal scroll if needed */
-  gap: 32px;
-  margin-top: 32px;
-  padding-bottom: 16px; /* Add some space at the bottom to prevent horizontal scroll */
+  justify-content: center;
+  overflow-x: auto;
+  gap: 180px;
 }
 
-/* Styling for individual testimonial card */
+.quoteImage {
+  width: 50px;
+  height: 50px;
+  margin-left: 16px;
+  color: #dddddd;
+}
+
 .testimonialCard {
-  width: 300px; /* Adjust the width as needed */
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  width: 300px;
+  padding: 25px;
+  margin-top: 10px;
+  display: flex;
+  font-size: 2rem;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  border-radius: 20px;
   transition: transform 0.3s ease-in-out;
-  background-color: #f0f0f0; /* Background color for the card */
+  background-color: transparent;
+  border-top-color: transparent;
 }
 
-/* Hover effect for testimonial card */
+@media (max-width: 600px) {
+  .testimonialCardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .testimonialCard:hover {
   transform: translateY(-5px);
-  background-color: #ffffff; /* Change background color on hover */
+  background-color: #d2d8ff;
+  color: #000;
 }
 
 /* Styling for testimonial content */
 .testimonialContent {
-  color: #000;
   font-style: italic;
-  font-size: 1rem;
   text-align: center;
   margin-top: 16px;
 }
@@ -123,41 +116,40 @@
 
 /* Add this media query at the end of your CSS file to adjust styles for mobile screens */
 @media (max-width: 768px) {
-	.section {
-		margin: 32px 0;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		height: auto;
-	}
+  .section {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+  }
 
-	.libraryImage {
-		width: 100%;
-		max-width: 300px;
-		margin: 32px auto;
-	}
+  .libraryImage {
+    width: 100%;
+    max-width: 300px;
+    margin: 32px auto;
+  }
 
-	.mainHeading {
-		font-size: 2rem;
-		padding-top: 8px;
-		padding-bottom: 16px;
-	}
+  .mainHeading {
+    font-size: 2rem;
+    padding-top: 8px;
+    padding-bottom: 16px;
+  }
 
-	.sectionHeading {
-		font-size: 1.5rem;
-		margin-bottom: 24px;
-	}
+  .sectionHeading {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
 
-	.sectionContent {
-		font-size: 1rem;
-	}
+  .sectionContent {
+    font-size: 1rem;
+  }
 
-	.testimonialCard {
-		max-width: 300px;
-		padding: 16px;
-	}
+  .testimonialCard {
+    max-width: 300px;
+    padding: 16px;
+  }
 
-	.testimonialContent {
-		font-size: 0.8rem;
-	}
+  .testimonialContent {
+    font-size: 0.8rem;
+  }
 }

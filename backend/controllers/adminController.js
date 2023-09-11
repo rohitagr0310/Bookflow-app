@@ -2,7 +2,21 @@ import pool from "../db.js";
 
 const adminController = {
 
-  addBook: (req, res) => {
+  addBookTest: (req, res) => {
+    const bookData = req.body;
+
+    pool.query("INSERT INTO test SET ?", bookData, (error, result) => {
+      if (error) {
+        console.error("Error adding book:", error);
+        res.status(500).json({ error: "An error occurred" });
+      } else {
+        console.log("Book added:", result);
+        res.status(200).json({ message: "Book added successfully" });
+      }
+    });
+  },
+
+  addBookLibrary: (req, res) => {
     const bookData = req.body;
 
     pool.query("INSERT INTO library SET ?", bookData, (error, result) => {
