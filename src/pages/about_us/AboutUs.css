@@ -1,0 +1,215 @@
+.section-white {
+  background: #fff;
+  padding: 70px 0;
+}
+
+.container {
+    background-position: 255px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.team-item {
+  background: #f4f5f6;
+  text-align: center;
+  margin: 20px 0;
+  padding: 50px 20px 40px 20px;
+  width: 25vw;
+  border-radius: 8px;
+  transition: all 0.25s ease-in-out;
+}
+
+.team-item:hover {
+  background: #3956de;
+  color: white;
+}
+
+.team-item h3 {
+  margin: 20px 0 1px 0 !important;
+  color: #454545;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+}
+
+.section-subtitle {
+  white-space: pre-line;
+}
+
+.team-item:hover h3 {
+  color: #ddd;
+}
+
+.team-info {
+  display: block;
+  margin-bottom: 0;
+}
+
+.team-info p {
+  color: #acacac;
+  font-style: italic;
+}
+
+.team-info::after {
+  background: linear-gradient(to right, #b179ff, #a669ff, #9a58ff, #9859ff, #924fff, #924fff, #924fff, #924fff, #9859ff, #9a58ff, #a669ff, #b179ff);
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  width: 50px;
+  height: 3px;
+}
+
+.team-img {
+  max-width: 180px;
+  padding: 6px 6px;
+  background-color: #dedede;
+  border-radius: 50%;
+}
+
+ul.team-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  list-style: none; /* Remove list bullets */
+  padding: 0; 
+}
+
+ul.team-icon li {
+  display: inline-block;
+  margin: 0 3px;
+  transition: all 0.25s ease-in-out;
+}
+
+ul.team-icon li a {
+  margin: 0;
+  display: inline-block;
+  padding: 8px 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  line-height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #fff;
+}
+
+ul.team-icon li a.github {
+  background-color: #000000;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 40px; /* Adjust the width and height to your desired circle size */
+  height: 40px;
+  border-radius: 50%; /* Makes it a circle */
+  color: white; /* Set the color of the icon */
+  text-decoration: none;
+}
+
+ul.team-icon li a.instagram {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 40px; /* Adjust the width and height to your desired circle size */
+  height: 40px;
+  border-radius: 50%; /* Makes it a circle */
+  color: white; /* Set the color of the icon */
+  text-decoration: none;
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+  radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+  linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+.team-icon li a:hover {
+  color: #dedede;
+  transition: all 0.25s ease-in-out;
+}
+/* Add this CSS to your AboutUs.css file */
+ul.team-icon li a {
+  margin: 0;
+  display: inline-block;
+  padding: 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  line-height: 34px; /* Set line-height equal to width for a circular shape */
+  background-color: #fff;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center; /* Center the icon horizontally and vertically */
+  transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+}
+
+ul.team-icon li a:hover {
+  color: #dedede;
+  transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+}
+/* Add this CSS to your AboutUs.css file */
+ul.team-icon li a.linkedin {
+  background-color: #0051b5; /* Set the LinkedIn background color */
+  color: #fff; /* Set the text color to white */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 40px; /* Adjust the width and height to your desired circle size */
+  height: 40px;
+  border-radius: 50%; /* Makes it a circle */
+  color: white; /* Set the color of the icon */
+  text-decoration: none;
+}
+
+ul.team-icon li a.linkedin:hover {
+  background-color: #005FAB; /* Change the background color on hover */
+}
+/* AboutUs.css */
+
+.section-white {
+  background: #dfe4ff;
+  padding: 70px 0;
+  text-align: center; /* Center the text within the section */
+}
+
+/* Add these styles to center the heading vertically */
+.text-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Set the height to 100% to center vertically */
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  white-space: pre-line;
+}
+
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .row{
+    flex-direction: column;
+  }
+
+  .team-item{
+    width: 100%;
+  }
+}

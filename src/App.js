@@ -20,6 +20,7 @@ import Search from "./pages/student_panel/student_search/Search.jsx";
 import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
 import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
+import AboutUs from "./pages/about_us/AboutUs.jsx"; // Update the path as per your project structure
 import AdminHistory from "./pages/admin_panel/admin_pages/AdminHistory.jsx";
 import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
 
@@ -39,6 +40,7 @@ function App () {
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<AuthPage />} />
             <Route path="/password-reset" element={<ForgetPassword />} />
+            <Route path="about-us" element={<AboutUs />} />
             <Route path="admin" element={<AdminPanel />} >
               <Route path="add-book" element={<AddBook />} />
               <Route path="all-book" element={<AllBooks />} />
