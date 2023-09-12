@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./_issued-book.css"; // Import the CSS file for styling
+import "./_admin-history.css"; // Import the CSS file for styling
 
-const IssuedBooks = () => {
-  const [issuedBooks] = useState([
+const AdminHistory = () => {
+  const [AdminHistory] = useState([
     {
       bookName: "Book One",
       issueDate: "2023-08-20",
@@ -17,13 +17,14 @@ const IssuedBooks = () => {
       issuedBy: "Jane Smith",
       rollNumber: "54321"
     }
+    // Add more issued book objects here
   ]);
 
-  const totalIssuedBooks = issuedBooks.length;
+  const totalIssuedBooks = AdminHistory.length;
 
   return (
-    <div className="issued-books-container">
-      <h1>Issued Books</h1>
+    <div className="admin-history-container">
+      <h1>History</h1>
       <div className="total-issued-books">
         <p>Total Issued Books: {totalIssuedBooks}</p>
       </div>
@@ -38,7 +39,7 @@ const IssuedBooks = () => {
           </tr>
         </thead>
         <tbody>
-          {issuedBooks.map((book, index) => (
+          {AdminHistory.map((book, index) => (
             <tr key={index}>
               <td>{book.bookName}</td>
               <td>{book.issueDate}</td>
@@ -53,4 +54,4 @@ const IssuedBooks = () => {
   );
 };
 
-export default IssuedBooks;
+export default AdminHistory;

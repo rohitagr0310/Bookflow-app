@@ -14,26 +14,12 @@ import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import LogoutIcon from "@mui/icons-material/Logout";
 import { mainListItems } from "./listItems";
 import Deposits from "./Deposits";
 import Orders from "./pending";
-
-function Copyright (props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {"Copyright © "}
-      <Link color="inherit" href="/">
-        BookFlow
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import { Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -90,6 +76,7 @@ export default function Dashboard () {
 
   return (
     <ThemeProvider theme={defaultTheme}>
+
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
@@ -115,7 +102,6 @@ export default function Dashboard () {
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={0} color="secondary">
-                <LogoutIcon fontSize="large" />
               </Badge>
             </IconButton>
           </Toolbar>
@@ -150,25 +136,21 @@ export default function Dashboard () {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper
-                sx={{
-                  p: 2,
-                  display: "flex",
-                  flexDirection: "column",
-                  height: 240
-                }}
-              >
-                <Deposits />
-              </Paper>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Outlet/>
+              </Grid>
+              <Deposits title="Total books in LIB" count="12,000" asOnDate="on 15 March, 2019" ctaLabel="View All Books" />
+              <Deposits title="Total books in LIB" count="12,000" asOnDate="on 15 March, 2019" ctaLabel="View All Books" />
+              <Deposits title="Total books in LIB" count="12,000" asOnDate="on 15 March, 2019" ctaLabel="View All Books" />
+              <Deposits title="Total books in LIB" count="12,000" asOnDate="on 15 March, 2019" ctaLabel="View All Books" />
+              {/* Recent Orders */}
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                  <Orders />
+                </Paper>
+              </Grid>
             </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                <Orders />
-              </Paper>
-            </Grid>
-            <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>

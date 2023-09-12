@@ -1,155 +1,155 @@
 /* Styling for the root container */
 /* Styling for the background container */
 .root {
-	background-color: rgb(242, 246, 248);
-	background-size: cover;
-	background-position: center;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+  background-color: rgb(242, 246, 248);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 section {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: auto;
-	min-height: 100vh;
-	position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
 }
 
 .sectionContent {
-	text-align: center;
-	padding: 50px 80px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	min-height: 100%;
-	overflow: auto;
+  text-align: center;
+  padding: 50px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  overflow: auto;
 }
 
 /* Styling for section headings */
 .sectionHeading {
-	color: #000000;
-	margin-bottom: 32px; /* You can adjust this value */
-	font-size: 2.5rem; /* You can adjust this value */
-	font-weight: bold;
-	text-shadow: 0 3px 7px rgba(255, 255, 255, 0.7);
-	box-shadow: none;
-	padding-bottom: 50px;
-	letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 32px; /* You can adjust this value */
+  font-size: 2.5rem; /* You can adjust this value */
+  font-weight: bold;
+  text-shadow: 0 3px 7px rgba(255, 255, 255, 0.7);
+  box-shadow: none;
+  padding-bottom: 50px;
+  letter-spacing: 1px;
 }
 
 .sectionText {
-	color: #495464;
-	font-size: 1.3rem;
-	letter-spacing: 0.5;
-	text-align: left;
+  color: #495464;
+  font-size: 100%;
+  letter-spacing: 0.5;
+  text-align: left;
 }
 
 .sectionDivider {
-	width: 50%;
-	height: 3px;
-	margin: auto;
-	background-color: #000;
+  width: 50%;
+  height: 3px;
+  margin: auto;
+  background-color: #000;
 }
 
 .testimonialCardContainer {
-	display: flex;
-	justify-content: center;
-	overflow-x: auto;
-	gap: 180px;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  gap: 180px;
 }
 
 .quoteImage {
-	width: 50px;
-	height: 50px;
-	margin-left: 16px;
-	color: #dddddd;
+  width: 50px;
+  height: 50px;
+  margin-left: 16px;
+  color: #dddddd;
 }
 
 .testimonialCard {
-	width: 300px;
-	padding: 25px;
-	margin-top: 10px;
-	display: flex;
-	font-size: 2rem;
-	flex-direction: column;
-	align-items: center;
-	color: #000;
-	border: #dddddd 5px solid;
-	border-radius: 20px;
-	transition: transform 0.3s ease-in-out;
-	background-color: transparent;
-	border-top-color: transparent;
+  width: 300px;
+  padding: 25px;
+  margin-top: 10px;
+  display: flex;
+  font-size: 2rem;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+  background-color: transparent;
+  border-top-color: transparent;
 }
 
 @media (max-width: 600px) {
-	.testimonialCardContainer {
-		flex-direction: column;
-		align-items: center;
-	}
+  .testimonialCardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .testimonialCard:hover {
-	transform: translateY(-5px);
-	background-color: #dddddd;
+  transform: translateY(-5px);
+  background-color: #d2d8ff;
+  color: #000;
 }
 
 /* Styling for testimonial content */
 .testimonialContent {
-	font-style: italic;
-	text-align: center;
-	margin-top: 16px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 16px;
 }
 
 /* Styling for testimonial names */
 .testimonialName {
-	font-weight: bold;
-	margin-top: 16px;
+  font-weight: bold;
+  margin-top: 16px;
 }
 
 /* Add this media query at the end of your CSS file to adjust styles for mobile screens */
 @media (max-width: 768px) {
-	.section {
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		height: auto;
-	}
+  .section {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+  }
 
-	.libraryImage {
-		width: 100%;
-		max-width: 300px;
-		margin: 32px auto;
-	}
+  .libraryImage {
+    width: 100%;
+    max-width: 300px;
+    margin: 32px auto;
+  }
 
-	.mainHeading {
-		font-size: 2rem;
-		padding-top: 8px;
-		padding-bottom: 16px;
-	}
+  .mainHeading {
+    font-size: 2rem;
+    padding-top: 8px;
+    padding-bottom: 16px;
+  }
 
-	.sectionHeading {
-		font-size: 1.5rem;
-		margin-bottom: 24px;
-	}
+  .sectionHeading {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
 
-	.sectionContent {
-		font-size: 1rem;
-	}
+  .sectionContent {
+    font-size: 1rem;
+  }
 
-	.testimonialCard {
-		max-width: 300px;
-		padding: 16px;
-	}
+  .testimonialCard {
+    max-width: 300px;
+    padding: 16px;
+  }
 
-	.testimonialContent {
-		font-size: 0.8rem;
-	}
+  .testimonialContent {
+    font-size: 0.8rem;
+  }
 }

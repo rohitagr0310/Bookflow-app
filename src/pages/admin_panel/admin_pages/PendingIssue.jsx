@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./_issued-book.css"; // Import the CSS file for styling
+import "./_pending-issue.css"; // Import the CSS file for styling
 
-const IssuedBooks = () => {
-  const [issuedBooks] = useState([
+const PendingIssue = () => {
+  const [pendingIssue] = useState([
     {
       bookName: "Book One",
       issueDate: "2023-08-20",
@@ -19,13 +19,13 @@ const IssuedBooks = () => {
     }
   ]);
 
-  const totalIssuedBooks = issuedBooks.length;
+  const totalPendingIssue = pendingIssue.length;
 
   return (
-    <div className="issued-books-container">
-      <h1>Issued Books</h1>
+    <div className="pending-issue-container">
+      <h1>PendingIssue</h1>
       <div className="total-issued-books">
-        <p>Total Issued Books: {totalIssuedBooks}</p>
+        <p>Total Pending Issues: {totalPendingIssue}</p>
       </div>
       <table className="issued-books-list">
         <thead>
@@ -38,7 +38,7 @@ const IssuedBooks = () => {
           </tr>
         </thead>
         <tbody>
-          {issuedBooks.map((book, index) => (
+          {pendingIssue.map((book, index) => (
             <tr key={index}>
               <td>{book.bookName}</td>
               <td>{book.issueDate}</td>
@@ -53,4 +53,4 @@ const IssuedBooks = () => {
   );
 };
 
-export default IssuedBooks;
+export default PendingIssue;
