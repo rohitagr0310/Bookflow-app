@@ -4,6 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./_Footer.css";
+import { Link } from "react-router-dom";
 
 /**
  * Footer component.
@@ -16,11 +17,9 @@ function Footer () {
         <div className="columnsContainer">
           <div className="column">
             <Typography variant="h6" className="columnTitle">
-              About Us
+              <Link to="/about-us">About Us</Link>
             </Typography>
-            <a className="columnLink">
-              Contact
-            </a>
+            <a className="columnLink">Contact</a>
             <a href="/" className="columnLink">
               Home
             </a>
