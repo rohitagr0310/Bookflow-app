@@ -69,7 +69,11 @@
 }
 
 ul.team-icon {
+  display: flex;
+  justify-content: center;
   margin-top: 25px;
+  list-style: none; /* Remove list bullets */
+  padding: 0; 
 }
 
 ul.team-icon li {
@@ -91,20 +95,35 @@ ul.team-icon li a {
   color: #fff;
 }
 
-ul.team-icon li a.twitter {
-  background-color: #4099ff;
+ul.team-icon li a.github {
+  background-color: #000000;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 40px; /* Adjust the width and height to your desired circle size */
+  height: 40px;
+  border-radius: 50%; /* Makes it a circle */
+  color: white; /* Set the color of the icon */
+  text-decoration: none;
 }
 
-ul.team-icon li a.pinterest {
-  background-color: #c92228;
-}
-
-ul.team-icon li a.facebook {
-  background-color: #3b5998;
-}
-
-ul.team-icon li a.dribble {
-  background-color: #ea4c89;
+ul.team-icon li a.instagram {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 40px; /* Adjust the width and height to your desired circle size */
+  height: 40px;
+  border-radius: 50%; /* Makes it a circle */
+  color: white; /* Set the color of the icon */
+  text-decoration: none;
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+  radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), 
+  radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+  linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 }
 
 .team-icon li a:hover {
@@ -137,8 +156,16 @@ ul.team-icon li a:hover {
 }
 /* Add this CSS to your AboutUs.css file */
 ul.team-icon li a.linkedin {
-  background-color: #0077B5; /* Set the LinkedIn background color */
+  background-color: #0051b5; /* Set the LinkedIn background color */
   color: #fff; /* Set the text color to white */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 40px; /* Adjust the width and height to your desired circle size */
+  height: 40px;
+  border-radius: 50%; /* Makes it a circle */
+  color: white; /* Set the color of the icon */
+  text-decoration: none;
 }
 
 ul.team-icon li a.linkedin:hover {

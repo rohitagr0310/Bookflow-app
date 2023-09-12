@@ -1,10 +1,9 @@
 // AboutUs.jsx
 import React from "react";
 import "./AboutUs.css"; // Import your CSS file for styling
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import PinterestIcon from "@mui/icons-material/Pinterest";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import image from "../../images/jaye.jpg";
 import image1 from "../../images/qada.jpg";
 import image2 from "../../images/rohit.jpg";
@@ -31,18 +30,23 @@ const AboutUs = () => {
               </div>
               <ul className="team-icon">
                 <li>
-                  <a href="#" className="twitter">
-                    <TwitterIcon />
+                  <a
+                    href="https://github.com/rohitagr0310"
+                    className="github"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <GitHubIcon />
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="pinterest">
-                    <PinterestIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="facebook">
-                    <FacebookIcon />
+                  <a
+                    href="https://instagram.com/_rohitagar2610_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="
+                    className="instagram"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <InstagramIcon />
                   </a>
                 </li>
                 <li>
@@ -67,22 +71,32 @@ const AboutUs = () => {
               </div>
               <ul className="team-icon">
                 <li>
-                  <a href="#" className="twitter">
-                    <TwitterIcon />
+                  <a
+                    href="https://github.com/jain-anshika"
+                    className="github"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <GitHubIcon />
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="pinterest">
-                    <PinterestIcon />
+                  <a
+                    href="https://instagram.com/jain_anshika__?igshid=OGQ5ZDc2ODk2ZA=="
+                    className="instagram"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <InstagramIcon />
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="facebook">
-                    <FacebookIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="linkedin">
+                  <a
+                    href="https://www.linkedin.com/in/anshika-jain-85a638255/"
+                    className="linkedin"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
                     <LinkedInIcon />
                   </a>
                 </li>
@@ -98,23 +112,28 @@ const AboutUs = () => {
               </div>
               <ul className="team-icon">
                 <li>
-                  <a href="#" className="twitter">
-                    <TwitterIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pinterest">
-                    <PinterestIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="facebook">
-                    <FacebookIcon />
+                  <a
+                    href="https://github.com/qaidjoharj53"
+                    className="github"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <GitHubIcon />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/qaidjoharjukker53"
+                    className="instagram"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <InstagramIcon />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/qaidjoharj53/"
                     className="linkedin"
                     target="_blank" // Opens in a new tab
                     rel="noopener noreferrer" // Recommended for security
@@ -137,18 +156,23 @@ const AboutUs = () => {
               </div>
               <ul className="team-icon">
                 <li>
-                  <a href="#" className="twitter">
-                    <TwitterIcon />
+                  <a
+                    href="https://github.com/jainankit0811"
+                    className="github"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <GitHubIcon />
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="pinterest">
-                    <PinterestIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="facebook">
-                    <FacebookIcon />
+                  <a
+                    href="https://www.instagram.com/ankit_jain__002/"
+                    className="instagram"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <InstagramIcon />
                   </a>
                 </li>
                 <li>
@@ -173,23 +197,28 @@ const AboutUs = () => {
               </div>
               <ul className="team-icon">
                 <li>
-                  <a href="#" className="twitter">
-                    <TwitterIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="pinterest">
-                    <PinterestIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="facebook">
-                    <FacebookIcon />
+                  <a
+                    href="https://github.com/jayesh2474"
+                    className="github"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <GitHubIcon />
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
+                    className="instagram"
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer"
+                  >
+                    <InstagramIcon />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/jayesh-joshi-1b7261250/"
                     className="linkedin"
                     target="_blank" // Opens in a new tab
                     rel="noopener noreferrer" // Recommended for security
