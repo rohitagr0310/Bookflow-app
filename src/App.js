@@ -13,11 +13,9 @@ import AddBook from "./pages/admin_panel/admin_pages/AddBook.jsx";
 import ManageStudents from "./pages/admin_panel/admin_pages/ManageStudents.jsx";
 import IssuedBooks from "./pages/admin_panel/admin_pages/IssuedBooks.jsx";
 import AllBooks from "./pages/admin_panel/admin_pages/AllBooks.jsx";
-import BookIssued from "./pages/student_panel/student_pages/BooksIssued.jsx";
 import StudentAccount from "./pages/student_panel/student_pages/StudentAccount.jsx";
-import History from "./pages/student_panel/student_pages/History.jsx";
-import Search from "./pages/student_panel/student_search/Search.jsx";
-import StudentHomepage from "./pages/student_panel/student_pages/StudentHomepage.jsx";
+import StudentHistory from "./pages/student_panel/student_pages/StudentHistory.jsx";
+import Search from "./pages/student_panel/student_pages/StudentSearch.jsx";
 import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
 import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
 import AboutUs from "./pages/about_us/AboutUs.jsx"; // Update the path as per your project structure
@@ -50,10 +48,8 @@ function App () {
               <Route path="pending-issue" element={<PendingIssue />} />
             </Route>
             <Route path="student" element={<StudentPanel />} >
-              <Route path="std-account" element={<StudentAccount />} />
-              <Route path="history" element={<History />} />
-              <Route path="home" element={<StudentHomepage />} />
-              <Route path="book-issued" element={<BookIssued />} />
+              <Route path="account" element={<StudentAccount />} />
+              <Route path="history" element={<StudentHistory />} />
               <Route path="search" element={<Search />} />
               <Route path="feed-back" element={<Feedback />} />
             </Route>
