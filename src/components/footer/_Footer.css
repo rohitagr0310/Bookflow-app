@@ -57,7 +57,7 @@
 }
 
 .columnLink:hover {
-	color: #3498db;
+	color: #3498db !important;
 }
 
 .smallText {
@@ -71,6 +71,15 @@
 
 .logo {
 	padding: 50px 0;
+}
+
+a:-webkit-any-link {
+	color: white !important;
+	cursor: pointer;
+}
+
+a:-webkit-any-link:hover {
+	color: #3498db !important;
 }
 
 /* Add this media query at the end of your CSS file to adjust styles for mobile screens */
