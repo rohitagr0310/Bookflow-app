@@ -19,7 +19,9 @@ function Footer () {
             <Typography variant="h6" className="columnTitle">
               <Link to="/about-us">About Us</Link>
             </Typography>
-            <a className="columnLink">Contact</a>
+            <a href="#" className="columnLink">
+              Contact
+            </a>
             <a href="/" className="columnLink">
               Home
             </a>
@@ -51,34 +53,18 @@ function Footer () {
           </div>
         </div>
         <div className="socialIconsContainer">
-          <IconButton
-            href="https://www.facebook.com/technonjr"
-            target="_blank"
-            color="inherit"
-            className="socialIcons"
-          >
+          <IconButton href="https://www.facebook.com/technonjr" target="_blank" color="inherit" className="socialIcons">
             <FacebookIcon />
           </IconButton>
-          <IconButton
-            href="https://twitter.com/TechnoIndiaNJR"
-            target="_blank"
-            color="inherit"
-            className="socialIcons"
-          >
+          <IconButton href="https://twitter.com/TechnoIndiaNJR" target="_blank" color="inherit" className="socialIcons">
             <TwitterIcon />
           </IconButton>
-          <IconButton
-            href="https://www.linkedin.com/school/technonjr/"
-            target="_blank"
-            color="inherit"
-            className="socialIcons"
-          >
+          <IconButton href="https://www.linkedin.com/school/technonjr/" target="_blank" color="inherit" className="socialIcons">
             <LinkedInIcon />
           </IconButton>
         </div>
         <Typography variant="body2" align="center">
-          &copy; {new Date().getFullYear()} BookFlow Library Management. All
-          rights reserved.
+          &copy; {new Date().getFullYear()} BookFlow Library Management. All rights reserved.
         </Typography>
       </Container>
     </footer>

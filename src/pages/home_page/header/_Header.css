@@ -1,7 +1,7 @@
 .appBar {
-	background: transparent !important;
+	background: rgba(29, 112, 255, 0.5) !important;
 	backdrop-filter: blur(10px);
-	padding: 7px 0px;
+	padding: 5px 0px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -11,7 +11,7 @@
 .headerText {
 	flex-grow: 1;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	padding-left: 50px;
+	padding-left: 20px;
 }
 
 .headerLink {
@@ -22,7 +22,7 @@
 }
 
 .headerLink:hover {
-	color: rgb(85, 241, 255);
+	color: rgb(0, 42, 255);
 }
 
 .loginLink {
@@ -31,7 +31,6 @@
 	font-size: 1.2rem;
 	border: none;
 	padding: 7px 21px;
-	margin-right: 29px;
 	border-radius: 5px;
 	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
