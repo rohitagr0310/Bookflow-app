@@ -1,0 +1,1 @@
+get http://localhost:8888/.netlify/functions/hello

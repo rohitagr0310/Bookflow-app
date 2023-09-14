@@ -1,13 +1,18 @@
-import { createPool } from "mysql";
+import { createConnection } from "mysql2";
 
 import { configDotenv } from "dotenv";
 configDotenv({ path: "./.env" });
 
-const pool = createPool({
-  host: process.env.REACT_APP_DB_HOST,
-  user: process.env.REACT_APP_DB_USER,
-  password: process.env.REACT_APP_DB_PASSWORD,
-  database: process.env.REACT_APP_DB_DATABASE
+// Create the connection to the database
+const connection = createConnection(process.env.REACT_APP_DATABASE_URL);
+
+// simple query
+connection.query("show tables", (err, results, fields) => {
+  if (err) {
+    console.error("Error datebase connection:", err);
+  } else {
+    console.log(results);
+  }
 });
 
-export default pool;
+export default connection;

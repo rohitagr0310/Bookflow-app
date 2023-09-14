@@ -22,10 +22,7 @@ app.use("/auth", AuthRouter);
 app.use(
   contentSecurityPolicy({
     directives: {
-      // Add font-src directive to allow font loading from your backend
       "font-src": ["'self'", "http://localhost:5000"]
-      // Add other directives as needed
-      // ...
     }
   })
 );
