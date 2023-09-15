@@ -3,29 +3,54 @@ const { sign } = require("jsonwebtoken");
 const connection = require("./db.js");
 const secretKey = "bookflowadminstrationimp";
 
-module.exports = async function login (req, res) {
+const queryDatabase = async (connection, sql, params) => {
+  return new Promise((resolve, reject) => {
+    connection.query(sql, params, (error, results, fields) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+};
+
+exports.handler = async (event, context) => {
   try {
-    const { email, password } = req.body;
+    const { username, password } = JSON.parse(event.body);
 
-    const results = await connection.query("SELECT * FROM user WHERE email = ?", email);
+    const res = await queryDatabase(connection, "SELECT * FROM user WHERE name = ?", username);
 
-    if (results.length === 0) {
-      return res.status(401).json({ message: "Invalid credentials" });
+    if (res.length === 0) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: "Invalid credentials" })
+      };
     }
-
-    const user = results[0];
-    console.log(user);
-    const isPasswordValid = await compare(password, user.password);
+    const user = res[0];
+    const isPasswordValid = compare(password, user.password);
 
     if (!isPasswordValid) {
-      return res.status(401).json({ message: "Invalid credentials" });
+      console.log("user password incorrect");
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: "Invalid credentials" })
+      };
     }
 
-    // { userName: user.name }
-    const token = sign({ userId: user.id }, { userType: user.user_type }, secretKey);
-    return res.status(200).json({ message: "Login successful", email, token });
+    console.log("Login function completed successfully");
+
+    const token = sign({ userId: user.id, userType: user.user_type }, secretKey);
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Login successful", username: user.name, token, userType: user.user_type })
+    };
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "An error occurred" });
+    console.error("Error in login function:", error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "An error occurred login the user in" })
+    };
   }
 };

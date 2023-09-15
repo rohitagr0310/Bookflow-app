@@ -1,4 +1,4 @@
-const connection = require("./db-text.js");
+const connection = require("./db-test.js");
 
 exports.handler = async (event, context) => {
   try {
