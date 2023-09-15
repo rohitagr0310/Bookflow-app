@@ -4,6 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./_Footer.css";
+import { Link } from "react-router-dom";
 
 /**
  * Footer component.
@@ -16,9 +17,9 @@ function Footer () {
         <div className="columnsContainer">
           <div className="column">
             <Typography variant="h6" className="columnTitle">
-              About Us
+              <Link to="/about-us">About Us</Link>
             </Typography>
-            <a className="columnLink">
+            <a href="#" className="columnLink">
               Contact
             </a>
             <a href="/" className="columnLink">
@@ -52,34 +53,18 @@ function Footer () {
           </div>
         </div>
         <div className="socialIconsContainer">
-          <IconButton
-            href="https://www.facebook.com/technonjr"
-            target="_blank"
-            color="inherit"
-            className="socialIcons"
-          >
+          <IconButton href="https://www.facebook.com/technonjr" target="_blank" color="inherit" className="socialIcons">
             <FacebookIcon />
           </IconButton>
-          <IconButton
-            href="https://twitter.com/TechnoIndiaNJR"
-            target="_blank"
-            color="inherit"
-            className="socialIcons"
-          >
+          <IconButton href="https://twitter.com/TechnoIndiaNJR" target="_blank" color="inherit" className="socialIcons">
             <TwitterIcon />
           </IconButton>
-          <IconButton
-            href="https://www.linkedin.com/school/technonjr/"
-            target="_blank"
-            color="inherit"
-            className="socialIcons"
-          >
+          <IconButton href="https://www.linkedin.com/school/technonjr/" target="_blank" color="inherit" className="socialIcons">
             <LinkedInIcon />
           </IconButton>
         </div>
         <Typography variant="body2" align="center">
-          &copy; {new Date().getFullYear()} BookFlow Library Management. All
-          rights reserved.
+          &copy; {new Date().getFullYear()} BookFlow Library Management. All rights reserved.
         </Typography>
       </Container>
     </footer>
