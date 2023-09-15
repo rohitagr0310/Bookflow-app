@@ -1,11 +1,11 @@
-const connection = require("./db.js");
+const connection = require("../db.js");
 
 exports.handler = async (event, context) => {
   try {
     let results;
 
     await new Promise((resolve, reject) => {
-      connection.query("SELECT * FROM test limit 50", (error, queryresults) => {
+      connection.query("SELECT * FROM library limit 50", (error, queryresults) => {
         if (error) {
           console.error("Error fetching books:", error);
           reject(error);

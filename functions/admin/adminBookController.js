@@ -1,6 +1,6 @@
-const connection = require("./db.js");
+const connection = require("../db.js");
 
-const dbConnection = require("./db.js");
+const dbConnection = require("../db.js");
 
 exports.addBookTest = async (event, context) => {
   try {
