@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable require-jsdoc */
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -31,18 +30,6 @@ import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
 
 function App () {
   const theme = createTheme();
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    axios
-      .get("/.netlify/functions/hello")
-      .then((response) => {
-        setMessage(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -71,7 +58,6 @@ function App () {
             </Route>
           </Routes>
           <Footer />
-          <div><h1>{message}</h1></div>
         </div>
       </Router>
     </ThemeProvider>

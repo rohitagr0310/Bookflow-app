@@ -1,2 +1,8 @@
 [build]
-  functions="/functions"
+  functions = "functions"
+  command = "npm run build"
+
+[build.environment]
+  # Define environment variables here, or you can set them in the Netlify dashboard.
+  DATABASE_URL='mysql://9s2pkij899ay51zkh4ek:pscale_pw_FMhR99PBcbqJd1IEHZa70l3KSc5YCl0qCMAw8wb5Ooq@aws.connect.psdb.cloud/bookflow?ssl={"rejectUnauthorized":true}'
+
