@@ -12,6 +12,9 @@ import LoginIcon from "@mui/icons-material/Login";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import Checkbox from "@mui/material/Checkbox"; // Import Checkbox component
 import FormControlLabel from "@mui/material/FormControlLabel";
+import InputAdornment from "@mui/material/InputAdornment"; // Import InputAdornment
+import VisibilityIcon from "@mui/icons-material/Visibility"; // Import the eye icon
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import "./_AuthPage.css";
 import axios from "axios";
 import "./ForgetPassword";
@@ -92,6 +95,11 @@ const AuthPage = () => {
       console.error("An error occurred:", error);
     }
   };
+  const [showPassword, setShowPassword] = useState(false); // New state for showing/hiding password
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword); // Toggle the password visibility
+  };
 
   const handleSignUp = async (event) => {
     try {
@@ -167,7 +175,7 @@ const AuthPage = () => {
                 />
                 <TextField
                   label="Password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   variant="outlined"
                   value={loginData.loginPassword}
@@ -175,16 +183,24 @@ const AuthPage = () => {
                   fullWidth
                   margin="normal"
                   required
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={agreeTerms}
-                      onChange={handleAgreeTermsChange}
-                      color="primary"
-                    />
-                  }
-                  label="I agree to the Terms and Conditions" // Customize the label as needed
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={handleTogglePassword}
+                          edge="end"
+                          size="small"
+                          className="showPasswordButton" // // Add background color style
+                        >
+                          {showPassword ? (
+                            <VisibilityIcon />
+                          ) : (
+                            <VisibilityOffIcon />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    )
+                  }}
                 />
                 <Button
                   endIcon={<LoginIcon />}
@@ -269,7 +285,14 @@ const AuthPage = () => {
                       color="primary"
                     />
                   }
-                  label="I agree to the Terms and Conditions" // Customize the label as needed
+                  label={
+                    <span className="checkboxLabel">
+                      I agree to the{" "}
+                      <Link to="/terms-and-conditions">
+                        Terms and Conditions
+                      </Link>
+                    </span>
+                  }
                 />
                 <Button
                   type="submit"
