@@ -1,3 +1,4 @@
+/* eslint-disable multiline-ternary */
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
@@ -9,6 +10,11 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import LoginIcon from "@mui/icons-material/Login";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
+import Checkbox from "@mui/material/Checkbox"; // Import Checkbox component
+import FormControlLabel from "@mui/material/FormControlLabel";
+import InputAdornment from "@mui/material/InputAdornment"; // Import InputAdornment
+import VisibilityIcon from "@mui/icons-material/Visibility"; // Import the eye icon
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import "./_AuthPage.css";
 import axios from "axios";
 import "./ForgetPassword";
@@ -89,6 +95,11 @@ const AuthPage = () => {
       console.error("An error occurred:", error);
     }
   };
+  const [showPassword, setShowPassword] = useState(false); // New state for showing/hiding password
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword); // Toggle the password visibility
+  };
 
   const handleSignUp = async (event) => {
     try {
@@ -118,12 +129,24 @@ const AuthPage = () => {
     setShowLogin(!showLogin);
   };
 
+  const [agreeTerms, setAgreeTerms] = useState(false); // New state for checkbox
+
+  const handleAgreeTermsChange = () => {
+    setAgreeTerms(!agreeTerms); // Toggle the checkbox state
+  };
+
   return (
     <>
       <div className="bodyNoMarginPadding">
         <AppBar className="appBar">
           <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="back" component={Link} to="/">
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="back"
+              component={Link}
+              to="/"
+            >
               <ArrowBackIcon />
             </IconButton>
             <Typography variant="h6" style={{ flexGrow: 1, marginLeft: 10 }}>
@@ -134,35 +157,162 @@ const AuthPage = () => {
         <div className="authPageContainer">
           <div className="formContainer">
             <div className="formHeader">
-              <Typography variant="h6">{showLogin ? "Login" : "Sign Up"}</Typography>
+              <Typography variant="h6">
+                {showLogin ? "Login" : "Sign Up"}
+              </Typography>
             </div>
-            {showLogin
-              ? (
-                <form>
-                  <TextField label="Email" placeholder="Email" variant="outlined" value={loginData.loginEmail} onChange={handleLoginEmailChange} fullWidth margin="normal" required />
-                  <TextField label="Password" type="password" placeholder="Password" variant="outlined" value={loginData.loginPassword} onChange={handleLoginPasswordChange} fullWidth margin="normal" required />
-                  <Button endIcon={<LoginIcon />} type="submit" className="submitButton" variant="contained" color="primary" onClick={handleSignIn}>
+            {showLogin ? (
+              <form>
+                <TextField
+                  label="Email"
+                  placeholder="Email"
+                  variant="outlined"
+                  value={loginData.loginEmail}
+                  onChange={handleLoginEmailChange}
+                  fullWidth
+                  margin="normal"
+                  required
+                />
+                <TextField
+                  label="Password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  variant="outlined"
+                  value={loginData.loginPassword}
+                  onChange={handleLoginPasswordChange}
+                  fullWidth
+                  margin="normal"
+                  required
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={handleTogglePassword}
+                          edge="end"
+                          size="small"
+                          className="showPasswordButton" // // Add background color style
+                        >
+                          {showPassword ? (
+                            <VisibilityIcon />
+                          ) : (
+                            <VisibilityOffIcon />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    )
+                  }}
+                />
+                <Button
+                  endIcon={<LoginIcon />}
+                  type="submit"
+                  className="submitButton"
+                  variant="contained"
+                  color="primary"
+                  onClick={handleSignIn}
+                  disabled={!agreeTerms} // Disable the button if the checkbox is not checked
+                >
                   Sign In
-                  </Button>
-                  <Button variant="text" color="primary" className="forget" onClick={handleForgotPassword}>
-                    <Link to="/password-reset">Forgot Password?</Link>
-                  </Button>
-                </form>
-              )
-              : (
-                <form onSubmit={handleSignUp}>
-                  <TextField label="Name" name="name" value={signupData.name} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required />
-                  <TextField label="Roll Number" name="rollnumber" value={signupData.rollnumber} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required />
-                  <TextField label="Email" name="signupEmail" value={signupData.signupEmail} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required type="email" />
-                  <TextField label="Password" name="signupPassword" value={signupData.signupPassword} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required type="password" />
-                  <TextField label="Confirm Password" name="confirmPassword" value={signupData.confirmPassword} onChange={handleSignupChange} fullWidth margin="normal" variant="outlined" required type="password" />
-                  <Button type="submit" className="submitButton" variant="contained" color="primary" onClick={handleSignUp}>
+                </Button>
+                <Button
+                  variant="text"
+                  color="primary"
+                  className="forget"
+                  onClick={handleForgotPassword}
+                >
+                  <Link to="/password-reset">Forgot Password?</Link>
+                </Button>
+              </form>
+            ) : (
+              <form onSubmit={handleSignUp}>
+                <TextField
+                  label="Name"
+                  name="name"
+                  value={signupData.name}
+                  onChange={handleSignupChange}
+                  fullWidth
+                  margin="normal"
+                  variant="outlined"
+                  required
+                />
+                <TextField
+                  label="Roll Number"
+                  name="rollnumber"
+                  value={signupData.rollnumber}
+                  onChange={handleSignupChange}
+                  fullWidth
+                  margin="normal"
+                  variant="outlined"
+                  required
+                />
+                <TextField
+                  label="Email"
+                  name="signupEmail"
+                  value={signupData.signupEmail}
+                  onChange={handleSignupChange}
+                  fullWidth
+                  margin="normal"
+                  variant="outlined"
+                  required
+                  type="email"
+                />
+                <TextField
+                  label="Password"
+                  name="signupPassword"
+                  value={signupData.signupPassword}
+                  onChange={handleSignupChange}
+                  fullWidth
+                  margin="normal"
+                  variant="outlined"
+                  required
+                  type="password"
+                />
+                <TextField
+                  label="Confirm Password"
+                  name="confirmPassword"
+                  value={signupData.confirmPassword}
+                  onChange={handleSignupChange}
+                  fullWidth
+                  margin="normal"
+                  variant="outlined"
+                  required
+                  type="password"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={agreeTerms}
+                      onChange={handleAgreeTermsChange}
+                      color="primary"
+                    />
+                  }
+                  label={
+                    <span className="checkboxLabel">
+                      I agree to the{" "}
+                      <Link to="/terms-and-conditions">
+                        Terms and Conditions
+                      </Link>
+                    </span>
+                  }
+                />
+                <Button
+                  type="submit"
+                  className="submitButton"
+                  variant="contained"
+                  color="primary"
+                  onClick={handleSignUp}
+                  disabled={!agreeTerms} // Disable the button if the checkbox is not checked
+                >
                   Sign Up
-                  </Button>
-                </form>
-              )}
+                </Button>
+              </form>
+            )}
             <div className="toggleButtonContainer">
-              <Button variant="text" color="primary" onClick={handleToggleForm} startIcon={<SwapHorizIcon />}>
+              <Button
+                variant="text"
+                color="primary"
+                onClick={handleToggleForm}
+                startIcon={<SwapHorizIcon />}
+              >
                 {showLogin ? "Switch to Sign Up" : "Switch to Login"}
               </Button>
             </div>

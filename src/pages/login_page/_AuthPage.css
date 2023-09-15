@@ -89,3 +89,6 @@
 .forget {
   margin: auto;
 }
+.checkboxLabel {
+  font-size: 12px; /* Adjust the font size as needed */
+}
