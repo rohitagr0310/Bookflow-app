@@ -1,5 +1,5 @@
 const { hash } = require("bcrypt");
-const connection = require("./db.js");
+const connection = require("./db-test.js");
 
 module.exports = async function signup (req, res) {
   try {
