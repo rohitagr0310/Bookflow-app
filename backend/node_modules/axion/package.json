@@ -1,0 +1,22 @@
+{
+  "name": "axion",
+  "version": "0.1.0",
+  "description": "axion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stelatech/axion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stelatech/axion/issues"
+  },
+  "homepage": "https://github.com/stelatech/axion#README",
+  "keywords": [
+    "axion"
+  ],
+  "author": "Kennet Postigo <kennetfpostigo@gmail.com> (http://kpostigo.com/)",
+  "license": "MIT"
+}
