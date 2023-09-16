@@ -27,6 +27,7 @@ import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
  * Main component for the application.
  * @returns {JSX.Element} The rendered component.
  */
+
 function App () {
   const theme = createTheme();
 

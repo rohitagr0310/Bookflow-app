@@ -15,6 +15,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import InputAdornment from "@mui/material/InputAdornment"; // Import InputAdornment
 import VisibilityIcon from "@mui/icons-material/Visibility"; // Import the eye icon
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import TimedPopup from "../../components/timedpopup/TimedPopup";
 import "./_AuthPage.css";
 import axios from "axios";
 import "./ForgetPassword";
@@ -27,7 +28,7 @@ const AuthPage = () => {
   };
 
   const [loginData, setLoginData] = useState({
-    loginEmail: "",
+    loginUsername: "",
     loginPassword: ""
   });
 
@@ -39,12 +40,19 @@ const AuthPage = () => {
     confirmPassword: ""
   });
 
+  const [errorMessage, setErrorMessage] = useState("");
+  const [errorSeverity, setErrorSeverity] = useState("");
+  const [isErrorPopupOpen, setIsErrorPopupOpen] = useState(false);
+
+  const handleCloseErrorPopup = () => {
+    setIsErrorPopupOpen(false);
+  };
   const [showLogin, setShowLogin] = useState(true); // New state
 
-  const handleLoginEmailChange = (event) => {
+  const handleLoginUsernameChange = (event) => {
     setLoginData((prevData) => ({
       ...prevData,
-      loginEmail: event.target.value
+      loginUsername: event.target.value
     }));
   };
 
@@ -63,47 +71,111 @@ const AuthPage = () => {
     }));
   };
 
-  const handleSignIn = async () => {
+  const handleSignIn = async (event) => {
     event.preventDefault();
     try {
-      const apiUrlLogin = "http://localhost:5000/auth/login";
+      const apiUrlLogin = "/.netlify/functions/login";
 
       const response = await axios.post(apiUrlLogin, {
-        email: loginData.loginEmail,
+        username: loginData.loginUsername,
         password: loginData.loginPassword
       });
 
+      console.log(response);
       if (response.status === 200) {
         const userType = response.data.userType;
         const token = response.data.token;
-        // Store the token in local storage or state
+        // Store the token and user type in local storage or state
         localStorage.setItem("token", token);
+        localStorage.setItem("userType", userType); // Store user type
 
         // Navigate based on the userType
         if (userType === "A") {
           navigate("/admin");
         } else if (userType === "U") {
           navigate("/student");
-        } else {
-          console.error("Unknown user type:", userType);
         }
       } else {
-        // Login failed, show an error message
-        console.error(response.data.message);
+      // Login failed, show an error message
       }
     } catch (error) {
+      console.log(error.response.data.error);
+      setErrorMessage(error.response.data.error);
+      setErrorSeverity("error");
+      setIsErrorPopupOpen(true);
       console.error("An error occurred:", error);
     }
   };
+
   const [showPassword, setShowPassword] = useState(false); // New state for showing/hiding password
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword); // Toggle the password visibility
   };
 
+  const validatePassword = (password) => {
+  // Check if the password is at least 8 characters long
+    if (password.length < 8) {
+      return "Password must be at least 8 characters long.";
+    }
+
+    // Check if the password has at least one uppercase letter
+    if (!/[A-Z]/.test(password)) {
+      return "Password must have at least one uppercase letter.";
+    }
+
+    // Check if the password has at least one digit
+    if (!/\d/.test(password)) {
+      return "Password must have at least one digit.";
+    }
+
+    // Check if the password has at least one special character
+    if (!/[@$!%*?&]/.test(password)) {
+      return "Password must have at least one special character.";
+    }
+
+    // Password meets all conditions
+    return null;
+  };
+
   const handleSignUp = async (event) => {
+    event.preventDefault();
     try {
-      const apiUrlSignup = "http://localhost:5000/auth/signup";
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+      if (signupData.signupPassword !== signupData.confirmPassword) {
+        const message = "Password and Confirm Password do not match.";
+        setErrorMessage(message);
+        setErrorSeverity("error");
+        setIsErrorPopupOpen(true);
+        return; // Reject the operation
+      }
+
+      if (signupData.rollnumber.length !== 10) {
+        const message = "Roll number must be 10 characters long.";
+        setErrorMessage(message);
+        setErrorSeverity("error");
+        setIsErrorPopupOpen(true);
+        return; // Reject the operation
+      }
+
+      const passwordValidationError = validatePassword(signupData.signupPassword);
+
+      if (passwordValidationError) {
+        setErrorMessage(passwordValidationError);
+        setErrorSeverity("error");
+        setIsErrorPopupOpen(true);
+        return; // Reject the operation
+      }
+
+      if (!emailRegex.test(signupData.signupEmail)) {
+        setErrorMessage("Invalid email address.");
+        setErrorSeverity("error");
+        setIsErrorPopupOpen(true);
+        return; // Reject the operation
+      }
+
+      const apiUrlSignup = "/.netlify/functions/signup";
 
       const response = await axios.post(apiUrlSignup, {
         name: signupData.name,
@@ -115,13 +187,25 @@ const AuthPage = () => {
 
       if (response.status === 201) {
         // Signup successful code
+        setErrorMessage("Signup successful.");
+        setErrorSeverity("success");
+        setIsErrorPopupOpen(true);
         console.log("Signup successful:", response.data.message);
-      } else {
-        // Signup failed, show an error message
-        console.error("Signup failed:", response.data.message);
+
+        // Clear the input fields
+        setSignupData({
+          name: "",
+          rollnumber: "",
+          signupEmail: "",
+          signupPassword: "",
+          confirmPassword: ""
+        });
       }
     } catch (error) {
-      console.error("An error occurred:", error);
+      setErrorMessage(error.response.data.message);
+      setErrorSeverity("error");
+      setIsErrorPopupOpen(true);
+      console.log("Signup failed:", error.response.data.message);
     }
   };
 
@@ -162,66 +246,67 @@ const AuthPage = () => {
               </Typography>
             </div>
             {showLogin ? (
-              <form>
-                <TextField
-                  label="Email"
-                  placeholder="Email"
-                  variant="outlined"
-                  value={loginData.loginEmail}
-                  onChange={handleLoginEmailChange}
-                  fullWidth
-                  margin="normal"
-                  required
-                />
-                <TextField
-                  label="Password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  variant="outlined"
-                  value={loginData.loginPassword}
-                  onChange={handleLoginPasswordChange}
-                  fullWidth
-                  margin="normal"
-                  required
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={handleTogglePassword}
-                          edge="end"
-                          size="small"
-                          className="showPasswordButton" // // Add background color style
-                        >
-                          {showPassword ? (
-                            <VisibilityIcon />
-                          ) : (
-                            <VisibilityOffIcon />
-                          )}
-                        </IconButton>
-                      </InputAdornment>
-                    )
-                  }}
-                />
-                <Button
-                  endIcon={<LoginIcon />}
-                  type="submit"
-                  className="submitButton"
-                  variant="contained"
-                  color="primary"
-                  onClick={handleSignIn}
-                  disabled={!agreeTerms} // Disable the button if the checkbox is not checked
-                >
+              <div>
+                <form>
+                  <TextField
+                    label="Username"
+                    placeholder="Username"
+                    variant="outlined"
+                    value={loginData.loginUsername}
+                    onChange={handleLoginUsernameChange}
+                    fullWidth
+                    margin="normal"
+                    required
+                  />
+                  <TextField
+                    label="Password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    variant="outlined"
+                    value={loginData.loginPassword}
+                    onChange={handleLoginPasswordChange}
+                    fullWidth
+                    margin="normal"
+                    required
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            onClick={handleTogglePassword}
+                            edge="end"
+                            size="small"
+                            className="showPasswordButton"
+                          >
+                            {showPassword ? (
+                              <VisibilityIcon />
+                            ) : (
+                              <VisibilityOffIcon />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                      )
+                    }}
+                  />
+                  <Button
+                    endIcon={<LoginIcon />}
+                    type="submit"
+                    className="submitButton"
+                    variant="contained"
+                    color="primary"
+                    onClick={handleSignIn}
+                  >
                   Sign In
-                </Button>
-                <Button
-                  variant="text"
-                  color="primary"
-                  className="forget"
-                  onClick={handleForgotPassword}
-                >
-                  <Link to="/password-reset">Forgot Password?</Link>
-                </Button>
-              </form>
+                  </Button>
+                  <Button
+                    variant="text"
+                    color="primary"
+                    className="forget"
+                    onClick={handleForgotPassword}
+                  >
+                    <Link to="/password-reset">Forgot Password?</Link>
+                  </Button>
+                </form>
+              </div>
             ) : (
               <form onSubmit={handleSignUp}>
                 <TextField
@@ -300,12 +385,13 @@ const AuthPage = () => {
                   variant="contained"
                   color="primary"
                   onClick={handleSignUp}
-                  disabled={!agreeTerms} // Disable the button if the checkbox is not checked
+                  disabled={!agreeTerms}
                 >
                   Sign Up
                 </Button>
               </form>
             )}
+
             <div className="toggleButtonContainer">
               <Button
                 variant="text"
@@ -316,9 +402,16 @@ const AuthPage = () => {
                 {showLogin ? "Switch to Sign Up" : "Switch to Login"}
               </Button>
             </div>
+
           </div>
         </div>
       </div>
+      <TimedPopup
+        open={isErrorPopupOpen}
+        onClose={handleCloseErrorPopup}
+        message={errorMessage}
+        severity={errorSeverity}
+      />
     </>
   );
 };
