@@ -68,6 +68,27 @@ npm start
 - Addressed user feedback from initial testing
 - Prepared the app for beta testing phase
 
+### Week 4
+
+- Implemented forget password option
+- Admin panel and student panel interface was setup
+- Started main backend and database work as per requirement
+- Cleaning data of library was done
+
+### Week 5
+
+- Admin dashboard and student dashboards were implemented using Material UI
+- Add book and all books functionality was succesfully done 
+- Mainy student panel responsiveness was checked for mobiles
+- Student panel and Admin panel dashboard were implemented using Material UI
+
+### Week 6
+
+- Hosted the website using netlify
+- Cleaning of book bank data
+- Deployment of MySQL database on netlify
+- Using Material UI components for modifying the webapp
+
 ## Contributors
 
 Special thanks to the following contributors who have helped in shaping the BookFlow App:
