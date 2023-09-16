@@ -100,65 +100,98 @@ const AddBook = () => {
             </FormControl>
           </div>
           <Grid container spacing={1}>
-            <TextField
-              label="Accession Type"
-              value={accessionType}
-              onChange={(e) => setAccessionType(e.target.value)}
-            />
-            <TextField
-              label="Accession Number"
-              value={accessionNumber}
-              onChange={(e) => setAccessionNumber(e.target.value)}
-            />
-            <TextField
-              label="Accession Prefix"
-              value={accessionPrefix}
-              onChange={(e) => setAccessionPrefix(e.target.value)}
-            />
-            <TextField
-              label="Accession Date"
-              value={accessionDate}
-              onChange={(e) => setAccessionDate(e.target.value)}
-            />
-            <TextField
-              label="Book Title"
-              value={bookTitle}
-              onChange={(e) => setBookTitle(e.target.value)}
-            />
-            <TextField
-              label="Author First"
-              value={authorFirst}
-              onChange={(e) => setAuthorFirst(e.target.value)}
-            />
-            <TextField
-              label="Author Second"
-              value={authorSecond}
-              onChange={(e) => setAuthorSecond(e.target.value)}
-            />
-            <TextField
-              label="Publisher"
-              value={publisher}
-              onChange={(e) => setPublisher(e.target.value)}
-            />
-            <TextField label="Year" value={year} onChange={(e) => setYear(e.target.value)} />
-            <TextField label="Pages" value={pages} onChange={(e) => setPages(e.target.value)} />
-            <TextField label="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
-            <TextField label="Language" value={language} onChange={(e) => setLanguage(e.target.value)} />
-            <TextField label="Edition" value={edition} onChange={(e) => setEdition(e.target.value)} />
-            <TextField label="Vendor" value={vendor} onChange={(e) => setVendor(e.target.value)} />
-            <TextField label="Bill No" value={billNo} onChange={(e) => setBillNo(e.target.value)} />
-            <TextField
-              label="Purchase Date"
-              value={purchaseDate}
-              onChange={(e) => setPurchaseDate(e.target.value)}
-            />
-            <TextField
-              label="Purchase Cost"
-              value={purchaseCost}
-              onChange={(e) => setPurchaseCost(e.target.value)}
-            />
-            <TextField label="Keyword" value={keyword} onChange={(e) => setKeyword(e.target.value)} />
-            <TextField label="QR Code" value={qrCode} onChange={(e) => setQRCode(e.target.value)} />
+            <Grid item xs={2}>
+              <TextField
+                label="Accession Type"
+                value={accessionType}
+                onChange={(e) => setAccessionType(e.target.value)}
+              /></Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Accession Number"
+                value={accessionNumber}
+                onChange={(e) => setAccessionNumber(e.target.value)}
+              /></Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Accession Prefix"
+                value={accessionPrefix}
+                onChange={(e) => setAccessionPrefix(e.target.value)}
+              /></Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Accession Date"
+                value={accessionDate}
+                onChange={(e) => setAccessionDate(e.target.value)}
+              /></Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Book Title"
+                value={bookTitle}
+                onChange={(e) => setBookTitle(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Author First"
+                value={authorFirst}
+                onChange={(e) => setAuthorFirst(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Author Second"
+                value={authorSecond}
+                onChange={(e) => setAuthorSecond(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Publisher"
+                value={publisher}
+                onChange={(e) => setPublisher(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Year" value={year} onChange={(e) => setYear(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Pages" value={pages} onChange={(e) => setPages(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Language" value={language} onChange={(e) => setLanguage(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Edition" value={edition} onChange={(e) => setEdition(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Vendor" value={vendor} onChange={(e) => setVendor(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}><TextField label="Bill No" value={billNo} onChange={(e) => setBillNo(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Purchase Date"
+                value={purchaseDate}
+                onChange={(e) => setPurchaseDate(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Purchase Cost"
+                value={purchaseCost}
+                onChange={(e) => setPurchaseCost(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Keyword" value={keyword} onChange={(e) => setKeyword(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="QR Code" value={qrCode} onChange={(e) => setQRCode(e.target.value)} />
+            </Grid>
             <Grid item xs={12}>
               <div className="center-button">
                 <Button variant="contained" onClick={handleAddBook}>
