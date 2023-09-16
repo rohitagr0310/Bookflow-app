@@ -22,6 +22,7 @@ import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
 import AboutUs from "./pages/about_us/AboutUs.jsx";
 import AdminHistory from "./pages/admin_panel/admin_pages/AdminHistory.jsx";
 import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
+import TermsAndConditions from "./pages/login_page/term_condition/TermsAndConditions";
 
 /*
  * Main component for the application.
@@ -39,6 +40,7 @@ function App () {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<AuthPage />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/password-reset" element={<ForgetPassword />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="admin" element={<AdminPanel />}>
