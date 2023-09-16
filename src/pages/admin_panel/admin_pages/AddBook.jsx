@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unknown-property */
 import React, { useState, useEffect } from "react";
-import "./_add-book.css";
 import axios from "axios";
+import { TextField, Button, FormControl, Select, MenuItem, Card, CardContent, Grid } from "@mui/material";
 
 const AddBook = () => {
   const [accessionType, setAccessionType] = useState("");
@@ -53,8 +54,9 @@ const AddBook = () => {
 
     const apiUrl = `http://localhost:5000/api/admin/add-book/${selectedTable}`;
 
-    axios.post(apiUrl, bookData) // Send data to the server
-      .then(response => {
+    axios
+      .post(apiUrl, bookData)
+      .then((response) => {
         console.log("Book added successfully:", response.data);
         // Clear input fields
         setAccessionType("");
@@ -77,101 +79,161 @@ const AddBook = () => {
         setKeyword("");
         setQRCode("");
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error adding book:", error);
       });
   };
 
   return (
-    <div className="add-book-container">
-      <h1>Add Book Page</h1>
-      <div className="input-group">
-        <label>Select Table:</label>
-        <select value={selectedTable} onChange={(e) => setSelectedTable(e.target.value)}>
-          <option value="test">test</option>
-          <option value="library">Library</option>
-        </select>
-      </div>
-      <div className="input-group">
-        <label>Accession Type:</label>
-        <input type="text" value={accessionType} onChange={(e) => setAccessionType(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Accession Number:</label>
-        <input type="text" value={accessionNumber} onChange={(e) => setAccessionNumber(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Accession Prefix:</label>
-        <input type="text" value={accessionPrefix} onChange={(e) => setAccessionPrefix(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Accession Date:</label>
-        <input type="text" value={accessionDate} onChange={(e) => setAccessionDate(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Book Title:</label>
-        <input type="text" value={bookTitle} onChange={(e) => setBookTitle(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Author First:</label>
-        <input type="text" value={authorFirst} onChange={(e) => setAuthorFirst(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Author Second:</label>
-        <input type="text" value={authorSecond} onChange={(e) => setAuthorSecond(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Publisher:</label>
-        <input type="text" value={publisher} onChange={(e) => setPublisher(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Year:</label>
-        <input type="text" value={year} onChange={(e) => setYear(e.target.value)} />
-      </div>w
-      <div className="input-group">
-        <label>Pages:</label>
-        <input type="text" value={pages} onChange={(e) => setPages(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Subject:</label>
-        <input type="text" value={subject} onChange={(e) => setSubject(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Language:</label>
-        <input type="text" value={language} onChange={(e) => setLanguage(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Edition:</label>
-        <input type="text" value={edition} onChange={(e) => setEdition(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Vendor:</label>
-        <input type="text" value={vendor} onChange={(e) => setVendor(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Bill No:</label>
-        <input type="text" value={billNo} onChange={(e) => setBillNo(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Purchase Date:</label>
-        <input type="text" value={purchaseDate} onChange={(e) => setPurchaseDate(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Purchase Cost:</label>
-        <input type="text" value={purchaseCost} onChange={(e) => setPurchaseCost(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Keyword:</label>
-        <input type="text" value={keyword} onChange={(e) => setKeyword(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>QR Code:</label>
-        <input type="text" value={qrCode} onChange={(e) => setQRCode(e.target.value)} />
-      </div>
-      <div className="center-button">
-        <button onClick={handleAddBook}>Add Book</button>
-      </div>
-    </div>
+    <Card>
+      <CardContent>
+        <div className="add-book-container">
+          <h1>Add Book Page</h1>
+          <div className="input-group">
+            <FormControl>
+              <Grid container spacing={1}>
+                <Select value={selectedTable} onChange={(e) => setSelectedTable(e.target.value)}>
+                  <MenuItem value="test">test</MenuItem>
+                  <MenuItem value="library">Library</MenuItem>
+                </Select>
+              </Grid>
+            </FormControl>
+          </div>
+          <Grid container spacing={1}>
+            <Grid item xs={2}>
+              <TextField
+                label="Accession Type"
+                value={accessionType}
+                onChange={(e) => setAccessionType(e.target.value)}
+              /></Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Accession Number"
+                value={accessionNumber}
+                onChange={(e) => setAccessionNumber(e.target.value)}
+              /></Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Accession Prefix"
+                value={accessionPrefix}
+                onChange={(e) => setAccessionPrefix(e.target.value)}
+              /></Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Accession Date"
+                value={accessionDate}
+                onChange={(e) => setAccessionDate(e.target.value)}
+              /></Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Book Title"
+                value={bookTitle}
+                onChange={(e) => setBookTitle(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Author First"
+                value={authorFirst}
+                onChange={(e) => setAuthorFirst(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Author Second"
+                value={authorSecond}
+                onChange={(e) => setAuthorSecond(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Publisher"
+                value={publisher}
+                onChange={(e) => setPublisher(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Year" value={year} onChange={(e) => setYear(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Pages" value={pages} onChange={(e) => setPages(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Language" value={language} onChange={(e) => setLanguage(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Edition" value={edition} onChange={(e) => setEdition(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Vendor" value={vendor} onChange={(e) => setVendor(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}><TextField label="Bill No" value={billNo} onChange={(e) => setBillNo(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Purchase Date"
+                value={purchaseDate}
+                onChange={(e) => setPurchaseDate(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                label="Purchase Cost"
+                value={purchaseCost}
+                onChange={(e) => setPurchaseCost(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="Keyword" value={keyword} onChange={(e) => setKeyword(e.target.value)} />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField label="QR Code" value={qrCode} onChange={(e) => setQRCode(e.target.value)} />
+            </Grid>
+            <Grid item xs={12}>
+              <div className="center-button">
+                <Button variant="contained" onClick={handleAddBook}>
+          Add Book
+                </Button>
+              </div>
+            </Grid>
+          </Grid>
+        </div>
+      </CardContent>
+      <style jsx>{`
+        /* Add responsive styles here */
+        .add-book-container {
+          padding: 16px;
+        }
+
+        .input-group {
+          margin-bottom: 16px;
+        }
+
+        .center-button {
+          text-align: center;
+          margin-top: 16px;
+        }
+
+        @media (max-width: 768px) {
+          /* Adjust styles for screens smaller than 768px (typical mobile devices) */
+          .add-book-container {
+            padding: 8px;
+          }
+
+          .input-group {
+            margin-bottom: 8px;
+          }
+
+          .center-button {
+            text-align: center;
+            margin-top: 8px;
+          }
+        }
+      `}</style>
+    </Card>
   );
 };
 
