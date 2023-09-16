@@ -36,8 +36,8 @@ const PendingIssue = () => {
   return (
     <Card>
       <CardContent>
-        <div className="pending-issue-container">
-          <Typography variant="h4">Pending Issue</Typography>
+        <div>
+          <Typography variant="h3">Pending Issue</Typography>
           <br />
           <Paper elevation={3}>
             <Table>
@@ -64,7 +64,7 @@ const PendingIssue = () => {
             </Table>
           </Paper>
           <br />
-          <Typography variant="subtitle1">
+          <Typography variant="h6">
         Total Pending Issues: {totalPendingIssue}
           </Typography>
         </div>

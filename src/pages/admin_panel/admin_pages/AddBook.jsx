@@ -88,7 +88,7 @@ const AddBook = () => {
     <Card>
       <CardContent>
         <div className="add-book-container">
-          <h1>Add Book Page</h1>
+          <h1>Add Book</h1>
           <div className="input-group">
             <FormControl>
               <Grid container spacing={1}>
