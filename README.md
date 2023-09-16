@@ -5,6 +5,7 @@ Welcome to the BookFlow App repository! This is where we manage the development 
 ## Project Overview
 
 BookFlow is a library management app that allows users to seamlessly manage book borrowing and returns using QR code scanning. This app aims to provide an efficient way to interact with library resources without the need for direct librarian involvement.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ddd79048-ca31-4775-a44c-c3ee031177ca/deploy-status)](https://app.netlify.com/sites/book-flow/deploys)
 
 ## Features
 
