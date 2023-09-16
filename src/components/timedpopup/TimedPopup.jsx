@@ -12,7 +12,7 @@ const TimedPopup = ({ open, onClose, message, severity }) => {
     const timer = setTimeout(() => {
       setIsOpen(false);
       onClose();
-    }, 3000); // Set the time (in milliseconds) for the popup to automatically close
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [open, onClose]);
@@ -20,7 +20,7 @@ const TimedPopup = ({ open, onClose, message, severity }) => {
   return (
     <Snackbar
       open={isOpen}
-      autoHideDuration={3000}
+      autoHideDuration={5000}
       onClose={onClose}
       anchorOrigin={{ vertical: "top", horizontal: "right" }}
     >

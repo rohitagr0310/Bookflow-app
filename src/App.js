@@ -28,6 +28,7 @@ import TermsAndConditions from "./pages/login_page/term_condition/TermsAndCondit
  * Main component for the application.
  * @returns {JSX.Element} The rendered component.
  */
+
 function App () {
   const theme = createTheme();
 
