@@ -24,6 +24,7 @@ import AdminHistory from "./pages/admin_panel/admin_pages/AdminHistory.jsx";
 import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
 import TermsAndConditions from "./pages/login_page/term_condition/TermsAndConditions";
 import AdminDashboard from "./pages/admin_panel/adminDashboard.jsx";
+import StudentDashboard from "./pages/student_panel/studentdashboard.jsx";
 
 /*
  * Main component for the application.
@@ -55,6 +56,7 @@ function App () {
               <Route path="pending-issue" element={<PendingIssue />} />
             </Route>
             <Route path="student" element={<StudentPanel />}>
+              <Route index element={<StudentDashboard />} />
               <Route path="account" element={<StudentAccount />} />
               <Route path="history" element={<StudentHistory />} />
               <Route path="search" element={<Search />} />
