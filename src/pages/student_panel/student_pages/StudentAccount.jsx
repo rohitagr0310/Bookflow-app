@@ -1,97 +1,128 @@
 import React, { useState } from "react";
-import "./_studentAccount.css"; // Import the CSS file for styling
-import {
-// Avatar,
-// Box,
-// Button,
-// Card,
-// CardActions,
-// CardContent
-// Divider,
-// Typography
-} from "@mui/material";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+
+const initialFormData = {
+  username: "",
+  password: "",
+  rollNumber: "",
+  email: "",
+  semesterYear: "",
+  phoneNumber: ""
+};
 
 const StudentAccount = () => {
+  const [formData, setFormData] = useState(initialFormData);
   const [isEditing, setIsEditing] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [rollno, setRollNo] = useState("");
-  const [emailid, setEmailID] = useState("");
-  const [semester, setSemester] = useState("");
-  const [year, setYear] = useState("");
-  const [phoneno, setPhoneNo] = useState("");
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
   const handleEditClick = () => {
     setIsEditing(true);
-    console.log("Book added:", {
-      username,
-      password,
-      rollno,
-      emailid,
-      semester,
-      year,
-      phoneno
-    });
-
-    // Clear input fields
-    setUsername("");
-    setPassword("");
-    setRollNo("");
-    setEmailID("");
-    setSemester("");
-    setYear("");
-    setPhoneNo("");
   };
 
-  const handleConfirmClick = () => {
-    // Logic to handle confirming the edited details
-    // Update the database or perform necessary actions
+  const handleSaveClick = () => {
+    // Here, you can implement logic to save the updated data
+    // For simplicity, we're just logging the updated data
+    console.log("Updated Data:", formData);
     setIsEditing(false);
   };
 
   return (
-    <div className="account-container">
-      <h1>Account</h1>
-      <div className="input-group">
-        <label className="label">Username:</label>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label className="label">Password:</label>
-        <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label className="label"
-        >Roll No.:</label>
-        <input type="text" value={rollno} onChange={(e) => setRollNo(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Email ID:</label>
-        <input type="text" value={emailid} onChange={(e) => setEmailID(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Semester:</label>
-        <input type="text" value={semester} onChange={(e) => setSemester(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Year:</label>
-        <input type="text" value={year} onChange={(e) => setYear(e.target.value)} />
-      </div>
-      <div className="input-group">
-        <label>Phone No.</label>
-        <input type="text" value={phoneno} onChange={(e) => setPhoneNo(e.target.value)} />
-      </div>
+    <Card>
+      <CardContent>
+        <Paper elevation={3} style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
+          <Typography variant="h5" gutterBottom>
+        Account Information
+          </Typography>
+          <form>
+            <TextField
+              name="username"
+              label="Username"
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              value={formData.username}
+              onChange={handleInputChange}
+              disabled={!isEditing}
+            />
+            <TextField
+              name="password"
+              label="Password"
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              type="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              disabled={!isEditing}
+            />
+            <TextField
+              name="rollNumber"
+              label="Roll Number"
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              value={formData.rollNumber}
+              onChange={handleInputChange}
+              disabled={!isEditing}
+            />
+            <TextField
+              name="email"
+              label="Email ID"
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              value={formData.email}
+              onChange={handleInputChange}
+              disabled={!isEditing}
+            />
+            <TextField
+              name="semesterYear"
+              label="Semester/Year"
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              value={formData.semesterYear}
+              onChange={handleInputChange}
+              disabled={!isEditing}
+            />
+            <TextField
+              name="phoneNumber"
+              label="Phone Number"
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+              disabled={!isEditing}
+            />
 
-      <div className="center-button">
-        {isEditing
-          ? (
-            <button onClick={handleConfirmClick}>Confirm</button>
-          )
-          : (
-            <button onClick={handleEditClick}>Edit</button>
-          )}
-      </div>
-    </div>
+            {isEditing
+              ? (
+                <Button variant="contained" color="primary" onClick={handleSaveClick}>
+            Save
+                </Button>
+              )
+              : (
+                <Button variant="contained" color="primary" onClick={handleEditClick}>
+            Edit
+                </Button>
+              )}
+          </form>
+        </Paper>
+      </CardContent>
+    </Card>
   );
 };
 
