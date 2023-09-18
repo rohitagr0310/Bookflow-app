@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./_pending-issue.css";
 import {
   Table,
+  TableContainer,
   TableHead,
   TableBody,
   TableRow,
@@ -40,28 +40,30 @@ const PendingIssue = () => {
           <Typography variant="h3">Pending Issue</Typography>
           <br />
           <Paper elevation={3}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Book Name</TableCell>
-                  <TableCell>Issue Date</TableCell>
-                  <TableCell>Accession Number</TableCell>
-                  <TableCell>Issued By</TableCell>
-                  <TableCell>Roll Number</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {pendingIssue.map((book, index) => (
-                  <TableRow key={index}>
-                    <TableCell>{book.bookName}</TableCell>
-                    <TableCell>{book.issueDate}</TableCell>
-                    <TableCell>{book.accessionNumber}</TableCell>
-                    <TableCell>{book.issuedBy}</TableCell>
-                    <TableCell>{book.rollNumber}</TableCell>
+            <TableContainer component={Paper} style={{ maxHeight: 400 }}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Book Name</TableCell>
+                    <TableCell>Issue Date</TableCell>
+                    <TableCell>Accession Number</TableCell>
+                    <TableCell>Issued By</TableCell>
+                    <TableCell>Roll Number</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHead>
+                <TableBody>
+                  {pendingIssue.map((book, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{book.bookName}</TableCell>
+                      <TableCell>{book.issueDate}</TableCell>
+                      <TableCell>{book.accessionNumber}</TableCell>
+                      <TableCell>{book.issuedBy}</TableCell>
+                      <TableCell>{book.rollNumber}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </Paper>
           <br />
           <Typography variant="h6">
