@@ -17,37 +17,37 @@ export const mainListItems = (
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard"/>
+      <ListItemText className="admin-dashboard-menu-buttons" primary="Dashboard"/>
     </ListItemButton>
     <ListItemButton component={Link} to="/student/search">
       <ListItemIcon>
         <SearchIcon />
       </ListItemIcon>
-      <ListItemText primary="Search" />
+      <ListItemText className="admin-dashboard-menu-buttons"primary="Search" />
     </ListItemButton>
     <ListItemButton component={Link} to="/student/account">
       <ListItemIcon>
         <AccountCircleIcon />
       </ListItemIcon>
-      <ListItemText primary="Account" />
+      <ListItemText className="admin-dashboard-menu-buttons" primary="Account" />
     </ListItemButton>
     <ListItemButton component={Link} to="/student/history">
       <ListItemIcon>
         <HistoryIcon />
       </ListItemIcon>
-      <ListItemText primary="History" />
+      <ListItemText className="admin-dashboard-menu-buttons" primary="History" />
     </ListItemButton>
     <ListItemButton component={Link} to="/student/feed-back">
       <ListItemIcon>
         <FeedbackIcon/>
       </ListItemIcon>
-      <ListItemText primary="Feedback" />
+      <ListItemText className="admin-dashboard-menu-buttons"primary="Feedback" />
     </ListItemButton>
     <ListItemButton component={Link} to="/">
       <ListItemIcon>
         <LogoutIcon />
       </ListItemIcon>
-      <ListItemText primary="Logout" />
+      <ListItemText className="admin-dashboard-menu-buttons"primary="Logout" />
     </ListItemButton>
   </React.Fragment>
 );

@@ -10,7 +10,6 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -91,16 +90,13 @@ export default function Dashboard () {
                 marginRight: "36px",
                 ...(open && { display: "none" })
               }}
+              width='36px'
             >
               <MenuIcon />
             </IconButton>
             <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-              Dashboard
+              Admin Dashboard
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={0} color="secondary">
-              </Badge>
-            </IconButton>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -108,7 +104,7 @@ export default function Dashboard () {
             sx={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "flex-end",
+              justifyContent: "space-around",
               px: [1]
             }}
           >
