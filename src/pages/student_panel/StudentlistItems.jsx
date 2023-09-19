@@ -7,7 +7,6 @@ import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HistoryIcon from "@mui/icons-material/History";
-import FeedbackIcon from "@mui/icons-material/Feedback";
 import SearchIcon from "@mui/icons-material/Search";
 import LogoutIcon from "@mui/icons-material/Logout";
 
@@ -36,12 +35,6 @@ export const mainListItems = (
         <HistoryIcon />
       </ListItemIcon>
       <ListItemText className="admin-dashboard-menu-buttons" primary="History" />
-    </ListItemButton>
-    <ListItemButton component={Link} to="/student/feed-back">
-      <ListItemIcon>
-        <FeedbackIcon/>
-      </ListItemIcon>
-      <ListItemText className="admin-dashboard-menu-buttons"primary="Feedback" />
     </ListItemButton>
     <ListItemButton component={Link} to="/">
       <ListItemIcon>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as React from "react";
 /* eslint-disable require-jsdoc */
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
@@ -12,11 +13,8 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-<<<<<<< HEAD
 import Paper from "@mui/material/Paper";
-=======
 import Link from "@mui/material/Link";
->>>>>>> 34aa38a3ff347a2345c08db27c7f8863e82661ca
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems } from "./StudentlistItems";
