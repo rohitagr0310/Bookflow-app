@@ -19,6 +19,7 @@ import StudentHistory from "./pages/student_panel/student_pages/StudentHistory.j
 import Search from "./pages/student_panel/student_pages/StudentSearch.jsx";
 import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
 import AboutUs from "./pages/about_us/AboutUs.jsx";
+import ContactUs from "./pages/contact-us/ContactUs.jsx";
 import AdminHistory from "./pages/admin_panel/admin_pages/AdminHistory.jsx";
 import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
 import TermsAndConditions from "./pages/login_page/term_condition/TermsAndConditions";
@@ -45,6 +46,7 @@ function App () {
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/password-reset" element={<ForgetPassword />} />
             <Route path="about-us" element={<AboutUs />} />
+            <Route path="contact-us" element={<ContactUs />} />
             <Route path="admin" element={<AdminPanel />}>
               <Route index element={<AdminDashboard />} />
               <Route path="add-book" element={<AddBook />} />
