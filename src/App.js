@@ -17,12 +17,14 @@ import AllBooks from "./pages/admin_panel/admin_pages/AllBooks.jsx";
 import StudentAccount from "./pages/student_panel/student_pages/StudentAccount.jsx";
 import StudentHistory from "./pages/student_panel/student_pages/StudentHistory.jsx";
 import Search from "./pages/student_panel/student_pages/StudentSearch.jsx";
-import Feedback from "./pages/student_panel/student_pages/Feedback.jsx";
 import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
 import AboutUs from "./pages/about_us/AboutUs.jsx";
 import AdminHistory from "./pages/admin_panel/admin_pages/AdminHistory.jsx";
 import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
 import EmailVerifiedPage from "./pages/login_page/EmailVerified.jsx";
+import TermsAndConditions from "./pages/login_page/term_condition/TermsAndConditions";
+import AdminDashboard from "./pages/admin_panel/adminDashboard.jsx";
+import StudentDashboard from "./pages/student_panel/studentdashboard.jsx";
 
 /*
  * Main component for the application.
@@ -43,8 +45,10 @@ function App () {
             <Route path="login" element={<AuthPage />} />
             <Route path="password-reset" element={<ForgetPassword />} />
             <Route path="email-verified" element={<EmailVerifiedPage/>} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="admin" element={<AdminPanel />}>
+              <Route index element={<AdminDashboard />} />
               <Route path="add-book" element={<AddBook />} />
               <Route path="all-book" element={<AllBooks />} />
               <Route path="manage-std" element={<ManageStudents />} />
@@ -53,10 +57,10 @@ function App () {
               <Route path="pending-issue" element={<PendingIssue />} />
             </Route>
             <Route path="student" element={<StudentPanel />}>
+              <Route index element={<StudentDashboard />} />
               <Route path="account" element={<StudentAccount />} />
               <Route path="history" element={<StudentHistory />} />
               <Route path="search" element={<Search />} />
-              <Route path="feed-back" element={<Feedback />} />
             </Route>
           </Routes>
           <Footer />

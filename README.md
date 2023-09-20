@@ -5,6 +5,7 @@ Welcome to the BookFlow App repository! This is where we manage the development 
 ## Project Overview
 
 BookFlow is a library management app that allows users to seamlessly manage book borrowing and returns using QR code scanning. This app aims to provide an efficient way to interact with library resources without the need for direct librarian involvement.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ddd79048-ca31-4775-a44c-c3ee031177ca/deploy-status)](https://app.netlify.com/sites/book-flow/deploys)
 
 ## Features
 
@@ -67,6 +68,27 @@ npm start
 - Optimized performance through code refactoring
 - Addressed user feedback from initial testing
 - Prepared the app for beta testing phase
+
+### Week 4
+
+- Implemented forget password option
+- Admin panel and student panel interface was setup
+- Started main backend and database work as per requirement
+- Cleaning data of library was done
+
+### Week 5
+
+- Admin dashboard and student dashboards were implemented using Material UI
+- Add book and all books functionality was succesfully done 
+- Mainy student panel responsiveness was checked for mobiles
+- Student panel and Admin panel dashboard were implemented using Material UI
+
+### Week 6
+
+- Hosted the website using netlify
+- Cleaning of book bank data
+- Deployment of MySQL database on netlify
+- Using Material UI components for modifying the webapp
 
 ## Contributors
 
