@@ -25,9 +25,6 @@ function Footer () {
               <a href="#" className="columnLink">
                 Contact
               </a>
-              <a href="#" className="columnLink">
-                Services
-              </a>
               <a href="/terms-and-conditions" className="columnLink">
                 Terms
               </a>
