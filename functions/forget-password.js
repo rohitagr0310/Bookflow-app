@@ -1,52 +1,35 @@
 const { hash } = require("bcrypt");
-const { sign, verify } = require("jsonwebtoken");
-const nodemailer = require("nodemailer"); // You need to install nodemailer
+const nodemailer = require("nodemailer");
 
-const connection = require("./db.js");
-// const secretKey = "bookflowadministrationimp";
-const resetPasswordSecret = "resetpasswordsecret"; // A secret key for generating reset password
+const connection = require("./db-test.js");
 const smtpTransport = nodemailer.createTransport({
   // Configure this with your SMTP server details
   service: "Gmail",
   auth: {
-    user: "your_email@gmail.com",
-    pass: "your_password"
+    user: process.env.BF_EMAIL,
+    pass: process.env.BF_EMAIL_PASSWORD
   }
 });
 
 const queryDatabase = async (connection, sql, params) => {
-  // Your existing database query function
+  return new Promise((resolve, reject) => {
+    connection.query(sql, params, (error, results, fields) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(results);
+      }
+    });
+  });
 };
 
 exports.handler = async (event, context) => {
   try {
-    const { email, password, token } = JSON.parse(event.body);
+    const { email, password, otp } = JSON.parse(event.body);
+    console.log("email", email, "password", password, "otp", otp);
 
-    if (token) {
-      // Handle password reset request
-      const decodedToken = verify(token, resetPasswordSecret);
-
-      if (!decodedToken || !decodedToken.userId) {
-        return {
-          statusCode: 400,
-          body: JSON.stringify({ error: "Invalid or expired token" })
-        };
-      }
-
-      // Hash the new password and update it in the database
-      const hashedPassword = await hash(password, 10); // You can adjust the saltRounds
-      await queryDatabase(
-        connection,
-        "UPDATE user SET password = ? WHERE id = ?",
-        [hashedPassword, decodedToken.userId]
-      );
-
-      return {
-        statusCode: 200,
-        body: JSON.stringify({ message: "Password reset successfully" })
-      };
-    } else {
-      // Handle forgot password request
+    if (otp) {
+      // Handle password reset with OTP
       const user = await queryDatabase(
         connection,
         "SELECT * FROM user WHERE email = ?",
@@ -60,24 +43,67 @@ exports.handler = async (event, context) => {
         };
       }
 
-      // Generate a unique token for password reset (valid for a limited time)
-      const resetToken = sign({ userId: user[0].id }, resetPasswordSecret, {
-        expiresIn: "1h" // Adjust the expiration time as needed
-      });
+      // Check if the provided OTP matches the stored OTP
+      if (user[0].otp !== otp) {
+        return {
+          statusCode: 400,
+          body: JSON.stringify({ error: "Invalid OTP" })
+        };
+      }
 
-      // Send the reset password link to the user's email
-      const resetLink = `https://localhost:8888/forget-password?token=${resetToken}`;
-      const mailOptions = {
-        to: email,
-        subject: "Reset Your Password",
-        text: `Click the following link to reset your password: ${resetLink}`
-      };
-
-      await smtpTransport.sendMail(mailOptions);
+      // Hash the new password and update it in the database
+      const hashedPassword = await hash(password, 10); // You can adjust the saltRounds
+      await queryDatabase(
+        connection,
+        "UPDATE user SET password = ? WHERE id = ?",
+        [hashedPassword, user[0].id]
+      );
 
       return {
         statusCode: 200,
-        body: JSON.stringify({ message: "Password reset email sent" })
+        body: JSON.stringify({ message: "Password reset successfully" })
+      };
+    } else {
+      // Handle forgot password request (Sending OTP)
+      const user = await queryDatabase(
+        connection,
+        "SELECT * FROM user WHERE email = ?",
+        email
+      );
+
+      console.log(user);
+      if (user.length === 0) {
+        return {
+          statusCode: 404,
+          body: JSON.stringify({ error: "User not found" })
+        };
+      }
+
+      // Generate a random OTP (6-digit code)
+      const generatedOtp = Math.floor(100000 + Math.random() * 900000);
+
+      // Store the OTP in the database for this user
+      await queryDatabase(
+        connection,
+        "UPDATE user SET otp = ? WHERE id = ?",
+        [generatedOtp, user[0].id]
+      );
+
+      // Send the OTP via email
+      console.log("before mail structure \n");
+      const mailOptions = {
+        to: email,
+        subject: "Password Reset OTP",
+        text: `Your OTP for password reset is: ${generatedOtp}`
+      };
+
+      console.log("before mail sending \n");
+      await smtpTransport.sendMail(mailOptions);
+      console.log("after mail sending \n");
+
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: "OTP sent successfully" })
       };
     }
   } catch (error) {

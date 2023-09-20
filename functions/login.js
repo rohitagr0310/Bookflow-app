@@ -1,6 +1,6 @@
 const { compare } = require("bcrypt");
 const { sign } = require("jsonwebtoken");
-const connection = require("./db.js");
+const connection = require("./db-test.js");
 const secretKey = "bookflowadminstrationimp";
 
 const queryDatabase = async (connection, sql, params) => {

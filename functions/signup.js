@@ -1,5 +1,5 @@
 const { hash } = require("bcrypt");
-const connection = require("./db.js");
+const connection = require("./db-test.js");
 
 const queryDatabase = async (connection, sql, params) => {
   return new Promise((resolve, reject) => {
