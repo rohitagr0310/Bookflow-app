@@ -21,6 +21,7 @@ import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
 import AboutUs from "./pages/about_us/AboutUs.jsx";
 import AdminHistory from "./pages/admin_panel/admin_pages/AdminHistory.jsx";
 import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
+import EmailVerifiedPage from "./pages/login_page/EmailVerified.jsx";
 import TermsAndConditions from "./pages/login_page/term_condition/TermsAndConditions";
 import AdminDashboard from "./pages/admin_panel/adminDashboard.jsx";
 import StudentDashboard from "./pages/student_panel/studentdashboard.jsx";
@@ -42,8 +43,9 @@ function App () {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<AuthPage />} />
+            <Route path="password-reset" element={<ForgetPassword />} />
+            <Route path="email-verified" element={<EmailVerifiedPage/>} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-            <Route path="/password-reset" element={<ForgetPassword />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="admin" element={<AdminPanel />}>
               <Route index element={<AdminDashboard />} />
