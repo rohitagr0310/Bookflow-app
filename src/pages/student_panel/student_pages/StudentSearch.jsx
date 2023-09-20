@@ -10,12 +10,12 @@ import TableHead from "@mui/material/TableHead";
 import TableBody from "@mui/material/TableBody";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
+import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
+import { Grid } from "@mui/material";
 
 function Search () {
   const [searchTerm, setSearchTerm] = useState("");
   const [bookInfo, setBookInfo] = useState(null);
-  const [bookNameFilter, setBookNameFilter] = useState("");
-  const [streamFilter, setStreamFilter] = useState("");
 
   const handleSearch = () => {
     // Check if searchTerm is empty, and if so, reset bookInfo to null
@@ -43,7 +43,7 @@ function Search () {
       <CardContent>
         <div>
           <Typography variant="h4" gutterBottom>
-        Book Search
+            Book Search
           </Typography>
           <TextField
             label="Enter Book ID"
@@ -52,34 +52,20 @@ function Search () {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <TextField
-            label="Filter by Book Name"
-            variant="outlined"
-            fullWidth
-            value={bookNameFilter}
-            onChange={(e) => setBookNameFilter(e.target.value)}
-            style={{ marginTop: "16px" }}
-          />
-          <TextField
-            label="Filter by Student Stream"
-            variant="outlined"
-            fullWidth
-            value={streamFilter}
-            onChange={(e) => setStreamFilter(e.target.value)}
-            style={{ marginTop: "16px" }}
-          />
           <Button
             variant="contained"
             color="primary"
             onClick={handleSearch}
             style={{ marginTop: "16px" }}
           >
-        Search
+            Search
           </Button>
+          <Grid container spacing={2} style={{ marginTop: "16px" }}/>
+          <QrCodeScannerIcon style={{ fontSize: 40, marginBottom: "16px" }} />
           {bookInfo && (
             <div>
               <Typography variant="h5" style={{ marginTop: "16px" }}>
-            Book Information
+                Book Information
               </Typography>
               <TableContainer style={{ marginTop: "16px" }}>
                 <Table>
@@ -107,7 +93,6 @@ function Search () {
                 </Table>
               </TableContainer>
             </div>
-
           )}
         </div>
       </CardContent>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as React from "react";
 /* eslint-disable require-jsdoc */
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
@@ -12,25 +13,12 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems } from "./StudentlistItems";
 import { Outlet } from "react-router-dom";
-
-function Copyright (props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {"Copyright © "}
-      <Link color="inherit" href="/">
-        BookFlow
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -146,7 +134,6 @@ export default function Dashboard () {
                 <Outlet/>
               </Grid>
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>
