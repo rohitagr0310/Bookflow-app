@@ -1,9 +1,7 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable require-jsdoc */
 import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/scroll/scroll-to-top.jsx";
 import HomePage from "./pages/home_page/HomePage.jsx";
 import AuthPage from "./pages/login_page/AuthPage.jsx";
@@ -21,7 +19,8 @@ import ForgetPassword from "./pages/login_page/ForgetPassword.jsx";
 import AboutUs from "./pages/about_us/AboutUs.jsx";
 import AdminHistory from "./pages/admin_panel/admin_pages/AdminHistory.jsx";
 import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
-import TermsAndConditions from "./pages/login_page/term_condition/TermsAndConditions";
+import EmailVerifiedPage from "./pages/email_verified/EmailVerified.jsx";
+import TermsAndConditions from "./pages/term_condition/TermsAndConditions.jsx";
 import AdminDashboard from "./pages/admin_panel/adminDashboard.jsx";
 import StudentDashboard from "./pages/student_panel/studentdashboard.jsx";
 
@@ -32,6 +31,7 @@ import StudentDashboard from "./pages/student_panel/studentdashboard.jsx";
 
 function App () {
   const theme = createTheme();
+  const userType = localStorage.getItem("userType") || "";
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,24 +42,37 @@ function App () {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<AuthPage />} />
+            <Route path="password-reset" element={<ForgetPassword />} />
+            <Route path="email-verified" element={<EmailVerifiedPage />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-            <Route path="/password-reset" element={<ForgetPassword />} />
             <Route path="about-us" element={<AboutUs />} />
-            <Route path="admin" element={<AdminPanel />}>
-              <Route index element={<AdminDashboard />} />
-              <Route path="add-book" element={<AddBook />} />
-              <Route path="all-book" element={<AllBooks />} />
-              <Route path="manage-std" element={<ManageStudents />} />
-              <Route path="issued-book" element={<IssuedBooks />} />
-              <Route path="admin-history" element={<AdminHistory />} />
-              <Route path="pending-issue" element={<PendingIssue />} />
-            </Route>
-            <Route path="student" element={<StudentPanel />}>
-              <Route index element={<StudentDashboard />} />
-              <Route path="account" element={<StudentAccount />} />
-              <Route path="history" element={<StudentHistory />} />
-              <Route path="search" element={<Search />} />
-            </Route>
+            {/* <Route path="contact-us" element={<ContactUs />} /> */}
+            {userType === "A"
+              ? (
+                <Route path="admin" element={<AdminPanel />}>
+                  <Route index element={<AdminDashboard />} />
+                  <Route path="add-book" element={<AddBook />} />
+                  <Route path="all-book" element={<AllBooks />} />
+                  <Route path="manage-std" element={<ManageStudents />} />
+                  <Route path="issued-book" element={<IssuedBooks />} />
+                  <Route path="admin-history" element={<AdminHistory />} />
+                  <Route path="pending-issue" element={<PendingIssue />} />
+                </Route>
+              )
+              : userType === "U"
+                ? (
+                  <Route path="student" element={<StudentPanel />}>
+                    <Route index element={<StudentDashboard />} />
+                    <Route path="account" element={<StudentAccount />} />
+                    <Route path="history" element={<StudentHistory />} />
+                    <Route path="search" element={<Search />} />
+                  </Route>
+                )
+                : (
+                  <Navigate to="/" replace />
+                )}
+            {userType !== "A" && <Route path="admin" element={<Navigate to="/" replace />} />}
+            {userType !== "U" && <Route path="student" element={<Navigate to="/" replace />} />}
           </Routes>
           <Footer />
         </div>
