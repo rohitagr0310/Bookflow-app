@@ -5,7 +5,7 @@ exports.handler = async (event, context) => {
     let results;
 
     await new Promise((resolve, reject) => {
-      connection.query("SELECT * FROM library limit 50", (error, queryresults) => {
+      connection.query("SELECT * FROM history_library limit 50", (error, queryresults) => {
         if (error) {
           console.error("Error fetching books:", error);
           reject(error);

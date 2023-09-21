@@ -5,7 +5,8 @@ exports.handler = async (event, context) => {
     let results;
 
     await new Promise((resolve, reject) => {
-      connection.query("SELECT * FROM test limit 50", (error, queryresults) => {
+      // input search argument
+      connection.query("SELECT * FROM library WHERE bookTitle LIKE '%Let Us C%' UNION ALL SELECT * FROM bookbank WHERE bookTitle LIKE '%Let Us C%' LIMIT 50", (error, queryresults) => {
         if (error) {
           console.error("Error fetching books:", error);
           reject(error);

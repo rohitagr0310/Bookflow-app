@@ -1,0 +1,28 @@
+.contact-us {
+	text-align: center;
+	padding: 50px;
+	background-color: #f0f0f0;
+}
+
+h1 {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.contact-item {
+	display: flex;
+	align-items: center;
+	margin: 10px 0;
+	font-size: 18px;
+	color: black;
+}
+
+.contact-item a {
+	text-decoration: none;
+	color: #007bff !important;
+	transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+	color: #0056b3;
+}
