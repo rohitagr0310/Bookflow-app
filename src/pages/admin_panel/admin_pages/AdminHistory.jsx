@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Card, CardContent } from "@mui/material";
+import "./_admin-history.css"; // Import the CSS file for styling
 
 const AdminHistory = () => {
-  const [adminHistory] = useState([
+  const [AdminHistory] = useState([
     {
       bookName: "Book One",
       issueDate: "2023-08-20",
@@ -20,43 +20,37 @@ const AdminHistory = () => {
     // Add more issued book objects here
   ]);
 
-  const totalIssuedBooks = adminHistory.length;
+  const totalIssuedBooks = AdminHistory.length;
 
   return (
-    <Card>
-      <CardContent>
-        <div className="admin-history-container">
-          <Typography variant="h4">History</Typography>
-          <div className="total-issued-books">
-            <Typography variant="subtitle1">Total Issued Books: {totalIssuedBooks}</Typography>
-          </div>
-          <TableContainer component={Paper}>
-            <Table aria-label="Issued Books">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Book Name</TableCell>
-                  <TableCell>Issue Date</TableCell>
-                  <TableCell>Accession Number</TableCell>
-                  <TableCell>Issued By</TableCell>
-                  <TableCell>Roll Number</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {adminHistory.map((book, index) => (
-                  <TableRow key={index}>
-                    <TableCell>{book.bookName}</TableCell>
-                    <TableCell>{book.issueDate}</TableCell>
-                    <TableCell>{book.accessionNumber}</TableCell>
-                    <TableCell>{book.issuedBy}</TableCell>
-                    <TableCell>{book.rollNumber}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </div>
-      </CardContent>
-    </Card>
+    <div className="admin-history-container">
+      <h1>History</h1>
+      <div className="total-issued-books">
+        <p>Total Issued Books: {totalIssuedBooks}</p>
+      </div>
+      <table className="issued-books-list">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Issue Date</th>
+            <th>Accession Number</th>
+            <th>Issued By</th>
+            <th>Roll Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {AdminHistory.map((book, index) => (
+            <tr key={index}>
+              <td>{book.bookName}</td>
+              <td>{book.issueDate}</td>
+              <td>{book.accessionNumber}</td>
+              <td>{book.issuedBy}</td>
+              <td>{book.rollNumber}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
