@@ -71,8 +71,6 @@ function App () {
                 : (
                   <Navigate to="/" replace />
                 )}
-            {userType !== "A" && <Route path="admin" element={<Navigate to="/" replace />} />}
-            {userType !== "U" && <Route path="student" element={<Navigate to="/" replace />} />}
           </Routes>
           <Footer />
         </div>
