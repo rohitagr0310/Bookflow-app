@@ -1,16 +1,5 @@
 import React, { useState } from "react";
-import {
-  Table,
-  TableContainer,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  Paper,
-  Typography,
-  Card,
-  CardContent
-} from "@mui/material"; // Import Material-UI components
+import "./_pending-issue.css"; // Import the CSS file for styling
 
 const PendingIssue = () => {
   const [pendingIssue] = useState([
@@ -28,50 +17,39 @@ const PendingIssue = () => {
       issuedBy: "Jane Smith",
       rollNumber: "54321"
     }
-    // Add more pending issues as needed
   ]);
 
   const totalPendingIssue = pendingIssue.length;
 
   return (
-    <Card>
-      <CardContent>
-        <div>
-          <Typography variant="h3">Pending Issue</Typography>
-          <br />
-          <Paper elevation={3}>
-            <TableContainer component={Paper} style={{ maxHeight: 400 }}>
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Book Name</TableCell>
-                    <TableCell>Issue Date</TableCell>
-                    <TableCell>Accession Number</TableCell>
-                    <TableCell>Issued By</TableCell>
-                    <TableCell>Roll Number</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {pendingIssue.map((book, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{book.bookName}</TableCell>
-                      <TableCell>{book.issueDate}</TableCell>
-                      <TableCell>{book.accessionNumber}</TableCell>
-                      <TableCell>{book.issuedBy}</TableCell>
-                      <TableCell>{book.rollNumber}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Paper>
-          <br />
-          <Typography variant="h6">
-        Total Pending Issues: {totalPendingIssue}
-          </Typography>
-        </div>
-      </CardContent>
-    </Card>
+    <div className="pending-issue-container">
+      <h1>PendingIssue</h1>
+      <div className="total-issued-books">
+        <p>Total Pending Issues: {totalPendingIssue}</p>
+      </div>
+      <table className="issued-books-list">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Issue Date</th>
+            <th>Accession Number</th>
+            <th>Issued By</th>
+            <th>Roll Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pendingIssue.map((book, index) => (
+            <tr key={index}>
+              <td>{book.bookName}</td>
+              <td>{book.issueDate}</td>
+              <td>{book.accessionNumber}</td>
+              <td>{book.issuedBy}</td>
+              <td>{book.rollNumber}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

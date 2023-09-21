@@ -1,22 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  Container,
-  Typography,
-  FormControl,
-  Input,
-  Select,
-  MenuItem,
-  TableContainer,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  Card,
-  CardContent,
-  Paper // Use Paper component for the table container
-} from "@mui/material";
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
@@ -29,88 +12,79 @@ const AllBooks = () => {
   const fetchBooks = (table) => {
     const apiUrl = `http://localhost:5000/api/admin/all-books/${table}`;
 
-    axios
-      .get(apiUrl)
-      .then((response) => {
+    axios.get(apiUrl)
+      .then(response => {
         console.log(response.data);
         setBooks(response.data);
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(`Error fetching books from ${table}:`, error);
       });
   };
 
   return (
-    <Card>
-      <CardContent>
-        <Container>
-          <Typography variant="h4">All Books</Typography>
-          <FormControl>
-            <Input htmlFor="tableSelect"></Input>
-            <Select
-              id="tableSelect"
-              value={selectedTable}
-              onChange={(e) => setSelectedTable(e.target.value)}
-            >
-              <MenuItem value="library">Library</MenuItem>
-              <MenuItem value="test">Test</MenuItem>
-            </Select>
-          </FormControl>
-          <TableContainer component={Paper} style={{ maxHeight: 400 }}> {/* Adjust maxHeight to control the scrolling */}
-            <Table stickyHeader>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Accession Number</TableCell>
-                  <TableCell>Accession Type</TableCell>
-                  <TableCell>Accession Prefix</TableCell>
-                  <TableCell>Accession Date</TableCell>
-                  <TableCell>Book Title</TableCell>
-                  <TableCell>Author First</TableCell>
-                  <TableCell>Author Second</TableCell>
-                  <TableCell>Publisher</TableCell>
-                  <TableCell>Year</TableCell>
-                  <TableCell>Pages</TableCell>
-                  <TableCell>Subject</TableCell>
-                  <TableCell>Language</TableCell>
-                  <TableCell>Edition</TableCell>
-                  <TableCell>Vendor</TableCell>
-                  <TableCell>Bill No</TableCell>
-                  <TableCell>Purchase Date</TableCell>
-                  <TableCell>Purchase Cost</TableCell>
-                  <TableCell>Keyword</TableCell>
-                  <TableCell>QR Code</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {books.map((book) => (
-                  <TableRow key={book.accessionNumber}>
-                    <TableCell>{book.accessionNumber}</TableCell>
-                    <TableCell>{book.accessionType}</TableCell>
-                    <TableCell>{book.accessionPrefix}</TableCell>
-                    <TableCell>{book.accessionDate}</TableCell>
-                    <TableCell>{book.bookTitle}</TableCell>
-                    <TableCell>{book.authorFirst}</TableCell>
-                    <TableCell>{book.authorSecond}</TableCell>
-                    <TableCell>{book.publisher}</TableCell>
-                    <TableCell>{book.year}</TableCell>
-                    <TableCell>{book.pages}</TableCell>
-                    <TableCell>{book.subject}</TableCell>
-                    <TableCell>{book.language}</TableCell>
-                    <TableCell>{book.edition}</TableCell>
-                    <TableCell>{book.vendor}</TableCell>
-                    <TableCell>{book.billNo}</TableCell>
-                    <TableCell>{book.purchaseDate}</TableCell>
-                    <TableCell>{book.purchaseCost}</TableCell>
-                    <TableCell>{book.keyword}</TableCell>
-                    <TableCell>{book.qrCode}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Container>
-      </CardContent>
-    </Card>
+    <div>
+      <h2>All Books</h2>
+      <label htmlFor="tableSelect">Select Table: </label>
+      <select
+        id="tableSelect"
+        value={selectedTable}
+        onChange={(e) => setSelectedTable(e.target.value)}
+      >
+        <option value="library">Library</option>
+        <option value="test">test</option>
+      </select>
+      <table>
+        <thead>
+          <tr>
+            <th>Accession Number</th>
+            <th>Accession Type</th>
+            <th>Accession Prefix</th>
+            <th>Accession Date</th>
+            <th>Book Title</th>
+            <th>Author First</th>
+            <th>Author Second</th>
+            <th>Publisher</th>
+            <th>Year</th>
+            <th>Pages</th>
+            <th>Subject</th>
+            <th>Language</th>
+            <th>Edition</th>
+            <th>Vendor</th>
+            <th>Bill No</th>
+            <th>Purchase Date</th>
+            <th>Purchase Cost</th>
+            <th>Keyword</th>
+            <th>QR Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map(book => (
+            <tr key={book.accessionNumber}>
+              <td>{book.accessionNumber}</td>
+              <td>{book.accessionType}</td>
+              <td>{book.accessionPrefix}</td>
+              <td>{book.accessionDate}</td>
+              <td>{book.bookTitle}</td>
+              <td>{book.authorFirst}</td>
+              <td>{book.authorSecond}</td>
+              <td>{book.publisher}</td>
+              <td>{book.year}</td>
+              <td>{book.pages}</td>
+              <td>{book.subject}</td>
+              <td>{book.language}</td>
+              <td>{book.edition}</td>
+              <td>{book.vendor}</td>
+              <td>{book.billNo}</td>
+              <td>{book.purchaseDate}</td>
+              <td>{book.purchaseCost}</td>
+              <td>{book.keyword}</td>
+              <td>{book.qrCode}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
