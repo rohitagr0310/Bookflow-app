@@ -3,7 +3,7 @@
 import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/scroll/scroll-to-top.jsx";
 import HomePage from "./pages/home_page/HomePage.jsx";
 import AuthPage from "./pages/login_page/AuthPage.jsx";
@@ -63,18 +63,14 @@ function App () {
                   <Route path="pending-issue" element={<PendingIssue />} />
                 </Route>
               )
-              : userType === "U"
-                ? (
-                  <Route path="student" element={<StudentPanel />}>
-                    <Route index element={<StudentDashboard />} />
-                    <Route path="account" element={<StudentAccount />} />
-                    <Route path="history" element={<StudentHistory />} />
-                    <Route path="search" element={<Search />} />
-                  </Route>
-                )
-                : (
-                  <Navigate to="/" replace />
-                )}
+              : (
+                <Route path="student" element={<StudentPanel />}>
+                  <Route index element={<StudentDashboard />} />
+                  <Route path="account" element={<StudentAccount />} />
+                  <Route path="history" element={<StudentHistory />} />
+                  <Route path="search" element={<Search />} />
+                </Route>
+              )}
           </Routes>
           <Footer />
         </div>
