@@ -7,8 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HistoryIcon from "@mui/icons-material/History";
-import FeedbackIcon from "@mui/icons-material/Feedback";
-import SearchIcon from "@mui/icons-material/Search";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 export const mainListItems = (
@@ -17,37 +16,43 @@ export const mainListItems = (
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard"/>
+      <ListItemText
+        className="admin-dashboard-menu-buttons"
+        primary="Dashboard"
+      />
     </ListItemButton>
     <ListItemButton component={Link} to="/student/search">
       <ListItemIcon>
-        <SearchIcon />
+        <MenuBookIcon />
       </ListItemIcon>
-      <ListItemText primary="Search" />
+      <ListItemText
+        className="admin-dashboard-menu-buttons"
+        primary="Issue Book"
+      />
     </ListItemButton>
     <ListItemButton component={Link} to="/student/account">
       <ListItemIcon>
         <AccountCircleIcon />
       </ListItemIcon>
-      <ListItemText primary="Account" />
+      <ListItemText
+        className="admin-dashboard-menu-buttons"
+        primary="Account"
+      />
     </ListItemButton>
     <ListItemButton component={Link} to="/student/history">
       <ListItemIcon>
         <HistoryIcon />
       </ListItemIcon>
-      <ListItemText primary="History" />
-    </ListItemButton>
-    <ListItemButton component={Link} to="/student/feed-back">
-      <ListItemIcon>
-        <FeedbackIcon/>
-      </ListItemIcon>
-      <ListItemText primary="Feedback" />
+      <ListItemText
+        className="admin-dashboard-menu-buttons"
+        primary="History"
+      />
     </ListItemButton>
     <ListItemButton component={Link} to="/">
       <ListItemIcon>
         <LogoutIcon />
       </ListItemIcon>
-      <ListItemText primary="Logout" />
+      <ListItemText className="admin-dashboard-menu-buttons" primary="Logout" />
     </ListItemButton>
   </React.Fragment>
 );

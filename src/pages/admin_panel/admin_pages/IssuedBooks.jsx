@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./_issued-book.css"; // Import the CSS file for styling
+import { Typography, Table, TableHead, TableBody, TableCell, TableRow, Paper, Card, CardContent } from "@mui/material";
 
 const IssuedBooks = () => {
   const [issuedBooks] = useState([
@@ -22,34 +22,39 @@ const IssuedBooks = () => {
   const totalIssuedBooks = issuedBooks.length;
 
   return (
-    <div className="issued-books-container">
-      <h1>Issued Books</h1>
-      <div className="total-issued-books">
-        <p>Total Issued Books: {totalIssuedBooks}</p>
-      </div>
-      <table className="issued-books-list">
-        <thead>
-          <tr>
-            <th>Book Name</th>
-            <th>Issue Date</th>
-            <th>Accession Number</th>
-            <th>Issued By</th>
-            <th>Roll Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          {issuedBooks.map((book, index) => (
-            <tr key={index}>
-              <td>{book.bookName}</td>
-              <td>{book.issueDate}</td>
-              <td>{book.accessionNumber}</td>
-              <td>{book.issuedBy}</td>
-              <td>{book.rollNumber}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Card>
+      <CardContent>
+        <Typography variant="h3">Issued Books</Typography>
+        <br />
+        <div>
+          <Typography variant="h6">Total Issued Books: {totalIssuedBooks}</Typography>
+        </div>
+        <Paper elevation={1}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Book Name</TableCell>
+                <TableCell>Issue Date</TableCell>
+                <TableCell>Accession Number</TableCell>
+                <TableCell>Issued By</TableCell>
+                <TableCell>Roll Number</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {issuedBooks.map((book, index) => (
+                <TableRow key={index}>
+                  <TableCell>{book.bookName}</TableCell>
+                  <TableCell>{book.issueDate}</TableCell>
+                  <TableCell>{book.accessionNumber}</TableCell>
+                  <TableCell>{book.issuedBy}</TableCell>
+                  <TableCell>{book.rollNumber}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Paper>
+      </CardContent>
+    </Card>
   );
 };
 

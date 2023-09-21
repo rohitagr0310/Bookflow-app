@@ -1,6 +1,6 @@
 const { compare } = require("bcrypt");
 const { sign } = require("jsonwebtoken");
-const connection = require("./db.js");
+const connection = require("./db-test.js");
 const secretKey = "bookflowadminstrationimp";
 
 const queryDatabase = async (connection, sql, params) => {
@@ -17,9 +17,9 @@ const queryDatabase = async (connection, sql, params) => {
 
 exports.handler = async (event, context) => {
   try {
-    const { username, password } = JSON.parse(event.body);
+    const { email, password } = JSON.parse(event.body);
 
-    const res = await queryDatabase(connection, "SELECT * FROM user WHERE name = ?", username);
+    const res = await queryDatabase(connection, "SELECT * FROM user WHERE email = ?", email);
 
     if (res.length === 0) {
       return {
