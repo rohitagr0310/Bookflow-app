@@ -42,11 +42,11 @@ function Search () {
     setBookInfo(dummyBookInfo);
   };
 
-  const handleEnterKey = (e) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
-  };
+  // const handleEnterKey = (e) => {
+  //   if (e.key === "Enter") {
+  //     handleSearch();
+  //   }
+  // };
 
   const handleCheckboxChange = (event, book) => {
     if (event.target.checked) {
