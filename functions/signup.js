@@ -1,6 +1,5 @@
 const { hash } = require("bcrypt");
-const nodemailer = require("nodemailer");
-const connection = require("./db-test.js");
+const connection = require("./db.js");
 
 const queryDatabase = async (connection, sql, params) => {
   return new Promise((resolve, reject) => {
@@ -51,20 +50,9 @@ exports.handler = async (event, context) => {
     console.log("insert", insertResult);
 
     if (insertResult.affectedRows === 1) {
-      const verificationToken = generateVerificationToken();
-
-      // Update the user record in the database to include the verification token
-      await queryDatabase(connection,
-        "UPDATE user SET verification_token = ? WHERE email = ?",
-        [verificationToken, email]
-      );
-
-      // Send a verification email to the user
-      await sendVerificationEmail(email, verificationToken);
-
       return {
         statusCode: 201,
-        body: JSON.stringify({ message: "Signup successful. Verification email sent." })
+        body: JSON.stringify({ message: "Signup successful" })
       };
     } else {
       return {
@@ -79,32 +67,4 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ message: "An error occurred" })
     };
   }
-};
-
-const generateVerificationToken = () => {
-  // Generate a verification token (you can use a UUID library or any method you prefer)
-  // For simplicity, we'll generate a random 6-digit number here
-  return Math.floor(100000 + Math.random() * 900000);
-};
-
-const sendVerificationEmail = async (email, verificationToken) => {
-  // Create a nodemailer transporter using your email service credentials
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.BF_EMAIL,
-      pass: process.env.BF_EMAIL_PASSWORD
-    }
-  });
-
-  // Email content
-  const mailOptions = {
-    from: process.env.BF_EMAIL, // Sender email address
-    to: email, // Recipient email address
-    subject: "Email Verification", // Email subject
-    text: `http://localhost:8888/.netlify/functions/email-verify?token=${verificationToken}` // Email body with verification link
-  };
-
-  // Send the email
-  await transporter.sendMail(mailOptions);
 };

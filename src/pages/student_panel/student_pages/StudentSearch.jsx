@@ -38,12 +38,6 @@ function Search () {
     setBookInfo(dummyBookInfo);
   };
 
-  const handleEnterKey = (e) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
-  };
-
   return (
     <Card>
       <CardContent>
@@ -51,28 +45,23 @@ function Search () {
           <Typography variant="h4" gutterBottom>
             Book Search
           </Typography>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <TextField
-              label="Enter Book ID"
-              variant="outlined"
-              fullWidth
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyDown={handleEnterKey}
-            />
-            <QrCodeScannerIcon style={{ fontSize: 40, marginLeft: "16px" }} />
-          </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleSearch}
-              style={{ marginTop: "16px" }}
-            >
-              Search
-            </Button>
-          </div>
-          <Grid container spacing={2} style={{ marginTop: "16px" }} />
+          <TextField
+            label="Enter Book ID"
+            variant="outlined"
+            fullWidth
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleSearch}
+            style={{ marginTop: "16px" }}
+          >
+            Search
+          </Button>
+          <Grid container spacing={2} style={{ marginTop: "16px" }}/>
+          <QrCodeScannerIcon style={{ fontSize: 40, marginBottom: "16px" }} />
           {bookInfo && (
             <div>
               <Typography variant="h5" style={{ marginTop: "16px" }}>
