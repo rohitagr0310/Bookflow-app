@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { Card, CardContent, FormControl, Select, MenuItem, Grid } from "@mui/material";
+import { Card, CardContent, Select, MenuItem, Grid, FormControl } from "@mui/material";
 
 // eslint-disable-next-line require-jsdoc
 function generateData () {
@@ -28,30 +26,36 @@ const tableData = generateData();
 
 // eslint-disable-next-line require-jsdoc
 export default function StudentHistory () {
+  const [selectedTable, setSelectedTable] = useState("test"); // Initialize selectedTable state
+
   return (
     <React.Fragment>
       <Card>
         <CardContent>
           <Typography component="h2" variant="h6" gutterBottom>
-        Books detais
+            Books details
           </Typography>
-
           <FormControl>
-            <Grid>
-              <Select/* value={selectedTable} onChange={(e) => setSelectedTable(e.target.value)} */>
+            <Grid container spacing={1}>
+              <Select
+                value={selectedTable}
+                onChange={(e) => setSelectedTable(e.target.value)}
+              >
                 <MenuItem value="test">test</MenuItem>
                 <MenuItem value="library">Library</MenuItem>
+                <MenuItem value="bookbank">Book Bank</MenuItem>
               </Select>
             </Grid>
           </FormControl>
-          <TableContainer component={Paper}>
+          <br/>
+          <Grid container spacing={1}>
             <Table>
               <TableHead>
                 <TableRow>
                   <TableCell>ID</TableCell>
                   <TableCell>Name</TableCell>
-                  <TableCell>Issued Date</TableCell>
-                  <TableCell>Submition Date</TableCell>
+                  <TableCell>Description</TableCell>
+                  <TableCell>Quantity</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -65,7 +69,7 @@ export default function StudentHistory () {
                 ))}
               </TableBody>
             </Table>
-          </TableContainer>
+          </Grid>
         </CardContent>
       </Card>
     </React.Fragment>
