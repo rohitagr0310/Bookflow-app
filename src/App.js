@@ -45,21 +45,31 @@ function App () {
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/password-reset" element={<ForgetPassword />} />
             <Route path="about-us" element={<AboutUs />} />
-            <Route path="admin" element={<AdminPanel />}>
-              <Route index element={<AdminDashboard />} />
-              <Route path="add-book" element={<AddBook />} />
-              <Route path="all-book" element={<AllBooks />} />
-              <Route path="manage-std" element={<ManageStudents />} />
-              <Route path="issued-book" element={<IssuedBooks />} />
-              <Route path="admin-history" element={<AdminHistory />} />
-              <Route path="pending-issue" element={<PendingIssue />} />
-            </Route>
-            <Route path="student" element={<StudentPanel />}>
-              <Route index element={<StudentDashboard />} />
-              <Route path="account" element={<StudentAccount />} />
-              <Route path="history" element={<StudentHistory />} />
-              <Route path="search" element={<Search />} />
-            </Route>
+            {/* <Route path="contact-us" element={<ContactUs />} /> */}
+            {userType === "A"
+              ? (
+                <Route path="admin" element={<AdminPanel />}>
+                  <Route index element={<AdminDashboard />} />
+                  <Route path="add-book" element={<AddBook />} />
+                  <Route path="all-book" element={<AllBooks />} />
+                  <Route path="manage-std" element={<ManageStudents />} />
+                  <Route path="issued-book" element={<IssuedBooks />} />
+                  <Route path="admin-history" element={<AdminHistory />} />
+                  <Route path="pending-issue" element={<PendingIssue />} />
+                </Route>
+              )
+              : userType === "U"
+                ? (
+                  <Route path="student" element={<StudentPanel />}>
+                    <Route index element={<StudentDashboard />} />
+                    <Route path="account" element={<StudentAccount />} />
+                    <Route path="history" element={<StudentHistory />} />
+                    <Route path="search" element={<Search />} />
+                  </Route>
+                )
+                : (
+                  <Navigate to="/" replace />
+                )}
           </Routes>
           <Footer />
         </div>
