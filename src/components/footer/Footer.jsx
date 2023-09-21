@@ -22,7 +22,7 @@ function Footer () {
               <a href="/" className="columnLink">
                 Home
               </a>
-              <a href="#" className="columnLink">
+              <a href="/contact-us" className="columnLink">
                 Contact
               </a>
               <a href="/terms-and-conditions" className="columnLink">
