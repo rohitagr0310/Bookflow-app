@@ -24,6 +24,8 @@ import PendingIssue from "./pages/admin_panel/admin_pages/PendingIssue.jsx";
 import TermsAndConditions from "./pages/login_page/term_condition/TermsAndConditions";
 import AdminDashboard from "./pages/admin_panel/adminDashboard.jsx";
 import StudentDashboard from "./pages/student_panel/studentdashboard.jsx";
+import ContactUs from "./pages/contact-us/ContactUs.jsx";
+import EmailVerifiedPage from "./pages/email_verified/EmailVerified.jsx";
 
 /*
  * Main component for the application.
@@ -46,8 +48,9 @@ function App () {
             <Route path="login" element={<AuthPage />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/password-reset" element={<ForgetPassword />} />
+            <Route path="email-verified" element={<EmailVerifiedPage />} />
             <Route path="about-us" element={<AboutUs />} />
-            {/* <Route path="contact-us" element={<ContactUs />} /> */}
+            <Route path="contact-us" element={<ContactUs />} />
             {userType === "A"
               ? (
                 <Route path="admin" element={<AdminPanel />}>

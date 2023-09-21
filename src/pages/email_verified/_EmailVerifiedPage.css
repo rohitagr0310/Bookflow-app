@@ -1,0 +1,28 @@
+.message {
+  margin-bottom: 16px;
+}
+
+.button {
+  margin-top: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.locklogo {
+  font-size: 72px; /* Adjust the font size for the logo */
+  margin-bottom: 16px; /* Add spacing between the logo and message */
+  height: 2em;
+  width: 2em;
+}
+
+.checkmark {
+  font-size: 48px; /* Adjust the font size for the checkmark */
+  margin-bottom: 16px; /* Add spacing between the checkmark and message */
+}
