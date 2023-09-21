@@ -33,6 +33,8 @@ import StudentDashboard from "./pages/student_panel/studentdashboard.jsx";
 function App () {
   const theme = createTheme();
 
+  const userType = localStorage.getItem("userType") || "";
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
