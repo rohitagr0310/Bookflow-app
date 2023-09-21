@@ -28,7 +28,7 @@ const AuthPage = () => {
   };
 
   const [loginData, setLoginData] = useState({
-    loginEmail: "",
+    loginUsername: "",
     loginPassword: ""
   });
 
@@ -49,10 +49,10 @@ const AuthPage = () => {
   };
   const [showLogin, setShowLogin] = useState(true); // New state
 
-  const handleLoginEmailChange = (event) => {
+  const handleLoginUsernameChange = (event) => {
     setLoginData((prevData) => ({
       ...prevData,
-      loginEmail: event.target.value
+      loginUsername: event.target.value
     }));
   };
 
@@ -77,7 +77,7 @@ const AuthPage = () => {
       const apiUrlLogin = "/.netlify/functions/login";
 
       const response = await axios.post(apiUrlLogin, {
-        email: loginData.loginEmail,
+        username: loginData.loginUsername,
         password: loginData.loginPassword
       });
 
@@ -87,7 +87,7 @@ const AuthPage = () => {
         const token = response.data.token;
         // Store the token and user type in local storage or state
         localStorage.setItem("token", token);
-        localStorage.setItem("userType", userType);
+        localStorage.setItem("userType", userType); // Store user type
 
         // Navigate based on the userType
         if (userType === "A") {
@@ -249,11 +249,11 @@ const AuthPage = () => {
               <div>
                 <form>
                   <TextField
-                    label="Email"
-                    placeholder="Email"
+                    label="Username"
+                    placeholder="Username"
                     variant="outlined"
-                    value={loginData.loginEmail}
-                    onChange={handleLoginEmailChange}
+                    value={loginData.loginUsername}
+                    onChange={handleLoginUsernameChange}
                     fullWidth
                     margin="normal"
                     required
