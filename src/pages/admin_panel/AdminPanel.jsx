@@ -10,15 +10,11 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems } from "./listItems";
-import Deposits from "./Deposits";
-import Orders from "./pending";
 import { Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -94,16 +90,13 @@ export default function Dashboard () {
                 marginRight: "36px",
                 ...(open && { display: "none" })
               }}
+              width='36px'
             >
               <MenuIcon />
             </IconButton>
             <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-              Dashboard
+              Admin Dashboard
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={0} color="secondary">
-              </Badge>
-            </IconButton>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -111,7 +104,7 @@ export default function Dashboard () {
             sx={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "flex-end",
+              justifyContent: "space-around",
               px: [1]
             }}
           >
@@ -135,20 +128,9 @@ export default function Dashboard () {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            {/* Recent Deposits */}
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <Outlet/>
-              </Grid>
-              <Deposits title="Total books in LIB" count="12,000" asOnDate="on 15 March, 2019" ctaLabel="View All Books" />
-              <Deposits title="Total books in LIB" count="12,000" asOnDate="on 15 March, 2019" ctaLabel="View All Books" />
-              <Deposits title="Total books in LIB" count="12,000" asOnDate="on 15 March, 2019" ctaLabel="View All Books" />
-              <Deposits title="Total books in LIB" count="12,000" asOnDate="on 15 March, 2019" ctaLabel="View All Books" />
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                  <Orders />
-                </Paper>
               </Grid>
             </Grid>
           </Container>

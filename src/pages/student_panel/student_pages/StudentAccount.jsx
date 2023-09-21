@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -39,90 +38,88 @@ const StudentAccount = () => {
   };
 
   return (
-    <Card>
-      <CardContent>
-        <Paper elevation={3} style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
-          <Typography variant="h5" gutterBottom>
+    <CardContent>
+      <Paper elevation={3} style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
+        <Typography variant="h5" gutterBottom>
         Account Information
-          </Typography>
-          <form>
-            <TextField
-              name="username"
-              label="Username"
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              value={formData.username}
-              onChange={handleInputChange}
-              disabled={!isEditing}
-            />
-            <TextField
-              name="password"
-              label="Password"
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              type="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              disabled={!isEditing}
-            />
-            <TextField
-              name="rollNumber"
-              label="Roll Number"
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              value={formData.rollNumber}
-              onChange={handleInputChange}
-              disabled={!isEditing}
-            />
-            <TextField
-              name="email"
-              label="Email ID"
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              value={formData.email}
-              onChange={handleInputChange}
-              disabled={!isEditing}
-            />
-            <TextField
-              name="semesterYear"
-              label="Semester/Year"
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              value={formData.semesterYear}
-              onChange={handleInputChange}
-              disabled={!isEditing}
-            />
-            <TextField
-              name="phoneNumber"
-              label="Phone Number"
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              value={formData.phoneNumber}
-              onChange={handleInputChange}
-              disabled={!isEditing}
-            />
+        </Typography>
+        <form>
+          <TextField
+            name="username"
+            label="Username"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.username}
+            onChange={handleInputChange}
+            disabled={!isEditing}
+          />
+          <TextField
+            name="password"
+            label="Password"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            type="password"
+            value={formData.password}
+            onChange={handleInputChange}
+            disabled={!isEditing}
+          />
+          <TextField
+            name="rollNumber"
+            label="Roll Number"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.rollNumber}
+            onChange={handleInputChange}
+            disabled={!isEditing}
+          />
+          <TextField
+            name="email"
+            label="Email ID"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.email}
+            onChange={handleInputChange}
+            disabled={!isEditing}
+          />
+          <TextField
+            name="semesterYear"
+            label="Semester/Year"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.semesterYear}
+            onChange={handleInputChange}
+            disabled={!isEditing}
+          />
+          <TextField
+            name="phoneNumber"
+            label="Phone Number"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.phoneNumber}
+            onChange={handleInputChange}
+            disabled={!isEditing}
+          />
 
-            {isEditing
-              ? (
-                <Button variant="contained" color="primary" onClick={handleSaveClick}>
+          {isEditing
+            ? (
+              <Button variant="contained" color="primary" onClick={handleSaveClick}>
             Save
-                </Button>
-              )
-              : (
-                <Button variant="contained" color="primary" onClick={handleEditClick}>
+              </Button>
+            )
+            : (
+              <Button variant="contained" color="primary" onClick={handleEditClick}>
             Edit
-                </Button>
-              )}
-          </form>
-        </Paper>
-      </CardContent>
-    </Card>
+              </Button>
+            )}
+        </form>
+      </Paper>
+    </CardContent>
   );
 };
 
