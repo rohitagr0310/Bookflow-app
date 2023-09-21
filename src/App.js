@@ -3,7 +3,7 @@
 import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/scroll/scroll-to-top.jsx";
 import HomePage from "./pages/home_page/HomePage.jsx";
 import AuthPage from "./pages/login_page/AuthPage.jsx";
