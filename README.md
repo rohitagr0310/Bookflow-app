@@ -1,19 +1,18 @@
-
 # BOOKFLOW APP
 
 Welcome to the BookFlow App repository! This is where we manage the development of our library management application built using React.
 
-
 ## Overview
 
 BookFlow is a library management app that allows users to seamlessly manage book borrowing and returns using QR code scanning. This app aims to provide an efficient way to interact with library resources without the need for direct librarian involvement.
+
 ## Features
 
-- **QR Code Scanning:** Effortlessly scan QR codes on books.
-- **Efficient Transactions:** Streamlined book issuance and return process.
-- **Real-time Availability:** Instantly check book availability.
-- **Search & Filters:** Easily discover books with smart search and filters.
-- **Responsive Design:** Seamless experience on desktop and mobile.
+-   **QR Code Scanning:** Effortlessly scan QR codes on books.
+-   **Efficient Transactions:** Streamlined book issuance and return process.
+-   **Real-time Availability:** Instantly check book availability.
+-   **Search & Filters:** Easily discover books with smart search and filters.
+-   **Responsive Design:** Seamless experience on desktop and mobile.
 
 ## Tech Stack
 
@@ -37,11 +36,11 @@ BookFlow is a library management app that allows users to seamlessly manage book
 
 Special thanks to the following contributors who have helped in shaping the BookFlow App:
 
-- [Rohit Agarwal](https://github.com/rohitagr0310)
-- [Anshika Jain](https://github.com/jain-anshika)
-- [Ankit Dhanawat](https://github.com/jainankit0811)
-- [Qaidjohar Jukker](https://github.com/qaidjoharj53)
-- [Jayesh Joshi](https://github.com/jayesh2474)
+-   [Rohit Agarwal](https://github.com/rohitagr0310)
+-   [Qaidjohar Jukker](https://github.com/qaidjoharj53)
+-   [Anshika Jain](https://github.com/jain-anshika)
+-   [Ankit Dhanawat](https://github.com/jainankit0811)
+-   [Jayesh Joshi](https://github.com/jayesh2474)
 
 ## How to contribute?
 
@@ -55,41 +54,28 @@ Contributions are always welcome!
 
 Please adhere to this project's `code of conduct`.
 
-
 ## Installation
 
 1. Clone the repository:
-`
-git clone https://github.com/your-username/bookflow-app.git
-`
+   `git clone https://github.com/your-username/bookflow-app.git`
 
-3. Navigate to the project directory:
-`
-cd bookflow-app
-`
+2. Navigate to the project directory:
+   `cd bookflow-app`
 
 3. Install dependencies:
-`
-yarn install
-`
+   `yarn install`
 
 4. Start the development server:
-`
-yarn start
-`
+   `yarn start`
 
 5. Open your browser and navigate to http://localhost:3000 to see the app in action.
 
 6. Start the hosted webapp using:
-`
-netlify dev
-`
+   `netlify dev`
 
-    
 ## License
 
 This project is licensed under [MIT](https://choosealicense.com/licenses/mit/).
-
 
 ## Contact
 
