@@ -24,6 +24,12 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText className="admin-dashboard-menu-buttons"primary="Issue Book" />
     </ListItemButton>
+    <ListItemButton component={Link} to="/student/requests">
+      <ListItemIcon>
+        <MenuBookIcon />
+      </ListItemIcon>
+      <ListItemText className="admin-dashboard-menu-buttons"primary="Requests" />
+    </ListItemButton>
     <ListItemButton component={Link} to="/student/account">
       <ListItemIcon>
         <AccountCircleIcon />

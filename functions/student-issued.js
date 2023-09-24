@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
       };
     }
 
-    const historyData = await new Promise((resolve, reject) => {
+    const issuedDate = await new Promise((resolve, reject) => {
       // Fetch history data
       connection.query(`SELECT * FROM ${tableName} WHERE user_id = ? LIMIT 50`, [userid], (error, queryresults) => {
         if (error) {
@@ -35,9 +35,9 @@ exports.handler = async (event, context) => {
     });
 
     // Fetch book names
-    const bookIds = historyData.map((row) => row.book_id);
+    const bookIds = issuedDate.map((row) => row.book_id);
     const bookNames = await new Promise((resolve, reject) => {
-      connection.query(`SELECT accessionNumber, bookTitle FROM ${bookTable} WHERE accessionNumber = ?`, [bookIds], (error, queryresults) => {
+      connection.query(`SELECT accessionNumber, bookTitle FROM ${bookTable} WHERE accessionNumber IN (?)`, [bookIds], (error, queryresults) => {
         if (error) {
           console.error("Error fetching book names:", error);
           reject(error);
@@ -48,13 +48,11 @@ exports.handler = async (event, context) => {
     });
 
     // Merge the history data with book names
-    // Merge the history data with book names
-    const historyDataWithBookNames = historyData.map((row) => {
+    const issuedDateWithBookNames = issuedDate.map((row) => {
       const book = bookNames.find((book) => book.accessionNumber === row.book_id);
       return {
         bookId: row.book_id,
-        issueDate: row.issue_date,
-        returnedDate: row.returned_date,
+        returnedDate: row.return_date,
         bookName: book ? book.bookTitle : "Unknown" // Use "Unknown" if book name is not found
       };
     });
@@ -67,17 +65,15 @@ exports.handler = async (event, context) => {
     }
 
     // Example history data with formatted dates
-    const historyDataWithFormattedDates = historyDataWithBookNames.map((row) => ({
+    const issuedDateWithFormattedDates = issuedDateWithBookNames.map((row) => ({
       ...row,
       issueDate: formatDate(new Date(row.issueDate)),
       returnedDate: formatDate(new Date(row.returnedDate))
     }));
 
-    console.log("final", historyDataWithFormattedDates);
-
     return {
       statusCode: 200,
-      body: JSON.stringify(historyDataWithFormattedDates)
+      body: JSON.stringify(issuedDateWithFormattedDates)
     };
   } catch (error) {
     return {

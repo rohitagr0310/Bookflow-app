@@ -5,8 +5,9 @@ exports.handler = async (event, context) => {
     const { userid, requestType } = JSON.parse(event.body);
 
     let tableName;
+    let bookTableName;
 
-    // Determine the table name based on the requestType parameter
+    // Determine the table names based on the requestType parameter
     if (requestType === "return") {
       tableName = "book_return_requests";
     } else if (requestType === "issue") {
@@ -33,9 +34,39 @@ exports.handler = async (event, context) => {
       });
     });
 
+    // Fetch book names for each row
+    const resultsWithBookNames = await Promise.all(
+      results.map(async (row) => {
+        if (row.accession === "Library") {
+          bookTableName = "library";
+        } else {
+          bookTableName = "bookbank";
+        }
+
+        const bookNames = await new Promise((resolve, reject) => {
+          connection.query(`SELECT accessionNumber, bookTitle FROM ${bookTableName} WHERE accessionNumber = ?`, [row.book_id], (error, queryresults) => {
+            if (error) {
+              console.error("Error fetching book names:", error);
+              reject(error);
+            } else {
+              resolve(queryresults);
+            }
+          });
+        });
+
+        const book = bookNames.find((book) => book.accessionNumber === row.book_id);
+        return {
+          ...row,
+          bookName: book ? book.bookTitle : "Unknown" // Use "Unknown" if book name is not found
+        };
+      })
+    );
+
+    console.log(resultsWithBookNames);
+
     return {
       statusCode: 200,
-      body: JSON.stringify(results)
+      body: JSON.stringify(resultsWithBookNames)
     };
   } catch (error) {
     return {

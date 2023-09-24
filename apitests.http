@@ -1,1 +1,1 @@
-get http://localhost:8888/.netlify/functions/return-requests
+get http://localhost:8888/.netlify/functions/student-account?userid=1
