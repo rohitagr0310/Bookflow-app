@@ -6,10 +6,9 @@ exports.handler = async (event, context) => {
     const { userid } = JSON.parse(event.body);
 
     await new Promise((resolve, reject) => {
-      // input user id argument
-      connection.query("SELECT * FROM issued_bb WHERE user_id = ? limit 50", [userid], (error, queryresults) => {
+      connection.query("SELECT * FROM user where id = ? limit 50", [userid], (error, queryresults) => {
         if (error) {
-          console.error("Error fetching books:", error);
+          console.error("Error fetching requests:", error);
           reject(error);
         } else {
           results = queryresults;
