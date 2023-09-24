@@ -81,7 +81,7 @@ function Search () {
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={handleEnterKey}
             />
-            <QrCodeScannerIcon style={{ fontSize: 40, marginLeft: "16px" }} />
+            <QrCodeScannerIcon style={{ fontSize: 35, marginLeft: "16px" }} />
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Button
