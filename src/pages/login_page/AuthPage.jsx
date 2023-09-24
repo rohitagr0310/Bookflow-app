@@ -107,6 +107,10 @@ const AuthPage = () => {
     }
   };
 
+  const [showSignupPassword, setShowSignupPassword] = useState(false);
+  const handleToggleSignupPassword = () => {
+    setShowSignupPassword(!showSignupPassword);
+  };
   const [showPassword, setShowPassword] = useState(false); // New state for showing/hiding password
 
   const handleTogglePassword = () => {
@@ -295,7 +299,7 @@ const AuthPage = () => {
                     color="primary"
                     onClick={handleSignIn}
                   >
-                  Sign In
+                    Sign In
                   </Button>
                   <Button
                     variant="text"
@@ -349,7 +353,25 @@ const AuthPage = () => {
                   margin="normal"
                   variant="outlined"
                   required
-                  type="password"
+                  type={showSignupPassword ? "text" : "password"} // Toggle between text and password
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={handleToggleSignupPassword} // Call the toggle function
+                          edge="end"
+                          size="small"
+                          className="showPasswordButton"
+                        >
+                          {showSignupPassword ? (
+                            <VisibilityIcon />
+                          ) : (
+                            <VisibilityOffIcon />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    )
+                  }}
                 />
                 <TextField
                   label="Confirm Password"
@@ -360,7 +382,7 @@ const AuthPage = () => {
                   margin="normal"
                   variant="outlined"
                   required
-                  type="password"
+                  type={showSignupPassword ? "text" : "password"} // Toggle between text and password
                 />
                 <FormControlLabel
                   control={
@@ -402,7 +424,6 @@ const AuthPage = () => {
                 {showLogin ? "Switch to Sign Up" : "Switch to Login"}
               </Button>
             </div>
-
           </div>
         </div>
       </div>
