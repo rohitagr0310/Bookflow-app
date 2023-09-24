@@ -85,9 +85,11 @@ const AuthPage = () => {
       if (response.status === 200) {
         const userType = response.data.userType;
         const token = response.data.token;
+        const userId = response.data.user_id;
         // Store the token and user type in local storage or state
         localStorage.setItem("token", token);
         localStorage.setItem("userType", userType); // Store user type
+        localStorage.setItem("userId", userId);
 
         // Navigate based on the userType
         if (userType === "A") {
