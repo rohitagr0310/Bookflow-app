@@ -13,13 +13,16 @@ import TableCell from "@mui/material/TableCell";
 import Checkbox from "@mui/material/Checkbox"; // Moved this import to the top
 import Paper from "@mui/material/Paper"; // Moved this import to the top
 import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
-import { Grid } from "@mui/material";
+import { IconButton, Grid } from "@mui/material";
 import axios from "axios";
+import { QrReader } from "react-qr-reader";
 
 function Search () {
   const [searchTerm, setSearchTerm] = useState("");
   const [bookInfo, setBookInfo] = useState();
   const [selectedBooks, setSelectedBooks] = useState([]);
+  const [data, setData] = useState("No result");
+  const [qrScannerActive, setQrScannerActive] = useState(false);
 
   const handleSearch = async () => {
     if (!searchTerm) {
@@ -80,9 +83,30 @@ function Search () {
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={handleEnterKey}
             />
+            <IconButton
+              onClick={() => setQrScannerActive(!qrScannerActive)}
+              color={qrScannerActive ? "primary" : "default"}
+            >
+              <QrCodeScannerIcon />
+            </IconButton>
 
-            <QrCodeScannerIcon style={{ fontSize: 35, marginLeft: "16px" }} />
           </div>
+          {qrScannerActive && (
+            <QrReader
+              onResult={(result, error) => {
+                if (result) {
+                  setQrScannerActive(false);
+                  setData(result?.text);
+                }
+
+                if (error) {
+                  console.info(error);
+                }
+              }}
+              style={{ width: "100%" }}
+            />
+          )}
+          <p>{data}</p>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Button
               variant="contained"
