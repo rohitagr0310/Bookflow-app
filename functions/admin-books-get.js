@@ -2,12 +2,14 @@ const connection = require("./db-test.js");
 
 exports.handler = async (event, context) => {
   try {
+    const { tableName } = JSON.parse(event.body);
+
     let results;
 
     await new Promise((resolve, reject) => {
-      connection.query("SELECT * FROM history_library limit 50", (error, queryresults) => {
+      connection.query(`SELECT * FROM ${tableName} LIMIT 50`, (error, queryresults) => {
         if (error) {
-          console.error("Error fetching books:", error);
+          console.error(`Error fetching books from ${tableName}:`, error);
           reject(error);
         } else {
           results = queryresults;
