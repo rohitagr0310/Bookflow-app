@@ -14,14 +14,28 @@ exports.handler = async (event, context) => {
         };
       }
 
-      // Create a new record in the "test" table
+      let tableName;
+      // Determine the table name based on requestData or requestType
+      if (requestData.bookType === "bookbank") {
+        tableName = "bookbank";
+      } else if (requestData.bookType === "library") {
+        tableName = "library";
+      } else {
+        // Handle an invalid or missing table name
+        return {
+          statusCode: 400,
+          body: JSON.stringify({ error: "Invalid table name or request type" })
+        };
+      }
+
+      // Create a new record in the determined table
       await new Promise((resolve, reject) => {
         connection.query(
-          "INSERT INTO test (field1, field2, field3) VALUES (?, ?, ?)",
+          `INSERT INTO ${tableName} (field1, field2, field3) VALUES (?, ?, ?)`,
           [requestData.field1, requestData.field2, requestData.field3],
           (error, insertResult) => {
             if (error) {
-              console.error("Error inserting record:", error);
+              console.error(`Error inserting record into ${tableName}:`, error);
               reject(error);
             } else {
               resolve(insertResult);
@@ -32,7 +46,7 @@ exports.handler = async (event, context) => {
 
       return {
         statusCode: 201, // 201 Created
-        body: JSON.stringify({ message: "Record added successfully to the test table" })
+        body: JSON.stringify({ message: `Record added successfully to the ${tableName} table` })
       };
     } else {
       return {

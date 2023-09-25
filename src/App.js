@@ -26,6 +26,7 @@ import AdminDashboard from "./pages/admin_panel/adminDashboard.jsx";
 import StudentDashboard from "./pages/student_panel/studentdashboard.jsx";
 import ContactUs from "./pages/contact-us/ContactUs.jsx";
 import EmailVerifiedPage from "./pages/email_verified/EmailVerified.jsx";
+import StudentRequests from "./pages/student_panel/student_pages/StudentRequests.jsx";
 
 /*
  * Main component for the application.
@@ -69,6 +70,7 @@ function App () {
                   <Route path="account" element={<StudentAccount />} />
                   <Route path="history" element={<StudentHistory />} />
                   <Route path="search" element={<Search />} />
+                  <Route path="requests" element={<StudentRequests/>}/>
                 </Route>
               )}
           </Routes>

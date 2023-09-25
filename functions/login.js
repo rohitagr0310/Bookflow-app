@@ -44,7 +44,7 @@ exports.handler = async (event, context) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "Login successful", username: user.name, token, userType: user.user_type })
+      body: JSON.stringify({ message: "Login successful", username: user.name, token, userType: user.user_type, id: user.id })
     };
   } catch (error) {
     console.error("Error in login function:", error);

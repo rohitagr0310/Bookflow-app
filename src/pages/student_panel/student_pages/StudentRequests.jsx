@@ -6,43 +6,38 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { Card, CardContent, Select, MenuItem, Grid, FormControl } from "@mui/material";
-import axios from "axios";
+import axios from "axios"; // Import axios library
 
-// eslint-disable-next-line require-jsdoc
-export default function StudentHistory () {
-  const [selectedTable, setSelectedTable] = useState("library"); // Initialize selectedTable state
-  const [historyData, setHistoryData] = useState([]); // Initialize historyData state
+export default function StudentRequests () {
+  const [selectedTable, setSelectedTable] = useState("issue");
+  const [requestData, setRequestData] = useState([]); // State to store the request data
 
-  const fetchData = async (selectedOption) => {
+  useEffect(() => {
+    fetchDataFromBackend(selectedTable);
+  }, [selectedTable]);
+
+  const fetchDataFromBackend = async (requestType) => {
     try {
-      const userid = localStorage.getItem("userId");
-
-      const response = await axios.post("/.netlify/functions/student-history", {
-        userid,
-        source: selectedOption // Pass the selected option to the backend
+      // Make an API request to fetch request data based on the selected request type
+      const response = await axios.post("/.netlify/functions/student-requests", {
+        userid: localStorage.getItem("userId"),
+        requestType // Send the selected request type in the query
       });
 
       // Handle the response data as needed
       const data = response.data;
-
-      // Update the historyData state with the fetched data
-      setHistoryData(data);
+      setRequestData(data);
     } catch (error) {
       console.error("Error fetching data from backend:", error);
     }
   };
-
-  // Call fetchData when the component mounts or when selectedTable changes
-  useEffect(() => {
-    fetchData(selectedTable);
-  }, [selectedTable]);
 
   return (
     <React.Fragment>
       <Card>
         <CardContent>
           <Typography component="h2" variant="h6" gutterBottom>
-            Books details
+            Books Requests
           </Typography>
           <FormControl>
             <Grid container spacing={1}>
@@ -50,8 +45,8 @@ export default function StudentHistory () {
                 value={selectedTable}
                 onChange={(e) => setSelectedTable(e.target.value)}
               >
-                <MenuItem value="library">Library</MenuItem>
-                <MenuItem value="bookbank">Book Bank</MenuItem>
+                <MenuItem value="issue">Issue</MenuItem>
+                <MenuItem value="return">Return</MenuItem>
               </Select>
             </Grid>
           </FormControl>
@@ -60,19 +55,15 @@ export default function StudentHistory () {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>Book ID</TableCell>
-                  <TableCell>Book Name</TableCell>
-                  <TableCell>Issue Date</TableCell>
-                  <TableCell>Returned Date</TableCell>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Accession</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {historyData.map((row) => (
+                {requestData.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell>{row.bookId}</TableCell>
                     <TableCell>{row.bookName}</TableCell>
-                    <TableCell>{row.issueDate}</TableCell>
-                    <TableCell>{row.returnedDate}</TableCell>
+                    <TableCell>{row.accession}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

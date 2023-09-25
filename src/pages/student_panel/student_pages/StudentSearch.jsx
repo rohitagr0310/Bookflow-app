@@ -13,40 +13,42 @@ import TableCell from "@mui/material/TableCell";
 import Checkbox from "@mui/material/Checkbox"; // Moved this import to the top
 import Paper from "@mui/material/Paper"; // Moved this import to the top
 import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
-import { Grid } from "@mui/material";
+import { IconButton, Grid } from "@mui/material";
+import axios from "axios";
+import { QrReader } from "react-qr-reader";
 
 function Search () {
   const [searchTerm, setSearchTerm] = useState("");
-  const [bookInfo, setBookInfo] = useState(null);
+  const [bookInfo, setBookInfo] = useState();
   const [selectedBooks, setSelectedBooks] = useState([]);
+  const [data, setData] = useState("No result");
+  const [qrScannerActive, setQrScannerActive] = useState(false);
 
-  const handleSearch = () => {
-    // Check if searchTerm is empty, and if so, reset bookInfo to null
+  const handleSearch = async () => {
     if (!searchTerm) {
       setBookInfo(null);
       return;
     }
 
-    // In a real application, you would fetch book information from an API
-    // based on the searchTerm (book ID), bookNameFilter, and streamFilter.
-    // For this example, we'll just set some dummy book information.
+    try {
+      const response = await axios.post("/.netlify/functions/student-books-get-search", {
+        searchKeyword: searchTerm
+      });
 
-    const dummyBookInfo = {
-      ID: "1",
-      title: "Sample Book",
-      author: "John Doe",
-      ISBN: "1234567890"
-      // Add more book information here.
-    };
+      const data = response.data;
+      console.log("api data", data);
 
-    setBookInfo(dummyBookInfo);
+      setBookInfo(data);
+    } catch (error) {
+      console.error("Error fetching book information:", error);
+    }
   };
 
-  // const handleEnterKey = (e) => {
-  //   if (e.key === "Enter") {
-  //     handleSearch();
-  //   }
-  // };
+  const handleEnterKey = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
 
   const handleCheckboxChange = (event, book) => {
     if (event.target.checked) {
@@ -64,6 +66,7 @@ function Search () {
     // Reset the selected books after submission
     setSelectedBooks([]);
   };
+
   return (
     <Card>
       <CardContent>
@@ -71,23 +74,50 @@ function Search () {
           <Typography variant="h4" gutterBottom>
             Book Search
           </Typography>
-          <TextField
-            label="Enter Book ID"
-            variant="outlined"
-            fullWidth
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSearch}
-            style={{ marginTop: "16px" }}
-          >
-            Search
-          </Button>
-          <Grid container spacing={2} style={{ marginTop: "16px" }}/>
-          <QrCodeScannerIcon style={{ fontSize: 40, marginBottom: "16px" }} />
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <TextField
+              label="Enter Book Name"
+              variant="outlined"
+              fullWidth
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleEnterKey}
+            />
+            <IconButton
+              onClick={() => setQrScannerActive(!qrScannerActive)}
+              color={qrScannerActive ? "primary" : "default"}
+            >
+              <QrCodeScannerIcon />
+            </IconButton>
+
+          </div>
+          {qrScannerActive && (
+            <QrReader
+              onResult={(result, error) => {
+                if (result) {
+                  setQrScannerActive(false);
+                  setData(result?.text);
+                }
+
+                if (error) {
+                  console.info(error);
+                }
+              }}
+              style={{ width: "100%" }}
+            />
+          )}
+          <p>{data}</p>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleSearch}
+              style={{ marginTop: "16px" }}
+            >
+              Search
+            </Button>
+          </div>
+          <Grid container spacing={2} style={{ marginTop: "16px" }} />
           {bookInfo && (
             <div>
               <Typography variant="h5" style={{ marginTop: "16px" }}>
@@ -98,34 +128,32 @@ function Search () {
                   <TableHead>
                     <TableRow>
                       <TableCell>Select</TableCell>
-                      <TableCell>ID</TableCell>
-                      <TableCell>Title</TableCell>
+                      <TableCell>Accession Type</TableCell>
+                      <TableCell>Book Title</TableCell>
                       <TableCell>Author</TableCell>
-                      <TableCell>ISBN</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    <TableRow key={bookInfo.title}>
-                      <TableCell>
-                        <Checkbox
-                          onChange={(e) =>
-                            handleCheckboxChange(e, bookInfo.title)
-                          }
-                          checked={selectedBooks.includes(bookInfo.title)}
-                        />
-                        {/* Checkbox for the first row */}
-                      </TableCell>
-                      <TableCell>1</TableCell>
-                      <TableCell>{bookInfo.title}</TableCell>
-                      <TableCell>{bookInfo.author}</TableCell>
-                      <TableCell>{bookInfo.ISBN}</TableCell>
-                    </TableRow>
-                    {/* Add more book information fields as needed */}
+                    {bookInfo.map((book) => (
+                      <TableRow key={book.bookTitle}>
+                        <TableCell>
+                          <Checkbox
+                            onChange={(e) => handleCheckboxChange(e, book.bookTitle)}
+                            checked={selectedBooks.includes(book.bookTitle)}
+                          />
+                          {/* Checkbox for each row */}
+                        </TableCell>
+                        <TableCell>{book.accessionType}</TableCell>
+                        <TableCell>{book.bookTitle}</TableCell>
+                        <TableCell>{book.authorFirst}</TableCell>
+                      </TableRow>
+                    ))}
                   </TableBody>
                 </Table>
               </TableContainer>
             </div>
           )}
+
           {selectedBooks.length > 0 && (
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Button
