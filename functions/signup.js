@@ -1,6 +1,6 @@
 const { hash } = require("bcrypt");
 const nodemailer = require("nodemailer");
-const connection = require("./db-test.js");
+const connection = require("./db.js");
 
 const queryDatabase = async (connection, sql, params) => {
   return new Promise((resolve, reject) => {
