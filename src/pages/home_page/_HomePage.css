@@ -97,7 +97,7 @@ section {
 
 .testimonialCard:hover {
   transform: translateY(-5px);
-  background-color:black;
+  background-color:#00031a;
   color: #000;
   
 }
