@@ -97,9 +97,8 @@ section {
 
 .testimonialCard:hover {
   transform: translateY(-5px);
-  background-color:black;
+  background-color: #d2d8ff;
   color: #000;
-  
 }
 
 /* Styling for testimonial content */
@@ -107,14 +106,12 @@ section {
   font-style: italic;
   text-align: center;
   margin-top: 16px;
-  color: white;
 }
 
 /* Styling for testimonial names */
 .testimonialName {
   font-weight: bold;
   margin-top: 16px;
-  color: white;
 }
 
 /* Add this media query at the end of your CSS file to adjust styles for mobile screens */
