@@ -25,13 +25,37 @@ section {
 .sectionContent {
   text-align: center;
   padding: 50px 15px;
-  display: flex;
-  flex-direction: column;
+  display: grid;                      /*creating a grid to assign content and image 2*2 */
+  grid-template-columns: 1fr;         
+  grid-template-rows:1fr;
   justify-content: center;
   align-items: center;
   min-height: 100%;
   overflow: auto;
 }
+.sectionContent #content{             
+  grid-column: 1;                     /*assigning content to row 1 column 1  for odd sections*/
+  grid-row: 1;
+  
+}
+
+.sectionContent #img{
+  grid-column: 2;                      /*assigning image to row 1 column 2 for odd sections*/
+  grid-row: 1;
+}
+
+.sectionContent #content2{
+  grid-column: 2;                       /*assigning content to row 1 column 2 for even sections*/
+  grid-row: 1;                          
+  
+}
+
+.sectionContent #img2{
+  grid-column: 1;                       /*assigning image to row 1 column 2 for even sections*/
+  grid-row: 1;
+}
+
+
 
 /* Styling for section headings */
 .sectionHeading {
@@ -57,6 +81,8 @@ section {
   height: 3px;
   margin: auto;
   background-color: #000;
+  grid-column: 1/span 2;                /*assigning space to section divider*/
+  grid-row: 2;
 }
 
 .testimonialCardContainer {
@@ -141,7 +167,53 @@ section {
   }
 
   .sectionContent {
-    font-size: 1rem;
+    text-align: center;
+    padding: 50px 15px;
+    display: grid;                              /*creating a grid to assign content and image 1*1 in mobile devices */
+    grid-template-columns: 1fr;
+    grid-template-rows:auto ;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  .sectionContent #content{
+    grid-column: 1;                               /*assigning content to row 2*/
+    grid-row: 2;
+    align-items: center;
+    overflow: auto;
+    
+  }
+  
+  .sectionContent #img{
+    grid-column: 1;
+    grid-row: 1;                                   /*assigning image to row 1*/
+    align-items: center;
+    overflow: auto;
+  }
+  .sectionContent #content2{                        /*assigning content to row 2*/
+    grid-column: 1;           
+    grid-row: 2;
+    align-items: center;
+    overflow: auto;
+    
+  }
+  
+  .sectionContent #img2{                            /*assigning image to row 1*/
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+    overflow: auto;
+  }
+
+  .sectionDivider {
+    width: 50%;
+    height: 3px;
+    margin: auto;
+    background-color: #000;
+    grid-column: 1;
+    grid-row: 1;                                     /*assigning space to sectionDevider ini grid*/
   }
 
   .testimonialCard {

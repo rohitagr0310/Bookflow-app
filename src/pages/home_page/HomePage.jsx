@@ -66,8 +66,8 @@ const HomePage = () => {
           }}
         >
           <div className="sectionContent">
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <div style={{ flex: "1" }}>
+            <div style={{ display: "grid", alignItems: "center" }}>
+              <div id="content">
                 <h2 className="sectionHeading">Effortless QR Code Scanning</h2>
                 <p className="sectionText">
                   BookFlow takes convenience to the next level with seamless QR code scanning. Now, borrowing a book is as simple as pointing your device at the book&apos;s QR code. Our advanced scanning technology instantly recognizes the book,
@@ -75,7 +75,7 @@ const HomePage = () => {
                 </p>
                 <p className="sectionText">Say goodbye to long queues and paperwork. Whether you&apos;re in the library or browsing our vast online catalog, QR code scanning makes borrowing books a breeze.</p>
               </div>
-              <div style={{ flex: "1", textAlign: "right" }}>
+              <div id="img">
                 <img src={img1} alt="Image Description" width={"80%"}/>
               </div>
             </div>
@@ -92,11 +92,11 @@ const HomePage = () => {
           }}
         >
           <div className="sectionContent">
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <div style={{ flex: "1", textAlign: "left" }}>
+            <div style={{ display: "grid", alignItems: "center" }}>
+              <div id="img2">
                 <img src={img2} alt="Image Description" width={"80%"}/>
               </div>
-              <div style={{ flex: "1" }}>
+              <div id="content2">
                 <h2 className="sectionHeading">All-in-One Book Management</h2>
                 <p className="sectionText">
                   BookFlow isn&apos;t just about reading; it&apos;s about managing your entire literary journey. Our web app empowers you to search, choose, and issue books all from one place. No more jumping between apps or websites. Everything you
@@ -121,8 +121,8 @@ const HomePage = () => {
           }}
         >
           <div className="sectionContent">
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <div style={{ flex: "1" }}>
+            <div style={{ display: "grid", alignItems: "center" }}>
+              <div id="content">
                 <h2 className="sectionHeading">Your Reading History</h2>
                 <p className="sectionText">
                   BookFlow cares about your reading journey, and that&apos;s why we offer a personalized experience like no other. With our web app, you can easily access your reading history. See which books you&apos;ve borrowed, which ones
@@ -130,7 +130,7 @@ const HomePage = () => {
                 </p>
                 <p className="sectionText">It&apos;s your literary journey, beautifully organized in one place. BookFlow ensures that every chapter of your reading history is easily accessible and memorable.</p>
               </div>
-              <div style={{ flex: "1", textAlign: "right" }}>
+              <div id="img">
                 <img src={img3} alt="Image Description" width={"80%"} />
               </div>
             </div>
