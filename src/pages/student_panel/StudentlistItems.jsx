@@ -7,7 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HistoryIcon from "@mui/icons-material/History";
-import SearchIcon from "@mui/icons-material/Search";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 export const mainListItems = (
@@ -20,9 +20,15 @@ export const mainListItems = (
     </ListItemButton>
     <ListItemButton component={Link} to="/student/search">
       <ListItemIcon>
-        <SearchIcon />
+        <MenuBookIcon />
       </ListItemIcon>
-      <ListItemText className="admin-dashboard-menu-buttons"primary="Search" />
+      <ListItemText className="admin-dashboard-menu-buttons"primary="Issue Book" />
+    </ListItemButton>
+    <ListItemButton component={Link} to="/student/requests">
+      <ListItemIcon>
+        <MenuBookIcon />
+      </ListItemIcon>
+      <ListItemText className="admin-dashboard-menu-buttons"primary="Requests" />
     </ListItemButton>
     <ListItemButton component={Link} to="/student/account">
       <ListItemIcon>

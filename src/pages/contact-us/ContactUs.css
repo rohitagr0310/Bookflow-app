@@ -1,28 +1,90 @@
+/* Base styles for larger screens */
 .contact-us {
-	text-align: center;
 	padding: 50px;
 	background-color: #f0f0f0;
 }
 
 h1 {
-	font-size: 24px;
-	margin-bottom: 20px;
+	font-size: 35px;
+	text-align: center;
+	margin-bottom: 30px;
 }
 
-.contact-item {
+h1::after {
+	content: "";
+	display: block;
+	width: 35%;
+	height: 3px;
+	background-color: #007bff;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.contact-details {
 	display: flex;
 	align-items: center;
-	margin: 10px 0;
-	font-size: 18px;
-	color: black;
+	margin: 0 10%;
+	text-align: left;
+	font-size: 1rem;
 }
 
-.contact-item a {
+.contact-content {
+	flex: 1;
+}
+
+.contact-name {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin-bottom: 40px;
+}
+
+h2 {
+	font-size: 28px;
+}
+
+.contact-detail {
+	font-size: 1.1rem;
+	color: black;
+	margin-top: 20px;
+}
+
+.contact-info {
+	margin-top: 20px;
+}
+
+.contact-info span {
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.contact-detail a {
 	text-decoration: none;
 	color: #007bff !important;
 	transition: color 0.3s ease;
 }
 
-.contact-item a:hover {
+.contact-detail a:hover {
+	text-decoration: underline;
 	color: #0056b3;
+}
+
+.contact-image img {
+	align-items: center;
+	max-width: 100%;
+	padding-left: 25%;
+}
+
+@media (max-width: 768px) {
+	.contact-us {
+		padding: 20px;
+	}
+
+	.contact-details {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.contact-details .contact-content {
+		margin-top: 20px;
+		max-width: 100%;
+	}
 }

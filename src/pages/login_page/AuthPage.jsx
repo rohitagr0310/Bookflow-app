@@ -85,9 +85,13 @@ const AuthPage = () => {
       if (response.status === 200) {
         const userType = response.data.userType;
         const token = response.data.token;
+        const userId = response.data.id;
+        const user = response.data.username;
         // Store the token and user type in local storage or state
         localStorage.setItem("token", token);
-        localStorage.setItem("userType", userType); // Store user type
+        localStorage.setItem("userType", userType);
+        localStorage.setItem("userId", userId);
+        localStorage.setItem("user", user);
 
         // Navigate based on the userType
         if (userType === "A") {
@@ -107,6 +111,10 @@ const AuthPage = () => {
     }
   };
 
+  const [showSignupPassword, setShowSignupPassword] = useState(false);
+  const handleToggleSignupPassword = () => {
+    setShowSignupPassword(!showSignupPassword);
+  };
   const [showPassword, setShowPassword] = useState(false); // New state for showing/hiding password
 
   const handleTogglePassword = () => {
@@ -295,7 +303,7 @@ const AuthPage = () => {
                     color="primary"
                     onClick={handleSignIn}
                   >
-                  Sign In
+                    Sign In
                   </Button>
                   <Button
                     variant="text"
@@ -349,7 +357,25 @@ const AuthPage = () => {
                   margin="normal"
                   variant="outlined"
                   required
-                  type="password"
+                  type={showSignupPassword ? "text" : "password"} // Toggle between text and password
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={handleToggleSignupPassword} // Call the toggle function
+                          edge="end"
+                          size="small"
+                          className="showPasswordButton"
+                        >
+                          {showSignupPassword ? (
+                            <VisibilityIcon />
+                          ) : (
+                            <VisibilityOffIcon />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    )
+                  }}
                 />
                 <TextField
                   label="Confirm Password"
@@ -360,7 +386,7 @@ const AuthPage = () => {
                   margin="normal"
                   variant="outlined"
                   required
-                  type="password"
+                  type={showSignupPassword ? "text" : "password"} // Toggle between text and password
                 />
                 <FormControlLabel
                   control={
@@ -402,7 +428,6 @@ const AuthPage = () => {
                 {showLogin ? "Switch to Sign Up" : "Switch to Login"}
               </Button>
             </div>
-
           </div>
         </div>
       </div>

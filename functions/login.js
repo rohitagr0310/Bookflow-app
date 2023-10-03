@@ -1,6 +1,6 @@
 const { compare } = require("bcrypt");
 const { sign } = require("jsonwebtoken");
-const connection = require("./db-test.js");
+const connection = require("./db.js");
 const secretKey = "bookflowadminstrationimp";
 
 const queryDatabase = async (connection, sql, params) => {
@@ -44,7 +44,7 @@ exports.handler = async (event, context) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "Login successful", username: user.name, token, userType: user.user_type })
+      body: JSON.stringify({ message: "Login successful", username: user.name, token, userType: user.user_type, id: user.id })
     };
   } catch (error) {
     console.error("Error in login function:", error);
