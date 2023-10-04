@@ -16,7 +16,7 @@ To get started with contributing to BookFlow App, follow these steps:
    ```bash
    git clone https://github.com/rohitagr0310/bookflow-app.git
    ```
-Continuity work with Readme:
+3. For further details refer Readme:
    ```bash
    https://github.com/rohitagr0310/Bookflow-app/blob/main/README.md
    ```
