@@ -28,14 +28,20 @@
 }
 
 .columnsContainer {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 1rem;
 	width: 100%;
+	height: 300px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 1rem;
 }
 
 .column {
-	flex: 1;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
 	margin-right: 1rem;
 	margin-bottom: 1rem;
 	text-align: center;
@@ -44,16 +50,25 @@
 .columnTitle {
 	font-weight: bold;
 	text-decoration: underline;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 }
 
 .columnLink {
 	display: block;
 	color: white;
+	min-width: 100px;
 	text-decoration: none;
-	margin-top: 1rem;
-	font-size: 0.8rem;
+	margin: 1rem 0;
+	font-size: 1.2rem;
 	transition: color 0.3s ease-in-out;
+}
+.linksWrapper{
+	width: 40vw;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 
 .columnLink:hover {
