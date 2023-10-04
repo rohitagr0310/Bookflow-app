@@ -144,6 +144,14 @@ section {
     font-size: 1rem;
   }
 
+  .sectionContent > div {
+    flex-direction: column-reverse;
+  }
+
+  .page > section:nth-of-type(3) > div > div > div:first-child{
+    order: 1;
+  }
+
   .testimonialCard {
     max-width: 300px;
     padding: 16px;
