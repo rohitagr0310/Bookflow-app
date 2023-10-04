@@ -3,7 +3,7 @@
 import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/scroll/scroll-to-top.jsx";
 import HomePage from "./pages/home_page/HomePage.jsx";
 import AuthPage from "./pages/login_page/AuthPage.jsx";
@@ -27,6 +27,7 @@ import StudentDashboard from "./pages/student_panel/studentdashboard.jsx";
 import ContactUs from "./pages/contact-us/ContactUs.jsx";
 import EmailVerifiedPage from "./pages/email_verified/EmailVerified.jsx";
 import StudentRequests from "./pages/student_panel/student_pages/StudentRequests.jsx";
+import AuthWrapper from "./components/auth/AuthWrapper.jsx";
 
 /*
  * Main component for the application.
@@ -54,7 +55,7 @@ function App () {
             <Route path="contact-us" element={<ContactUs />} />
             {userType === "A"
               ? (
-                <Route path="admin" element={<AdminPanel />}>
+                <Route path="admin" element={<AuthWrapper Component={AdminPanel}/>}>
                   <Route index element={<AdminDashboard />} />
                   <Route path="add-book" element={<AddBook />} />
                   <Route path="all-book" element={<AllBooks />} />
@@ -65,7 +66,7 @@ function App () {
                 </Route>
               )
               : (
-                <Route path="student" element={<StudentPanel />}>
+                <Route path="student" element={<AuthWrapper Component={StudentPanel} />}>
                   <Route index element={<StudentDashboard />} />
                   <Route path="account" element={<StudentAccount />} />
                   <Route path="history" element={<StudentHistory />} />
@@ -73,6 +74,7 @@ function App () {
                   <Route path="requests" element={<StudentRequests/>}/>
                 </Route>
               )}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <Footer />
         </div>
