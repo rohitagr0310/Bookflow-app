@@ -30,20 +30,12 @@ const ContactUs = lazy(() => import("./pages/contact-us/ContactUs.jsx"));
 const EmailVerifiedPage = lazy(() => import("./pages/email_verified/EmailVerified.jsx"));
 const StudentRequests = lazy(() => import("./pages/student_panel/student_pages/StudentRequests.jsx"));
 
-
-
-
-
-
-
-
-
 /*
  * Main component for the application.
  * @returns {JSX.Element} The rendered component.
  */
 
-function App() {
+function App () {
   const theme = createTheme();
 
   const userType = localStorage.getItem("userType") || "";

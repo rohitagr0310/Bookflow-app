@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ["standard", "plugin:react/recommended"],
+  extends: ["eslint:recommended", "plugin:react/recommended"],
   overrides: [
     {
       env: {
@@ -11,41 +11,23 @@ module.exports = {
       },
       files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: "script"
+        sourceType: "module"
       }
     }
   ],
   parserOptions: {
-    ecmaVersion: "latest",
+    ecmaVersion: 2021, // Use the appropriate ECMAScript version
     sourceType: "module"
   },
   plugins: ["react"],
   rules: {
-    // Enforce consistent indentation (use tabs or spaces)
     indent: ["error", 2],
-
-    // Enforce single quotes for string literals
+    "linebreak-style": ["error", "windows"],
     quotes: ["error", "double"],
-
-    // Require semicolons at the end of statements
     semi: ["error", "always"],
-
-    // Enforce consistent spacing inside curly braces
-    "object-curly-spacing": ["error", "always"],
-
-    // Enforce consistent spacing before and after arrow functions
-    "arrow-spacing": ["error", { before: true, after: true }],
-
-    // Require variable declarations to be at the top of their scope
-    "vars-on-top": "error",
-
-    // Require the use of triple equals (===) and not double equals (==)
-    eqeqeq: "error",
-
-    // Enforce a maximum line length to improve readability
-    "max-len": ["error", { code: 250 }],
-
-    // Require consistent return values in array methods like map and forEach
-    "array-callback-return": "error"
+    "comma-dangle": ["error", "never"],
+    "no-multiple-empty-lines": ["error", { max: 1 }], // Updated to allow only 1 blank line
+    "space-before-function-paren": ["error", "always"], // Updated to "always"
+    "no-extra-semi": "error"
   }
 };

@@ -64,7 +64,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export default function Dashboard () {
+export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -130,12 +130,12 @@ export default function Dashboard () {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <Outlet/>
+                <Outlet />
               </Grid>
             </Grid>
           </Container>
         </Box>
       </Box>
     </ThemeProvider>
-  );
-};
+  )
+}
