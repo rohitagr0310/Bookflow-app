@@ -95,23 +95,32 @@ section {
   }
 }
 
-.testimonialCard:hover {
-  transform: translateY(-5px);
-  background-color: #d2d8ff;
-  color: #000;
-}
-
 /* Styling for testimonial content */
 .testimonialContent {
   font-style: italic;
   text-align: center;
   margin-top: 16px;
+  color: #fff;
+  transition: color 0.3s ease; /* Add transition for smooth color change */
 }
 
 /* Styling for testimonial names */
 .testimonialName {
   font-weight: bold;
   margin-top: 16px;
+  color: #fff;
+  transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  background-color: #d2d8ff;
+  color: #666; /* Change text color of .testimonialCard */
+}
+
+.testimonialCard:hover .testimonialContent,
+.testimonialCard:hover .testimonialName {
+  color: #666; /* Change text color of .testimonialContent and .testimonialName */
 }
 
 /* Add this media query at the end of your CSS file to adjust styles for mobile screens */
@@ -142,6 +151,14 @@ section {
 
   .sectionContent {
     font-size: 1rem;
+  }
+
+  .sectionContent > div {
+    flex-direction: column-reverse;
+  }
+
+  .page > section:nth-of-type(3) > div > div > div:first-child{
+    order: 1;
   }
 
   .testimonialCard {
