@@ -8,7 +8,6 @@ const TermsAndConditions = () => {
   const [isExpanded, setIsExpanded] = useState({
     account: false,
     privacy: false
-    // Add more sections as needed
   });
 
   const toggleExpansion = (section) => {
@@ -32,7 +31,6 @@ const TermsAndConditions = () => {
           Terms and Conditions for BookFlow - Library Management Web Application
         </h1>
         <p>Last Updated: 16-09-2023</p>
-        {/* Rest of your content */}
         <p>
           Welcome to BookFlow, a library management web application designed
           to enhance your reading experience. Before you begin using our
@@ -42,8 +40,6 @@ const TermsAndConditions = () => {
           you do not agree with any part of these terms, please do not use our
           services.
         </p>
-
-        {/* Example usage of expansion */}
         <p
           onClick={() => toggleExpansion("account")}
           style={{ cursor: "pointer" }}
@@ -68,9 +64,6 @@ const TermsAndConditions = () => {
           </>
         )}
         <hr />
-
-        {/* Repeat the above pattern for other sections */}
-        {/* Example for section 2 */}
         <p
           onClick={() => toggleExpansion("privacy")}
           style={{ cursor: "pointer" }}
@@ -99,10 +92,8 @@ const TermsAndConditions = () => {
               for the purpose of scanning QR codes. We do not store any images
               captured by your devices camera.
             </p>
-            {/* Add other privacy-related content here */}
           </>
         )}
-        {/* Example for section 3 */}
         <hr/>
         <p
           onClick={() => toggleExpansion("issuingReturning")}
@@ -130,9 +121,6 @@ const TermsAndConditions = () => {
           </>
         )}
         <hr />
-
-        {/* Repeat the above pattern for other sections */}
-        {/* Example for section 4 */}
         <p
           onClick={() => toggleExpansion("history")}
           style={{ cursor: "pointer" }}
@@ -153,8 +141,6 @@ const TermsAndConditions = () => {
           </>
         )}
         <hr />
-        {/* Repeat for other sections */}
-        {/* Example for section 5 */}
         <p
           onClick={() => toggleExpansion("communication")}
           style={{ cursor: "pointer" }}
@@ -176,8 +162,6 @@ const TermsAndConditions = () => {
           </>
         )}
         <hr />
-        {/* Repeat for other sections */}
-        {/* Example for section 6 */}
         <p
           onClick={() => toggleExpansion("acceptableUse")}
           style={{ cursor: "pointer" }}
@@ -195,7 +179,6 @@ const TermsAndConditions = () => {
           </>
         )}
         <hr />
-        {/* Example for section 7 */}
         <p
           onClick={() => toggleExpansion("modificationOfTerms")}
           style={{ cursor: "pointer" }}
@@ -212,7 +195,6 @@ const TermsAndConditions = () => {
           </>
         )}
         <hr />
-        {/* Example for section 8 */}
         <p
           onClick={() => toggleExpansion("termination")}
           style={{ cursor: "pointer" }}
@@ -230,7 +212,6 @@ const TermsAndConditions = () => {
           </>
         )}
         <hr />
-        {/* Example for section 9 */}
         <p
           onClick={() => toggleExpansion("disclaimer")}
           style={{ cursor: "pointer" }}
@@ -248,7 +229,6 @@ const TermsAndConditions = () => {
           </>
         )}
         <hr />
-        {/* Example for section 10 */}
         <p
           onClick={() => toggleExpansion("contactInformation")}
           style={{ cursor: "pointer" }}
@@ -265,7 +245,6 @@ const TermsAndConditions = () => {
             </p>
           </>
         )}
-        {/* Closing paragraph */}
         <p>
           By using the BookFlow web application, you acknowledge that you have read,
           understood, and agreed to these Terms and Conditions. Thank you for
