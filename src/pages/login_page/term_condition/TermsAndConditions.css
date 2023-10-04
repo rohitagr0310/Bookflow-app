@@ -1,4 +1,4 @@
-/* TermsAndConditions.css */
+/* TermsAndConditions.css
 
 .terms-container {
   background-color: #f7f7f7;
@@ -41,5 +41,31 @@ p {
 }
 .terms-content strong {
   font-weight: bold;
+}
+ */
+ /* TermsAndConditions.css */
+.terms-container {
+  background: linear-gradient(90deg, #0080ff, #00ff80); /* Example gradient background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+
+.appBar {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.9); /* Example semi-transparent white background for content */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example box shadow for content */
 }
 
