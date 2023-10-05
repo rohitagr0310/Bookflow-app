@@ -31,7 +31,7 @@ function Footer () {
             </div>
           </div>
           <div className="column">
-            <Typography variant="h3" className="logo">
+            <Typography variant="h3" p="0" className="logo">
               BookFlow
             </Typography>
           </div>
