@@ -97,23 +97,30 @@ section {
   }
 }
 
-.testimonialCard:hover {
-  cursor: pointer;
-  border-color: #d2d8ff;
-  transform: translateY(-5px);
-  background-color: #d2d8ff;
-  color: #000;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-  
-}
+
 .testimonialContent {
   font-style: italic;
   text-align: center;
   margin-top: 16px;
+  color: #fff;
+  transition: color 0.3s ease; /* Add transition for smooth color change */
 }
 .testimonialName {
   font-weight: bold;
   margin-top: 16px;
+  color: #fff;
+  transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  background-color: #d2d8ff;
+  color: #666; /* Change text color of .testimonialCard */
+}
+
+.testimonialCard:hover .testimonialContent,
+.testimonialCard:hover .testimonialName {
+  color: #666; /* Change text color of .testimonialContent and .testimonialName */
 }
 @media (max-width: 768px) {
   .section {
@@ -142,6 +149,14 @@ section {
 
   .sectionContent {
     font-size: 1rem;
+  }
+
+  .sectionContent > div {
+    flex-direction: column-reverse;
+  }
+
+  .page > section:nth-of-type(3) > div > div > div:first-child{
+    order: 1;
   }
 
   .testimonialCard {
