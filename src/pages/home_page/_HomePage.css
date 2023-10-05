@@ -34,8 +34,6 @@ section {
   min-height: 100%;
   overflow: auto;
 }
-
-/* Styling for section headings */
 .sectionHeading {
   color: #000000;
    margin-bottom: 12px; /*You can adjust this value */
@@ -88,6 +86,10 @@ section {
   transition: transform 0.3s ease-in-out;
   background-color: transparent;
   border-top-color: transparent;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 600px) {
@@ -97,26 +99,31 @@ section {
   }
 }
 
-.testimonialCard:hover {
-  transform: translateY(-5px);
-  background-color: #d2d8ff;
-  color: #000;
-}
 
-/* Styling for testimonial content */
 .testimonialContent {
   font-style: italic;
   text-align: center;
   margin-top: 16px;
+  color: #fff;
+  transition: color 0.3s ease; /* Add transition for smooth color change */
 }
-
-/* Styling for testimonial names */
 .testimonialName {
   font-weight: bold;
   margin-top: 16px;
+  color: #fff;
+  transition: color 0.3s ease; /* Add transition for smooth color change */
 }
 
-/* Add this media query at the end of your CSS file to adjust styles for mobile screens */
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  background-color: #d2d8ff;
+  color: #666; /* Change text color of .testimonialCard */
+}
+
+.testimonialCard:hover .testimonialContent,
+.testimonialCard:hover .testimonialName {
+  color: #666; /* Change text color of .testimonialContent and .testimonialName */
+}
 @media (max-width: 768px) {
   .section {
     background-size: contain;
@@ -144,6 +151,14 @@ section {
 
   .sectionContent {
     font-size: 1rem;
+  }
+
+  .sectionContent > div {
+    flex-direction: column-reverse;
+  }
+
+  .page > section:nth-of-type(3) > div > div > div:first-child{
+    order: 1;
   }
 
   .testimonialCard {
