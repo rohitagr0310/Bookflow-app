@@ -4,7 +4,7 @@ Welcome to the BookFlow App repository! This is where we manage the development 
 
 ## Overview
 
-BookFlow is a library management app that allows users to seamlessly manage book borrowing and returns using QR code scanning. This app aims to provide an efficient way to interact with library resources without the need for direct librarian involvement.
+BookFlow is an elegantly designed library management application, offering users a seamless experience for managing book checkouts and returns with the effortless charm of QR code scanning. This innovative app empowers patrons to navigate library resources independently, reducing the reliance on direct librarian intervention.
 
 ## Features
 
