@@ -1,54 +1,107 @@
-/* Base styles for larger screens */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	/* Background color */
+	color: #333;
+}
+
 .contact-us {
-	padding: 50px;
-	background-color: #f0f0f0;
+	text-align: center;
+	padding: 40px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 h1 {
-	font-size: 35px;
-	text-align: center;
-	margin-bottom: 30px;
-}
-
-h1::after {
-	content: "";
-	display: block;
-	width: 35%;
-	height: 3px;
-	background-color: #007bff;
-	margin: 0 auto;
-	margin-top: 10px;
-}
-
-.contact-details {
-	display: flex;
-	align-items: center;
-	margin: 0 10%;
-	text-align: left;
-	font-size: 1rem;
+	font-size: 36px;
+	margin-bottom: 20px;
+	color: #333;
 }
 
 .contact-content {
-	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-top: 20px;
 }
 
-.contact-name {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	margin-bottom: 40px;
+.contact-form {
+	flex: 1;
+	text-align: left;
+	padding-right: 20px;
+}
+
+.reach-us {
+	flex: 1;
+	text-align: left;
+	padding-left: 20px;
+}
+
+form {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-	font-size: 28px;
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333;
 }
 
-.contact-detail {
-	font-size: 1.1rem;
-	color: black;
-	margin-top: 20px;
+.form-group {
+	margin-bottom: 15px;
 }
 
-.contact-info {
-	margin-top: 20px;
+label {
+	font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
+	color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+
+/* Improved Styling for "Reach Us" Section */
+.contact-details {
+	text-align: left;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-name {
+	margin-bottom: 10px;
 }
 
 .contact-info span {
@@ -56,9 +109,9 @@ h2 {
 	font-weight: bold;
 }
 
-.contact-detail a {
+.contact-info a {
 	text-decoration: none;
-	color: #007bff !important;
+	color: blue !important;
 	transition: color 0.3s ease;
 }
 
@@ -67,24 +120,12 @@ h2 {
 	color: #0056b3;
 }
 
-.contact-image img {
-	align-items: center;
-	max-width: 100%;
-	padding-left: 25%;
-}
-
 @media (max-width: 768px) {
-	.contact-us {
+
+	.left-half,
+	.right-half {
+		flex: 1;
+		width: 100%;
 		padding: 20px;
-	}
-
-	.contact-details {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.contact-details .contact-content {
-		margin-top: 20px;
-		max-width: 100%;
 	}
 }
