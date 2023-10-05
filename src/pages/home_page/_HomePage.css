@@ -38,8 +38,8 @@ section {
 /* Styling for section headings */
 .sectionHeading {
   color: #000000;
-   margin-bottom: 32px; /*You can adjust this value */
-  font-size: 2.5rem; /* You can adjust this value */
+   margin-bottom: 12px; /*You can adjust this value */
+  font-size: 3rem; /* You can adjust this value */
   font-weight: bold;
   text-shadow: 0 3px 7px rgba(255, 255, 255, 0.7);
   box-shadow: none;
@@ -49,7 +49,7 @@ section {
 
 .sectionText {
   color: #495464;
-  font-size: 100%;
+  font-size: 1.4rem;
   letter-spacing: 0.5;
   text-align: left;
 }

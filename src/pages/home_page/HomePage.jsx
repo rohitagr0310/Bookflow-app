@@ -67,12 +67,12 @@ const HomePage = () => {
           <div className="sectionContent">
             <div style={{ display: "flex", alignItems: "center", width: "100vw", justifyContent: "space-evenly" }}>
               <div style={{ display: "flex", flexDirection: "column", width: "50%", alignItems: "center" }}>
-                <h2 className="sectionHeading">Effortless QR Code Scanning</h2>
-                <p className="sectionText" style={{ maxWidth: "500px", width: "auto" }}>
+                <h2 className="sectionHeading" style={{ width: "60%" }}>Effortless QR Code Scanning</h2>
+                <p className="sectionText" style={{ maxWidth: "500px", width: "auto", padding: "0 10px" }}>
                   BookFlow takes convenience to the next level with seamless QR code scanning. Now, borrowing a book is as simple as pointing your device at the book&apos;s QR code. Our advanced scanning technology instantly recognizes the book,
                   allowing you to check it out with just a tap.
                 </p>
-                <p className="sectionText" style={{ maxWidth: "500px", width: "auto" }}>Say goodbye to long queues and paperwork. Whether you&apos;re in the library or browsing our vast online catalog,
+                <p className="sectionText" style={{ maxWidth: "500px", width: "auto", padding: "0 10px" }}>Say goodbye to long queues and paperwork. Whether you&apos;re in the library or browsing our vast online catalog,
                  QR code scanning makes borrowing books a breeze.</p>
               </div>
               <div style={{ flex: "1", textAlign: "center" }}>
@@ -97,12 +97,12 @@ const HomePage = () => {
                 <img src={img2} alt="Image Description" width={"80%"}/>
               </div>
               <div style={{ display: "flex", flexDirection: "column", width: "50%", alignItems: "center" }}>
-                <h2 className="sectionHeading">All-in-One Book Management</h2>
-                <p className="sectionText" style={{ maxWidth: "500px", width: "auto" }}>
+                <h2 className="sectionHeading" style={{ width: "60%" }}>All-in-One Book Management</h2>
+                <p className="sectionText" style={{ maxWidth: "500px", width: "auto", padding: "0 10px" }}>
                   BookFlow isn&apos;t just about reading; it&apos;s about managing your entire literary journey. Our web app empowers you to search, choose, and issue books all from one place. No more jumping between apps or websites. Everything you
                   need is right here.
                 </p>
-                <p className="sectionText" style={{ maxWidth: "500px", width: "auto" }}>
+                <p className="sectionText" style={{ maxWidth: "500px", width: "auto", padding: "0 10px" }}>
                   Explore our extensive library, read book summaries, and make informed decisions. Once you&apos;ve found the perfect book, issue it instantly. The days of multiple logins and complicated procedures are over. BookFlow simplifies it
                   all.
                 </p>
@@ -123,12 +123,12 @@ const HomePage = () => {
           <div className="sectionContent">
             <div style={{ display: "flex", alignItems: "center", width: "100vw", justifyContent: "space-evenly" }}>
               <div style={{ display: "flex", flexDirection: "column", width: "50%", alignItems: "center" }}>
-                <h2 className="sectionHeading">Your Reading History</h2>
-                <p className="sectionText" style={{ maxWidth: "500px", width: "auto" }}>
+                <h2 className="sectionHeading" style={{ width: "60%" }}>Your Reading History</h2>
+                <p className="sectionText" style={{ maxWidth: "500px", width: "auto", padding: "0 10px" }}>
                   BookFlow cares about your reading journey, and that&apos;s why we offer a personalized experience like no other. With our web app, you can easily access your reading history. See which books you&apos;ve borrowed, which ones
                   you&apos;ve returned, and even track your favorite genres.
                 </p>
-                <p className="sectionText" style={{ maxWidth: "500px", width: "auto" }}>It&apos;s your literary journey, beautifully organized in one place.
+                <p className="sectionText" style={{ maxWidth: "500px", width: "auto", padding: "0 10px" }}>It&apos;s your literary journey, beautifully organized in one place.
                 BookFlow ensures that every chapter of your reading history is easily accessible and memorable.</p>
               </div>
               <div style={{ flex: "1", textAlign: "right" }}>
