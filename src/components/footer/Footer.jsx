@@ -17,7 +17,7 @@ function Footer () {
           <div className="column">
             <div className="linksWrapper">
               <a href="/about-us" className="columnLink">
-                About Us
+                Meet the Team
               </a>
               <a href="/" className="columnLink">
                 Home
