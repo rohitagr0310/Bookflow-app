@@ -70,9 +70,6 @@ Please adhere to this project's `code of conduct`.
 
 5. Open your browser and navigate to http://localhost:3000 to see the app in action.
 
-6. Start the hosted webapp using:
-   `netlify dev`
-
 ## License
 
 This project is licensed under [MIT](https://choosealicense.com/licenses/mit/).
