@@ -70,7 +70,7 @@ const AboutUs = () => {
                 <img src={image3} className="team-img" alt="pic" />
                 <h3>Anshika Jain</h3>
                 <div className="team-info">
-                  <p>Purple Specialist</p>
+                  <p>Full Stack</p>
                 </div>
                 <ul className="team-icon">
                   <li>
@@ -111,7 +111,7 @@ const AboutUs = () => {
                 <img src={image1} className="team-img" alt="pic" />
                 <h3>Qaidjohar Jukker</h3>
                 <div className="team-info">
-                  <p>Video Creator</p>
+                  <p>Full Stack</p>
                 </div>
                 <ul className="team-icon">
                   <li>
@@ -155,7 +155,7 @@ const AboutUs = () => {
                 <img src={image4} className="team-img" alt="pic" />
                 <h3>Ankit Dhanawat</h3>
                 <div className="team-info">
-                  <p>HAGA Specialist</p>
+                  <p>All Rounder</p>
                 </div>
                 <ul className="team-icon">
                   <li>
@@ -196,7 +196,7 @@ const AboutUs = () => {
                 <img src={image} className="team-img" alt="pic" />
                 <h3>Jayesh Joshi</h3>
                 <div className="team-info">
-                  <p>Marketing Manager</p>
+                  <p>Front End</p>
                 </div>
                 <ul className="team-icon">
                   <li>
