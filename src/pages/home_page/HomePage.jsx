@@ -93,8 +93,6 @@ const HomePage = () => {
         >
           <div className="sectionContent">
             <div style={{ display: "flex", alignItems: "center", width: "100vw", justifyContent: "space-evenly" }}>
-            
-
               <div style={{ flex: "1", textAlign: "left" }}>
                 <img src={img2} alt="Image Description" width={"80%"}/>
               </div>
