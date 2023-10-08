@@ -38,7 +38,7 @@ const StudentRequests = lazy(() => import("./pages/student_panel/student_pages/S
 function App () {
   const theme = createTheme();
 
-  const userType = localStorage.getItem("userType") || "";
+  // const userType = localStorage.getItem("userType") || "";
 
   return (
     <ThemeProvider theme={theme}>
@@ -68,55 +68,52 @@ function App () {
             <Route path="contact-us" element={<Suspense fallback={<Loader />}>
               <ContactUs />
             </Suspense>} />
-            {userType === "A"
-              ? (
-                <Route path="admin" element={<Suspense fallback={<Loader />}>
-                  <AdminPanel />
-                </Suspense>}>
-                  <Route index element={<Suspense fallback={<Loader />}>
-                    <AdminDashboard />
-                  </Suspense>} />
-                  <Route path="add-book" element={<Suspense fallback={<Loader />}>
-                    <AddBook />
-                  </Suspense>} />
-                  <Route path="all-book" element={<Suspense fallback={<Loader />}>
-                    <AllBooks />
-                  </Suspense>} />
-                  <Route path="manage-std" element={<Suspense fallback={<Loader />}>
-                    <ManageStudents />
-                  </Suspense>} />
-                  <Route path="issued-book" element={<Suspense fallback={<Loader />}>
-                    <IssuedBooks />
-                  </Suspense>} />
-                  <Route path="admin-history" element={<Suspense fallback={<Loader />}>
-                    <AdminHistory />
-                  </Suspense>} />
-                  <Route path="pending-issue" element={<Suspense fallback={<Loader />}>
-                    <PendingIssue />
-                  </Suspense>} />
-                </Route>
-              )
-              : (
-                <Route path="student" element={<Suspense fallback={<Loader />}>
-                  <StudentPanel />
-                </Suspense>}>
-                  <Route index element={<Suspense fallback={<Loader />}>
-                    <StudentDashboard />
-                  </Suspense>} />
-                  <Route path="account" element={<Suspense fallback={<Loader />}>
-                    <StudentAccount />
-                  </Suspense>} />
-                  <Route path="history" element={<Suspense fallback={<Loader />}>
-                    <StudentHistory />
-                  </Suspense>} />
-                  <Route path="search" element={<Suspense fallback={<Loader />}>
-                    <Search />
-                  </Suspense>} />
-                  <Route path="requests" element={<Suspense fallback={<Loader />}>
-                    <StudentRequests />
-                  </Suspense>} />
-                </Route>
-              )}
+            <Route path="admin" element={<Suspense fallback={<Loader />}>
+              <AdminPanel />
+            </Suspense>}>
+              <Route index element={<Suspense fallback={<Loader />}>
+                <AdminDashboard />
+              </Suspense>} />
+              <Route path="add-book" element={<Suspense fallback={<Loader />}>
+                <AddBook />
+              </Suspense>} />
+              <Route path="all-book" element={<Suspense fallback={<Loader />}>
+                <AllBooks />
+              </Suspense>} />
+              <Route path="manage-std" element={<Suspense fallback={<Loader />}>
+                <ManageStudents />
+              </Suspense>} />
+              <Route path="issued-book" element={<Suspense fallback={<Loader />}>
+                <IssuedBooks />
+              </Suspense>} />
+              <Route path="admin-history" element={<Suspense fallback={<Loader />}>
+                <AdminHistory />
+              </Suspense>} />
+              <Route path="pending-issue" element={<Suspense fallback={<Loader />}>
+                <PendingIssue />
+              </Suspense>} />
+            </Route>
+
+            <Route path="student" element={<Suspense fallback={<Loader />}>
+              <StudentPanel />
+            </Suspense>}>
+              <Route index element={<Suspense fallback={<Loader />}>
+                <StudentDashboard />
+              </Suspense>} />
+              <Route path="account" element={<Suspense fallback={<Loader />}>
+                <StudentAccount />
+              </Suspense>} />
+              <Route path="history" element={<Suspense fallback={<Loader />}>
+                <StudentHistory />
+              </Suspense>} />
+              <Route path="search" element={<Suspense fallback={<Loader />}>
+                <Search />
+              </Suspense>} />
+              <Route path="requests" element={<Suspense fallback={<Loader />}>
+                <StudentRequests />
+              </Suspense>} />
+            </Route>
+
           </Routes>
           <Footer />
         </div>
