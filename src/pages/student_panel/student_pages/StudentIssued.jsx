@@ -57,27 +57,28 @@ function BookTable () {
   };
 
   return (
-    <div>
-      <Typography component="h2" variant="h6" gutterBottom fontFamily={"Montserrat"}>
+    <div className="MainDiv">
+      <Typography component="h2" variant="h6" gutterBottom fontFamily={"Montserrat"} className="text-issued">
         Issued Books
       </Typography>
-      <FormControl className="MenuItems">
+      <FormControl className="MenuItems text-montserrat" bgcolor={"#ECF9FF"} >
         <Select
+          bgcolor={"#ECF9FF"}
           value={selectedSource}
           onChange={handleSourceChange}
         >
-          <MenuItem value="library" fontFamily={"Montserrat"}>Library</MenuItem>
-          <MenuItem value="bookbank" fontFamily={"Montserrat"}>Book Bank</MenuItem>
+          <MenuItem value="library" className="text-montserrat">Library</MenuItem>
+          <MenuItem value="bookbank" className="text-montserrat">Book Bank</MenuItem>
         </Select>
       </FormControl>
       <TableContainer component={Paper} className="TableContainer">
-        <Table bgcolor={"beige"} fontFamily={"Montserrat"}>
+        <Table bgcolor={"#ECF9FF"} fontFamily={"Montserrat"}>
           <TableHead>
             <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>Name</TableCell>
-              <TableCell>Date of Submission</TableCell>
-              <TableCell>Date Pending Time</TableCell>
+              <TableCell className="text-montserrat">ID</TableCell>
+              <TableCell className="text-montserrat">Name</TableCell>
+              <TableCell className="text-montserrat">Date of Submission</TableCell>
+              <TableCell className="text-montserrat">Date Pending Time</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
