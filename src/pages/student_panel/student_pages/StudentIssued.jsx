@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
+import "./StudentIssued.css";
 
 function BookTable () {
   const [books, setBooks] = useState([]);
@@ -57,8 +58,8 @@ function BookTable () {
 
   return (
     <div>
-      <Typography component="h2" variant="h6" gutterBottom>
-        Issued books
+      <Typography component="h2" variant="h6" gutterBottom fontFamily={"Montserrat"}>
+        Issued Books
       </Typography>
       <FormControl className="MenuItems">
         <Select
@@ -69,7 +70,7 @@ function BookTable () {
           <MenuItem value="bookbank">Book Bank</MenuItem>
         </Select>
       </FormControl>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} className="TableContainer">
         <Table>
           <TableHead>
             <TableRow>
