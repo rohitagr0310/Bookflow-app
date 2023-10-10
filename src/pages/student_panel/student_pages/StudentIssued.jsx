@@ -60,7 +60,7 @@ function BookTable () {
       <Typography component="h2" variant="h6" gutterBottom>
         Issued books
       </Typography>
-      <FormControl>
+      <FormControl className="MenuItems">
         <Select
           value={selectedSource}
           onChange={handleSourceChange}
