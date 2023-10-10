@@ -19,7 +19,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems } from "./StudentlistItems";
 import { Outlet } from "react-router-dom";
-import "./StudentPanel.css";
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -77,7 +76,7 @@ export default function Dashboard () {
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open} className="Dashboard">
+        <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
               pr: "24px" // keep right padding when drawer closed
@@ -121,8 +120,7 @@ export default function Dashboard () {
         <Box
           component="main"
           sx={{
-            // backgroundColor: (theme) => (theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[900]),
-            backgroundColor: "#FFE7CC",
+            backgroundColor: (theme) => (theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[900]),
             flexGrow: 1,
             height: "100vh",
             overflow: "auto"

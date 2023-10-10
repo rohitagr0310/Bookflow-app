@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
-import "./StudentIssued.css";
 
 function BookTable () {
   const [books, setBooks] = useState([]);
@@ -57,28 +56,27 @@ function BookTable () {
   };
 
   return (
-    <div className="MainDiv">
-      <Typography component="h2" variant="h6" gutterBottom fontFamily={"Montserrat"} className="text-issued">
-        Issued Books
+    <div>
+      <Typography component="h2" variant="h6" gutterBottom>
+        Issued books
       </Typography>
-      <FormControl className="MenuItems text-montserrat" bgcolor={"#ECF9FF"} >
+      <FormControl>
         <Select
-          bgcolor={"#ECF9FF"}
           value={selectedSource}
           onChange={handleSourceChange}
         >
-          <MenuItem value="library" className="text-montserrat">Library</MenuItem>
-          <MenuItem value="bookbank" className="text-montserrat">Book Bank</MenuItem>
+          <MenuItem value="library">Library</MenuItem>
+          <MenuItem value="bookbank">Book Bank</MenuItem>
         </Select>
       </FormControl>
-      <TableContainer component={Paper} className="TableContainer">
-        <Table bgcolor={"#ECF9FF"} fontFamily={"Montserrat"}>
+      <TableContainer component={Paper}>
+        <Table>
           <TableHead>
             <TableRow>
-              <TableCell className="text-montserrat">ID</TableCell>
-              <TableCell className="text-montserrat">Name</TableCell>
-              <TableCell className="text-montserrat">Date of Submission</TableCell>
-              <TableCell className="text-montserrat">Date Pending Time</TableCell>
+              <TableCell>ID</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>Date of Submission</TableCell>
+              <TableCell>Date Pending Time</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
