@@ -66,12 +66,12 @@ function BookTable () {
           value={selectedSource}
           onChange={handleSourceChange}
         >
-          <MenuItem value="library">Library</MenuItem>
-          <MenuItem value="bookbank">Book Bank</MenuItem>
+          <MenuItem value="library" fontFamily={"Montserrat"}>Library</MenuItem>
+          <MenuItem value="bookbank" fontFamily={"Montserrat"}>Book Bank</MenuItem>
         </Select>
       </FormControl>
       <TableContainer component={Paper} className="TableContainer">
-        <Table>
+        <Table bgcolor={"beige"} fontFamily={"Montserrat"}>
           <TableHead>
             <TableRow>
               <TableCell>ID</TableCell>
