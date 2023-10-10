@@ -29,7 +29,7 @@ const AboutUs = () => {
                 <img src={image2} className="team-img" alt="pic" />
                 <h3>Rohit Agarwal</h3>
                 <div className="team-info">
-                  <p>Project Manager</p>
+                  <p>Solution Architecture</p>
                 </div>
                 <ul className="team-icon">
                   <li>
@@ -70,7 +70,7 @@ const AboutUs = () => {
                 <img src={image3} className="team-img" alt="pic" />
                 <h3>Anshika Jain</h3>
                 <div className="team-info">
-                  <p>Full Stack Developer</p>
+                  <p>Software Developer Manager</p>
                 </div>
                 <ul className="team-icon">
                   <li>
@@ -111,7 +111,7 @@ const AboutUs = () => {
                 <img src={image1} className="team-img" alt="pic" />
                 <h3>Qaidjohar Jukker</h3>
                 <div className="team-info">
-                  <p>Full Stack Developer</p>
+                  <p>QA Manager</p>
                 </div>
                 <ul className="team-icon">
                   <li>
@@ -155,7 +155,7 @@ const AboutUs = () => {
                 <img src={image4} className="team-img" alt="pic" />
                 <h3>Ankit Dhanawat</h3>
                 <div className="team-info">
-                  <p>Front End Developer</p>
+                  <p>Full Stack Developer</p>
                 </div>
                 <ul className="team-icon">
                   <li>
