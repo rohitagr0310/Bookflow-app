@@ -1,0 +1,23 @@
+.MenuItems{
+    margin-top : 12px;
+}
+
+.TableContainer{
+    margin-top: 24px;
+}
+
+.MainDiv{
+    background-color: #FFFBEB;
+}
+
+.text-montserrat{
+    font-family: Montserrat;
+    font-size: large;
+    font-weight: 300;
+}
+
+.text-issued{
+    font-family: Montserrat;
+    font-size: xx-large;
+    font-weight: 300;
+}
