@@ -1,5 +1,5 @@
 .appBar {
-	background: rgba(29, 112, 255, 0.5) !important;
+	background: black !important;
 	backdrop-filter: blur(10px);
 	padding: 5px 0px;
 	position: fixed;
@@ -18,7 +18,7 @@
 	text-decoration: none;
 	color: inherit;
 	font-size: 1.6rem;
-	transition: color 0.3s ease-in-out;
+	font-weight: bold;
 }
 
 .headerLink:hover {
@@ -32,9 +32,52 @@
 	border: none;
 	padding: 7px 21px;
 	border-radius: 5px;
-	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.loginLink:hover {
-	background-color: rgba(255, 255, 255, 0.12);
+.linksWrapper {
+	display: flex;
+}
+
+.navLink {
+	text-decoration: none;
+	font-size: 1.2rem;
+	padding: 7px 21px;
+	border-radius: 5px;
+}
+
+.loginLink:hover, .navLink:hover {
+	background-color: white;
+	color: black !important;
+}
+
+.toggleNav {
+	padding: 0 10px;
+	display: none;
+}
+
+@media (max-width: 48em) {
+	.loginLink:hover, .navLink:hover {
+		background-color: black;
+		color: white !important;
+	}
+
+	.linksWrapper {
+		display: none;
+	}
+
+	.mobileLinksWrapper {
+		background-color: black;
+		width: 200px;
+		position: absolute;
+		top: 70px;
+		right: 20px;
+		display: flex;
+		flex-direction: column;
+		border-radius: 2px;
+		padding: 10px 0;
+	}
+
+	.toggleNav {
+		display: block;
+	}
 }
