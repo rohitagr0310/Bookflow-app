@@ -4,7 +4,6 @@
   background-color: rgb(242, 246, 248);
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -19,9 +18,9 @@ section {
   justify-content: center;
   align-items: center;
   height: auto;
-  min-height: 100vh;
   width: 100vw;
   position: relative;
+  padding: 100px 50px;
 }
 
 .sectionContent {
@@ -34,19 +33,27 @@ section {
   min-height: 100%;
   overflow: auto;
 }
+
 .sectionHeading {
   color: #000000;
    margin-bottom: 12px; /*You can adjust this value */
   font-size: 3rem; /* You can adjust this value */
-  font-weight: bold;
-  text-shadow: 0 3px 7px rgba(255, 255, 255, 0.7);
   box-shadow: none;
   /* padding-bottom: 50px; */
   letter-spacing: 1px;
+  font-family: "Dela Gothic One", cursive;
+}
+
+.mainHeading {
+  font-size: 6rem;
+}
+
+.sectionTextContainer {
+  width: 50%;
 }
 
 .sectionText {
-  color: #495464;
+  color: black;
   font-size: 1.4rem;
   letter-spacing: 0.5;
   text-align: left;
@@ -63,6 +70,7 @@ section {
   display: flex;
   justify-content: center;
   overflow-x: auto;
+  overflow-y: hidden;
   gap: 180px;
 }
 
@@ -76,85 +84,122 @@ section {
 .testimonialCard {
   width: 300px;
   padding: 25px;
-  margin-top: 10px;
   display: flex;
-  font-size: 2rem;
+  font-size: 1.4rem;
   flex-direction: column;
+  position: relative;
   align-items: center;
-  color: #fff;
-  border-radius: 20px;
-  transition: transform 0.3s ease-in-out;
-  background-color: transparent;
-  border-top-color: transparent;
-  border: 2px solid transparent;
-  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 600px) {
+.testimonialDivider {
+  margin: 0;
+  z-index: 1;
+}
+
+.testimonialContent {
+  z-index: 1;
+}
+
+.testimonialName {
+  z-index: 1;
+  font-size: 1.2rem;
+  opacity: .8;
+}
+
+.testimonialBg {
+  position: absolute;
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 10rem;
+  top: -50px;
+  line-height: 0;
+  opacity: .3;
+  color: #FFD793;
+  z-index: 0;
+}
+
+@media (max-width: 90em) {
+  .section1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .testimonialCard {
+    position: relative;
+  }
+
   .testimonialCardContainer {
     flex-direction: column;
     align-items: center;
+    gap: 0;
+  }
+
+  .testimonialBg {
+    top: -70px;
+    line-height: 0;
   }
 }
 
-
-.testimonialContent {
-  font-style: italic;
-  text-align: center;
-  margin-top: 16px;
-  color: #fff;
-  transition: color 0.3s ease; /* Add transition for smooth color change */
-}
-.testimonialName {
-  font-weight: bold;
-  margin-top: 16px;
-  color: #fff;
-  transition: color 0.3s ease; /* Add transition for smooth color change */
-}
-
-.testimonialCard:hover {
-  transform: translateY(-5px);
-  background-color: #d2d8ff;
-  color: #666; /* Change text color of .testimonialCard */
-}
-
-.testimonialCard:hover .testimonialContent,
-.testimonialCard:hover .testimonialName {
-  color: #666; /* Change text color of .testimonialContent and .testimonialName */
-}
-@media (max-width: 768px) {
-  .section {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: auto;
+@media (max-width: 86.5em) {
+  .mainHeading {
+    line-height: 100px;
+    margin-bottom: 50px;
   }
 
-  .libraryImage {
+  .sectionTextContainer {
+    flex: 1.5;
+  }
+}
+
+@media (max-width: 64em) {
+  .sectionContentContainer {
+    flex-direction: column-reverse;
+  }
+
+  .sectionTextContainer {
     width: 100%;
-    max-width: 300px;
-    margin: 32px auto;
+  }
+
+  .imageContainer {
+    display: none;
+  }
+
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 49.75em) {
+  .mainHeading {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .sectionHeading {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    width: 100% !important;
   }
 
   .mainHeading {
-    font-size: 2rem;
+    font-size: 4rem;
+    line-height: 70px;
     padding-top: 8px;
     padding-bottom: 16px;
   }
 
-  .sectionHeading {
-    font-size: 1.5rem;
-    margin-bottom: 24px;
+  .testimonialCards h2 {
+    width: 100%;
   }
 
   .sectionContent {
     font-size: 1rem;
-  }
-
-  .sectionContent > div {
-    flex-direction: column-reverse;
   }
 
   .page > section:nth-of-type(3) > div > div > div:first-child{
@@ -165,8 +210,17 @@ section {
     max-width: 300px;
     padding: 16px;
   }
+}
 
-  .testimonialContent {
-    font-size: 0.8rem;
+@media (max-width: 35em) {
+  .mainHeading {
+    font-size: 2.5rem;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 23.43em) {
+  html {
+    font-size: .8rem;
   }
 }
