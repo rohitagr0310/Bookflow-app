@@ -1,78 +1,18 @@
 .footer {
-	background-color: #00031a;
-	color: white;
+	color: black;
 	padding: 2rem 0;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.socialIconsContainer {
-	margin-top: 1rem;
-	border-top: 1px solid white;
-	padding-top: 2;
-	display: flex;
-	align-items: center;
+	justify-content: space-between;
 }
 
 .socialIcons {
 	font-size: 2rem;
-	margin: 0 0.5rem;
-	color: white;
+	color: black !important;
 	transition: color 0.3s ease-in-out;
 }
 
 .socialIcons:hover {
-	color: #3498db;
-}
-
-.columnsContainer {
-	width: 100%;
-	height: 300px;
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	margin-top: 1rem;
-}
-
-.column {
-	height: auto;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	align-items: center;
-	margin-right: 1rem;
-	margin-bottom: 1rem;
-	text-align: center;
-}
-
-.columnTitle {
-	font-weight: bold;
-	text-decoration: underline;
-	font-size: 1.5rem;
-}
-
-.columnLink {
-	display: block;
-	color: white;
-	min-width: 100px;
-	text-decoration: none;
-	margin: 1rem 0;
-	font-size: 1.2rem;
-	transition: color 0.3s ease-in-out;
-}
-.linksWrapper{
-	width: 40vw;
-	height: auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-}
-
-.columnLink:hover {
-	color: #3498db !important;
+	color: #68967D !important;
 }
 
 .smallText {
@@ -84,47 +24,8 @@
 	margin: 0 auto;
 }
 
-.logo {
-	padding: 50px 0;
-}
-
-a:-webkit-any-link {
-	color: white !important;
-	cursor: pointer;
-}
-
-a:-webkit-any-link:hover {
-	color: #3498db !important;
-}
-
-/* Add this media query at the end of your CSS file to adjust styles for mobile screens */
-@media (max-width: 768px) {
-	.columnsContainer {
+@media (max-width: 48em) {
+	.footer {
 		flex-direction: column;
-		align-items: center;
-		text-align: center;
-	}
-
-	.column {
-		flex: none;
-		margin: 8px 0;
-	}
-
-	.columnTitle {
-		font-size: 1rem;
-	}
-
-	.columnLink {
-		margin-top: 8px;
-		font-size: 0.8rem;
-	}
-
-	.socialIconsContainer {
-		margin-top: 16px;
-	}
-
-	.logo {
-		padding: 16px 0;
-		font-size: 1.5rem;
 	}
 }

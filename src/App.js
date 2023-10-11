@@ -36,7 +36,11 @@ const StudentRequests = lazy(() => import("./pages/student_panel/student_pages/S
  */
 
 function App () {
-  const theme = createTheme();
+  const theme = createTheme({
+    typography: {
+      fontFamily: "Roboto Condensed"
+    }
+  });
 
   // const userType = localStorage.getItem("userType") || "";
 
