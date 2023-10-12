@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
 .appBar {
-	background: rgba(29, 112, 255, 0.5) !important;
+	background: rgba(13, 20, 39, 0.5) !important;
 	backdrop-filter: blur(10px);
 	padding: 5px 0px;
 	position: fixed;
@@ -10,7 +12,7 @@
 
 .headerText {
 	flex-grow: 1;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: 'Pangolin', cursive;
 	padding-left: 20px;
 }
 
@@ -22,7 +24,7 @@
 }
 
 .headerLink:hover {
-	color: rgb(0, 42, 255);
+	color: rgb(191, 132, 132);
 }
 
 .loginLink {
@@ -36,5 +38,5 @@
 }
 
 .loginLink:hover {
-	background-color: rgba(255, 255, 255, 0.12);
+	background-color: rgb(255, 255, 255);
 }
