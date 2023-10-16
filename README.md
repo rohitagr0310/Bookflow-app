@@ -11,7 +11,7 @@ Welcome to the BookFlow App repository! This is where we manage the development 
 ![GitHub repo size](https://img.shields.io/github/repo-size/rohitagr0310/Bookflow-app?color=blue)
 ![](https://img.shields.io/badge/Status-Ongoing-green.svg)
 [![license](https://img.shields.io/github/license/rohitagr0310/Bookflow-app.svg?color=red)](https://github.com/rohitagr0310/Bookflow-app/blob/main/LICENSE)
-[![GitHub forks](https://img.shields.io/github/forks/kushal997-das/Bookflow-app.svg?color=green)](https://github.com/kushal997-das/Bookflow-app/network) [![GitHub stars](https://img.shields.io/github/stars/rohitagr0310/Bookflow-app.svg?color=orange)](https://github.com/kushal997-das/Bookflow-app/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/rohitagr0310/Bookflow-app.svg?color=green)](https://github.com/rohitagr0310/Bookflow-app/network) [![GitHub stars](https://img.shields.io/github/stars/rohitagr0310/Bookflow-app.svg?color=orange)](https://github.com/rohitagr0310/Bookflow-app/stargazers)
 
 [![GitHub issues](https://img.shields.io/github/issues/rohitagr0310/Bookflow-app.svg?color=red)](https://github.com/rohitagr0310/Bookflow-app/issues)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed/rohitagr0310/Bookflow-app.svg)](https://github.com/rohitagr0310/Bookflow-app/issues?q=is%3Aissue+is%3Aclosed)
