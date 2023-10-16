@@ -1,26 +1,17 @@
-## Question or Help Request
+---
+name: ❓ Questions and Help
+about: If you have questions, please check the below links
+labels: "question"
+---
 
-**Summary:**
-Please provide a brief summary of your question or the help you need.
+## ❓ Questions and Help
 
-**Description:**
-Describe your question or the issue you're facing in detail. Include any error messages, code snippets, or context that can help others understand your problem.
 
-**Environment:**
+Please contact me instead.
 
-- Operating System: [e.g., Windows, macOS, Linux]
-- Browser (if applicable): [e.g., Chrome, Firefox]
-- Project Version (if applicable): [e.g., v1.2.0]
 
-**Steps Taken:**
-List any steps you've already taken to try to solve the issue or find an answer to your question.
+- [Email](mailto:daskushal980@gmail.com)
+- [GitHub](https://github.com/Kushal997-das)
+- [Instagram](https://www.instagram.com/kushal_das07/)
+- [LinkedIn](https://www.linkedin.com/in/kushal-das-7337421a9/)
 
-**Expected Outcome:**
-What do you expect to happen or find as a result of this question or request for help?
-
-**Additional Information:**
-Include any additional information, context, or screenshots that might be helpful.
-
-**Labels:** [optional, specify labels to be applied]
-
-**Assignees:** [optional, specify who should be assigned to this question]
