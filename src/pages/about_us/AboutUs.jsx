@@ -4,7 +4,7 @@ import "./AboutUs.css"; // Import your CSS file for styling
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import Header from "../home_page/header/Header";
+import Header from "../../components/header/Header";
 import image from "../../images/jaye.jpg";
 import image1 from "../../images/qaidj.jpg";
 import image2 from "../../images/rohit.jpg";

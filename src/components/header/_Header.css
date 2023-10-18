@@ -6,7 +6,9 @@
 	top: 0;
 	left: 0;
 	right: 0;
+	border-radius: 0px !important;
 }
+
 
 .headerText {
 	flex-grow: 1;
@@ -16,38 +18,47 @@
 
 .headerLink {
 	text-decoration: none;
-	color: inherit;
 	font-size: 1.6rem;
 	font-weight: bold;
 }
 
 .headerLink:hover {
-	color: rgb(0, 42, 255);
+	color: white !important;
+	text-decoration: none !important;
+	font-size: 1.7rem;
+	transition: font-size 0.1s ease-in-out;
 }
 
 .loginLink {
 	text-decoration: none;
 	color: inherit;
 	font-size: 1.2rem;
-	border: none;
-	padding: 7px 21px;
-	border-radius: 5px;
+	margin-inline: 11px;
+	padding: 6px 10px;
 }
 
 .linksWrapper {
 	display: flex;
+	.active {
+		transition: all 0.2s ease-in-out;
+		border-bottom: 4px solid white;
+	}
 }
 
 .navLink {
 	text-decoration: none;
 	font-size: 1.2rem;
-	padding: 7px 21px;
-	border-radius: 5px;
+	margin-inline: 11px;
+	padding: 6px 10px;
 }
 
 .loginLink:hover, .navLink:hover {
-	background-color: white;
-	color: black !important;
+	/* background-color: white;
+	color: black !important; */
+	transition: all 0.2s ease-in-out;
+	border-bottom: 4px solid white;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .toggleNav {

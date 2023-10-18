@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/scroll/scroll-to-top.jsx";
 import HomePage from "./pages/home_page/HomePage.jsx";
 import Footer from "./components/footer/Footer.jsx";
+import Header from "./components/header/Header.jsx";
 
 const AuthPage = lazy(() => import("./pages/login_page/AuthPage.jsx"));
 const AdminPanel = lazy(() => import("./pages/admin_panel/AdminPanel.jsx"));
@@ -50,6 +51,7 @@ function App () {
         <div className="App">
           <CssBaseline />
           <ScrollToTop />
+          <Header />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={

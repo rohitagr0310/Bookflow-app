@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./header/Header";
+// import Header from "../../components/header/Header";
 import "./_HomePage.css";
 // import background1 from "../../images/background.jpg";
 // import testimonialbg from "../../images/new3.png";
@@ -24,7 +24,6 @@ const HomePage = () => {
   ];
   return (
     <div className="root">
-      <Header />
       <div className="page">
         <section
           className="section section1"
