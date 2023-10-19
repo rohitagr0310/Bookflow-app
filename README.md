@@ -92,3 +92,8 @@ This project is licensed under [MIT](https://choosealicense.com/licenses/mit/).
 ## Contact
 
 For questions or inquiries, please contact [Rohit Agarwal](mailto:Rohitagr2610@gmail.com).
+
+## Contributors
+
+The following people have contributed immensely to the development of this project. You can find a detailed list of contributors and their contributions in the [CONTRIBUTORS.md](CONTRIBUTORS.md) file.
+
