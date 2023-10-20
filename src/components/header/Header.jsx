@@ -30,16 +30,10 @@ const Header = () => {
           <NavLink to="/terms-and-conditions" className="navLink" onClick={() => setIsActive(false)}>
             Terms
           </NavLink>
+          <NavLink to="/login" className="navLink" onClick={() => setIsActive(false)}>
+            Login
+          </NavLink>
         </div>
-
-        <NavLink to="/login" className="loginLink">
-          Login
-        </NavLink>
-        <span className="material-icons toggleNav" onClick={() => {
-          setIsActive(!isActive);
-        }}>
-          {isActive ? "close" : "menu"}
-        </span>
       </Toolbar>
     </AppBar>
   );
