@@ -44,6 +44,10 @@ section {
   font-family: "Dela Gothic One", cursive;
 }
 
+.button:hover{
+    background-color: #68967d;
+}
+
 .mainHeading {
   font-size: 6rem;
 }
