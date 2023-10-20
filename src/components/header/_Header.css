@@ -9,6 +9,18 @@
 	border-radius: 0px !important;
 }
 
+.html{
+	scroll-behavior: smooth;
+}
+
+a{
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 1.8rem;
+}
+a:hover {
+	color: #b5b2b2 !important;
+}
 
 .headerText {
 	flex-grow: 1;

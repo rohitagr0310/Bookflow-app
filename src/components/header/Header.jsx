@@ -12,9 +12,14 @@ const Header = () => {
     <AppBar className="appBar">
       <Toolbar>
         <Typography variant="h6" className="headerText">
-          <NavLink to="/" className="headerLink">
+
+          <a href="#home">
             BookFlow
-          </NavLink>
+          </a>
+
+          {/* <NavLink to="/#home" className="headerLink">
+            BookFlow
+          </NavLink> */}
         </Typography>
 
         <div className={isActive ? "linksWrapper mobileLinksWrapper" : "linksWrapper"}>
