@@ -13,12 +13,12 @@
 	scroll-behavior: smooth;
 }
 
-a{
+#bookflow_scroll{
 	font-weight: bold;
 	text-decoration: none;
 	font-size: 1.8rem;
 }
-a:hover {
+#bookflow_scroll:hover {
 	color: #b5b2b2 !important;
 }
 
