@@ -12,9 +12,14 @@ const Header = () => {
     <AppBar className="appBar">
       <Toolbar>
         <Typography variant="h6" className="headerText">
-          <NavLink to="/" className="headerLink">
+
+          <a href="#home" id="bookflow_scroll">
             BookFlow
-          </NavLink>
+          </a>
+
+          {/* <NavLink to="/#home" className="headerLink">
+            BookFlow
+          </NavLink> */}
         </Typography>
 
         <div className={isActive ? "linksWrapper mobileLinksWrapper" : "linksWrapper"}>
@@ -30,16 +35,10 @@ const Header = () => {
           <NavLink to="/terms-and-conditions" className="navLink" onClick={() => setIsActive(false)}>
             Terms
           </NavLink>
+          <NavLink to="/login" className="navLink" onClick={() => setIsActive(false)}>
+            Login
+          </NavLink>
         </div>
-
-        <NavLink to="/login" className="loginLink">
-          Login
-        </NavLink>
-        <span className="material-icons toggleNav" onClick={() => {
-          setIsActive(!isActive);
-        }}>
-          {isActive ? "close" : "menu"}
-        </span>
       </Toolbar>
     </AppBar>
   );

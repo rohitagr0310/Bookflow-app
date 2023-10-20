@@ -44,9 +44,11 @@ p {
 }
  */
  /* TermsAndConditions.css */
+
 .terms-container {
   background: linear-gradient(90deg, #0080ff, #00ff80); /* Example gradient background */
   min-height: 100vh;
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;

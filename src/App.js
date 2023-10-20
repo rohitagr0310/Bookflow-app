@@ -51,7 +51,7 @@ function App () {
         <div className="App">
           <CssBaseline />
           <ScrollToTop />
-          <Header />
+          <Header/>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={
