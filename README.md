@@ -93,9 +93,9 @@ This project is licensed under [MIT](https://choosealicense.com/licenses/mit/).
 
 For questions or inquiries, please contact [Rohit Agarwal](mailto:Rohitagr2610@gmail.com).
 
-## Contributors
+## Our Contributors 
 
-The following people have contributed immensely to the development of this project. You can find a detailed list of contributors and their contributions in the [CONTRIBUTORS.md](CONTRIBUTORS.md) file.
-
-
+<a href="https://github.com/rohitagr0310/Bookflow-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=rohitagr0310/Bookflow-app" />
+</a>
 
