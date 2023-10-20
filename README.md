@@ -47,9 +47,9 @@ BookFlow is a library management app that allows users to seamlessly manage book
 
 **Additional Libraries & Dependencies:** dotenv, Axios, Directory Tree
 
-## Contributors
+## Maintainers
 
-Special thanks to the following contributors who have helped in shaping the BookFlow App:
+Special thanks to the following Maintainers who have helped in shaping the BookFlow App:
 
 -   [Rohit Agarwal](https://github.com/rohitagr0310)
 -   [Qaidjohar Jukker](https://github.com/qaidjoharj53)
