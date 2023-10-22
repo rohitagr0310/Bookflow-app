@@ -9,13 +9,13 @@ import "./_Footer.css";
  * Footer component.
  * @returns {JSX.Element} Footer
  */
-function Footer() {
+function Footer () {
   return (
     <footer
       style={{
         backgroundColor: "#FFD793",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "center"
       }}
     >
       <div
