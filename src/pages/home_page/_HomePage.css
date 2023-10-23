@@ -1,6 +1,6 @@
 /* Styling for the root container */
 /* Styling for the background container */
-.root {
+.root {  
   background-color: rgb(242, 246, 248);
   background-size: cover;
   background-position: center;
@@ -10,6 +10,11 @@
   justify-content: center;
   align-items: center;
   position: relative;
+
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 section {
@@ -21,6 +26,7 @@ section {
   width: 100vw;
   position: relative;
   padding: 100px 50px;
+  scroll-margin: 20px;
 }
 
 .sectionContent {
@@ -42,6 +48,10 @@ section {
   /* padding-bottom: 50px; */
   letter-spacing: 1px;
   font-family: "Dela Gothic One", cursive;
+}
+
+.button:hover{
+  scroll-behavior: smooth;
 }
 
 .mainHeading {
@@ -100,6 +110,7 @@ section {
   z-index: 1;
 }
 
+
 .testimonialName {
   z-index: 1;
   font-size: 1.2rem;
@@ -137,6 +148,9 @@ section {
     top: -70px;
     line-height: 0;
   }
+  #more{
+    scroll-margin-top: 78px;
+  }
 }
 
 @media (max-width: 86.5em) {
@@ -149,6 +163,8 @@ section {
     flex: 1.5;
   }
 }
+
+
 
 @media (max-width: 64em) {
   .sectionContentContainer {
@@ -216,6 +232,9 @@ section {
   .mainHeading {
     font-size: 2.5rem;
     line-height: 50px;
+  }
+  #more{
+    scroll-margin-top: 78px;
   }
 }
 

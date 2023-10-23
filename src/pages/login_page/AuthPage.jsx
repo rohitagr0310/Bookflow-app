@@ -16,6 +16,7 @@ import InputAdornment from "@mui/material/InputAdornment"; // Import InputAdornm
 import VisibilityIcon from "@mui/icons-material/Visibility"; // Import the eye icon
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import TimedPopup from "../../components/timedpopup/TimedPopup";
+// import scrollToTop from "../../components/scroll/scroll-to-top";
 import "./_AuthPage.css";
 import axios from "axios";
 import "./ForgetPassword";
@@ -218,6 +219,11 @@ const AuthPage = () => {
   };
 
   const handleToggleForm = () => {
+    if (showLogin) {
+      window.scrollTo(0, 50);
+    } else {
+      window.scrollTo(0, 80);
+    }
     setShowLogin(!showLogin);
   };
 

@@ -2,6 +2,21 @@
 
 Welcome to the BookFlow App repository! This is where we manage the development of our library management application built using React.
 
+![GitHub watchers](https://img.shields.io/github/watchers/rohitagr0310/Bookflow-app?style=social) <br>
+
+<a href="#Contribution" title="Contributions are welcome"><img src="https://img.shields.io/badge/contributions-welcome-green.svg"></a> <br>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![GitHub last commit](https://img.shields.io/github/last-commit/rohitagr0310/Bookflow-app?logo=git&logoColor=white)](https://github.com/rohitagr0310/Bookflow-app/commits/master)
+[![All  contributors](https://img.shields.io/github/contributors/rohitagr0310/Bookflow-app?color=green)](https://github.com/rohitagr0310/Bookflow-app/graphs/contributors)
+![GitHub repo size](https://img.shields.io/github/repo-size/rohitagr0310/Bookflow-app?color=blue)
+![](https://img.shields.io/badge/Status-Ongoing-green.svg)
+[![license](https://img.shields.io/github/license/rohitagr0310/Bookflow-app.svg?color=red)](https://github.com/rohitagr0310/Bookflow-app/blob/main/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/rohitagr0310/Bookflow-app.svg?color=green)](https://github.com/rohitagr0310/Bookflow-app/network) [![GitHub stars](https://img.shields.io/github/stars/rohitagr0310/Bookflow-app.svg?color=orange)](https://github.com/rohitagr0310/Bookflow-app/stargazers)
+
+[![GitHub issues](https://img.shields.io/github/issues/rohitagr0310/Bookflow-app.svg?color=red)](https://github.com/rohitagr0310/Bookflow-app/issues)
+[![GitHub issues closed](https://img.shields.io/github/issues-closed/rohitagr0310/Bookflow-app.svg)](https://github.com/rohitagr0310/Bookflow-app/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/rohitagr0310/Bookflow-app.svg?color=yellow)](https://github.com/rohitagr0310/Bookflow-app/pulls)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr-closed/rohitagr0310/Bookflow-app.svg?color=red)](https://github.com/rohitagr0310/Bookflow-app/issues?q=is%3Aissue+is%3Aclosed)
 ## Overview
 
 BookFlow is a library management app that allows users to seamlessly manage book borrowing and returns using QR code scanning. This app aims to provide an efficient way to interact with library resources without the need for direct librarian involvement.
@@ -32,9 +47,9 @@ BookFlow is a library management app that allows users to seamlessly manage book
 
 **Additional Libraries & Dependencies:** dotenv, Axios, Directory Tree
 
-## Contributors
+## Maintainers
 
-Special thanks to the following contributors who have helped in shaping the BookFlow App:
+Special thanks to the following Maintainers who have helped in shaping the BookFlow App:
 
 -   [Rohit Agarwal](https://github.com/rohitagr0310)
 -   [Qaidjohar Jukker](https://github.com/qaidjoharj53)
@@ -77,3 +92,10 @@ This project is licensed under [MIT](https://choosealicense.com/licenses/mit/).
 ## Contact
 
 For questions or inquiries, please contact [Rohit Agarwal](mailto:Rohitagr2610@gmail.com).
+
+## Our Contributors 
+
+<a href="https://github.com/rohitagr0310/Bookflow-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=rohitagr0310/Bookflow-app" />
+</a>
+
