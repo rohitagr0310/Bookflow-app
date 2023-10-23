@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Typography, IconButton } from "@mui/material";
+import { Typography, IconButton } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import { FaXTwitter } from "react-icons/fa6";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./_Footer.css";
 
@@ -11,32 +11,29 @@ import "./_Footer.css";
  */
 function Footer () {
   return (
-    <footer className="footer">
-      <Container maxWidth="lg">
-        <div className="columnsContainer">
-          <div className="column">
-            <div className="linksWrapper">
-              <a href="/about-us" className="columnLink">
-                Meet the Team
-              </a>
-              <a href="/" className="columnLink">
-                Home
-              </a>
-              <a href="/contact-us" className="columnLink">
-                Contact
-              </a>
-              <a href="/terms-and-conditions" className="columnLink">
-                Terms
-              </a>
-            </div>
-          </div>
-          <div className="column">
-            <Typography variant="h3" p="0" className="logo">
-              BookFlow
-            </Typography>
-          </div>
-        </div>
-        <div className="socialIconsContainer">
+    <footer
+      style={{
+        backgroundColor: "#FFD793",
+        display: "flex",
+        justifyContent: "center"
+      }}
+    >
+      <div
+        className="footer"
+        style={{ width: "80vw", display: "flex", alignItems: "center" }}
+      >
+        <Typography
+          variant="body2"
+          align="center"
+          style={{ fontSize: "1.4rem", fontWeight: "bold" }}
+        >
+          BookFlow
+        </Typography>
+        <Typography variant="body1" align="center">
+          &copy; {new Date().getFullYear()} BookFlow Library Management. All
+          rights reserved.
+        </Typography>
+        <div id="iconButtons">
           <IconButton
             href="https://www.facebook.com/technonjr"
             target="_blank"
@@ -51,7 +48,7 @@ function Footer () {
             color="inherit"
             className="socialIcons"
           >
-            <TwitterIcon />
+            <FaXTwitter />
           </IconButton>
           <IconButton
             href="https://www.linkedin.com/school/technonjr/"
@@ -62,11 +59,7 @@ function Footer () {
             <LinkedInIcon />
           </IconButton>
         </div>
-        <Typography variant="body2" align="center">
-          &copy; {new Date().getFullYear()} BookFlow Library Management. All
-          rights reserved.
-        </Typography>
-      </Container>
+      </div>
     </footer>
   );
 }

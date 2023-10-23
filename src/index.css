@@ -1,13 +1,49 @@
+/* Roboto Condensed, Dela Gothic One */
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto+Condensed:wght@400;700&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.button {
+  padding: 20px 100px;
+  background-color: #ffd793;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black !important;
+}
+
+li {
+  font-size: 1.4rem;
+}
+
+a:-webkit-any-link {
+  color: white;
+  cursor: pointer;
+}
+
+a:-webkit-any-link:hover {
+  color: #3498db;
+}
+
+@media (max-width: 48em) {
+  html {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    padding: 20px 50px;
+  }
 }

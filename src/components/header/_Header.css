@@ -1,0 +1,175 @@
+.appBar {
+	background: black !important;
+	backdrop-filter: blur(10px);
+	padding: 5px 0px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	border-radius: 0px !important;
+}
+
+.html{
+	scroll-behavior: smooth;
+}
+
+#bookflow_scroll{
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 1.8rem;
+}
+#bookflow_scroll:hover {
+	color: #b5b2b2 !important;
+}
+
+.headerText {
+	flex-grow: 1;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	padding-left: 20px;
+}
+
+.headerLink {
+	text-decoration: none;
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+
+.headerLink:hover {
+	color: white !important;
+	text-decoration: none !important;
+	font-size: 1.7rem;
+	transition: font-size 0.1s ease-in-out;
+}
+
+.loginLink {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.2rem;
+	margin-inline: 11px;
+	padding: 6px 10px;
+}
+
+.linksWrapper {
+	display: flex;
+	.active {
+		transition: all 0.2s ease-in-out;
+		border-bottom: 4px solid white;
+	}
+}
+
+.navLink {
+	text-decoration: none;
+	font-size: 1.2rem;
+	margin-inline: 11px;
+	padding: 6px 10px;
+}
+
+.loginLink:hover, .navLink:hover {
+	/* background-color: white;
+	color: black !important; */
+	transition: all 0.2s ease-in-out;
+	border-bottom: 4px solid white;
+	color: white !important;
+	text-decoration: none !important;
+}
+
+.toggleNav {
+	padding: 0 10px;
+	display: none;
+}
+
+.mobileMenuIcon {
+	display: none; 
+	cursor: pointer;
+  }
+  
+  .mobileMenuIcon .bar {
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	margin: 5px 0;
+	transition: 0.4s;
+  }
+  
+  .change .bar:nth-child(1) {
+	transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .change .bar:nth-child(2) {
+	opacity: 0;
+  }
+  
+  .change .bar:nth-child(3) {
+	transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .mobileLinksWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  /* Hide the mobile menu links initially */
+  @media (max-width: 768px) {
+	.linksWrapper {
+	  display: none;
+	}
+  
+	.mobileMenuIcon {
+	  display: block; 
+	}
+  }
+
+.mobileDropdownMenu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: black; 
+	position: absolute;
+	top: 60px; 
+	right: 0;
+	z-index: 1; 
+	width: 100%; 
+	border: 1px solid #333; 
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+	padding: 10px 0; 
+  }
+  
+  .mobileNavLink {
+	text-decoration: none;
+	font-size: 1.2rem;
+	color: white;
+	margin: 10px 0;
+  }
+  
+  .mobileNavLink:hover {
+	color: #b5b2b2;
+  }
+  
+
+@media (max-width: 48em) {
+	.loginLink:hover, .navLink:hover {
+		background-color: black;
+		color: white !important;
+	}
+
+	.linksWrapper {
+		display: none;
+	}
+
+	.mobileLinksWrapper {
+		background-color: black;
+		width: 200px;
+		position: absolute;
+		top: 70px;
+		right: 20px;
+		display: flex;
+		flex-direction: column;
+		border-radius: 2px;
+		padding: 10px 0;
+	}
+
+	.toggleNav {
+		display: block;
+	}
+}
