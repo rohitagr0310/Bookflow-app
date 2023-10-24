@@ -9,6 +9,18 @@
 	border-radius: 0px !important;
 }
 
+.html{
+	scroll-behavior: smooth;
+}
+
+#bookflow_scroll{
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 1.8rem;
+}
+#bookflow_scroll:hover {
+	color: #b5b2b2 !important;
+}
 
 .headerText {
 	flex-grow: 1;
@@ -65,6 +77,75 @@
 	padding: 0 10px;
 	display: none;
 }
+
+.mobileMenuIcon {
+	display: none; 
+	cursor: pointer;
+  }
+  
+  .mobileMenuIcon .bar {
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	margin: 5px 0;
+	transition: 0.4s;
+  }
+  
+  .change .bar:nth-child(1) {
+	transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .change .bar:nth-child(2) {
+	opacity: 0;
+  }
+  
+  .change .bar:nth-child(3) {
+	transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .mobileLinksWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  /* Hide the mobile menu links initially */
+  @media (max-width: 768px) {
+	.linksWrapper {
+	  display: none;
+	}
+  
+	.mobileMenuIcon {
+	  display: block; 
+	}
+  }
+
+.mobileDropdownMenu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: black; 
+	position: absolute;
+	top: 60px; 
+	right: 0;
+	z-index: 1; 
+	width: 100%; 
+	border: 1px solid #333; 
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+	padding: 10px 0; 
+  }
+  
+  .mobileNavLink {
+	text-decoration: none;
+	font-size: 1.2rem;
+	color: white;
+	margin: 10px 0;
+  }
+  
+  .mobileNavLink:hover {
+	color: #b5b2b2;
+  }
+  
 
 @media (max-width: 48em) {
 	.loginLink:hover, .navLink:hover {

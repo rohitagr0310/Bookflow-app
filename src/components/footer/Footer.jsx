@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, IconButton } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import { FaXTwitter } from "react-icons/fa6";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./_Footer.css";
 
@@ -11,9 +11,22 @@ import "./_Footer.css";
  */
 function Footer () {
   return (
-    <footer style={{ backgroundColor: "#FFD793", display: "flex", justifyContent: "center" }}>
-      <div className="footer" style={{ width: "80vw", display: "flex", alignItems: "center" }}>
-        <Typography variant="body2" align="center" style={{ fontSize: "1.4rem", fontWeight: "bold" }}>
+    <footer
+      style={{
+        backgroundColor: "#FFD793",
+        display: "flex",
+        justifyContent: "center"
+      }}
+    >
+      <div
+        className="footer"
+        style={{ width: "80vw", display: "flex", alignItems: "center" }}
+      >
+        <Typography
+          variant="body2"
+          align="center"
+          style={{ fontSize: "1.4rem", fontWeight: "bold" }}
+        >
           BookFlow
         </Typography>
         <Typography variant="body1" align="center">
@@ -35,7 +48,7 @@ function Footer () {
             color="inherit"
             className="socialIcons"
           >
-            <TwitterIcon />
+            <FaXTwitter />
           </IconButton>
           <IconButton
             href="https://www.linkedin.com/school/technonjr/"

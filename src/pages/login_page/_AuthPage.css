@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.html{
+  scroll-behavior: inherit;
+}
+
 .appBar {
   background-color: rgba(35, 154, 160, 0.7);
 }

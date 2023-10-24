@@ -23,7 +23,7 @@ const HomePage = () => {
     }
   ];
   return (
-    <div className="root">
+    <div className="root" id="home">
       <div className="page">
         <section
           className="section section1"
