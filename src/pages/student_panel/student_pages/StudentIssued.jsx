@@ -60,13 +60,13 @@ function BookTable () {
       <Typography component="h2" variant="h6" gutterBottom>
         Issued books
       </Typography>
-      <FormControl>
+      <FormControl sx={{ padding: "0 0 1em 0" }}>
         <Select
           value={selectedSource}
           onChange={handleSourceChange}
         >
-          <MenuItem value="library">Library</MenuItem>
-          <MenuItem value="bookbank">Book Bank</MenuItem>
+          <MenuItem value="library" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>Library</MenuItem>
+          <MenuItem value="bookbank" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>Book Bank</MenuItem>
         </Select>
       </FormControl>
       <TableContainer component={Paper}>

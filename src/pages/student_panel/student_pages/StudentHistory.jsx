@@ -44,14 +44,14 @@ export default function StudentHistory () {
           <Typography component="h2" variant="h6" gutterBottom>
             Books details
           </Typography>
-          <FormControl>
+          <FormControl sx={{ padding: "0 0 1em 0" }}>
             <Grid container spacing={1}>
               <Select
                 value={selectedTable}
                 onChange={(e) => setSelectedTable(e.target.value)}
               >
-                <MenuItem value="library">Library</MenuItem>
-                <MenuItem value="bookbank">Book Bank</MenuItem>
+                <MenuItem value="library" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>Library</MenuItem>
+                <MenuItem value="bookbank" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>Book Bank</MenuItem>
               </Select>
             </Grid>
           </FormControl>

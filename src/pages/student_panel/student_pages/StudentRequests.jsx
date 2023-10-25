@@ -39,14 +39,14 @@ export default function StudentRequests () {
           <Typography component="h2" variant="h6" gutterBottom>
             Books Requests
           </Typography>
-          <FormControl>
+          <FormControl sx={{ padding: "0 0 1em 0" }}>
             <Grid container spacing={1}>
               <Select
                 value={selectedTable}
                 onChange={(e) => setSelectedTable(e.target.value)}
               >
-                <MenuItem value="issue">Issue</MenuItem>
-                <MenuItem value="return">Return</MenuItem>
+                <MenuItem value="issue" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>Issue</MenuItem>
+                <MenuItem value="return" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>Return</MenuItem>
               </Select>
             </Grid>
           </FormControl>
