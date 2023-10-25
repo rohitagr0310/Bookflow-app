@@ -44,14 +44,23 @@
 .formContainer form {
   display: flex;
   flex-direction: column;
+  gap: 1.2rem;
 }
 
-.formContainer form input {
+.formContainer form .input_sec {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.formContainer form .input_sec input {
   color: white;
 }
 
-.formContainer form label {
+.formContainer form .input_sec label {
   color: white;
+  margin-bottom: 0;
 }
 
 .formContainer form .submitButton {
