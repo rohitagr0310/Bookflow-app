@@ -9,6 +9,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HistoryIcon from "@mui/icons-material/History";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LogoutIcon from "@mui/icons-material/Logout";
+import "./_student-panel-styles.css";
 
 export const mainListItems = (
   <React.Fragment>

@@ -1,0 +1,55 @@
+/* Style for the QR scanner dialog */
+.qr-scanner-dialog {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 9999;
+}
+
+.qr-scanner-dialog .scanner-content {
+	background-color: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.qr-scanner-dialog h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+/* Style for the close button */
+.qr-scanner-dialog .close-button {
+	background-color: #e74c3c;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	cursor: pointer;
+	border-radius: 4px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+/* Style for the scanned QR code data */
+.qr-code-data {
+	margin-top: 20px;
+	font-size: 18px;
+}
+.admin-content {
+	text-align: center;
+}
+
+.admin-panel {
+	background-color: white;
+}
+
+.admin-dashboard-menu-buttons {
+	color: #000;
+}

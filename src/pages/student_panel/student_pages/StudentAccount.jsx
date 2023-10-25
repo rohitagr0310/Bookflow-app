@@ -100,7 +100,7 @@ const StudentAccount = () => {
   return (
     <CardContent>
       <Paper elevation={3} style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" sx={{ fontFamily: "Dela Gothic One" }} gutterBottom>
         Account Information
         </Typography>
         <form>
@@ -158,12 +158,14 @@ const StudentAccount = () => {
 
           {isEditing
             ? (
-              <Button variant="contained" color="primary" onClick={handleSaveClick}>
+              <Button variant="contained" color="primary" onClick={handleSaveClick}
+                sx={{ marginTop: "16px", backgroundColor: "#68967D", fontFamily: "Roboto", ":hover": { backgroundColor: "#000000" } }}>
             Save
               </Button>
             )
             : (
-              <Button variant="contained" color="primary" onClick={handleEditClick}>
+              <Button variant="contained" color="primary" onClick={handleEditClick}
+                sx={{ marginTop: "16px", backgroundColor: "#68967D", fontFamily: "Roboto", ":hover": { backgroundColor: "#000000" } }}>
             Edit
               </Button>
             )}
