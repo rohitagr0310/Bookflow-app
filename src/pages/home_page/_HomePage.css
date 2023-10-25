@@ -29,27 +29,6 @@ section {
   scroll-margin: 20px;
 }
 
-.section1 {
-  background-image: linear-gradient(
-      90deg,
-      rgba(252, 252, 252, 0.3) 0%,
-      rgba(252, 252, 252, 0.3) 50%,
-      rgba(252, 252, 252, 0.3) 100%
-    ),
-    url("https://images.pexels.com/photos/2925304/pexels-photo-2925304.jpeg?auto=compress&cs=tinysrgb&w=600");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.section1 h1 {
-  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
-}
-
-.section1 div p {
-  text-shadow: 2px 0px 2px rgba(0, 0, 0, 0.6);
-}
-
 .sectionContent {
   text-align: center;
   padding: 50px 15px;
