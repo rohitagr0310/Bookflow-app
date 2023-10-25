@@ -71,7 +71,7 @@ function Search () {
     <Card>
       <CardContent>
         <div>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" sx={{ fontFamily: "Dela Gothic One" }} gutterBottom>
             Book Search
           </Typography>
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -112,7 +112,7 @@ function Search () {
               variant="contained"
               color="primary"
               onClick={handleSearch}
-              style={{ marginTop: "16px" }}
+              sx={{ marginTop: "16px", backgroundColor: "#68967D", fontFamily: "Roboto", ":hover": { backgroundColor: "#000000" } }}
             >
               Search
             </Button>
