@@ -37,8 +37,11 @@ const PendingIssue = () => {
     <Card>
       <CardContent>
         <div>
-          <Typography variant="h3">Pending Issue</Typography>
+          <Typography variant="h4" color="#000000" sx={{ fontFamily: ["Dela Gothic One"] }}>Pending Issue</Typography>
           <br />
+          <Typography variant="h6" sx={{ fontFamily: ["Roboto"] }}>
+            Total Pending Issues: {totalPendingIssue}
+          </Typography>
           <Paper elevation={3}>
             <TableContainer component={Paper} style={{ maxHeight: 400 }}>
               <Table>
@@ -66,9 +69,6 @@ const PendingIssue = () => {
             </TableContainer>
           </Paper>
           <br />
-          <Typography variant="h6">
-        Total Pending Issues: {totalPendingIssue}
-          </Typography>
         </div>
       </CardContent>
     </Card>

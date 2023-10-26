@@ -26,9 +26,10 @@ const AdminHistory = () => {
     <Card>
       <CardContent>
         <div className="admin-history-container">
-          <Typography variant="h4">History</Typography>
+          <Typography variant="h4" color="#000000" sx={{ fontFamily: ["Dela Gothic One"] }}>History</Typography>
+          <br />
           <div className="total-issued-books">
-            <Typography variant="subtitle1">Total Issued Books: {totalIssuedBooks}</Typography>
+            <Typography variant="h6" sx={{ fontFamily: ["Roboto"] }}>Total Issued Books: {totalIssuedBooks}</Typography>
           </div>
           <TableContainer component={Paper}>
             <Table aria-label="Issued Books">

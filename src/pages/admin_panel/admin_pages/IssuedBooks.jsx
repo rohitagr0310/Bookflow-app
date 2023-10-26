@@ -24,10 +24,10 @@ const IssuedBooks = () => {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h3">Issued Books</Typography>
+        <Typography variant="h4" color="#000000" sx={{ fontFamily: ["Dela Gothic One"] }}>Issued Books</Typography>
         <br />
-        <div>
-          <Typography variant="h6">Total Issued Books: {totalIssuedBooks}</Typography>
+        <div className="total-issued-books">
+          <Typography variant="h6" sx={{ fontFamily: ["Roboto"] }}>Total Issued Books: {totalIssuedBooks}</Typography>
         </div>
         <Paper elevation={1}>
           <Table>

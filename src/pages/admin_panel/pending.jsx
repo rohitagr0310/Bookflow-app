@@ -61,8 +61,8 @@ function preventDefault (event) {
 
 export default function Orders () {
   return (
-    <React.Fragment><Typography component="h2" variant="h6" color="primary" gutterBottom>
-      pending Issues
+    <React.Fragment><Typography component="h2" variant="h6" color="#000000" gutterBottom>
+      Pending Issues
     </Typography>
     <Table size="small">
       <TableHead>

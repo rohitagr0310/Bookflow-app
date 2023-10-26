@@ -62,7 +62,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
 }));
 
 // TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
+const defaultTheme = createTheme({
+  typography: {
+    h6: {
+      fontFamily: ["Dela Gothic One"]
+    }
+  }
+});
 
 export default function Dashboard () {
   const [open, setOpen] = React.useState(true);
@@ -78,6 +84,7 @@ export default function Dashboard () {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
+              backgroundColor: "#FFD793",
               pr: "24px" // keep right padding when drawer closed
             }}
           >
@@ -94,7 +101,7 @@ export default function Dashboard () {
             >
               <MenuIcon />
             </IconButton>
-            <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+            <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1, color: "#000000" }}>
               Admin Dashboard
             </Typography>
           </Toolbar>

@@ -22,7 +22,7 @@ const Deposits = (props) => {
             height: 240
           }}
         >
-          <Typography component="h2" variant="h6" color="primary" gutterBottom>
+          <Typography component="h2" variant="h6" color="#000000" gutterBottom>
             {title}
           </Typography>
           <Typography component="p" variant="h4">

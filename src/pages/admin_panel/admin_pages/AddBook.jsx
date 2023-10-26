@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { TextField, Button, FormControl, Select, MenuItem, Card, CardContent, Grid } from "@mui/material";
+import { TextField, Button, FormControl, Select, MenuItem, Card, CardContent, Grid, Typography } from "@mui/material";
 
 const AddBook = () => {
   const [accessionType, setAccessionType] = useState("");
@@ -88,13 +88,13 @@ const AddBook = () => {
     <Card>
       <CardContent>
         <div className="add-book-container">
-          <h1>Add Book</h1>
+          <Typography variant="h4" color="#000000" sx={{ fontFamily: ["Dela Gothic One"], paddingBottom: "0.5em" }}>Add Book</Typography>
           <div className="input-group">
             <FormControl>
               <Grid container spacing={1}>
-                <Select value={selectedTable} onChange={(e) => setSelectedTable(e.target.value)}>
-                  <MenuItem value="test">test</MenuItem>
-                  <MenuItem value="library">Library</MenuItem>
+                <Select value={selectedTable} onChange={(e) => setSelectedTable(e.target.value)} sx={{ marginLeft: "0.5em" }}>
+                  <MenuItem value="test" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>test</MenuItem>
+                  <MenuItem value="library" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>Library</MenuItem>
                 </Select>
               </Grid>
             </FormControl>
@@ -194,7 +194,7 @@ const AddBook = () => {
             </Grid>
             <Grid item xs={12}>
               <div className="center-button">
-                <Button variant="contained" onClick={handleAddBook}>
+                <Button variant="contained" onClick={handleAddBook} sx={{ backgroundColor: "#68967D", fontFamily: "Roboto", ":hover": { backgroundColor: "#000000" } }}>
           Add Book
                 </Button>
               </div>
