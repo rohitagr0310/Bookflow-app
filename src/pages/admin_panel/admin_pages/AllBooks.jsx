@@ -44,16 +44,17 @@ const AllBooks = () => {
     <Card>
       <CardContent>
         <Container>
-          <Typography variant="h4">All Books</Typography>
+          <Typography variant="h4" color="#000000" sx={{ fontFamily: ["Dela Gothic One"] }}>All Books</Typography>
           <FormControl>
             <Input htmlFor="tableSelect"></Input>
             <Select
               id="tableSelect"
               value={selectedTable}
               onChange={(e) => setSelectedTable(e.target.value)}
+              sx={{ marginBottom: "0.5em" }}
             >
-              <MenuItem value="library">Library</MenuItem>
-              <MenuItem value="test">Test</MenuItem>
+              <MenuItem value="library" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>Library</MenuItem>
+              <MenuItem value="test" sx={{ ":hover": { backgroundColor: "#a7dbbf" } }}>Test</MenuItem>
             </Select>
           </FormControl>
           <TableContainer component={Paper} style={{ maxHeight: 400 }}> {/* Adjust maxHeight to control the scrolling */}
