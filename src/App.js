@@ -99,7 +99,6 @@ function App () {
                 <PendingIssue />
               </Suspense>} />
             </Route>
-
             <Route path="student" element={<Suspense fallback={<Loader />}>
               <StudentPanel />
             </Suspense>}>
@@ -119,7 +118,6 @@ function App () {
                 <StudentRequests />
               </Suspense>} />
             </Route>
-
           </Routes>
           <Footer />
         </div>

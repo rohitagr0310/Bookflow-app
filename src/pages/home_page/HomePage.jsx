@@ -7,6 +7,7 @@ import "./_HomePage.css";
 import img1 from "../../images/vector1.png";
 import img2 from "../../images/vector2.png";
 import img3 from "../../images/vector5.png";
+import FAQ from "../faqs/faqs";
 const HomePage = () => {
   const testimonials = [
     {
@@ -172,8 +173,10 @@ const HomePage = () => {
             </div>
           </div>
         </section>
+        <FAQ />
       </div>
     </div>
+
   );
 };
 
