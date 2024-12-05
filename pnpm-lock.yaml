@@ -75,8 +75,8 @@ dependencies:
     specifier: ^14.0.1
     version: 14.0.1
   mysql2:
-    specifier: ^3.9.7
-    version: 3.9.7
+    specifier: ^3.9.8
+    version: 3.9.8
   nodemailer:
     specifier: ^6.9.9
     version: 6.9.9
@@ -10274,8 +10274,8 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: false
 
-  /mysql2@3.9.7:
-    resolution: {integrity: sha512-KnJT8vYRcNAZv73uf9zpXqNbvBG7DJrs+1nACsjZP1HMJ1TgXEy8wnNilXAn/5i57JizXKtrUtwDB7HxT9DDpw==}
+  /mysql2@3.9.8:
+    resolution: {integrity: sha512-+5JKNjPuks1FNMoy9TYpl77f+5frbTklz7eb3XDwbpsERRLEeXiW2PDEkakYF50UuKU2qwfGnyXpKYvukv8mGA==}
     engines: {node: '>= 8.0'}
     dependencies:
       denque: 2.1.0
